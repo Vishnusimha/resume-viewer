@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Section from "./components/Section";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import TechnicalSkills from "./components/TechnicalSkills";
+import Certifications from "./components/Certifications";
 import "./styles/App.css";
 
 function App() {
@@ -22,10 +23,14 @@ function App() {
       </Section>
 
       <Section title="Technical Skills">
-        <Skills skills={resumeData.skills} />
+        <TechnicalSkills skills={resumeData.skills.technical} />
       </Section>
 
-      <Section title="Work EXPERIENCE">
+      <Section title="Certifications">
+        <Certifications certifications={resumeData.skills.certifications} />
+      </Section>
+
+      <Section title="Work Experience">
         {resumeData.experience.map((exp, index) => (
           <Experience key={index} experience={exp} />
         ))}
