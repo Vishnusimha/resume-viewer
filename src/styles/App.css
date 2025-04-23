@@ -1,38 +1,197 @@
-.App {
+/* Base Styles */
+.resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header Styles */
+.resume-header {
   text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.name {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  color: #2c3e50;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.contact-info {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Section Styles */
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.section-content {
+  padding-left: 20px;
+}
+
+/* Experience Styles */
+.experience {
+  margin-bottom: 25px;
+}
+
+.company {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.position-duration {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+}
+
+.experience-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.experience-details li {
+  margin-bottom: 8px;
+}
+
+/* Education Styles */
+.education {
+  margin-bottom: 25px;
+}
+
+.institution {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.degree-duration {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+}
+
+.education-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Skills Styles */
+.skills {
+  margin-bottom: 20px;
+}
+
+.skills-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 15px 0 10px 0;
+}
+
+.technical-skills,
+.certifications {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.technical-skills li,
+.certifications li {
+  margin-bottom: 8px;
+}
+
+/* Projects Styles */
+.project {
+  margin-bottom: 25px;
+}
+
+.project-name {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.project-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.project-details li {
+  margin-bottom: 8px;
+}
+
+/* Internship Styles */
+.internship {
+  margin-bottom: 25px;
+}
+
+.internship-company {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.internship-duration {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+}
+
+.internship-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Summary Styles */
+.summary {
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 15px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .name {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
   }
 }
