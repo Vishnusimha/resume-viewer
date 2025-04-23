@@ -1,4 +1,6 @@
 import React from "react";
+import awsCloudLogo from "../assets/aws-certified-cloud-practitioner.png";
+import awsSaaLogo from "../assets/aws-certified-solutions-architect-associate.png";
 
 const Certifications = ({ certifications }) => {
   return (
@@ -8,7 +10,7 @@ const Certifications = ({ certifications }) => {
           <li key={`cert-${index}`}>
             {cert.includes(":") ? (
               <>
-                <strong>{cert.split(":")[0]}:</strong>
+                <strong>{cert.split(":")[0]}:</strong>{" "}
                 {cert.split(":").slice(1).join(":")}
               </>
             ) : (
@@ -17,6 +19,11 @@ const Certifications = ({ certifications }) => {
           </li>
         ))}
       </ul>
+
+      <div className="certification-logos">
+        <img src={awsCloudLogo} alt="AWS Cloud Practitioner Logo" />
+        <img src={awsSaaLogo} alt="AWS Solutions Architect Associate Logo" />
+      </div>
     </div>
   );
 };
