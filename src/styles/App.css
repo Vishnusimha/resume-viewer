@@ -1,8 +1,10 @@
 /* Base Styles */
 .resume-container {
-  max-width: 800px;
+  max-width: 100%;
+  /* Changed from 800px to full width */
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 5%;
+  /* More horizontal padding */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
@@ -10,25 +12,40 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Color Variables */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #2980b9;
+  --text-color: #333;
+  --light-gray: #eaecee;
+}
+
 /* Header Styles */
 .resume-header {
   text-align: center;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  /* Reduced from 40px */
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+  /* Reduced from 25px */
+  background-color: var(--light-gray);
+  padding: 10px;
+  /* Reduced from 30px */
+  border-radius: 8px;
 }
 
 .name {
   font-size: 2.5rem;
   margin-bottom: 5px;
-  color: #2c3e50;
+  color: var(--primary-color);
   font-weight: 700;
 }
 
 .title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #3498db;
+  font-size: 2.0rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
   font-weight: 600;
 }
 
@@ -38,7 +55,7 @@
 }
 
 .contact-info a {
-  color: #2980b9;
+  color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
 }
@@ -49,16 +66,25 @@
 
 /* Section Styles */
 .resume-section {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  /* Reduced from 40px */
+  background-color: var(--light-gray);
+  padding: 15px 20px;
+  /* Reduced vertical padding */
+  border-radius: 8px;
 }
 
 .section-title {
   font-size: 1.8rem;
-  color: #2c3e50;
-  border-bottom: 1px solid #eee;
+  color: var(--primary-color);
+  border-bottom: 2px solid rgba(52, 152, 219, 0.3);
   padding-bottom: 5px;
-  margin-bottom: 15px;
+  /* Reduced from 8px */
+  margin-bottom: 12px;
+  /* Reduced from 15px */
   font-weight: 700;
+  margin-top: 5px;
+  /* Added to control space above title */
 }
 
 .section-content {
@@ -67,131 +93,167 @@
 
 /* Experience Styles */
 .experience {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .company {
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .position {
   font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+  /* 10% lighter */
 }
 
 .position-duration {
   font-style: italic;
   margin-bottom: 10px;
-  color: #7f8c8d;
+  color: rgba(127, 140, 141, 0.8);
+  /* 20% lighter */
 }
 
 .experience-details {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .experience-details li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 /* Education Styles */
 .education {
   margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .institution {
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .degree {
   font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+  /* 10% lighter */
 }
 
 .degree-duration {
   font-style: italic;
   margin-bottom: 10px;
-  color: #7f8c8d;
+  color: rgba(127, 140, 141, 0.8);
+  /* 20% lighter */
 }
 
 .education-details {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .education-details li {
   margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 /* Technical Skills Styles */
 .technical-skills-section {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .technical-skills-list {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .technical-skills-list li {
   margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 .technical-skills-list li strong {
   font-weight: 700;
+  color: var(--primary-color);
 }
 
 /* Certifications Styles */
 .certifications-section {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .certifications-list {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .certifications-list li {
   margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 .certifications-list li strong {
   font-weight: 700;
+  color: var(--primary-color);
 }
 
 /* Projects Styles */
 .project {
   margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .project-name {
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
 .project-details {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .project-details li {
   margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 /* Internship Styles */
 .internship {
   margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 .internship-company {
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: var(--primary-color);
   margin-bottom: 5px;
   font-weight: 700;
 }
@@ -199,24 +261,36 @@
 .internship-duration {
   font-style: italic;
   margin-bottom: 10px;
-  color: #7f8c8d;
+  color: rgba(127, 140, 141, 0.8);
+  /* 20% lighter */
 }
 
 .internship-details {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
+}
+
+.internship-details li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
 }
 
 /* Summary Styles */
 .summary {
   text-align: justify;
   line-height: 1.8;
+  color: rgba(51, 51, 51, 0.9);
+  /* 10% lighter */
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .resume-container {
-    padding: 15px;
+    padding: 20px;
     box-shadow: none;
   }
 
@@ -241,6 +315,16 @@
   .internship-company {
     font-size: 1.1rem;
   }
+
+.experience,
+.education,
+.project,
+.internship {
+  margin-bottom: 15px;
+  /* Reduced from 25-30px */
+  padding: 12px 15px;
+  /* Reduced from 15px */
+}
 }
 
 /* Print Styles */
@@ -257,12 +341,12 @@
   }
 
   .resume-header {
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid var(--secondary-color);
   }
 
   a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
   }
 
   .section-title {
