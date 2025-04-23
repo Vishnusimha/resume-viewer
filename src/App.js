@@ -21,14 +21,16 @@ function App() {
       <Section title="Professional Summary">
         <p className="summary">{resumeData.summary}</p>
       </Section>
+      {/* Flex Container for Technical Skills and Certifications */}
+      <div className="side-by-side-sections">
+        <Section title="Technical Skills">
+          <TechnicalSkills skills={resumeData.skills.technical} />
+        </Section>
 
-      <Section title="Technical Skills">
-        <TechnicalSkills skills={resumeData.skills.technical} />
-      </Section>
-
-      <Section title="Certifications">
-        <Certifications certifications={resumeData.skills.certifications} />
-      </Section>
+        <Section title="Certifications">
+          <Certifications certifications={resumeData.skills.certifications} />
+        </Section>
+      </div>
 
       <Section title="Work Experience">
         {resumeData.experience.map((exp, index) => (
