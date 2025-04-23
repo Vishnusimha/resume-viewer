@@ -54,9 +54,18 @@ body {
 }
 
 .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
   font-size: 0.95rem;
-  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.contact-info p {
   margin: 0;
+  white-space: nowrap;
 }
 
 .contact-info a {
