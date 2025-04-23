@@ -21,6 +21,7 @@ function App() {
       <Section title="Professional Summary">
         <p className="summary">{resumeData.summary}</p>
       </Section>
+
       {/* Flex Container for Technical Skills and Certifications */}
       <div className="side-by-side-sections">
         <Section title="Technical Skills">
@@ -38,27 +39,30 @@ function App() {
         ))}
       </Section>
 
-      <Section title="Education">
-        {resumeData.education.map((edu, index) => (
-          <Education key={index} education={edu} />
-        ))}
-      </Section>
+      {/* Flex Container for Education and Internships */}
+      <div className="side-by-side-sections">
+        <Section title="Education">
+          {resumeData.education.map((edu, index) => (
+            <Education key={index} education={edu} />
+          ))}
+        </Section>
 
-      <Section title="Internships">
-        {resumeData.internships.map((internship, index) => (
-          <div key={index} className="internship">
-            <h3 className="internship-company">{internship.company}</h3>
-            {internship.duration && (
-              <p className="internship-duration">{internship.duration}</p>
-            )}
-            <ul className="internship-details">
-              {internship.details.map((detail, idx) => (
-                <li key={idx}>{detail}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </Section>
+        <Section title="Internships">
+          {resumeData.internships.map((internship, index) => (
+            <div key={index} className="internship">
+              <h3 className="internship-company">{internship.company}</h3>
+              {internship.duration && (
+                <p className="internship-duration">{internship.duration}</p>
+              )}
+              <ul className="internship-details">
+                {internship.details.map((detail, idx) => (
+                  <li key={idx}>{detail}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </Section>
+      </div>
 
       <Section title="Projects - Github Repositories">
         <Projects projects={resumeData.projects} />
