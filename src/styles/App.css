@@ -101,18 +101,18 @@ body {
 /* Flex Layout for Technical Skills and Certifications */
 .side-by-side-sections {
   display: flex;
-  gap: 20px;
-  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between sections */
+  justify-content: stretch; /* Ensure sections are spaced evenly */
   align-items: stretch;
+  width: 100%; /* Make the container span the full width */
+  margin: 0 auto; /* Center the container */
+  padding: 0; /* Remove extra padding */
 }
 
 .technical-skills-section,
 .certifications-section {
-  flex: 1;
-  min-width: 300px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  flex: 1; /* Ensure both sections take equal space */
+  min-width: 0; /* Prevent sections from shrinking too much */
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
   padding: 12px;
