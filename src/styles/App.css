@@ -36,6 +36,12 @@ body {
   border-bottom: 1px solid var(--secondary-color);
   border-radius: 6px;
 }
+.subheading {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  list-style: none; /* Remove bullet points for subheadings */
+}
 
 .name {
   font-size: 1.8rem;
@@ -165,7 +171,6 @@ body {
 .company {
   font-size: 1.4rem;
   color: var(--primary-color);
-  margin-bottom: 5px;
   font-weight: 700;
 }
 
@@ -176,7 +181,6 @@ body {
 
 .position-duration {
   font-style: italic;
-  margin-bottom: 8px;
   color: rgba(127, 140, 141, 0.8);
 }
 
