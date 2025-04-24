@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/resume-viewer/static/css/main.5194be33.css",
-    "main.js": "/resume-viewer/static/js/main.3febbb64.js",
-    "static/js/453.b65c0714.chunk.js": "/resume-viewer/static/js/453.b65c0714.chunk.js",
-    "static/media/aws-certified-solutions-architect-associate.png": "/resume-viewer/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
-    "static/media/aws-certified-cloud-practitioner.png": "/resume-viewer/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
-    "index.html": "/resume-viewer/index.html",
-    "main.5194be33.css.map": "/resume-viewer/static/css/main.5194be33.css.map",
-    "main.3febbb64.js.map": "/resume-viewer/static/js/main.3febbb64.js.map",
-    "453.b65c0714.chunk.js.map": "/resume-viewer/static/js/453.b65c0714.chunk.js.map"
+    "main.css": "/portfolio/static/css/main.5194be33.css",
+    "main.js": "/portfolio/static/js/main.6c3ff062.js",
+    "static/js/453.b65c0714.chunk.js": "/portfolio/static/js/453.b65c0714.chunk.js",
+    "static/media/aws-certified-solutions-architect-associate.png": "/portfolio/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
+    "static/media/aws-certified-cloud-practitioner.png": "/portfolio/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
+    "index.html": "/portfolio/index.html",
+    "main.5194be33.css.map": "/portfolio/static/css/main.5194be33.css.map",
+    "main.6c3ff062.js.map": "/portfolio/static/js/main.6c3ff062.js.map",
+    "453.b65c0714.chunk.js.map": "/portfolio/static/js/453.b65c0714.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5194be33.css",
-    "static/js/main.3febbb64.js"
+    "static/js/main.6c3ff062.js"
   ]
 }
