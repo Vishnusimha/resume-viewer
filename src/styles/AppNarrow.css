@@ -300,6 +300,89 @@ body {
   margin-bottom: var(--space-lg);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --primary: #1e293b;
+  --primary-light: #334155;
+  --secondary: #0ea5e9;
+  --accent: #0284c7;
+  --text: #e2e8f0;
+  --text-light: #94a3b8;
+  --light-gray: #1e293b;
+  --white: #0f172a;
+  --border: #334155;
+  background-color: var(--white);
+  color: var(--text);
+}
+
+body.dark-theme .resume-container {
+  background: var(--light-gray);
+  box-shadow: var(--shadow-md);
+}
+
+body.dark-theme .resume-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-light) 100%
+  );
+  color: var(--text);
+}
+
+body.dark-theme .section-title,
+body.dark-theme .company,
+body.dark-theme .institution,
+body.dark-theme .project-name,
+body.dark-theme .internship-company {
+  color: var(--secondary); /* Ensure proper contrast for headings */
+}
+
+body.dark-theme .position,
+body.dark-theme .degree,
+body.dark-theme .position-duration,
+body.dark-theme .degree-duration,
+body.dark-theme .internship-duration {
+  color: var(--text-light); /* Subheadings and durations in lighter text */
+}
+
+body.dark-theme .experience-details li,
+body.dark-theme .project-details li {
+  color: var(--text-light); /* Ensure list items are visible */
+}
+
+body.dark-theme .certification-logos img {
+  filter: grayscale(50%);
+}
+
+body.dark-theme .certification-logos img:hover {
+  filter: grayscale(0%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .resume-container {
