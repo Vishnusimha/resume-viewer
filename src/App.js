@@ -7,7 +7,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import TechnicalSkills from "./components/TechnicalSkills";
 import Certifications from "./components/Certifications";
-import "./styles/AppNarrow.css";
+import "./styles/App.css";
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
