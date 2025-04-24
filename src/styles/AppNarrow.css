@@ -246,22 +246,6 @@ body {
   padding-left: var(--space-md);
 }
 
-.experience::before,
-.education::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 2px;
-  background: var(--border);
-}
-
-.experience:last-child::before,
-.education:last-child::before {
-  height: 1.5em;
-}
-
 .company,
 .institution,
 .project-name,
@@ -270,22 +254,6 @@ body {
   font-weight: 700;
   color: var(--primary);
   margin-bottom: var(--space-xs);
-  display: flex;
-  align-items: center;
-}
-
-.company::before,
-.institution::before {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: var(--secondary);
-  border-radius: 50%;
-  margin-right: var(--space-sm);
-  position: absolute;
-  left: -5px;
-  z-index: 1;
 }
 
 .position,
