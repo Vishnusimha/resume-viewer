@@ -377,3 +377,131 @@ body {
     margin: 1cm;
   }
 }
+
+/* Dark Theme */
+body.dark-theme {
+  --primary-color: #202123; /* Dark grey for primary elements */
+  --secondary-color: #3498db; /* Blue for highlights */
+  --accent-color: #4aa3f0; /* Brighter blue for accents */
+  --text-color: #e5e7eb; /* Slightly lighter grey for text */
+  --light-gray: #2d2f34; /* Slightly lighter grey for sections */
+  --background-color: #161616; /* Black for the background */
+  --border-color: #4b5563; /* Medium grey for borders */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark-theme .resume-container {
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .resume-header {
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-color);
+  color: var(--text-color);
+}
+
+body.dark-theme .subheading {
+  color: var(--text-color);
+}
+
+body.dark-theme .name {
+  color: var(--secondary-color);
+}
+
+body.dark-theme .title {
+  color: var(--accent-color);
+}
+
+body.dark-theme .contact-info a {
+  color: var(--accent-color);
+}
+
+body.dark-theme .contact-info a:hover {
+  color: #5bb8ff; /* Brighter blue for hover state */
+  text-decoration: underline;
+}
+
+body.dark-theme .resume-section {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color); /* Subtle border for separation */
+}
+
+body.dark-theme .section-title {
+  color: var(--secondary-color);
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5); /* Slightly brighter blue border */
+}
+
+body.dark-theme .section-content {
+  color: var(--text-color);
+}
+
+body.dark-theme .technical-skills-section,
+body.dark-theme .certifications-section {
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-theme .technical-skills-list li,
+body.dark-theme .certifications-list li {
+  color: var(--text-color);
+}
+
+body.dark-theme .technical-skills-list li strong,
+body.dark-theme .certifications-list li strong {
+  color: var(--secondary-color);
+}
+
+body.dark-theme .certification-logos img {
+  filter: grayscale(50%);
+}
+
+body.dark-theme .certification-logos img:hover {
+  filter: grayscale(0%);
+}
+
+body.dark-theme .experience,
+body.dark-theme .education,
+body.dark-theme .project,
+body.dark-theme .internship {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color); /* Subtle border for separation */
+}
+
+body.dark-theme .company,
+body.dark-theme .institution,
+body.dark-theme .project-name,
+body.dark-theme .internship-company {
+  color: var(--secondary-color);
+}
+
+body.dark-theme .position,
+body.dark-theme .degree {
+  color: var(--text-color);
+}
+
+body.dark-theme .position-duration,
+body.dark-theme .degree-duration,
+body.dark-theme .internship-duration {
+  color: rgba(229, 231, 235, 0.8); /* Slightly lighter grey for durations */
+}
+
+body.dark-theme .experience-details li,
+body.dark-theme .education-details li,
+body.dark-theme .project-details li,
+body.dark-theme .internship-details li {
+  color: var(--text-color);
+}
+
+body.dark-theme .summary {
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color); /* Subtle border for separation */
+}

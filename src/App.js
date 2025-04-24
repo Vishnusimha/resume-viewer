@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { resumeData } from "./data";
 import Header from "./components/Header";
 import Section from "./components/Section";
@@ -10,8 +10,20 @@ import Certifications from "./components/Certifications";
 import "./styles/App.css";
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.body.classList.toggle("dark-theme", !isDarkTheme);
+  };
+
   return (
-    <div className="resume-container">
+    <div className={`resume-container ${isDarkTheme ? "dark" : ""}`}>
+      {/* Theme Toggle Button */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {isDarkTheme ? "☀️ Light" : "🌙 Dark"}
+      </button>
+
       <Header
         name={resumeData.name}
         title={resumeData.title}
