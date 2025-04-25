@@ -69,7 +69,9 @@ body {
 
 .contact-info p {
   margin: 0;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  white-space: normal; /* Allow text to wrap */
+  word-break: break-word; /* Break long words if necessary */
 }
 
 .contact-info a {
@@ -499,7 +501,7 @@ body.dark-theme .internship-details li {
 }
 
 body.dark-theme .summary {
-  background-color: var(--light-gray);
+  background-color: var(--primary-color);
   color: var(--text-color);
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
