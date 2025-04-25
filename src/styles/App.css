@@ -69,7 +69,6 @@ body {
 
 .contact-info p {
   margin: 0;
-  /* white-space: nowrap; */
   white-space: normal; /* Allow text to wrap */
   word-break: break-word; /* Break long words if necessary */
 }
