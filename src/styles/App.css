@@ -8,11 +8,12 @@ body {
 
 /* Color Variables */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --accent-color: #2980b9;
-  --text-color: #333;
-  --light-gray: #eaecee;
+  --primary-color: #2c3e50; /* Dark blue for primary elements */
+  --secondary-color: #1d78c1; /* Brighter blue for highlights */
+  --accent-color: #1a6fb3; /* Slightly darker blue for accents */
+  --text-color: #2c3e50; /* Darker grey for text */
+  --light-gray: #e9eef5; /* Muted light grey for sections */
+  --background-color: #f7f9fc; /* Softer off-white for the background */
 }
 
 /* Base Styles */
@@ -40,20 +41,22 @@ body {
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
+  color: var(--accent-color); /* Slightly darker blue for subheadings */
   list-style: none; /* Remove bullet points for subheadings */
 }
 
+/* Update Heading and Subheading Colors */
 .name {
   font-size: 1.8rem;
   margin: 0;
-  color: var(--primary-color);
+  color: var(--secondary-color); /* Brighter blue for name */
   font-weight: 700;
 }
 
 .title {
   font-size: 1.2rem;
   margin: 4px 0 6px;
-  color: var(--secondary-color);
+  color: var(--accent-color); /* Slightly darker blue for title */
   font-weight: 600;
 }
 
@@ -93,8 +96,8 @@ body {
 
 .section-title {
   font-size: 1.8rem;
-  color: var(--primary-color);
-  border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+  color: var(--secondary-color); /* Brighter blue for section titles */
+  border-bottom: 2px solid rgba(29, 120, 193, 0.3); /* Subtle blue border */
   padding-bottom: 5px;
   margin-bottom: 10px;
   font-weight: 700;
