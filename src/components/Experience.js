@@ -124,18 +124,16 @@ const Experience = ({ experience }) => {
         <span className="duration"> {experience.duration}</span>
       </p>
       <ul className="experience-details">
-        {experience.details.map((detail, index) => {
-          // Check if the detail is one of the subheadings
-          if (subheadings.includes(detail)) {
-            return (
-              <li key={index} className="subheading">
-                <strong>{detail}</strong>
-              </li>
-            );
-          }
-          // Render normal text with highlighted keywords or phrases
-          return <li key={index}>{highlightKeywords(detail)}</li>;
-        })}
+        {experience.details.map((detail, index) => (
+          <li key={index}>
+            <strong>{detail.heading}</strong>
+            <ul>
+              {detail.items.map((item, itemIndex) => (
+                <li key={itemIndex}>{item}</li>
+              ))}
+            </ul>
+          </li>
+        ))}
       </ul>
     </div>
   );
