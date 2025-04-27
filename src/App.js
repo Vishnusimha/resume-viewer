@@ -58,14 +58,14 @@ function App() {
             <Education key={index} education={edu} />
           ))}
         </Section>
-
         <Section title="Internships">
           {resumeData.internships.map((internship, index) => (
             <div key={index} className="internship">
               <h3 className="internship-company">{internship.company}</h3>
-              {internship.duration && (
-                <p className="internship-duration">{internship.duration}</p>
-              )}
+              <p className="name-duration">
+                <span className="internship-name">{internship.name}</span> -
+                <span className="duration">{internship.duration}</span>
+              </p>
               <ul className="internship-details">
                 {internship.details.map((detail, idx) => (
                   <li key={idx}>{detail}</li>

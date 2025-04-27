@@ -266,7 +266,6 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
 }
-
 .internship-company {
   font-size: 1.3rem;
   color: var(--primary-color);
@@ -274,9 +273,19 @@ body {
   font-weight: 700;
 }
 
-.internship-duration {
+.name-duration {
   font-style: italic;
   margin-bottom: 8px;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.internship-name {
+  font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+}
+
+.duration {
+  font-weight: normal;
   color: rgba(127, 140, 141, 0.8);
 }
 
