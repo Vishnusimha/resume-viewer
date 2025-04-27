@@ -7,6 +7,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import TechnicalSkills from "./components/TechnicalSkills";
 import Certifications from "./components/Certifications";
+import Internship from "./components/Internship";
 import "./styles/App.css";
 
 function App() {
@@ -60,22 +61,10 @@ function App() {
         </Section>
         <Section title="Internships">
           {resumeData.internships.map((internship, index) => (
-            <div key={index} className="internship">
-              <h3 className="internship-company">{internship.company}</h3>
-              <p className="name-duration">
-                <span className="internship-name">{internship.name}</span> -
-                <span className="duration"> {internship.duration}</span>
-              </p>
-              <ul className="internship-details">
-                {internship.details.map((detail, idx) => (
-                  <li key={idx}>{detail}</li>
-                ))}
-              </ul>
-            </div>
+            <Internship key={index} internship={internship} />
           ))}
         </Section>
       </div>
-
       <Section title="Projects - Github Repositories">
         <Projects projects={resumeData.projects} />
       </Section>

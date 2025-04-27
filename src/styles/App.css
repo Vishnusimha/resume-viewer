@@ -198,40 +198,52 @@ body {
   color: rgba(51, 51, 51, 0.9);
 }
 
-/* Education Styles */
-.education {
+/* Shared Styles for Education and Internship */
+.education,
+.internship {
   margin-bottom: 15px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.institution {
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  margin-bottom: 5px;
-  font-weight: 700;
+.institution,
+.internship-company {
+  font-size: 1.4rem; /* Larger font size for headings */
+  color: var(--primary-color); /* Primary color for emphasis */
+  margin-bottom: 5px; /* Space below the heading */
+  font-weight: 700; /* Bold font */
 }
 
-.degree {
-  font-weight: 600;
-  color: rgba(44, 62, 80, 0.9);
+.degree-duration,
+.name-duration {
+  font-style: italic; /* Italic style for duration */
+  margin-bottom: 8px; /* Space below the duration */
+  color: rgba(127, 140, 141, 0.8); /* Muted color for duration */
 }
 
-.degree-duration {
-  font-style: italic;
-  margin-bottom: 8px;
-  color: rgba(127, 140, 141, 0.8);
+.degree,
+.internship-name {
+  font-weight: 600; /* Semi-bold font for degree or name */
+  color: rgba(44, 62, 80, 0.9); /* Darker color for emphasis */
 }
 
-.education-details {
-  list-style-type: disc;
-  padding-left: 20px;
+.duration {
+  font-weight: normal; /* Normal font weight for duration */
+  color: rgba(127, 140, 141, 0.8); /* Muted color for duration */
 }
 
-.education-details li {
-  margin-bottom: 8px;
-  color: rgba(51, 51, 51, 0.9);
+.education-details,
+.internship-details {
+  list-style-type: disc; /* Bulleted list */
+  padding-left: 20px; /* Indentation for list items */
+}
+
+.education-details li,
+.internship-details li {
+  margin-bottom: 8px; /* Space between list items */
+  color: rgba(51, 51, 51, 0.9); /* Standard text color */
 }
 
 /* Projects Styles */
@@ -255,46 +267,6 @@ body {
 }
 
 .project-details li {
-  margin-bottom: 8px;
-  color: rgba(51, 51, 51, 0.9);
-}
-
-/* Internship Styles */
-.internship {
-  margin-bottom: 15px;
-  padding: 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 6px;
-}
-.internship-company {
-  font-size: 1.3rem;
-  color: var(--primary-color);
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-.name-duration {
-  font-style: italic;
-  margin-bottom: 8px;
-  color: rgba(127, 140, 141, 0.8);
-}
-
-.internship-name {
-  font-weight: 600;
-  color: rgba(44, 62, 80, 0.9);
-}
-
-.duration {
-  font-weight: normal;
-  color: rgba(127, 140, 141, 0.8);
-}
-
-.internship-details {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.internship-details li {
   margin-bottom: 8px;
   color: rgba(51, 51, 51, 0.9);
 }
