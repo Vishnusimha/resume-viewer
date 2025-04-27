@@ -36,6 +36,15 @@ const Header = ({ name, title, contact }) => {
           </p>
         )}
 
+        {contact?.credly ? (
+          <p>
+            Credly:{" "}
+            <a href={contact.credly} target="_blank" rel="noopener noreferrer">
+              {contact.credly}
+            </a>
+          </p>
+        ) : null}
+
         {contact.phone && <p>Phone: {contact.phone}</p>}
       </div>
     </header>
