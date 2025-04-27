@@ -37,15 +37,16 @@ body {
   border-bottom: 1px solid var(--secondary-color);
   border-radius: 6px;
 }
-.subheading {
+
+.side-heading {
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: var(--accent-color); /* Slightly darker blue for subheadings */
-  list-style: none; /* Remove bullet points for subheadings */
+  color: var(--accent-color); /* Slightly darker blue for headings */
+  list-style: none; /* Remove bullet points */
 }
 
-/* Update Heading and Subheading Colors */
+/* Update Heading and side-heading Colors */
 .name {
   font-size: 1.8rem;
   margin: 0;
@@ -387,8 +388,8 @@ body.dark-theme .resume-header {
   color: var(--text-color);
 }
 
-body.dark-theme .subheading {
-  color: var(--text-color);
+body.dark-theme .side-heading {
+  color: var(--secondary-color);
 }
 
 body.dark-theme .name {

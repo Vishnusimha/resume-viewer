@@ -126,10 +126,10 @@ const Experience = ({ experience }) => {
       <ul className="experience-details">
         {experience.details.map((detail, index) => (
           <li key={index}>
-            <strong>{detail.heading}</strong>
+            <strong className="side-heading">{detail.heading}</strong>
             <ul>
               {detail.items.map((item, itemIndex) => (
-                <li key={itemIndex}>{item}</li>
+                <li key={itemIndex}>{highlightKeywords(item)}</li>
               ))}
             </ul>
           </li>
