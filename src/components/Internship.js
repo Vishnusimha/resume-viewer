@@ -5,7 +5,7 @@ const Internship = ({ internship }) => {
     <div className="internship">
       <h3 className="internship-company">{internship.company}</h3>
       <p className="name-duration">
-        <span className="internship-name">{internship.name}</span>
+        <span className="name-highlight">{internship.name}</span>
         {internship.duration && (
           <>
             {" - "}

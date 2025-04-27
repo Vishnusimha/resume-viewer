@@ -5,7 +5,7 @@ const Education = ({ education }) => {
     <div className="education">
       <h3 className="institution">{education.institution}</h3>
       <p className="degree-duration">
-        <span className="degree">{education.degree}</span>
+        <span className="name-highlight">{education.degree}</span>
         {education.duration && (
           <>
             {" - "}
