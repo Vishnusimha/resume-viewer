@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/resume-viewer/static/css/main.0493b00e.css",
-    "main.js": "/resume-viewer/static/js/main.c1826564.js",
+    "main.js": "/resume-viewer/static/js/main.dc4f4929.js",
     "static/js/453.b65c0714.chunk.js": "/resume-viewer/static/js/453.b65c0714.chunk.js",
     "static/media/aws-certified-solutions-architect-associate.png": "/resume-viewer/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
     "static/media/aws-certified-cloud-practitioner.png": "/resume-viewer/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
     "index.html": "/resume-viewer/index.html",
     "main.0493b00e.css.map": "/resume-viewer/static/css/main.0493b00e.css.map",
-    "main.c1826564.js.map": "/resume-viewer/static/js/main.c1826564.js.map",
+    "main.dc4f4929.js.map": "/resume-viewer/static/js/main.dc4f4929.js.map",
     "453.b65c0714.chunk.js.map": "/resume-viewer/static/js/453.b65c0714.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0493b00e.css",
-    "static/js/main.c1826564.js"
+    "static/js/main.dc4f4929.js"
   ]
 }
