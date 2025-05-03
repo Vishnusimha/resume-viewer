@@ -1,13 +1,6 @@
 import React from "react";
 
 const Experience = ({ experience }) => {
-  // Define the subheadings to handle differently
-  const subheadings = [
-    "Key Responsibilities and Tasks Performed:",
-    "Project Management and Collaboration:",
-    "Bonus Technical Skills | Spring boot:",
-  ];
-
   // Define the keywords or phrases to make bold
   const keywords = [
     "HID Mobile Access",
@@ -124,16 +117,24 @@ const Experience = ({ experience }) => {
         <span className="duration"> {experience.duration}</span>
       </p>
       <ul className="experience-details">
-        {experience.details.map((detail, index) => (
-          <li key={index}>
-            <strong className="side-heading">{detail.heading}</strong>
-            <ul>
-              {detail.items.map((item, itemIndex) => (
-                <li key={itemIndex}>{highlightKeywords(item)}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
+        {experience.details.map((detail, index) => {
+          // Check if the detail is a string
+          if (typeof detail === "string") {
+            return <li key={index}>{highlightKeywords(detail)}</li>;
+          }
+
+          // If the detail is an object, render its heading and items
+          return (
+            <li key={index}>
+              <strong className="side-heading">{detail.heading}</strong>
+              <ul>
+                {detail.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>{highlightKeywords(item)}</li>
+                ))}
+              </ul>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
