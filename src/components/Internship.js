@@ -15,7 +15,16 @@ const Internship = ({ internship }) => {
       </p>
       <ul className="internship-details">
         {internship.details.map((detail, idx) => (
-          <li key={idx}>{detail}</li>
+          <li key={idx}>
+            {detail.startsWith("Technologies:") ? (
+              <>
+                <strong>Technologies:</strong>
+                <em>{detail.replace("Technologies:", "")}</em>
+              </>
+            ) : (
+              detail
+            )}
+          </li>
         ))}
       </ul>
     </div>

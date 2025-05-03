@@ -15,7 +15,16 @@ const Education = ({ education }) => {
       </p>
       <ul className="education-details">
         {education.details.map((detail, index) => (
-          <li key={index}>{detail}</li>
+          <li key={index}>
+            {detail.startsWith("Focus:") ? (
+              <>
+                <strong>Focus:</strong>
+                <em>{detail.replace("Focus:", "")}</em>
+              </>
+            ) : (
+              detail
+            )}
+          </li>
         ))}
       </ul>
     </div>
