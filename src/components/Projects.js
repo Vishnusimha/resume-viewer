@@ -8,7 +8,16 @@ const Projects = ({ projects }) => {
           <h3 className="project-name">{project.name}</h3>
           <ul className="project-details">
             {project.details.map((detail, idx) => (
-              <li key={idx}>{detail}</li>
+              <li key={idx}>
+                {detail.startsWith("Technologies:") ? (
+                  <>
+                    <strong>Technologies:</strong>
+                    <em>{detail.replace("Technologies:", "")}</em>
+                  </>
+                ) : (
+                  detail
+                )}
+              </li>
             ))}
           </ul>
         </div>
