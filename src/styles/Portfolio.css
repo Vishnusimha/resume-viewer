@@ -171,3 +171,100 @@
   color: var(--hover-accent);
   text-decoration: underline;
 }
+
+/* Projects Section */
+.projects-section {
+  padding: 10px 20px; /* Reduced padding to decrease space above and below */
+  background-color: var(--primary-bg); /* Matches the portfolio theme */
+  color: var(--text-light);
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  margin: 10px 0 20px 0; /* Reduced margin above the title */
+  color: var(--accent-color); /* Accent color for the title */
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Fixed 2 projects per row */
+  gap: 20px; /* Reduced gap between project cards */
+  justify-items: stretch; /* Stretch cards to fill available space */
+  margin: 0 auto; /* Center the grid */
+  max-width: 1200px; /* Limit the width of the grid */
+}
+
+.project-card {
+  background-color: var(
+    --secondary-bg
+  ); /* Slightly darker background for cards */
+  color: var(--text-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px;
+  text-align: center;
+}
+
+.project-name {
+  font-size: 2.5rem; /* Larger font size for project names */
+  margin-bottom: 10px;
+  color: #ffffff !important; /* Explicit white color with !important to override conflicts */
+  font-weight: bold; /* Added bold weight for emphasis */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */
+}
+
+.project-description {
+  font-size: 1.2rem; /* Normal font size for description */
+  margin-bottom: 10px; /* Reduced margin below the description */
+  line-height: 1.6;
+  color: var(--text-light); /* Light text color */
+}
+
+.project-technologies {
+  font-size: 1rem; /* Smaller font size for technologies */
+  font-style: italic; /* Italicized text */
+  color: var(--text-muted); /* Muted color for technologies */
+}
+
+.project-media-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjusted height for better image view */
+  margin-bottom: 15px; /* Reduced margin below the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg); /* Placeholder background */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-media {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the media fits nicely */
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap between buttons */
+  margin-bottom: 15px; /* Reduced margin below buttons */
+}
+
+.project-button {
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: var(--hover-accent);
+}
