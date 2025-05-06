@@ -1,0 +1,96 @@
+:root {
+  --primary-bg: #0f172a; /* Navy Black */
+  --secondary-bg: #1e293b; /* Dark Slate */
+  --accent-color: #38bdf8; /* Sky Blue */
+  --hover-accent: #0ea5e9; /* Light Blue */
+  --text-light: #f1f5f9; /* Light Gray */
+  --text-muted: #94a3b8; /* Muted Blue Gray */
+  --section-bg-light: #f8fafc; /* Lightest background */
+  --section-bg-dark: #e2e8f0; /* Light gray for alternates */
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.portfolio-container {
+  font-family: var(--font-main);
+  color: var(--text-light);
+  background-color: var(--primary-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background-color: var(--secondary-bg);
+  color: var(--text-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  color: var(--text-light);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: var(--hover-accent);
+  text-decoration: underline;
+}
+
+/* Section Styling */
+.section {
+  padding: 60px 30px;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 1000px;
+  background-color: var(--section-bg-light);
+  color: #1e293b;
+}
+
+.section:nth-child(even) {
+  background-color: var(--section-bg-dark);
+}
+
+.section h2 {
+  font-size: 2.25rem;
+  margin-bottom: 15px;
+  color: var(--primary-bg);
+}
+
+.section p,
+.section ul {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.section a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.section a:hover {
+  color: var(--hover-accent);
+  text-decoration: underline;
+}

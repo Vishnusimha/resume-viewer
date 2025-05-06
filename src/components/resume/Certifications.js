@@ -1,6 +1,6 @@
 import React from "react";
-import awsCloudLogo from "../assets/aws-certified-cloud-practitioner.png";
-import awsSaaLogo from "../assets/aws-certified-solutions-architect-associate.png";
+import awsCloudLogo from "../../assets/aws-certified-cloud-practitioner.png";
+import awsSaaLogo from "../../assets/aws-certified-solutions-architect-associate.png";
 
 const Certifications = ({ certifications }) => {
   return (

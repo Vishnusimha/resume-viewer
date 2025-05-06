@@ -1,75 +1,17 @@
-import React, { useState } from "react";
-import { resumeData } from "./data";
-import Header from "./components/Header";
-import Section from "./components/Section";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Projects from "./components/Projects";
-import TechnicalSkills from "./components/TechnicalSkills";
-import Certifications from "./components/Certifications";
-import Internship from "./components/Internship";
-import "./styles/App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Portfolio from "./components/portfolio/Portfolio";
+import ResumeViewer from "./components/resume/ResumeViewer";
 
-function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-    document.body.classList.toggle("dark-theme", !isDarkTheme);
-  };
-
+const App = () => {
   return (
-    <div className={`resume-container ${isDarkTheme ? "dark" : ""}`}>
-      {/* Theme Toggle Button */}
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {isDarkTheme ? "☀️ Light" : "🌙 Dark"}
-      </button>
-
-      <Header
-        name={resumeData.name}
-        title={resumeData.title}
-        contact={resumeData.contact}
-      />
-
-      <Section title="Professional Summary">
-        <p className="summary">{resumeData.summary}</p>
-      </Section>
-
-      {/* Flex Container for Technical Skills and Certifications */}
-      <div className="side-by-side-sections">
-        <Section title="Technical Skills">
-          <TechnicalSkills skills={resumeData.skills.technical} />
-        </Section>
-
-        <Section title="Certifications">
-          <Certifications certifications={resumeData.skills.certifications} />
-        </Section>
-      </div>
-
-      <Section title="Work Experience">
-        {resumeData.experience.map((exp, index) => (
-          <Experience key={index} experience={exp} />
-        ))}
-      </Section>
-
-      {/* Flex Container for Education and Internships */}
-      <div className="side-by-side-sections">
-        <Section title="Education">
-          {resumeData.education.map((edu, index) => (
-            <Education key={index} education={edu} />
-          ))}
-        </Section>
-        <Section title="Internships">
-          {resumeData.internships.map((internship, index) => (
-            <Internship key={index} internship={internship} />
-          ))}
-        </Section>
-      </div>
-      <Section title="Projects - Github Repositories">
-        <Projects projects={resumeData.projects} />
-      </Section>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/resume-viewer" element={<ResumeViewer />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
