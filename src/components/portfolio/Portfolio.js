@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "../../styles/Portfolio.css"; // Import the CSS file for styling
 import About from "./About"; // Import the About component
 import Projects from "./Projects";
@@ -12,14 +12,31 @@ const Portfolio = () => {
   const contactRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
+    const headerHeight = document.querySelector(".navbar").offsetHeight; // Get the header height
+    const sectionTop = ref.current.offsetTop; // Get the section's top position
+    window.scrollTo({
+      top: sectionTop - headerHeight, // Adjust for the header height
+      behavior: "smooth",
+    });
   };
+
+  useEffect(() => {
+    // Scroll to the About section on initial load
+    if (aboutRef.current) {
+      const headerHeight = document.querySelector(".navbar").offsetHeight;
+      const sectionTop = aboutRef.current.offsetTop;
+      window.scrollTo({
+        top: sectionTop - headerHeight, // Adjust for the header height
+        behavior: "auto", // No animation on initial load
+      });
+    }
+  }, []);
 
   return (
     <div className="portfolio-container">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <h1 className="portfolio-title">Vishnu Simha Dussa</h1>
+        <h1 className="portfolio-title">VS</h1>
         <ul className="nav-links">
           <li onClick={() => scrollToSection(aboutRef)}>About</li>
           <li onClick={() => scrollToSection(projectsRef)}>Projects</li>

@@ -5,8 +5,6 @@
   --hover-accent: #0ea5e9; /* Light Blue */
   --text-light: #f1f5f9; /* Light Gray */
   --text-muted: #94a3b8; /* Muted Blue Gray */
-  --section-bg-light: #f8fafc; /* Lightest background */
-  --section-bg-dark: #e2e8f0; /* Light gray for alternates */
   --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -16,9 +14,9 @@
   background-color: var(--primary-bg);
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -30,6 +28,7 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 .portfolio-title {
@@ -56,41 +55,119 @@
   text-decoration: underline;
 }
 
-/* Section Styling */
 .section {
   padding: 60px 30px;
   margin: 30px auto;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  max-width: 1000px;
-  background-color: var(--section-bg-light);
-  color: #1e293b;
+  background-color: var(--primary-bg);
+  color: var(--text-light);
+  width: 100%;
 }
 
-.section:nth-child(even) {
-  background-color: var(--section-bg-dark);
+.about-section {
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.section h2 {
-  font-size: 2.25rem;
-  margin-bottom: 15px;
-  color: var(--primary-bg);
-}
-
-.section p,
-.section ul {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #334155;
-}
-
-.section a {
+.about-section h1 {
+  font-size: 3rem;
+  margin: 10px 0;
   color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
-.section a:hover {
+.about-section h2 {
+  font-size: 2rem;
+  color: var(--text-light);
+}
+
+/* Full-Screen Welcome Section */
+.about-welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  height: 100vh; /* Full screen height */
+  background-color: var(--primary-bg); /* Matches the portfolio background */
+  color: var(--text-light); /* Light text color */
+  text-align: center;
+  padding: 20px;
+}
+
+.about-welcome-section h1 {
+  font-size: 4rem; /* Large font size for emphasis */
+  margin: 10px 0;
+  color: var(--accent-color); /* Accent color for "Hi There!" */
+}
+
+.about-welcome-section h2 {
+  font-size: 2.5rem; /* Slightly smaller font for the subtitle */
+  color: var(--text-light); /* Light text color */
+}
+
+/* Full-Screen Introduction Section */
+.about-introduction-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  height: 100vh; /* Full screen height */
+  background-color: var(
+    --primary-bg
+  ); /* Matches the welcome section background */
+  color: var(--text-light); /* Light text color */
+  text-align: center;
+  padding: 20px;
+}
+
+.about-introduction-section h2 {
+  font-size: 3rem; /* Large font size for the heading */
+  margin-bottom: 20px;
+  color: var(--accent-color); /* Accent color for the heading */
+}
+
+.about-introduction-section p {
+  font-size: 1.2rem; /* Standard font size for paragraphs */
+  line-height: 1.8; /* Better readability */
+  margin-bottom: 15px;
+  max-width: 800px; /* Limit the width of the text */
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the header content horizontally */
+  align-items: center; /* Centers the header content vertically */
+  padding: 10px 20px;
+  background-color: var(--secondary-bg);
+  color: var(--text-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.portfolio-title {
+  font-size: 1.75rem; /* Slightly smaller font size */
+  font-weight: 600;
+  color: var(--accent-color); /* Sky Blue color */
+  margin-right: auto; /* Pushes the title to the left */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  color: var(--text-light);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
   color: var(--hover-accent);
   text-decoration: underline;
 }
