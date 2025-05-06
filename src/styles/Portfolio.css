@@ -180,7 +180,7 @@
   text-align: center;
 }
 
-.projects-title {
+.project-heading {
   font-size: 2.5rem;
   margin: 10px 0 20px 0; /* Reduced margin above the title */
   color: var(--accent-color); /* Accent color for the title */
@@ -207,7 +207,7 @@
   text-align: center;
 }
 
-.project-name {
+.project-title {
   font-size: 2.5rem; /* Larger font size for project names */
   margin-bottom: 10px;
   color: #ffffff !important; /* Explicit white color with !important to override conflicts */

@@ -63,11 +63,11 @@ const Projects = React.forwardRef((props, ref) => {
 
   return (
     <section ref={ref} className="projects-section">
-      <h2 className="projects-title">Projects</h2>
+      <h2 className="projects-heading">Projects</h2>
       <div className="projects-container">
         {projects.map((project, index) => (
           <div key={index} className="project-card">
-            <h3 className="project-name">{project.name}</h3>
+            <h3 className="project-title">{project.name}</h3>
             <div className="project-media-container">
               <img
                 src={project.media[currentMediaIndex[index]]}
