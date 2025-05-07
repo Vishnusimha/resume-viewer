@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/resume-viewer/static/css/main.0493b00e.css",
-    "main.js": "/resume-viewer/static/js/main.ec8a456b.js",
-    "static/js/453.b65c0714.chunk.js": "/resume-viewer/static/js/453.b65c0714.chunk.js",
-    "static/media/aws-certified-solutions-architect-associate.png": "/resume-viewer/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
-    "static/media/aws-certified-cloud-practitioner.png": "/resume-viewer/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
-    "index.html": "/resume-viewer/index.html",
-    "main.0493b00e.css.map": "/resume-viewer/static/css/main.0493b00e.css.map",
-    "main.ec8a456b.js.map": "/resume-viewer/static/js/main.ec8a456b.js.map",
-    "453.b65c0714.chunk.js.map": "/resume-viewer/static/js/453.b65c0714.chunk.js.map"
+    "main.css": "/vishnuportfolio/static/css/main.03747c91.css",
+    "main.js": "/vishnuportfolio/static/js/main.e35ca03f.js",
+    "static/js/453.c812f1fc.chunk.js": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js",
+    "static/media/a.png": "/vishnuportfolio/static/media/a.7c8870197b91a1e359e4.png",
+    "static/media/aws-certified-solutions-architect-associate.png": "/vishnuportfolio/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
+    "static/media/b.png": "/vishnuportfolio/static/media/b.92bcc2bad200b714fee4.png",
+    "static/media/aws-certified-cloud-practitioner.png": "/vishnuportfolio/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
+    "static/media/c.png": "/vishnuportfolio/static/media/c.1929bbb619275d95b0e1.png",
+    "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.f8841dc0f9977e13becc.pdf",
+    "index.html": "/vishnuportfolio/index.html",
+    "main.03747c91.css.map": "/vishnuportfolio/static/css/main.03747c91.css.map",
+    "main.e35ca03f.js.map": "/vishnuportfolio/static/js/main.e35ca03f.js.map",
+    "453.c812f1fc.chunk.js.map": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0493b00e.css",
-    "static/js/main.ec8a456b.js"
+    "static/css/main.03747c91.css",
+    "static/js/main.e35ca03f.js"
   ]
 }
