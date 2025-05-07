@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.03747c91.css",
-    "main.js": "/vishnuportfolio/static/js/main.a0a5f1ab.js",
+    "main.js": "/vishnuportfolio/static/js/main.27d23d54.js",
     "static/js/453.c812f1fc.chunk.js": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js",
+    "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.1923440dbd7fa0bf06e8.pdf",
     "static/media/a.png": "/vishnuportfolio/static/media/a.7c8870197b91a1e359e4.png",
     "static/media/aws-certified-solutions-architect-associate.png": "/vishnuportfolio/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
     "static/media/b.png": "/vishnuportfolio/static/media/b.92bcc2bad200b714fee4.png",
     "static/media/aws-certified-cloud-practitioner.png": "/vishnuportfolio/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
     "static/media/c.png": "/vishnuportfolio/static/media/c.1929bbb619275d95b0e1.png",
-    "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.f8841dc0f9977e13becc.pdf",
     "index.html": "/vishnuportfolio/index.html",
     "main.03747c91.css.map": "/vishnuportfolio/static/css/main.03747c91.css.map",
-    "main.a0a5f1ab.js.map": "/vishnuportfolio/static/js/main.a0a5f1ab.js.map",
+    "main.27d23d54.js.map": "/vishnuportfolio/static/js/main.27d23d54.js.map",
     "453.c812f1fc.chunk.js.map": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03747c91.css",
-    "static/js/main.a0a5f1ab.js"
+    "static/js/main.27d23d54.js"
   ]
 }
