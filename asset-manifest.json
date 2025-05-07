@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.03747c91.css",
-    "main.js": "/vishnuportfolio/static/js/main.e35ca03f.js",
-    "static/js/453.c812f1fc.chunk.js": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js",
+    "main.js": "/vishnuportfolio/static/js/main.bfd52fe3.js",
+    "static/js/453.b65c0714.chunk.js": "/vishnuportfolio/static/js/453.b65c0714.chunk.js",
     "static/media/a.png": "/vishnuportfolio/static/media/a.7c8870197b91a1e359e4.png",
     "static/media/aws-certified-solutions-architect-associate.png": "/vishnuportfolio/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
     "static/media/b.png": "/vishnuportfolio/static/media/b.92bcc2bad200b714fee4.png",
@@ -11,11 +11,11 @@
     "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.f8841dc0f9977e13becc.pdf",
     "index.html": "/vishnuportfolio/index.html",
     "main.03747c91.css.map": "/vishnuportfolio/static/css/main.03747c91.css.map",
-    "main.e35ca03f.js.map": "/vishnuportfolio/static/js/main.e35ca03f.js.map",
-    "453.c812f1fc.chunk.js.map": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js.map"
+    "main.bfd52fe3.js.map": "/vishnuportfolio/static/js/main.bfd52fe3.js.map",
+    "453.b65c0714.chunk.js.map": "/vishnuportfolio/static/js/453.b65c0714.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03747c91.css",
-    "static/js/main.e35ca03f.js"
+    "static/js/main.bfd52fe3.js"
   ]
 }
