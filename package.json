@@ -1,5 +1,5 @@
 {
-  "name": "resume-viewer",
+  "name": "vishnuportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,9 +21,10 @@
     "react-router-dom": "^7.5.3",
     "react-scripts": "5.0.1",
     "react-typed": "^2.0.12",
-    "swiper": "^11.2.6",
+    "swiper": "^11.2.6",  
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://vishnusimha.github.io/vishnuportfolio",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -50,7 +51,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://vishnusimha.github.io/resume-viewer",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",

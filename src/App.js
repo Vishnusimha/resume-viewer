@@ -5,7 +5,11 @@ import ResumeViewer from "./components/resume/ResumeViewer";
 
 const App = () => {
   return (
-    <Router>
+    <Router
+      basename={
+        process.env.NODE_ENV === "production" ? "/vishnuportfolio" : "/"
+      }
+    >
       <Routes>
         <Route path="/" element={<Portfolio />} />
         <Route path="/resume-viewer" element={<ResumeViewer />} />
