@@ -24,6 +24,7 @@ body {
   padding: 0;
   width: 100%;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -157,15 +158,18 @@ body {
 
 /* Projects Section */
 .projects-section {
-  padding: 10px 20px;
+  padding: 0 20px 40px; /* remove top padding, keep bottom for spacing */
   color: var(--text-light);
   text-align: center;
+  margin: 0;
 }
 
-.project-heading {
+.projects-heading {
   font-size: 2.5rem;
-  margin: 10px 0 20px 0;
   color: var(--accent-color);
+  text-align: center;
+  margin: 20px;
+  padding-top: 0;
 }
 
 .projects-container {
@@ -255,17 +259,20 @@ body {
   margin: 0;
   background-color: var(--primary-bg);
   color: var(--text-light);
+  padding-bottom: 40px;
+  margin-top: 0;
 }
 
 .resume-title {
   font-size: 2.5rem;
   color: var(--accent-color);
   text-align: center;
-  margin-bottom: 10px;
+  margin: 0;
+  padding-top: 0;
 }
-
 .resume-download-text {
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -278,23 +285,6 @@ body {
 .resume-download-link:hover {
   color: var(--hover-accent);
   text-decoration: underline;
-}
-
-.resume-view-button {
-  display: block;
-  margin: 15px auto 20px;
-  padding: 10px 20px;
-  background-color: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.resume-view-button:hover {
-  background-color: var(--hover-accent);
 }
 
 .resume-embed-container {
@@ -326,8 +316,8 @@ body {
 /* Contact Section */
 .contact-section {
   width: 100%;
-  min-height: 100vh;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
   color: var(--text-light);
   background-color: transparent;
   display: flex;
@@ -336,10 +326,11 @@ body {
 }
 
 .contact-title {
-  text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--accent-color);
-  margin-bottom: 1rem;
+  text-align: center;
+  margin: 20px;
+  padding-top: 0;
 }
 
 .contact-info {

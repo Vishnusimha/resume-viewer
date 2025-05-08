@@ -22,9 +22,6 @@ const Resume = React.forwardRef((props, ref) => {
           here
         </a>
       </p>
-      <button onClick={handleViewResume} className="resume-view-button">
-        View Full Resume
-      </button>
       <div className="resume-embed-container">
         {loading && <div className="resume-loading">Loading resume...</div>}
         {error && (
