@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.aeae684f.css",
-    "main.js": "/vishnuportfolio/static/js/main.8650cc6f.js",
+    "main.js": "/vishnuportfolio/static/js/main.13dc5db2.js",
     "static/js/453.c812f1fc.chunk.js": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js",
     "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.1923440dbd7fa0bf06e8.pdf",
     "static/media/a.png": "/vishnuportfolio/static/media/a.7c8870197b91a1e359e4.png",
@@ -11,11 +11,11 @@
     "static/media/c.png": "/vishnuportfolio/static/media/c.1929bbb619275d95b0e1.png",
     "index.html": "/vishnuportfolio/index.html",
     "main.aeae684f.css.map": "/vishnuportfolio/static/css/main.aeae684f.css.map",
-    "main.8650cc6f.js.map": "/vishnuportfolio/static/js/main.8650cc6f.js.map",
+    "main.13dc5db2.js.map": "/vishnuportfolio/static/js/main.13dc5db2.js.map",
     "453.c812f1fc.chunk.js.map": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aeae684f.css",
-    "static/js/main.8650cc6f.js"
+    "static/js/main.13dc5db2.js"
   ]
 }
