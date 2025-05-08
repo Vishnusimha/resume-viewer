@@ -1,11 +1,11 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 
-const Home = React.forwardRef((props, ref) => {
+export const About = React.forwardRef((props, ref) => {
   return (
     <div>
       {/* Full-Screen Welcome Section */}
-      <section ref={ref} className="home-welcome-section">
+      <section ref={ref} className="about-welcome-section">
         <h1>Hi There!</h1>
         <h1>
           I'M <b>Vishnu Simha</b>
@@ -25,7 +25,7 @@ const Home = React.forwardRef((props, ref) => {
       </section>
 
       {/* Full-Screen Introduction Section */}
-      <section className="home-introduction-section">
+      <section className="about-introduction-section">
         <h2>Brief Introduction</h2>
         <p>
           I am a passionate Android and backend developer with expertise in
@@ -49,5 +49,3 @@ const Home = React.forwardRef((props, ref) => {
     </div>
   );
 });
-
-export default Home;
