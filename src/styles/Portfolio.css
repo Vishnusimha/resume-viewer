@@ -14,12 +14,11 @@ body {
   padding: 0;
   background-color: var(--primary-bg);
   color: var(--text-light);
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 .portfolio-container {
   font-family: var(--font-main);
-  color: var(--text-light);
   background-color: var(--primary-bg);
   margin: 0;
   padding: 0;
@@ -27,12 +26,12 @@ body {
   min-height: 100vh;
 }
 
-/* Navigation */
+/* Navigation - Improved Mobile Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px; /* Reduced padding for mobile */
+  padding: 12px 16px;
   background-color: var(--secondary-bg);
   color: var(--text-light);
   position: sticky;
@@ -41,45 +40,59 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .portfolio-title {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--accent);
+  color: var(--accent-color);
   letter-spacing: 1px;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 40%;
 }
 
 .portfolio-title:hover {
-  color: var(
-    --hover-accent
-  ); /* or use any bright neon like green/orange if you prefer */
+  color: var(--hover-accent);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 16px; /* Slightly increased for better spacing with icons */
+  gap: 12px;
   margin: 0;
   padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  white-space: nowrap;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .nav-links li {
   display: flex;
-  align-items: center; /* Aligns icon and text vertically */
-  gap: 6px; /* Space between icon and text */
-  font-size: 0.95rem; /* Slightly larger for clarity */
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   position: relative;
   color: var(--text-light);
   transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  padding: 4px 0; /* Add some vertical padding */
 }
 
 .nav-links li svg {
-  font-size: 1.1rem; /* Makes icon slightly more prominent */
+  font-size: 1rem;
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .nav-links li::after {
@@ -93,12 +106,9 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-links li:hover {
-  color: var(--hover-accent);
-}
-
+.nav-links li:hover,
 .nav-links li:hover svg {
-  color: var(--hover-accent); /* Animate icon color on hover too */
+  color: var(--hover-accent);
 }
 
 .nav-links li:hover::after {
@@ -107,136 +117,104 @@ body {
 
 /* Sections */
 .section {
-  padding: 40px 20px; /* Reduced padding for mobile */
+  padding: 40px 20px;
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   color: var(--text-light);
-  width: calc(100% - 40px); /* Account for padding */
+  width: calc(100% - 40px);
   max-width: 1200px;
 }
 
-/* About Sections */
-.home-section {
+.home-section,
+.home-welcome-section,
+.home-introduction-section {
   text-align: center;
-  padding: 60px 20px; /* Reduced padding for mobile */
+  padding: 60px 20px;
 }
 
-.home-section h1 {
-  font-size: 2.5rem; /* Smaller font for mobile */
-  margin: 10px 0;
-  color: var(--accent-color);
-}
-
-.home-section h2 {
-  font-size: 1.5rem; /* Smaller font for mobile */
-  color: var(--text-light);
-}
-
-/* Full-Screen Welcome Section */
-.home-welcome-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Changed from height to min-height */
-  color: var(--text-light);
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.home-welcome-section h1 {
-  font-size: 2.5rem; /* Smaller font for mobile */
-  margin: 10px 0;
-  color: var(--accent-color);
-}
-
-.home-welcome-section h2 {
-  font-size: 1.5rem; /* Smaller font for mobile */
-  color: var(--text-light);
-}
-
-/* Full-Screen Introduction Section */
+.home-welcome-section,
 .home-introduction-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Changed from height to min-height */
-  color: var(--text-light);
-  text-align: center;
-  padding: 20px;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
+.home-section h1,
+.home-welcome-section h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: var(--accent-color);
+}
+
+.home-section h2,
+.home-welcome-section h2 {
+  font-size: 1.5rem;
+}
+
 .home-introduction-section h2 {
-  font-size: 2rem; /* Smaller font for mobile */
+  font-size: 2rem;
   margin-bottom: 20px;
   color: var(--accent-color);
 }
 
 .home-introduction-section p {
-  font-size: 1rem; /* Smaller font for mobile */
-  line-height: 1.6; /* Slightly tighter line height */
+  font-size: 1rem;
+  line-height: 1.6;
   margin-bottom: 15px;
-  max-width: 100%; /* Full width on mobile */
-  padding: 0 10px; /* Add some padding */
+  max-width: 100%;
+  padding: 0 10px;
 }
 
-/* Projects Section */
+/* Projects */
 .projects-section {
-  padding: 0 10px 30px; /* Adjusted padding for mobile */
-  color: var(--text-light);
+  padding: 0 10px 30px;
   text-align: center;
-  margin: 0;
 }
 
 .projects-heading {
-  font-size: 2rem; /* Smaller font for mobile */
+  font-size: 2rem;
   color: var(--accent-color);
-  text-align: center;
-  margin: 20px 0; /* Adjusted margin */
-  padding-top: 0;
+  margin: 20px 0;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column on mobile */
+  grid-template-columns: 1fr;
   gap: 20px;
-  justify-items: stretch;
-  margin: 0 auto;
   max-width: 1200px;
   padding: 0 10px;
+  margin: 0 auto;
 }
 
 .project-card {
   background-color: var(--secondary-bg);
-  color: var(--text-light);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 15px; /* Reduced padding for mobile */
+  padding: 15px;
   text-align: center;
 }
 
 .project-title {
-  font-size: 1.8rem; /* Smaller font for mobile */
+  font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #ffffff !important;
   font-weight: bold;
+  color: #ffffff !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .project-description {
-  font-size: 1rem; /* Smaller font for mobile */
+  font-size: 1rem;
   margin-bottom: 10px;
-  line-height: 1.5; /* Tighter line height */
-  color: var(--text-light);
+  line-height: 1.5;
 }
 
 .project-technologies {
-  font-size: 0.9rem; /* Smaller font for mobile */
+  font-size: 0.9rem;
   font-style: italic;
   color: var(--text-muted);
 }
@@ -244,14 +222,14 @@ body {
 .project-media-container {
   position: relative;
   width: 100%;
-  height: 200px; /* Mobile height */
-  margin: 0 auto 15px; /* Centered with bottom margin */
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-bg);
   border-radius: 8px;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .project-media {
@@ -263,9 +241,9 @@ body {
 .project-buttons {
   display: flex;
   gap: 10px;
-  justify-content: center; /* Always center buttons horizontally */
-  margin: 0 auto 15px; /* Centered with bottom margin */
-  width: 100%; /* Full width container */
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .project-button {
@@ -277,36 +255,32 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%; /* Full width buttons on mobile */
+  width: 100%;
 }
 
 .project-button:hover {
   background-color: var(--hover-accent);
 }
 
-/* Resume Section */
+/* Resume */
 .section.resume-section {
   max-width: 100%;
   margin: 0;
   background-color: var(--primary-bg);
-  color: var(--text-light);
-  padding-bottom: 30px; /* Reduced padding for mobile */
-  margin-top: 0;
+  padding-bottom: 30px;
 }
 
 .resume-title {
-  font-size: 2rem; /* Smaller font for mobile */
+  font-size: 2rem;
   color: var(--accent-color);
   text-align: center;
   margin: 0;
-  padding-top: 0;
 }
 
 .resume-download-text {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 1rem; /* Smaller font for mobile */
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
 .resume-download-link {
@@ -323,18 +297,17 @@ body {
 .resume-embed-container {
   width: 100%;
   max-width: 800px;
-  min-height: 400px; /* Smaller height for mobile */
+  min-height: 400px;
   margin: 0 auto;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px; /* Add padding for mobile */
+  padding: 0 10px;
 }
 
 .resume-iframe {
   width: 100%;
-  height: 400px; /* Smaller height for mobile */
+  height: 400px;
   border: none;
   border-radius: 8px;
 }
@@ -344,36 +317,32 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 1rem;
-  color: var(--text-light);
 }
 
-/* Contact Section */
+/* Contact */
 .contact-section {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 20px; /* Adjusted padding for mobile */
-  margin: 0;
+  padding: 40px 20px;
   color: var(--text-light);
   background-color: var(--primary-bg);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Changed from top to flex-start */
   align-items: center;
   box-sizing: border-box;
 }
 
 .contact-title {
-  font-size: 2rem; /* Smaller font for mobile */
+  font-size: 2rem;
   color: var(--accent-color);
   text-align: center;
-  margin: 20px 0; /* Adjusted margin */
-  padding-top: 0;
+  margin: 20px 0;
 }
 
 .contact-info {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1rem; /* Smaller font for mobile */
+  font-size: 1rem;
 }
 
 .contact-form {
@@ -382,10 +351,9 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 600px;
-  padding: 0 10px; /* Add padding for mobile */
+  padding: 0 10px;
 }
 
-/* Inputs & Textarea */
 .contact-form input,
 .contact-form textarea {
   padding: 0.8rem 1rem;
@@ -394,12 +362,16 @@ body {
   font-size: 1rem;
   background: #fff;
   color: #000;
-  box-shadow: none;
-  width: 100%; /* Full width inputs */
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Submit Button */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
 .contact-form button {
   padding: 0.8rem;
   font-size: 1rem;
@@ -409,14 +381,13 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100%; /* Full width button */
+  width: 100%;
 }
 
 .contact-form button:hover {
   background-color: var(--hover-accent);
 }
 
-/* Messages and Validation */
 .success-message {
   text-align: center;
   color: green;
@@ -429,14 +400,7 @@ body {
   font-size: 0.875rem;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent-color);
-  outline: none;
-  box-shadow: none;
-}
-
-/* Media Queries for Larger Screens */
+/* Media Queries */
 @media (min-width: 768px) {
   .navbar {
     padding: 12px 32px;
@@ -444,10 +408,12 @@ body {
 
   .portfolio-title {
     font-size: 1.5rem;
+    max-width: none;
   }
 
   .nav-links {
     gap: 24px;
+    overflow-x: visible;
   }
 
   .nav-links li {
@@ -459,124 +425,53 @@ body {
     margin: 30px auto;
   }
 
-  .home-section {
-    padding: 100px 20px;
-  }
-
   .home-section h1 {
     font-size: 3rem;
   }
 
-  .home-section h2 {
-    font-size: 2rem;
-  }
-
-  .home-welcome-section h1 {
-    font-size: 4rem;
-  }
-
+  .home-section h2,
   .home-welcome-section h2 {
-    font-size: 2.5rem;
-  }
-
-  .home-introduction-section h2 {
-    font-size: 3rem;
-  }
-
-  .home-introduction-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 800px;
-  }
-
-  .projects-section {
-    padding: 0 20px 40px;
-  }
-
-  .projects-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .projects-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .project-card {
-    padding: 20px;
-  }
-
-  .project-title {
-    font-size: 2.5rem;
-  }
-
-  .project-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .project-technologies {
-    font-size: 1rem;
-  }
-
-  .project-media-container {
-    height: 300px;
-  }
-
-  .project-buttons {
-    flex-direction: row;
-    width: auto; /* Reset width for desktop */
-    max-width: none;
-    margin: 15px auto; /* Consistent margin */
-  }
-
   .project-button {
     width: auto;
-  }
-
-  .resume-title {
-    font-size: 2.5rem;
-  }
-
-  .resume-download-text {
-    font-size: 1.2rem;
-  }
-
-  .resume-embed-container {
-    min-height: 600px;
   }
 
   .resume-iframe {
     height: 600px;
   }
 
-  .contact-title {
-    font-size: 2.5rem;
-  }
-
-  .contact-info {
-    font-size: 1.2rem;
-  }
-
-  .contact-form {
-    padding: 0;
-  }
-
-  .contact-form button {
-    width: auto;
+  .contact-section {
+    padding: 60px 40px;
   }
 }
 
-/* Media Queries for Very Small Screens */
-@media (max-width: 400px) {
-  .home-welcome-section h1 {
-    font-size: 2rem;
+/* Additional Mobile Optimization */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 12px;
   }
 
-  .home-welcome-section h2 {
-    font-size: 1.2rem;
+  .portfolio-title {
+    font-size: 1rem;
+    max-width: 35%;
   }
 
-  .project-title {
-    font-size: 1.5rem;
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links li {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  .nav-links li svg {
+    font-size: 0.9rem;
   }
 }
