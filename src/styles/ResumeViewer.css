@@ -14,6 +14,14 @@ body {
   --text-color: #2c3e50; /* Darker grey for text */
   --light-gray: #e9eef5; /* Muted light grey for sections */
   --background-color: #f7f9fc; /* Softer off-white for the background */
+  --heading-color: #1d78c1; /* Brighter blue for headings */
+}
+
+.side-heading,
+.name,
+.title,
+.section-title {
+  color: var(--heading-color);
 }
 
 /* Base Styles */
@@ -375,14 +383,12 @@ body {
 /* Dark Theme */
 body.dark-theme {
   --primary-color: #202123; /* Dark grey for primary elements */
-  --secondary-color: #3498db; /* Blue for highlights */
+  --secondary-color: #3498db; /* Bright blue for highlights */
   --accent-color: #4aa3f0; /* Brighter blue for accents */
   --text-color: #e5e7eb; /* Slightly lighter grey for text */
   --light-gray: #2d2f34; /* Slightly lighter grey for sections */
   --background-color: #161616; /* Black for the background */
-  --border-color: #4b5563; /* Medium grey for borders */
-  background-color: var(--background-color);
-  color: var(--text-color);
+  --heading-color: #3498db; /* Bright blue for headings */
 }
 
 body.dark-theme .resume-container {

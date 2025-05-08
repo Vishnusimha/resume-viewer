@@ -42,7 +42,6 @@ const Portfolio = () => {
         </h1>
 
         <ul className="nav-links">
-          <li onClick={() => setActiveSection("about")}>About</li>
           <li onClick={() => setActiveSection("projects")}>Projects</li>
           <li onClick={() => setActiveSection("resume")}>Resume</li>
           <li onClick={() => setActiveSection("CV")}>CV</li>
