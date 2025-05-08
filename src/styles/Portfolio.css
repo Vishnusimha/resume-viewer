@@ -316,12 +316,14 @@ body {
 /* Contact Section */
 .contact-section {
   width: 100%;
+  min-height: 100vh; /* ensures full screen height */
   padding: 0;
   margin: 0;
   color: var(--text-light);
-  background-color: transparent;
+  background-color: var(--primary-bg); /* or any other desired bg */
   display: flex;
   flex-direction: column;
+  justify-content: top; /* vertically center content */
   align-items: center;
 }
 
