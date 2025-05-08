@@ -5,6 +5,10 @@ import Projects from "./Projects";
 import Resume from "./Resume";
 import Contact from "./Contact";
 import CV from "../resume/ResumeViewer";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsCodeSlash, BsPersonLinesFill } from "react-icons/bs";
+import { CgFileDocument } from "react-icons/cg";
+import { MdOutlineContactMail } from "react-icons/md";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -42,10 +46,18 @@ const Portfolio = () => {
         </h1>
 
         <ul className="nav-links">
-          <li onClick={() => setActiveSection("projects")}>Projects</li>
-          <li onClick={() => setActiveSection("CV")}>CV</li>
-          <li onClick={() => setActiveSection("resume")}>Resume</li>
-          <li onClick={() => setActiveSection("contact")}>Contact</li>
+          <li onClick={() => setActiveSection("projects")}>
+            <BsCodeSlash style={{ marginRight: "6px" }} /> Projects
+          </li>
+          <li onClick={() => setActiveSection("CV")}>
+            <CgFileDocument style={{ marginRight: "6px" }} /> CV
+          </li>
+          <li onClick={() => setActiveSection("resume")}>
+            <BsPersonLinesFill style={{ marginRight: "6px" }} /> Resume
+          </li>
+          <li onClick={() => setActiveSection("contact")}>
+            <MdOutlineContactMail style={{ marginRight: "6px" }} /> Contact
+          </li>
         </ul>
       </nav>
 

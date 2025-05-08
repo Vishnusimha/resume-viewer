@@ -1,8 +1,8 @@
 :root {
   --primary-bg: #0d1117; /* Jet Black Navy */
   --secondary-bg: #161b22; /* Deep Slate */
-  --accent-color: #58a6ff; /* Electric Blue */
-  --hover-accent: #1f6feb; /* Brighter Blue */
+  --accent-color: #39ff14; /* Neon Green */
+  --hover-accent: #00ff7f; /* Spring Green */
   --text-light: #f0f6fc; /* Pale White-Blue */
   --text-muted: #8b949e; /* Subtle Gray */
   --font-main: "Fira Code", monospace;
@@ -44,26 +44,41 @@ body {
 }
 
 .portfolio-title {
-  font-size: 1.2rem; /* Smaller font for mobile */
+  font-size: 1.2rem;
   font-weight: bold;
-  letter-spacing: 1px;
   color: var(--accent);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.portfolio-title:hover {
+  color: var(
+    --hover-accent
+  ); /* or use any bright neon like green/orange if you prefer */
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 12px; /* Reduced gap for mobile */
+  gap: 16px; /* Slightly increased for better spacing with icons */
   margin: 0;
   padding: 0;
 }
 
 .nav-links li {
-  font-size: 0.9rem; /* Smaller font for mobile */
+  display: flex;
+  align-items: center; /* Aligns icon and text vertically */
+  gap: 6px; /* Space between icon and text */
+  font-size: 0.95rem; /* Slightly larger for clarity */
   font-weight: 500;
   cursor: pointer;
   position: relative;
   color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.nav-links li svg {
+  font-size: 1.1rem; /* Makes icon slightly more prominent */
   transition: color 0.3s ease;
 }
 
@@ -80,6 +95,10 @@ body {
 
 .nav-links li:hover {
   color: var(--hover-accent);
+}
+
+.nav-links li:hover svg {
+  color: var(--hover-accent); /* Animate icon color on hover too */
 }
 
 .nav-links li:hover::after {
