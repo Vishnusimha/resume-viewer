@@ -4,6 +4,7 @@ import About from "./About";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import Contact from "./Contact";
+import CV from "../resume/ResumeViewer";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("about");
@@ -16,6 +17,8 @@ const Portfolio = () => {
         return <Projects />;
       case "resume":
         return <Resume />;
+      case "CV":
+        return <CV />;
       case "contact":
         return <Contact />;
       default:
@@ -32,6 +35,7 @@ const Portfolio = () => {
           <li onClick={() => setActiveSection("about")}>About</li>
           <li onClick={() => setActiveSection("projects")}>Projects</li>
           <li onClick={() => setActiveSection("resume")}>Resume</li>
+          <li onClick={() => setActiveSection("CV")}>CV</li>
           <li onClick={() => setActiveSection("contact")}>Contact</li>
         </ul>
       </nav>
