@@ -30,7 +30,17 @@ const Portfolio = () => {
     <div className="portfolio-container">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <h1 className="portfolio-title">VS</h1>
+        <h1
+          className="portfolio-title"
+          onClick={() => {
+            setActiveSection("about");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          VS
+        </h1>
+
         <ul className="nav-links">
           <li onClick={() => setActiveSection("about")}>About</li>
           <li onClick={() => setActiveSection("projects")}>Projects</li>
