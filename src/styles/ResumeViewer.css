@@ -285,18 +285,18 @@
 
 /* Theme Toggle - Top Right Corner of Resume */
 .resume-viewer-container .theme-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  position: fixed;
+  top: 100px;
+  right: 0;
   padding: 6px 12px;
   background-color: var(--resume-accent-color);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px; /* Rounded left corners only */
   cursor: pointer;
-  z-index: 1;
+  z-index: 9999;
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .resume-viewer-container .resume-container {
