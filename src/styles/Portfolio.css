@@ -12,24 +12,27 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary-bg); /* or your desired color */
+  background-color: var(--primary-bg);
   color: var(--text-light);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .portfolio-container {
   font-family: var(--font-main);
   color: var(--text-light);
-  background-color: var(--primary-bg); /* Moved here to cover all sections */
+  background-color: var(--primary-bg);
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100vh;
 }
 
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 32px;
+  padding: 12px 16px; /* Reduced padding for mobile */
   background-color: var(--secondary-bg);
   color: var(--text-light);
   position: sticky;
@@ -41,7 +44,7 @@ body {
 }
 
 .portfolio-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Smaller font for mobile */
   font-weight: bold;
   letter-spacing: 1px;
   color: var(--accent);
@@ -50,13 +53,13 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 12px; /* Reduced gap for mobile */
   margin: 0;
   padding: 0;
 }
 
 .nav-links li {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller font for mobile */
   font-weight: 500;
   cursor: pointer;
   position: relative;
@@ -83,28 +86,31 @@ body {
   width: 100%;
 }
 
+/* Sections */
 .section {
-  padding: 60px 30px;
-  margin: 30px auto;
+  padding: 40px 20px; /* Reduced padding for mobile */
+  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   color: var(--text-light);
-  width: 100%;
+  width: calc(100% - 40px); /* Account for padding */
+  max-width: 1200px;
 }
 
+/* About Sections */
 .about-section {
   text-align: center;
-  padding: 100px 20px;
+  padding: 60px 20px; /* Reduced padding for mobile */
 }
 
 .about-section h1 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Smaller font for mobile */
   margin: 10px 0;
   color: var(--accent-color);
 }
 
 .about-section h2 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Smaller font for mobile */
   color: var(--text-light);
 }
 
@@ -114,20 +120,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height */
   color: var(--text-light);
   text-align: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .about-welcome-section h1 {
-  font-size: 4rem;
+  font-size: 2.5rem; /* Smaller font for mobile */
   margin: 10px 0;
   color: var(--accent-color);
 }
 
 .about-welcome-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem; /* Smaller font for mobile */
   color: var(--text-light);
 }
 
@@ -137,48 +144,51 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height */
   color: var(--text-light);
   text-align: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .about-introduction-section h2 {
-  font-size: 3rem;
+  font-size: 2rem; /* Smaller font for mobile */
   margin-bottom: 20px;
   color: var(--accent-color);
 }
 
 .about-introduction-section p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1rem; /* Smaller font for mobile */
+  line-height: 1.6; /* Slightly tighter line height */
   margin-bottom: 15px;
-  max-width: 800px;
+  max-width: 100%; /* Full width on mobile */
+  padding: 0 10px; /* Add some padding */
 }
 
 /* Projects Section */
 .projects-section {
-  padding: 0 20px 40px; /* remove top padding, keep bottom for spacing */
+  padding: 0 10px 30px; /* Adjusted padding for mobile */
   color: var(--text-light);
   text-align: center;
   margin: 0;
 }
 
 .projects-heading {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font for mobile */
   color: var(--accent-color);
   text-align: center;
-  margin: 20px;
+  margin: 20px 0; /* Adjusted margin */
   padding-top: 0;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr; /* Single column on mobile */
   gap: 20px;
   justify-items: stretch;
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0 10px;
 }
 
 .project-card {
@@ -187,12 +197,12 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 15px; /* Reduced padding for mobile */
   text-align: center;
 }
 
 .project-title {
-  font-size: 2.5rem;
+  font-size: 1.8rem; /* Smaller font for mobile */
   margin-bottom: 10px;
   color: #ffffff !important;
   font-weight: bold;
@@ -200,14 +210,14 @@ body {
 }
 
 .project-description {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Smaller font for mobile */
   margin-bottom: 10px;
-  line-height: 1.6;
+  line-height: 1.5; /* Tighter line height */
   color: var(--text-light);
 }
 
 .project-technologies {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller font for mobile */
   font-style: italic;
   color: var(--text-muted);
 }
@@ -215,8 +225,8 @@ body {
 .project-media-container {
   position: relative;
   width: 100%;
-  height: 300px;
-  margin-bottom: 15px;
+  height: 200px; /* Mobile height */
+  margin: 0 auto 15px; /* Centered with bottom margin */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,9 +243,10 @@ body {
 
 .project-buttons {
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-bottom: 15px;
+  justify-content: center; /* Always center buttons horizontally */
+  margin: 0 auto 15px; /* Centered with bottom margin */
+  width: 100%; /* Full width container */
 }
 
 .project-button {
@@ -247,6 +258,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Full width buttons on mobile */
 }
 
 .project-button:hover {
@@ -259,21 +271,23 @@ body {
   margin: 0;
   background-color: var(--primary-bg);
   color: var(--text-light);
-  padding-bottom: 40px;
+  padding-bottom: 30px; /* Reduced padding for mobile */
   margin-top: 0;
 }
 
 .resume-title {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font for mobile */
   color: var(--accent-color);
   text-align: center;
   margin: 0;
   padding-top: 0;
 }
+
 .resume-download-text {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 1rem; /* Smaller font for mobile */
 }
 
 .resume-download-link {
@@ -290,17 +304,18 @@ body {
 .resume-embed-container {
   width: 100%;
   max-width: 800px;
-  min-height: 600px;
+  min-height: 400px; /* Smaller height for mobile */
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px; /* Add padding for mobile */
 }
 
 .resume-iframe {
   width: 100%;
-  height: 600px;
+  height: 400px; /* Smaller height for mobile */
   border: none;
   border-radius: 8px;
 }
@@ -316,28 +331,30 @@ body {
 /* Contact Section */
 .contact-section {
   width: 100%;
-  min-height: 100vh; /* ensures full screen height */
-  padding: 0;
+  min-height: 100vh;
+  padding: 40px 20px; /* Adjusted padding for mobile */
   margin: 0;
   color: var(--text-light);
-  background-color: var(--primary-bg); /* or any other desired bg */
+  background-color: var(--primary-bg);
   display: flex;
   flex-direction: column;
-  justify-content: top; /* vertically center content */
+  justify-content: flex-start; /* Changed from top to flex-start */
   align-items: center;
+  box-sizing: border-box;
 }
 
 .contact-title {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Smaller font for mobile */
   color: var(--accent-color);
   text-align: center;
-  margin: 20px;
+  margin: 20px 0; /* Adjusted margin */
   padding-top: 0;
 }
 
 .contact-info {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 1rem; /* Smaller font for mobile */
 }
 
 .contact-form {
@@ -346,6 +363,7 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 600px;
+  padding: 0 10px; /* Add padding for mobile */
 }
 
 /* Inputs & Textarea */
@@ -358,6 +376,8 @@ body {
   background: #fff;
   color: #000;
   box-shadow: none;
+  width: 100%; /* Full width inputs */
+  box-sizing: border-box;
 }
 
 /* Submit Button */
@@ -370,6 +390,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%; /* Full width button */
 }
 
 .contact-form button:hover {
@@ -381,6 +402,7 @@ body {
   text-align: center;
   color: green;
   margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .validation-error {
@@ -393,4 +415,149 @@ body {
   border-color: var(--accent-color);
   outline: none;
   box-shadow: none;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 12px 32px;
+  }
+
+  .portfolio-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-links li {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 60px 30px;
+    margin: 30px auto;
+  }
+
+  .about-section {
+    padding: 100px 20px;
+  }
+
+  .about-section h1 {
+    font-size: 3rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-welcome-section h1 {
+    font-size: 4rem;
+  }
+
+  .about-welcome-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-introduction-section h2 {
+    font-size: 3rem;
+  }
+
+  .about-introduction-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+  }
+
+  .projects-section {
+    padding: 0 20px 40px;
+  }
+
+  .projects-heading {
+    font-size: 2.5rem;
+  }
+
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .project-technologies {
+    font-size: 1rem;
+  }
+
+  .project-media-container {
+    height: 300px;
+  }
+
+  .project-buttons {
+    flex-direction: row;
+    width: auto; /* Reset width for desktop */
+    max-width: none;
+    margin: 15px auto; /* Consistent margin */
+  }
+
+  .project-button {
+    width: auto;
+  }
+
+  .resume-title {
+    font-size: 2.5rem;
+  }
+
+  .resume-download-text {
+    font-size: 1.2rem;
+  }
+
+  .resume-embed-container {
+    min-height: 600px;
+  }
+
+  .resume-iframe {
+    height: 600px;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-info {
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    padding: 0;
+  }
+
+  .contact-form button {
+    width: auto;
+  }
+}
+
+/* Media Queries for Very Small Screens */
+@media (max-width: 400px) {
+  .about-welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .about-welcome-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
 }
