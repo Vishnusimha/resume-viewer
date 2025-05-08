@@ -1,11 +1,26 @@
 :root {
-  --primary-bg: #0d1117; /* Jet Black Navy */
-  --secondary-bg: #161b22; /* Deep Slate */
-  --accent-color: #39ff14; /* Neon Green */
-  --hover-accent: #00ff7f; /* Spring Green */
-  --text-light: #f0f6fc; /* Pale White-Blue */
-  --text-muted: #8b949e; /* Subtle Gray */
+  /* Colors */
+  --deep-neon-green: #39ff14; /* Neon Green */
+  --spring-green: #00ff7f; /* Spring Green */
+  --deep-neon-blue: #0ff0fc; /* Deep Neon Blue */
+  --darker-blue: #1a6fb3; /* Slightly darker blue for accents */
+  --subtle-gray: #8b949e; /* Subtle Gray */
+  --pale-white-blue: #f0f6fc; /* Pale White-Blue */
+  --jet-black-navy: #0d1117; /* Jet Black Navy */
+  --deep-slate: #161b22; /* Deep Slate */
+
+  /* Main Variables */
+  --primary-bg: var(--jet-black-navy); /* Jet Black Navy */
+  --secondary-bg: var(--deep-slate); /* Deep Slate */
+  --accent-color: var(--deep-neon-blue); /* Neon Green */
+  --text-light: var(--pale-white-blue); /* Pale White-Blue */
+  --text-muted: var(--subtle-gray); /* Subtle Gray */
   --font-main: "Fira Code", monospace;
+
+  --links-accent: var(--darker-blue); /* Darker blue */
+  --navbar-hover-accent: var(--spring-green); /* Spring Green */
+  --links-hover-accent: var(--deep-neon-blue); /* Deep Neon Blue */
+  --button-hover-accent: var(--deep-neon-blue); /* Deep Neon Blue */
 }
 
 html,
@@ -56,7 +71,7 @@ body {
 }
 
 .portfolio-title:hover {
-  color: var(--hover-accent);
+  color: var(--navbar-hover-accent);
 }
 
 .nav-links {
@@ -102,13 +117,13 @@ body {
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background-color: var(--hover-accent);
+  background-color: var(--navbar-hover-accent);
   transition: width 0.3s ease;
 }
 
 .nav-links li:hover,
 .nav-links li:hover svg {
-  color: var(--hover-accent);
+  color: var(--navbar-hover-accent);
 }
 
 .nav-links li:hover::after {
@@ -247,7 +262,7 @@ body {
 }
 
 .project-button {
-  background-color: var(--accent-color);
+  background-color: var(--links-accent);
   color: var(--text-light);
   border: none;
   padding: 10px 20px;
@@ -259,7 +274,7 @@ body {
 }
 
 .project-button:hover {
-  background-color: var(--hover-accent);
+  background-color: var(--button-hover-accent);
 }
 
 /* Resume */
@@ -284,13 +299,13 @@ body {
 }
 
 .resume-download-link {
-  color: var(--accent-color);
+  color: var(--links-accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .resume-download-link:hover {
-  color: var(--hover-accent);
+  color: var(--links-hover-accent);
   text-decoration: underline;
 }
 
@@ -345,6 +360,16 @@ body {
   font-size: 1rem;
 }
 
+.contact-value {
+  color: var(--links-accent); /* Color for values (e.g., neon green) */
+  text-decoration: none;
+}
+
+.contact-value:hover {
+  color: var(--links-hover-accent); /* Hover effect (spring green) */
+  text-decoration: underline; /* Optional: to underline on hover */
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -368,14 +393,14 @@ body {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--accent-color);
+  border-color: var(--links-hover-accent);
   outline: none;
 }
 
 .contact-form button {
   padding: 0.8rem;
   font-size: 1rem;
-  background-color: var(--accent-color);
+  background-color: var(--links-accent);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -385,7 +410,7 @@ body {
 }
 
 .contact-form button:hover {
-  background-color: var(--hover-accent);
+  background-color: var(--button-hover-accent);
 }
 
 .success-message {
