@@ -1,11 +1,11 @@
 :root {
-  --primary-bg: #0f172a; /* Navy Black */
-  --secondary-bg: #1e293b; /* Dark Slate */
-  --accent-color: #38bdf8; /* Sky Blue */
-  --hover-accent: #0ea5e9; /* Light Blue */
-  --text-light: #f1f5f9; /* Light Gray */
-  --text-muted: #94a3b8; /* Muted Blue Gray */
-  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-bg: #0d1117; /* Jet Black Navy */
+  --secondary-bg: #161b22; /* Deep Slate */
+  --accent-color: #58a6ff; /* Electric Blue */
+  --hover-accent: #1f6feb; /* Brighter Blue */
+  --text-light: #f0f6fc; /* Pale White-Blue */
+  --text-muted: #8b949e; /* Subtle Gray */
+  --font-main: "Fira Code", monospace;
 }
 
 html,
