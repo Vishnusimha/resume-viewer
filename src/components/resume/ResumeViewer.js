@@ -11,7 +11,7 @@ import Internship from "./Internship";
 import "../../styles/ResumeViewer.css";
 
 function ResumeViewer() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
