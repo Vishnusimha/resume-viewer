@@ -10,11 +10,16 @@ const Contact = React.forwardRef((props, ref) => {
 
       <div className="contact-info">
         <p>
-          Email:{" "}
-          <a href="mailto:vishnusimha98@gmail.com">vishnusimha98@gmail.com</a>
+          <span className="contact-key">Email: </span>
+          <a href="mailto:vishnusimha98@gmail.com" className="contact-value">
+            vishnusimha98@gmail.com
+          </a>
         </p>
         <p>
-          Phone: <a href="tel:+3538995956611">+353 899595661</a>
+          <span className="contact-key">Phone: </span>
+          <a href="tel:+3538995956611" className="contact-value">
+            +353 899595661
+          </a>
         </p>
       </div>
 

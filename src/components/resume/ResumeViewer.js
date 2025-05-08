@@ -15,59 +15,60 @@ function ResumeViewer() {
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
-    document.body.classList.toggle("dark-theme", !isDarkTheme);
   };
 
   return (
-    <div className={`resume-container ${isDarkTheme ? "dark" : ""}`}>
-      {/* Theme Toggle Button */}
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {isDarkTheme ? "☀️ Light" : "🌙 Dark"}
-      </button>
+    <div
+      className={`resume-viewer-container ${isDarkTheme ? "dark-theme" : ""}`}
+    >
+      <div className="resume-container">
+        {/* Theme Toggle Button */}
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkTheme ? "☀️ Light" : "🌙 Dark"}
+        </button>
 
-      <Header
-        name={resumeData.name}
-        title={resumeData.title}
-        contact={resumeData.contact}
-      />
+        <Header
+          name={resumeData.name}
+          title={resumeData.title}
+          contact={resumeData.contact}
+        />
 
-      <Section title="Professional Summary">
-        <p className="summary">{resumeData.summary}</p>
-      </Section>
-
-      {/* Flex Container for Technical Skills and Certifications */}
-      <div className="side-by-side-sections">
-        <Section title="Technical Skills">
-          <TechnicalSkills skills={resumeData.skills.technical} />
+        <Section title="Professional Summary">
+          <p className="summary">{resumeData.summary}</p>
         </Section>
 
-        <Section title="Certifications">
-          <Certifications certifications={resumeData.skills.certifications} />
-        </Section>
-      </div>
+        <div className="side-by-side-sections">
+          <Section title="Technical Skills">
+            <TechnicalSkills skills={resumeData.skills.technical} />
+          </Section>
 
-      <Section title="Work Experience">
-        {resumeData.experience.map((exp, index) => (
-          <Experience key={index} experience={exp} />
-        ))}
-      </Section>
+          <Section title="Certifications">
+            <Certifications certifications={resumeData.skills.certifications} />
+          </Section>
+        </div>
 
-      {/* Flex Container for Education and Internships */}
-      <div className="side-by-side-sections">
-        <Section title="Education">
-          {resumeData.education.map((edu, index) => (
-            <Education key={index} education={edu} />
+        <Section title="Work Experience">
+          {resumeData.experience.map((exp, index) => (
+            <Experience key={index} experience={exp} />
           ))}
         </Section>
-        <Section title="Internships">
-          {resumeData.internships.map((internship, index) => (
-            <Internship key={index} internship={internship} />
-          ))}
+
+        <div className="side-by-side-sections">
+          <Section title="Education">
+            {resumeData.education.map((edu, index) => (
+              <Education key={index} education={edu} />
+            ))}
+          </Section>
+          <Section title="Internships">
+            {resumeData.internships.map((internship, index) => (
+              <Internship key={index} internship={internship} />
+            ))}
+          </Section>
+        </div>
+        <Section title="Projects - Github Repositories">
+          <Projects projects={resumeData.projects} />
         </Section>
       </div>
-      <Section title="Projects - Github Repositories">
-        <Projects projects={resumeData.projects} />
-      </Section>
     </div>
   );
 }
