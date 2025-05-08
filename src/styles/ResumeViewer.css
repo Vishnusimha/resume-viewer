@@ -1,31 +1,18 @@
-/* Global Reset */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ResumeViewer.css - Scoped to only affect the ResumeViewer component */
+.resume-viewer-container {
+  /* Local color variables - only used in this component */
+  --resume-primary-color: #2c3e50;
+  --resume-secondary-color: #1d78c1;
+  --resume-accent-color: #1a6fb3;
+  --resume-text-color: #2c3e50;
+  --resume-light-gray: #e9eef5;
+  --resume-background-color: #f7f9fc;
+  --resume-heading-color: #1d78c1;
+  --resume-border-color: #ddd;
 }
 
-/* Color Variables */
-:root {
-  --primary-color: #2c3e50; /* Dark blue for primary elements */
-  --secondary-color: #1d78c1; /* Brighter blue for highlights */
-  --accent-color: #1a6fb3; /* Slightly darker blue for accents */
-  --text-color: #2c3e50; /* Darker grey for text */
-  --light-gray: #e9eef5; /* Muted light grey for sections */
-  --background-color: #f7f9fc; /* Softer off-white for the background */
-  --heading-color: #1d78c1; /* Brighter blue for headings */
-}
-
-.side-heading,
-.name,
-.title,
-.section-title {
-  color: var(--heading-color);
-}
-
-/* Base Styles */
-.resume-container {
+/* All styles are scoped under .resume-viewer-container */
+.resume-viewer-container .resume-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 5px 5% 30px;
@@ -36,40 +23,46 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.resume-viewer-container .side-heading,
+.resume-viewer-container .name,
+.resume-viewer-container .title,
+.resume-viewer-container .section-title {
+  color: var(--resume-heading-color);
+}
+
 /* Header Styles */
-.resume-header {
+.resume-viewer-container .resume-header {
   text-align: center;
   padding: 8px 12px;
   margin: 0 auto 10px auto;
-  background-color: var(--light-gray);
-  border-bottom: 1px solid var(--secondary-color);
+  background-color: var(--resume-light-gray);
+  border-bottom: 1px solid var(--resume-secondary-color);
   border-radius: 6px;
 }
 
-.side-heading {
+.resume-viewer-container .side-heading {
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: var(--accent-color); /* Slightly darker blue for headings */
-  list-style: none; /* Remove bullet points */
+  color: var(--resume-accent-color);
+  list-style: none;
 }
 
-/* Update Heading and side-heading Colors */
-.name {
+.resume-viewer-container .name {
   font-size: 1.8rem;
   margin: 0;
-  color: var(--secondary-color); /* Brighter blue for name */
+  color: var(--resume-secondary-color);
   font-weight: 700;
 }
 
-.title {
+.resume-viewer-container .title {
   font-size: 1.2rem;
   margin: 4px 0 6px;
-  color: var(--accent-color); /* Slightly darker blue for title */
+  color: var(--resume-accent-color);
   font-weight: 600;
 }
 
-.contact-info {
+.resume-viewer-container .contact-info {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -79,85 +72,85 @@ body {
   margin-top: 10px;
 }
 
-.contact-info p {
+.resume-viewer-container .contact-info p {
   margin: 0;
-  white-space: normal; /* Allow text to wrap */
-  word-break: break-word; /* Break long words if necessary */
+  white-space: normal;
+  word-break: break-word;
 }
 
-.contact-info a {
-  color: var(--accent-color);
+.resume-viewer-container .contact-info a {
+  color: var(--resume-accent-color);
   text-decoration: none;
   font-weight: 500;
 }
 
-.contact-info a:hover {
+.resume-viewer-container .contact-info a:hover {
   text-decoration: underline;
 }
 
 /* Section Styles */
-.resume-section {
+.resume-viewer-container .resume-section {
   margin-bottom: 10px;
-  background-color: var(--light-gray);
+  background-color: var(--resume-light-gray);
   padding: 15px;
   border-radius: 8px;
 }
 
-.section-title {
+.resume-viewer-container .section-title {
   font-size: 1.8rem;
-  color: var(--secondary-color); /* Brighter blue for section titles */
-  border-bottom: 2px solid rgba(29, 120, 193, 0.3); /* Subtle blue border */
+  color: var(--resume-secondary-color);
+  border-bottom: 2px solid rgba(29, 120, 193, 0.3);
   padding-bottom: 5px;
   margin-bottom: 10px;
   font-weight: 700;
   margin-top: 0;
 }
 
-.section-content {
+.resume-viewer-container .section-content {
   padding-left: 15px;
 }
 
-/* Flex Layout for Technical Skills and Certifications */
-.side-by-side-sections {
+/* Flex Layout */
+.resume-viewer-container .side-by-side-sections {
   display: flex;
-  gap: 20px; /* Adjust the gap between sections */
-  justify-content: stretch; /* Ensure sections are spaced evenly */
+  gap: 20px;
+  justify-content: stretch;
   align-items: stretch;
-  width: 100%; /* Make the container span the full width */
-  margin: 0 auto; /* Center the container */
-  padding: 0; /* Remove extra padding */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.technical-skills-section,
-.certifications-section {
-  flex: 1; /* Ensure both sections take equal space */
-  min-width: 0; /* Prevent sections from shrinking too much */
+.resume-viewer-container .technical-skills-section,
+.resume-viewer-container .certifications-section {
+  flex: 1;
+  min-width: 0;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
   padding: 12px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid var(--resume-border-color);
 }
 
-.technical-skills-list,
-.certifications-list {
+.resume-viewer-container .technical-skills-list,
+.resume-viewer-container .certifications-list {
   list-style-type: disc;
   padding-left: 20px;
 }
 
-.technical-skills-list li,
-.certifications-list li {
+.resume-viewer-container .technical-skills-list li,
+.resume-viewer-container .certifications-list li {
   margin-bottom: 8px;
   color: rgba(51, 51, 51, 0.9);
 }
 
-.technical-skills-list li strong,
-.certifications-list li strong {
+.resume-viewer-container .technical-skills-list li strong,
+.resume-viewer-container .certifications-list li strong {
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--resume-primary-color);
 }
 
-.certification-logos {
+.resume-viewer-container .certification-logos {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -165,131 +158,123 @@ body {
   flex-wrap: wrap;
 }
 
-.certification-logos img {
+.resume-viewer-container .certification-logos img {
   max-height: 100px;
   object-fit: contain;
   border-radius: 6px;
-  background-color: transparent; /* explicitly transparent */
+  background-color: transparent;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Experience Styles */
-.experience {
+.resume-viewer-container .experience {
   margin-bottom: 15px;
   padding: 12px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
 }
 
-.company {
+.resume-viewer-container .company {
   font-size: 1.4rem;
-  color: var(--primary-color);
+  color: var(--resume-primary-color);
   font-weight: 700;
 }
 
-.position {
+.resume-viewer-container .position {
   font-weight: 600;
   color: rgba(44, 62, 80, 0.9);
 }
 
-.position-duration {
+.resume-viewer-container .position-duration {
   font-style: italic;
   color: rgba(127, 140, 141, 0.8);
 }
 
-.experience-details {
+.resume-viewer-container .experience-details {
   list-style-type: disc;
   padding-left: 20px;
 }
 
-.experience-details li {
+.resume-viewer-container .experience-details li {
   margin-bottom: 8px;
   color: rgba(51, 51, 51, 0.9);
 }
 
-/* Shared Styles for Education and Internship */
-.education,
-.internship {
+/* Education and Internship */
+.resume-viewer-container .education,
+.resume-viewer-container .internship {
   margin-bottom: 15px;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.9); /* Light background */
-  border-radius: 6px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.institution,
-.internship-company {
-  font-size: 1.4rem; /* Larger font size for headings */
-  color: var(--primary-color); /* Primary color for emphasis */
-  margin-bottom: 5px; /* Space below the heading */
-  font-weight: 700; /* Bold font */
-}
-
-.degree-duration,
-.name-duration {
-  font-style: italic; /* Italic style for duration */
-  margin-bottom: 8px; /* Space below the duration */
-  color: rgba(127, 140, 141, 0.8); /* Muted color for duration */
-}
-
-.degree,
-.internship-name {
-  font-weight: 600; /* Semi-bold font for degree or name */
-  color: rgba(44, 62, 80, 0.9); /* Darker color for emphasis */
-}
-
-.duration {
-  font-weight: normal; /* Normal font weight for duration */
-  color: rgba(127, 140, 141, 0.8); /* Muted color for duration */
-}
-
-.education-details,
-.internship-details {
-  list-style-type: disc; /* Bulleted list */
-  padding-left: 20px; /* Indentation for list items */
-}
-
-.education-details li,
-.internship-details li {
-  margin-bottom: 8px; /* Space between list items */
-  color: rgba(51, 51, 51, 0.9); /* Standard text color */
-}
-
-/* Light Theme - Name Styling */
-.name-highlight {
-  color: var(--secondary-color); /* Brighter blue for light theme */
-  font-weight: bold;
-  font-size: 1.1rem; /* Slightly larger font size */
+.resume-viewer-container .institution,
+.resume-viewer-container .internship-company {
+  font-size: 1.4rem;
+  color: var(--resume-primary-color);
   margin-bottom: 5px;
+  font-weight: 700;
 }
 
-/* Projects Styles */
-.project {
+.resume-viewer-container .degree-duration,
+.resume-viewer-container .name-duration {
+  font-style: italic;
+  margin-bottom: 8px;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.resume-viewer-container .degree,
+.resume-viewer-container .internship-name {
+  font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+}
+
+.resume-viewer-container .duration {
+  font-weight: normal;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.resume-viewer-container .education-details,
+.resume-viewer-container .internship-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-viewer-container .education-details li,
+.resume-viewer-container .internship-details li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+/* Projects */
+.resume-viewer-container .project {
   margin-bottom: 15px;
   padding: 12px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 6px;
 }
 
-.project-name {
+.resume-viewer-container .project-name {
   font-size: 1.3rem;
-  color: var(--primary-color);
+  color: var(--resume-primary-color);
   margin-bottom: 5px;
   font-weight: 700;
 }
 
-.project-details {
+.resume-viewer-container .project-details {
   list-style-type: disc;
   padding-left: 20px;
 }
 
-.project-details li {
+.resume-viewer-container .project-details li {
   margin-bottom: 8px;
   color: rgba(51, 51, 51, 0.9);
 }
 
-/* Summary Styles */
-.summary {
+/* Summary */
+.resume-viewer-container .summary {
   text-align: justify;
   line-height: 1.8;
   color: rgba(51, 51, 51, 0.9);
@@ -298,214 +283,187 @@ body {
   border-radius: 6px;
 }
 
+/* Theme Toggle - Top Right Corner of Resume */
+.resume-viewer-container .theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  background-color: var(--resume-accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-viewer-container .resume-container {
+  position: relative;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .resume-container {
+  .resume-viewer-container .resume-container {
     padding: 15px;
     box-shadow: none;
   }
 
-  .name {
+  .resume-viewer-container .name {
     font-size: 2rem;
   }
 
-  .title {
+  .resume-viewer-container .title {
     font-size: 1.5rem;
   }
 
-  .section-title {
+  .resume-viewer-container .section-title {
     font-size: 1.5rem;
   }
 
-  .company,
-  .institution {
+  .resume-viewer-container .company,
+  .resume-viewer-container .institution {
     font-size: 1.2rem;
   }
 
-  .project-name,
-  .internship-company {
+  .resume-viewer-container .project-name,
+  .resume-viewer-container .internship-company {
     font-size: 1.1rem;
   }
 
-  .resume-section,
-  .experience,
-  .education,
-  .project,
-  .internship {
+  .resume-viewer-container .resume-section,
+  .resume-viewer-container .experience,
+  .resume-viewer-container .education,
+  .resume-viewer-container .project,
+  .resume-viewer-container .internship {
     padding: 10px;
     margin-bottom: 10px;
   }
 
-  .side-by-side-sections {
+  .resume-viewer-container .side-by-side-sections {
     flex-direction: column;
     gap: 10px;
   }
 }
 
-/* Print Styles */
-@media print {
-  body {
-    background-color: white;
-    font-size: 12pt;
-  }
-
-  .resume-container {
-    max-width: 100%;
-    padding: 0;
-    box-shadow: none;
-  }
-
-  .resume-header {
-    border-bottom: 2px solid var(--secondary-color);
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-
-  .section-title {
-    page-break-after: avoid;
-  }
-
-  .experience,
-  .education,
-  .project,
-  .internship {
-    page-break-inside: avoid;
-  }
-
-  @page {
-    margin: 1cm;
-  }
-}
-
 /* Dark Theme */
-body.dark-theme {
-  --primary-color: #202123; /* Dark grey for primary elements */
-  --secondary-color: #58a6ff; /* Electric Blue for highlights */
-  --accent-color: #4aa3f0; /* Brighter Blue for accents on hover */
-  --text-color: #f0f6fc; /* Pale White-Blue for text */
-  --light-gray: #2d2f34; /* Slightly lighter grey for sections */
-  --background-color: #0d1117; /* Jet Black Navy for the background */
-  --heading-color: #3498db; /* Electric Blue for headings */
+.resume-viewer-container.dark-theme {
+  --resume-primary-color: #202123;
+  --resume-secondary-color: #58a6ff;
+  --resume-accent-color: #4aa3f0;
+  --resume-text-color: #f0f6fc;
+  --resume-light-gray: #2d2f34;
+  --resume-background-color: #0d1117;
+  --resume-heading-color: #3498db;
+  --resume-border-color: #444;
 }
 
-body.dark-theme .resume-container {
-  background-color: var(--light-gray);
+.resume-viewer-container.dark-theme .resume-container {
+  background-color: var(--resume-light-gray);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-theme .resume-header {
-  background-color: var(--primary-color);
-  border-bottom: 1px solid var(--secondary-color);
-  color: var(--text-color);
+.resume-viewer-container.dark-theme .resume-header {
+  background-color: var(--resume-primary-color);
+  border-bottom: 1px solid var(--resume-secondary-color);
+  color: var(--resume-text-color);
 }
 
-body.dark-theme .side-heading {
-  color: var(--secondary-color);
+.resume-viewer-container.dark-theme .side-heading {
+  color: var(--resume-secondary-color);
 }
 
-body.dark-theme .name {
-  color: var(--secondary-color);
+.resume-viewer-container.dark-theme .name {
+  color: var(--resume-secondary-color);
 }
 
-body.dark-theme .title {
-  color: var(--accent-color);
+.resume-viewer-container.dark-theme .title {
+  color: var(--resume-accent-color);
 }
 
-body.dark-theme .contact-info a {
-  color: var(--accent-color);
+.resume-viewer-container.dark-theme .contact-info a {
+  color: var(--resume-accent-color);
 }
 
-body.dark-theme .contact-info a:hover {
-  color: var(--hover-accent);
+.resume-viewer-container.dark-theme .contact-info a:hover {
+  color: var(--resume-secondary-color);
   text-decoration: underline;
 }
 
-body.dark-theme .resume-section {
-  background-color: var(--light-gray);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-color); /* Subtle border for separation */
+.resume-viewer-container.dark-theme .resume-section {
+  background-color: var(--resume-light-gray);
+  border: 1px solid var(--resume-border-color);
 }
 
-body.dark-theme .section-title {
-  color: var(--secondary-color);
-  border-bottom: 2px solid rgba(52, 152, 219, 0.5); /* Slightly brighter blue border */
+.resume-viewer-container.dark-theme .section-title {
+  color: var(--resume-secondary-color);
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
 }
 
-body.dark-theme .section-content {
-  color: var(--text-color);
+.resume-viewer-container.dark-theme .section-content {
+  color: var(--resume-text-color);
 }
 
-body.dark-theme .technical-skills-section,
-body.dark-theme .certifications-section {
-  background-color: var(--primary-color);
-  border: 1px solid var(--border-color);
+.resume-viewer-container.dark-theme .technical-skills-section,
+.resume-viewer-container.dark-theme .certifications-section {
+  background-color: var(--resume-primary-color);
+  border: 1px solid var(--resume-border-color);
 }
 
-body.dark-theme .technical-skills-list li,
-body.dark-theme .certifications-list li {
-  color: var(--text-color);
+.resume-viewer-container.dark-theme .technical-skills-list li,
+.resume-viewer-container.dark-theme .certifications-list li {
+  color: var(--resume-text-color);
 }
 
-body.dark-theme .technical-skills-list li strong,
-body.dark-theme .certifications-list li strong {
-  color: var(--secondary-color);
+.resume-viewer-container.dark-theme .technical-skills-list li strong,
+.resume-viewer-container.dark-theme .certifications-list li strong {
+  color: var(--resume-secondary-color);
 }
 
-body.dark-theme .certification-logos img {
+.resume-viewer-container.dark-theme .certification-logos img {
   filter: grayscale(50%);
 }
 
-body.dark-theme .certification-logos img:hover {
+.resume-viewer-container.dark-theme .certification-logos img:hover {
   filter: grayscale(0%);
 }
 
-body.dark-theme .name-highlight {
-  color: var(--accent-color); /* Light blue for dark theme */
+.resume-viewer-container.dark-theme .experience,
+.resume-viewer-container.dark-theme .education,
+.resume-viewer-container.dark-theme .project,
+.resume-viewer-container.dark-theme .internship {
+  background-color: var(--resume-primary-color);
+  border: 1px solid var(--resume-border-color);
 }
 
-body.dark-theme .experience,
-body.dark-theme .education,
-body.dark-theme .project,
-body.dark-theme .internship {
-  background-color: var(--primary-color);
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-color); /* Subtle border for separation */
+.resume-viewer-container.dark-theme .company,
+.resume-viewer-container.dark-theme .institution,
+.resume-viewer-container.dark-theme .project-name,
+.resume-viewer-container.dark-theme .internship-company {
+  color: var(--resume-secondary-color);
 }
 
-body.dark-theme .company,
-body.dark-theme .institution,
-body.dark-theme .project-name,
-body.dark-theme .internship-company {
-  color: var(--secondary-color);
+.resume-viewer-container.dark-theme .position,
+.resume-viewer-container.dark-theme .degree {
+  color: var(--resume-text-color);
 }
 
-body.dark-theme .position,
-body.dark-theme .degree {
-  color: var(--text-color);
+.resume-viewer-container.dark-theme .position-duration,
+.resume-viewer-container.dark-theme .degree-duration,
+.resume-viewer-container.dark-theme .internship-duration {
+  color: rgba(229, 231, 235, 0.8);
 }
 
-body.dark-theme .position-duration,
-body.dark-theme .degree-duration,
-body.dark-theme .internship-duration {
-  color: rgba(229, 231, 235, 0.8); /* Slightly lighter grey for durations */
+.resume-viewer-container.dark-theme .experience-details li,
+.resume-viewer-container.dark-theme .education-details li,
+.resume-viewer-container.dark-theme .project-details li,
+.resume-viewer-container.dark-theme .internship-details li {
+  color: var(--resume-text-color);
 }
 
-body.dark-theme .experience-details li,
-body.dark-theme .education-details li,
-body.dark-theme .project-details li,
-body.dark-theme .internship-details li {
-  color: var(--text-color);
-}
-
-body.dark-theme .summary {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-color); /* Subtle border for separation */
+.resume-viewer-container.dark-theme .summary {
+  background-color: var(--resume-primary-color);
+  color: var(--resume-text-color);
+  border: 1px solid var(--resume-border-color);
 }

@@ -12,7 +12,7 @@
   /* Main Variables */
   --primary-bg: var(--jet-black-navy); /* Jet Black Navy */
   --secondary-bg: var(--deep-slate); /* Deep Slate */
-  --accent-color: var(--deep-neon-blue); /* Neon Green */
+  --accent-color: var(--deep-neon-blue); /* Deep Neon Blue */
   --text-light: var(--pale-white-blue); /* Pale White-Blue */
   --text-muted: var(--subtle-gray); /* Subtle Gray */
   --font-main: "Fira Code", monospace;
@@ -123,6 +123,10 @@ body {
 
 .nav-links li:hover,
 .nav-links li:hover svg {
+  color: var(--navbar-hover-accent);
+}
+
+.nav-links li:focus {
   color: var(--navbar-hover-accent);
 }
 
