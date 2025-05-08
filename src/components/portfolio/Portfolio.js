@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "../../styles/Portfolio.css";
-import About from "./About";
+import Home from "./Home";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import Contact from "./Contact";
 import CV from "../resume/ResumeViewer";
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("home");
 
   const renderSection = () => {
     switch (activeSection) {
-      case "about":
-        return <About />;
+      case "home":
+        return <Home />;
       case "projects":
         return <Projects />;
       case "resume":
@@ -22,7 +22,7 @@ const Portfolio = () => {
       case "contact":
         return <Contact />;
       default:
-        return <About />;
+        return <Home />;
     }
   };
 
@@ -33,7 +33,7 @@ const Portfolio = () => {
         <h1
           className="portfolio-title"
           onClick={() => {
-            setActiveSection("about");
+            setActiveSection("home");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           style={{ cursor: "pointer" }}
@@ -43,8 +43,8 @@ const Portfolio = () => {
 
         <ul className="nav-links">
           <li onClick={() => setActiveSection("projects")}>Projects</li>
-          <li onClick={() => setActiveSection("resume")}>Resume</li>
           <li onClick={() => setActiveSection("CV")}>CV</li>
+          <li onClick={() => setActiveSection("resume")}>Resume</li>
           <li onClick={() => setActiveSection("contact")}>Contact</li>
         </ul>
       </nav>
