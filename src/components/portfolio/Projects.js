@@ -1,6 +1,3 @@
-import a from "../../assets/a.png";
-import b from "../../assets/b.png";
-import c from "../../assets/c.png";
 import HID1 from "../../assets/HID Mobile Access one.png";
 import HID2 from "../../assets/HID Mobile Access two.png";
 import HID3 from "../../assets/HID Mobile Access three.png";
