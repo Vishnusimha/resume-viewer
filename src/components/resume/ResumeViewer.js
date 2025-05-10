@@ -24,7 +24,7 @@ function ResumeViewer() {
       <div className="resume-container">
         {/* Theme Toggle Button */}
         <button className="theme-toggle" onClick={toggleTheme}>
-          {isDarkTheme ? "☀️ Light" : "🌙 Dark"}
+          {isDarkTheme ? "☀️" : "🌙"}
         </button>
 
         <Header
