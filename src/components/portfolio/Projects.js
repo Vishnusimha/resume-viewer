@@ -50,7 +50,20 @@ const Projects = React.forwardRef((props, ref) => {
       ],
       media: [a, b, c],
       category: "IoT",
-      links: [],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/AirQualityMonitor",
+        },
+        {
+          type: "demo",
+          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003/blob/main/README.md",
+        },
+      ],
     },
     {
       name: "Feature-Rich Android Applications",
@@ -69,7 +82,16 @@ const Projects = React.forwardRef((props, ref) => {
       ],
       media: [a, b, c],
       category: "Mobile Development",
-      links: [],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/FeaturesCompose",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/FeaturesXml",
+        },
+      ],
     },
     {
       name: "StocKeeper - Android Stock Management App",
@@ -83,45 +105,71 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
       ],
-      media: [],
+      media: [a, b, c],
       category: "Mobile Development",
-      links: [],
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
+      ],
     },
     {
       name: "Full-Stack Web Applications",
       description:
         "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
       technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [],
+      media: [a, b, c],
       category: "Full-Stack Development",
-      links: [],
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
+        { type: "github", url: "https://github.com/Vishnusimha/webapp" },
+        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
+      ],
     },
     {
       name: "Weather Dashboard – React Project",
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [],
+      media: [a, b, c],
       category: "Web Development",
-      links: [],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/react-weather-dashboard",
+        },
+        {
+          type: "demo",
+          url: "https://vishnusimha.github.io/react-weather-dashboard/",
+        },
+      ],
     },
     {
       name: "Java Client-Server Application",
       description:
         "Created a multi-robot control application with real-time coordination via a Java Swing GUI, demonstrating concurrent communication and GUI design.",
       technologies: ["Java", "Swing", "Client-Server Architecture"],
-      media: [],
+      media: [a, b, c],
       category: "Software Systems",
-      links: [],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/JavaClientServerApplication",
+        },
+      ],
     },
     {
       name: "Human Activity Recognition - Data Analysis and ML",
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
       technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [],
+      media: [a, b, c],
       category: "Data Science / Machine Learning",
-      links: [],
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
+        {
+          type: "demo",
+          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/README.md",
+        },
+      ],
     },
   ];
 
