@@ -1,6 +1,12 @@
 import a from "../../assets/a.png";
 import b from "../../assets/b.png";
 import c from "../../assets/c.png";
+import HID1 from "../../assets/HID Mobile Access one.png";
+import HID2 from "../../assets/HID Mobile Access two.png";
+import HID3 from "../../assets/HID Mobile Access three.png";
+import HID4 from "../../assets/HID Mobile Access four.png";
+import HID5 from "../../assets/HID Mobile Access five.png";
+
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -29,10 +35,9 @@ const Projects = React.forwardRef((props, ref) => {
         "Material Design",
         "Navigation",
       ],
-      media: [a, b, c],
+      media: [HID1, HID2, HID3, HID4, HID5],
       category: "Mobile Development",
       links: [
-        { type: "github", url: "https://github.com/" },
         { type: "demo", url: "https://www.youtube.com/watch?v=Yfy0Y6YIJ7c" },
       ],
     },
