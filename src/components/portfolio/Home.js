@@ -139,11 +139,11 @@ const Home = React.forwardRef((props, ref) => {
                 <p>Projects Completed</p>
               </div>
               <div className="stat-card">
-                <h3>10M+</h3>
+                <h3>1M+</h3>
                 <p>Users Impacted</p>
               </div>
               <div className="stat-card">
-                <h3>4</h3>
+                <h3>6+</h3>
                 <p>Certifications</p>
               </div>
             </div>
