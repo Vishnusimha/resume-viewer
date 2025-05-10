@@ -53,7 +53,7 @@ const Projects = React.forwardRef((props, ref) => {
         "Cloud Storage",
         "Sensor Data Analysis",
       ],
-      media: [a, b, c],
+      media: [],
       category: "IoT",
       links: [
         {
@@ -85,7 +85,7 @@ const Projects = React.forwardRef((props, ref) => {
         "Coroutines",
         "OkHttp",
       ],
-      media: [a, b, c],
+      media: [],
       category: "Mobile Development",
       links: [
         {
@@ -110,7 +110,7 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
       ],
-      media: [a, b, c],
+      media: [],
       category: "Mobile Development",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
@@ -121,7 +121,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
       technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [a, b, c],
+      media: [],
       category: "Full-Stack Development",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
@@ -134,7 +134,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [a, b, c],
+      media: [],
       category: "Web Development",
       links: [
         {
@@ -152,7 +152,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Created a multi-robot control application with real-time coordination via a Java Swing GUI, demonstrating concurrent communication and GUI design.",
       technologies: ["Java", "Swing", "Client-Server Architecture"],
-      media: [a, b, c],
+      media: [],
       category: "Software Systems",
       links: [
         {
@@ -166,7 +166,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
       technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [a, b, c],
+      media: [],
       category: "Data Science / Machine Learning",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
