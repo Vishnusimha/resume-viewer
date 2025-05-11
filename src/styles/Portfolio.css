@@ -913,8 +913,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.divider {
-  width: 80px;
+.about-divider {
+  width: 160px;
   height: 4px;
   background-color: var(--accent-color);
   margin: 0 auto;
