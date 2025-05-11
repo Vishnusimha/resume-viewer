@@ -17,7 +17,13 @@ import AQM11 from "../../assets/work/AQM/ProjectBoard2.png";
 import AQM12 from "../../assets/work/AQM/AQMMobileApp1.jpg";
 import AQM13 from "../../assets/work/AQM/AQMMobileApp2.jpg";
 import AQM14 from "../../assets/work/AQM/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf";
-
+import AndroidFeat1 from "../../assets/work/AndroidFeatures/Project Structure1.png";
+import AndroidFeat2 from "../../assets/work/AndroidFeatures/Project Structure2.png";
+import AndroidFeat3 from "../../assets/work/AndroidFeatures/XMLBranchesFeatures.png";
+import AndroidFeat4 from "../../assets/work/AndroidFeatures/jetpackComposeAppbranches.png";
+import AndroidFeat5 from "../../assets/work/AndroidFeatures/xmlscreen1.png";
+import AndroidFeat6 from "../../assets/work/AndroidFeatures/Xmlscreen2.png";
+import OpenWeatherApp from "../../assets/work/WeatherDashboard.png";
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -78,7 +84,6 @@ const Projects = React.forwardRef((props, ref) => {
         AQM11,
         AQM12,
         AQM13,
-        AQM14,
       ],
       category: "IoT",
       links: [
@@ -110,8 +115,18 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
         "OkHttp",
+        "DataStore",
+        "Material Design",
+        "SonarQube Integration",
       ],
-      media: [],
+      media: [
+        AndroidFeat1,
+        AndroidFeat2,
+        AndroidFeat3,
+        AndroidFeat4,
+        AndroidFeat5,
+        AndroidFeat6,
+      ],
       category: "Mobile Development",
       links: [
         {
@@ -160,7 +175,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [],
+      media: [OpenWeatherApp],
       category: "Web Development",
       links: [
         {
