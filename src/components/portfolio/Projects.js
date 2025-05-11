@@ -3,6 +3,20 @@ import HID2 from "../../assets/HID Mobile Access two.png";
 import HID3 from "../../assets/HID Mobile Access three.png";
 import HID4 from "../../assets/HID Mobile Access four.png";
 import HID5 from "../../assets/HID Mobile Access five.png";
+import AQM1 from "../../assets/work/AQM/AdafruitAndRaspberryPi4.jpg";
+import AQM2 from "../../assets/work/AQM/AQMhardware.jpg";
+import AQM3 from "../../assets/work/AQM/AQMhardware2.jpg";
+import AQM4 from "../../assets/work/AQM/Shell logs 2023-07-21 at 12.12.18 p.m..png";
+import AQM5 from "../../assets/work/AQM/While collecting sensor data with window opened.png";
+import AQM6 from "../../assets/work/AQM/AirQualityEmailAlert.png";
+import AQM7 from "../../assets/work/AQM/temperature_humidity_data_2023-08-05T21_41_29+0100.png";
+import AQM8 from "../../assets/work/AQM/24_hours_data_2023-08-05T21_41_29+0100.png";
+import AQM9 from "../../assets/work/AQM/co2_data_2023-08-05T21_41_29+0100.png";
+import AQM10 from "../../assets/work/AQM/ProjectBoard1.png";
+import AQM11 from "../../assets/work/AQM/ProjectBoard2.png";
+import AQM12 from "../../assets/work/AQM/AQMMobileApp1.jpg";
+import AQM13 from "../../assets/work/AQM/AQMMobileApp2.jpg";
+import AQM14 from "../../assets/work/AQM/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf";
 
 import React, { useState } from "react";
 import {
@@ -50,7 +64,22 @@ const Projects = React.forwardRef((props, ref) => {
         "Cloud Storage",
         "Sensor Data Analysis",
       ],
-      media: [],
+      media: [
+        AQM1,
+        AQM2,
+        AQM3,
+        AQM4,
+        AQM5,
+        AQM6,
+        AQM7,
+        AQM8,
+        AQM9,
+        AQM10,
+        AQM11,
+        AQM12,
+        AQM13,
+        AQM14,
+      ],
       category: "IoT",
       links: [
         {
@@ -58,12 +87,12 @@ const Projects = React.forwardRef((props, ref) => {
           url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003",
         },
         {
-          type: "github",
-          url: "https://github.com/Vishnusimha/AirQualityMonitor",
-        },
-        {
           type: "demo",
           url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003/blob/main/README.md",
+        },
+        {
+          type: "pdf",
+          url: AQM14,
         },
       ],
     },
@@ -300,11 +329,15 @@ const Projects = React.forwardRef((props, ref) => {
                         <>
                           <FiGithub /> View Code
                         </>
-                      ) : (
+                      ) : link.type === "demo" ? (
                         <>
                           <FiExternalLink /> Live Demo
                         </>
-                      )}
+                      ) : link.type === "pdf" ? (
+                        <>
+                          <FiExternalLink /> View Document
+                        </>
+                      ) : null}
                     </a>
                   ))}
                 </div>
