@@ -144,6 +144,7 @@ body {
   width: calc(100% - 40px);
   max-width: 1200px;
 }
+
 /* ============================================= */
 /* PROJECTS SECTION - STRUCTURED FOR OPTIMIZATION */
 /* ============================================= */
@@ -516,7 +517,9 @@ body {
   }
 }
 
-/* Resume */
+/* ============================================= */
+/* RESUME SECTION - STRUCTURED FOR OPTIMIZATION */
+/* ============================================= */
 .section.resume-section {
   max-width: 100%;
   margin: 0;
@@ -573,40 +576,48 @@ body {
   font-size: 1rem;
 }
 
-/* Contact */
+/* ================================= */
+/* CONTACT SECTION - STRUCTURED */
+/* ================================= */
+
 .contact-section {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 20px;
-  color: var(--text-light);
-  background-color: var(--primary-bg);
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
+  background-color: var(--primary-bg);
+  color: var(--text-light);
 }
 
 .contact-title {
   font-size: 2rem;
   color: var(--accent-color);
   text-align: center;
-  margin: 20px 0;
+  margin: 0 0 1rem;
 }
 
 .contact-info {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-key {
+  color: var(--text-muted);
 }
 
 .contact-value {
-  color: var(--links-accent); /* Color for values (e.g., neon green) */
+  color: var(--links-accent);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .contact-value:hover {
-  color: var(--links-hover-accent); /* Hover effect (spring green) */
-  text-decoration: underline; /* Optional: to underline on hover */
+  color: var(--links-hover-accent);
+  text-decoration: underline;
 }
 
 .contact-form {
@@ -615,53 +626,89 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 600px;
-  padding: 0 10px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.8rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: #fff;
-  color: #000;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid var(--text-muted);
+  border-radius: 6px;
+  background: var(--secondary-bg);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--links-hover-accent);
+  border-color: var(--accent-color);
   outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .contact-form button {
   padding: 0.8rem;
-  font-size: 1rem;
-  background-color: var(--links-accent);
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--jet-black-navy);
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+  transition: all 0.2s ease;
 }
 
 .contact-form button:hover {
   background-color: var(--button-hover-accent);
+  transform: translateY(-1px);
 }
 
-.success-message {
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-success-message {
   text-align: center;
-  color: green;
-  margin-top: 1rem;
-  font-size: 1rem;
+  color: var(--spring-green);
+  margin: 1rem 0;
+  font-size: 1.1rem;
 }
 
 .validation-error {
-  color: red;
-  font-size: 0.875rem;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
+/* Contact Page Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-info {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.7rem;
+  }
 }
 
 /* Media Queries */
@@ -740,7 +787,9 @@ body {
   }
 }
 
-/* Home Container */
+/* ============================================= */
+/* HOME SECTION - STRUCTURED FOR OPTIMIZATION */
+/* ============================================= */
 .home-container {
   height: 100%;
   width: 100%;
@@ -884,7 +933,9 @@ body {
   transform: translateY(-3px);
 }
 
-/* About Section */
+/* ============================================= */
+/* HOME/About SECTION - STRUCTURED FOR OPTIMIZATION */
+/* ============================================= */
 .home-introduction-section {
   width: 100%;
   display: flex;

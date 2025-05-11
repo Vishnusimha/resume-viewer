@@ -5,7 +5,7 @@ const Contact = React.forwardRef((props, ref) => {
   const [state, handleSubmit] = useForm("mbloylgq");
 
   return (
-    <section ref={ref} className="section contact-section">
+    <section ref={ref} className="contact-section">
       <h2 className="contact-title">Contact</h2>
 
       <div className="contact-info">
@@ -24,7 +24,9 @@ const Contact = React.forwardRef((props, ref) => {
       </div>
 
       {state.succeeded ? (
-        <p className="success-message">Thanks! I'll get back to you soon.</p>
+        <p className="contact-success-message">
+          Thanks! I'll get back to you soon.
+        </p>
       ) : (
         <form className="contact-form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Your Name" required />
