@@ -1,21 +1,37 @@
 {
   "files": {
-    "main.css": "/vishnuportfolio/static/css/main.f4a5b73c.css",
-    "main.js": "/vishnuportfolio/static/js/main.6e7cf5f3.js",
+    "main.css": "/vishnuportfolio/static/css/main.3e0093c8.css",
+    "main.js": "/vishnuportfolio/static/js/main.ad789ad6.js",
     "static/js/453.c812f1fc.chunk.js": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js",
+    "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
+    "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
+    "static/media/While collecting sensor data with window opened.png": "/vishnuportfolio/static/media/While collecting sensor data with window opened.af7a3625e949ac9e0a0e.png",
+    "static/media/HID Mobile Access five.png": "/vishnuportfolio/static/media/HID Mobile Access five.7320ba166dbb8f1c1f7a.png",
+    "static/media/HID Mobile Access two.png": "/vishnuportfolio/static/media/HID Mobile Access two.a5e7835fb6e6802ef6d5.png",
+    "static/media/HID Mobile Access one.png": "/vishnuportfolio/static/media/HID Mobile Access one.b11096a560f4e2fd776e.png",
+    "static/media/HID Mobile Access three.png": "/vishnuportfolio/static/media/HID Mobile Access three.5344316b341c1a0ef30b.png",
+    "static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf": "/vishnuportfolio/static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.891ba9aedcec9c3c80c1.pdf",
+    "static/media/HID Mobile Access four.png": "/vishnuportfolio/static/media/HID Mobile Access four.7fb7c8cea93e73dfac1a.png",
+    "static/media/AQMMobileApp1.jpg": "/vishnuportfolio/static/media/AQMMobileApp1.2c13d6c8beb25e4c31eb.jpg",
+    "static/media/AQMMobileApp2.jpg": "/vishnuportfolio/static/media/AQMMobileApp2.751d5ddce7b06b651a63.jpg",
+    "static/media/ProjectBoard1.png": "/vishnuportfolio/static/media/ProjectBoard1.6fa04debe43a62322307.png",
+    "static/media/AdafruitAndRaspberryPi4.jpg": "/vishnuportfolio/static/media/AdafruitAndRaspberryPi4.ea26d0d9469e1546c3ee.jpg",
+    "static/media/ProjectBoard2.png": "/vishnuportfolio/static/media/ProjectBoard2.c40f64a1addbc67050d5.png",
     "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.1923440dbd7fa0bf06e8.pdf",
-    "static/media/a.png": "/vishnuportfolio/static/media/a.7c8870197b91a1e359e4.png",
+    "static/media/AirQualityEmailAlert.png": "/vishnuportfolio/static/media/AirQualityEmailAlert.2ced654ad2f2fa0aa288.png",
+    "static/media/Shell logs 2023-07-21 at 12.12.18 p.m..png": "/vishnuportfolio/static/media/Shell logs 2023-07-21 at 12.12.18 p.m..bc8a7dd95be602a467ce.png",
     "static/media/aws-certified-solutions-architect-associate.png": "/vishnuportfolio/static/media/aws-certified-solutions-architect-associate.92bcc2bad200b714fee4.png",
-    "static/media/b.png": "/vishnuportfolio/static/media/b.92bcc2bad200b714fee4.png",
+    "static/media/24_hours_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/24_hours_data_2023-08-05T21_41_29+0100.43bce52f58947a90cdcd.png",
+    "static/media/temperature_humidity_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/temperature_humidity_data_2023-08-05T21_41_29+0100.144a37cced7443a2e233.png",
     "static/media/aws-certified-cloud-practitioner.png": "/vishnuportfolio/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
-    "static/media/c.png": "/vishnuportfolio/static/media/c.1929bbb619275d95b0e1.png",
+    "static/media/co2_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/co2_data_2023-08-05T21_41_29+0100.59dac02611db6a765c6c.png",
     "index.html": "/vishnuportfolio/index.html",
-    "main.f4a5b73c.css.map": "/vishnuportfolio/static/css/main.f4a5b73c.css.map",
-    "main.6e7cf5f3.js.map": "/vishnuportfolio/static/js/main.6e7cf5f3.js.map",
+    "main.3e0093c8.css.map": "/vishnuportfolio/static/css/main.3e0093c8.css.map",
+    "main.ad789ad6.js.map": "/vishnuportfolio/static/js/main.ad789ad6.js.map",
     "453.c812f1fc.chunk.js.map": "/vishnuportfolio/static/js/453.c812f1fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4a5b73c.css",
-    "static/js/main.6e7cf5f3.js"
+    "static/css/main.3e0093c8.css",
+    "static/js/main.ad789ad6.js"
   ]
 }
