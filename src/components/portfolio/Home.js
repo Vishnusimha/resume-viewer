@@ -93,7 +93,7 @@ const Home = React.forwardRef((props, ref) => {
         <div className="section-container">
           <div className="section-header">
             <h2>About Me</h2>
-            <div className="divider"></div>
+            <div className="about-divider"></div>
           </div>
 
           <div className="about-content">
