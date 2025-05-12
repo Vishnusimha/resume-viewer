@@ -55,7 +55,7 @@ const Home = React.forwardRef((props, ref) => {
                 loop
               />
             </h2>
-            <p className="hero-description">
+            <p className="home-description">
               I craft exceptional digital experiences through clean, efficient
               code and scalable architectures. Currently, I specialize in
               building reliable mobile applications, backed by robust backend
@@ -89,15 +89,15 @@ const Home = React.forwardRef((props, ref) => {
       </section>
 
       {/* About Section */}
-      <section className="home-introduction-section">
-        <div className="section-container">
-          <div className="section-header">
+      <section className="home-about-section">
+        <div className="home-about-container">
+          <div className="home-about-header">
             <h2>About Me</h2>
-            <div className="about-divider"></div>
+            <div className="home-about-divider"></div>
           </div>
 
-          <div className="about-content">
-            <div className="about-text">
+          <div className="home-about-content">
+            <div className="home-about-text">
               <h3>Who am I?</h3>
               <p>
                 I'm a <strong>passionate software engineer</strong> with
@@ -119,7 +119,7 @@ const Home = React.forwardRef((props, ref) => {
                 🎬 watching movies, or 🛠️ experimenting with IoT projects🔌.
               </p>
 
-              <div className="tech-stack">
+              <div className="about-tech-stack">
                 <h4>Technologies I work with:</h4>
                 <div className="tech-tags">
                   {techStack.map((tech, index) => (

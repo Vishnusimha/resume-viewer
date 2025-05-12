@@ -151,7 +151,7 @@ body {
 }
 
 /* --------------------------- */
-/* Hero Section */
+/* Home Section */
 /* --------------------------- */
 .home-welcome-section {
   width: 100%;
@@ -209,7 +209,7 @@ body {
   font-weight: 600;
 }
 
-.hero-description {
+.home-description {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text-muted);
@@ -290,7 +290,7 @@ body {
 /* --------------------------- */
 /* About Section */
 /* --------------------------- */
-.home-introduction-section {
+.home-about-section {
   width: 100%;
   display: flex;
   align-items: center;
@@ -300,25 +300,25 @@ body {
   box-sizing: border-box;
 }
 
-.section-container {
+.home-about-container {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-.section-header {
+.home-about-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.section-header h2 {
+.home-about-header h2 {
   font-size: 2.5rem;
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
 
-.about-divider {
+.home-about-divider {
   width: 160px;
   height: 4px;
   background-color: var(--accent-color);
@@ -326,37 +326,37 @@ body {
   border-radius: 2px;
 }
 
-.about-content {
+.home-about-content {
   display: flex;
   gap: 4rem;
   align-items: flex-start;
   box-sizing: border-box;
 }
 
-.about-text {
+.home-about-text {
   flex: 1;
   box-sizing: border-box;
   min-width: 0;
 }
 
-.about-text h3 {
+.home-about-text h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: var(--text-light);
 }
 
-.about-text p {
+.home-about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
-.tech-stack {
+.about-tech-stack {
   margin-top: 2rem;
 }
 
-.tech-stack h4 {
+.about-tech-stack h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: var(--text-light);
@@ -949,7 +949,7 @@ body {
     padding-top: 56.25%;
   }
 
-  .about-content {
+  .home-about-content {
     flex-direction: column;
   }
 
@@ -976,7 +976,7 @@ body {
     text-align: center;
   }
 
-  .hero-description {
+  .home-description {
     margin: 0 auto;
     text-align: center;
   }
@@ -1031,19 +1031,19 @@ body {
     min-height: 50px;
   }
 
-  .hero-description {
+  .home-description {
     font-size: 1rem;
   }
 
-  .section-header h2 {
+  .home-about-header h2 {
     font-size: 2rem;
   }
 
-  .about-text h3 {
+  .home-about-text h3 {
     font-size: 1.5rem;
   }
 
-  .about-text p {
+  .home-about-text p {
     font-size: 1rem;
   }
 
@@ -1092,7 +1092,7 @@ body {
     font-size: 1.3rem;
   }
 
-  .section-header h2 {
+  .home-about-header h2 {
     font-size: 1.8rem;
   }
 
