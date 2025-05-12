@@ -778,7 +778,7 @@ body {
 
 .contact-section {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -792,6 +792,14 @@ body {
   color: var(--accent-color);
   text-align: center;
   margin: 0 0 1rem;
+}
+
+.contact-divider {
+  width: 120px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
 }
 
 .contact-info {
