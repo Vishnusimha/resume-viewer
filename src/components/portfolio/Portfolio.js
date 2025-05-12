@@ -4,6 +4,7 @@ import Home from "./Home";
 import Projects from "./Projects";
 import Resume from "./Resume";
 import Contact from "./Contact";
+import BlogPost from "./BlogPost";
 import CV from "../resume/ResumeViewer";
 import { AiOutlineHome } from "react-icons/ai";
 import { BsCodeSlash, BsPersonLinesFill } from "react-icons/bs";
@@ -23,6 +24,8 @@ const Portfolio = () => {
         return <Resume />;
       case "CV":
         return <CV />;
+      case "Blogs":
+        return <BlogPost fileName="post1.md" />;
       case "contact":
         return <Contact />;
       default:
@@ -54,6 +57,9 @@ const Portfolio = () => {
           </li>
           <li onClick={() => setActiveSection("resume")}>
             <BsPersonLinesFill style={{ marginRight: "6px" }} /> Resume
+          </li>
+          <li onClick={() => setActiveSection("Blogs")}>
+            <CgFileDocument style={{ marginRight: "6px" }} /> Blogs
           </li>
           <li onClick={() => setActiveSection("contact")}>
             <MdOutlineContactMail style={{ marginRight: "6px" }} /> Contact
