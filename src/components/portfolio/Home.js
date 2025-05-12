@@ -77,7 +77,7 @@ const Home = React.forwardRef((props, ref) => {
             </div>
           </div>
 
-          <div className="welcome-image">
+          <div className="home-welcome-image">
             <Lottie
               animationData={codingAnimation}
               loop={true}

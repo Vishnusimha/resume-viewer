@@ -155,24 +155,22 @@ body {
 /* --------------------------- */
 .home-welcome-section {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0 5%;
-  background-color: var(--primary-bg);
-  position: relative;
+  justify-content: center;
+  padding: 5% 8%;
   box-sizing: border-box;
 }
 
 .home-welcome-content {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
-  gap: 40px;
-  box-sizing: border-box;
+  max-width: 1600px;
+  gap: 30px;
 }
 
 .home-welcome-text {
@@ -214,7 +212,7 @@ body {
   line-height: 1.7;
   color: var(--text-muted);
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .cta-buttons {
@@ -259,11 +257,13 @@ body {
   color: var(--accent-color);
 }
 
-.welcome-image {
-  width: 40%;
+.home-welcome-image {
+  margin-top: -50px;
+  /* transform: translateY(-50px);  */
+  max-width: 100%;
   max-width: 500px;
   height: auto;
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
   animation: fadeInRight 1s ease-out;
@@ -292,11 +292,11 @@ body {
 /* --------------------------- */
 .home-about-section {
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding: 2%;
-  background-color: var(--primary-bg);
-  position: relative;
+  align-items: flex-start; /* Important: do not vertically center */
+  justify-content: center;
+  padding: 5% 8%;
   box-sizing: border-box;
 }
 
@@ -981,9 +981,8 @@ body {
     text-align: center;
   }
 
-  .welcome-image {
-    width: 70%;
-    max-width: 400px;
+  .home-welcome-image {
+    max-width: 100%;
   }
 
   .cta-buttons {
@@ -1056,8 +1055,8 @@ body {
     align-items: center;
   }
 
-  .welcome-image {
-    width: 85%;
+  .home-welcome-image {
+    max-width: 100%;
   }
 }
 
