@@ -23,7 +23,8 @@ import AndroidFeat3 from "../../assets/work/AndroidFeatures/XMLBranchesFeatures.
 import AndroidFeat4 from "../../assets/work/AndroidFeatures/jetpackComposeAppbranches.png";
 import AndroidFeat5 from "../../assets/work/AndroidFeatures/xmlscreen1.png";
 import AndroidFeat6 from "../../assets/work/AndroidFeatures/Xmlscreen2.png";
-import OpenWeatherApp from "../../assets/work/WeatherDashboard.png";
+import OpenWeatherApp1 from "../../assets/work/WeatherDashboard/WeatherDashboard1.png";
+import OpenWeatherApp2 from "../../assets/work/WeatherDashboard/WeatherDashboard2.png";
 import SK1 from "../../assets/work/StockKeeper/WelcomeScreen1.png";
 import SK2 from "../../assets/work/StockKeeper/WelcomeScreenError.png";
 import SK3 from "../../assets/work/StockKeeper/StockScreen.png";
@@ -49,6 +50,17 @@ import CN6 from "../../assets/work/Cloudnine/PlanningSpecialDayScreen.png";
 import CN7 from "../../assets/work/Cloudnine/Prices.png";
 import CN8 from "../../assets/work/Cloudnine/SafteyScreen.png";
 import CN9 from "../../assets/work/Cloudnine/Enquiry.png";
+import Res1 from "../../assets/work/Restaurant/Home.png";
+import Res2 from "../../assets/work/Restaurant/About.png";
+import Res3 from "../../assets/work/Restaurant/Gallery.png";
+import Res4 from "../../assets/work/Restaurant/SignUp.png";
+import Res5 from "../../assets/work/Restaurant/login.png";
+import Res6 from "../../assets/work/Restaurant/Menu.png";
+import Res7 from "../../assets/work/Restaurant/Specials.png";
+import Res8 from "../../assets/work/Restaurant/Team.png";
+import Res9 from "../../assets/work/Restaurant/CustomerReview.png";
+import Res10 from "../../assets/work/Restaurant/Bottom Nav.png";
+import Res11 from "../../assets/work/Restaurant/Cart.png";
 
 import React, { useState } from "react";
 import {
@@ -205,10 +217,21 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
       technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [],
+      media: [
+        Res1,
+        Res2,
+        Res3,
+        Res4,
+        Res5,
+        Res6,
+        Res7,
+        Res8,
+        Res9,
+        Res10,
+        Res11,
+      ],
       category: "Full-Stack Development",
       links: [
-        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
         { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
       ],
     },
@@ -230,7 +253,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [OpenWeatherApp],
+      media: [OpenWeatherApp1, OpenWeatherApp2],
       category: "Web Development",
       links: [
         {
