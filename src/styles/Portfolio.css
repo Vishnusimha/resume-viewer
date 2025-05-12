@@ -1016,6 +1016,7 @@ body {
 
   .home-welcome-image {
     max-width: 100%;
+    margin-top: 22rem;
   }
 
   .cta-buttons {
@@ -1112,6 +1113,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  .home-welcome-image {
+    margin-top: 100px;
+    max-width: 100%;
+  }
+
   .navbar {
     padding: 10px 12px;
   }
@@ -1212,6 +1218,10 @@ body {
 }
 
 @media (max-width: 375px) {
+  .home-welcome-image {
+    margin-top: 60px;
+    max-width: 100%;
+  }
   .home-name {
     font-size: 2rem;
   }
