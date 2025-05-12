@@ -1,8 +1,8 @@
-import HID1 from "../../assets/HID Mobile Access one.png";
-import HID2 from "../../assets/HID Mobile Access two.png";
-import HID3 from "../../assets/HID Mobile Access three.png";
-import HID4 from "../../assets/HID Mobile Access four.png";
-import HID5 from "../../assets/HID Mobile Access five.png";
+import HID1 from "../../assets/work/HID/HID Mobile Access one.png";
+import HID2 from "../../assets/work/HID/HID Mobile Access two.png";
+import HID3 from "../../assets/work/HID/HID Mobile Access three.png";
+import HID4 from "../../assets/work/HID/HID Mobile Access four.png";
+import HID5 from "../../assets/work/HID/HID Mobile Access five.png";
 import AQM1 from "../../assets/work/AQM/AdafruitAndRaspberryPi4.jpg";
 import AQM2 from "../../assets/work/AQM/AQMhardware.jpg";
 import AQM3 from "../../assets/work/AQM/AQMhardware2.jpg";
@@ -17,7 +17,67 @@ import AQM11 from "../../assets/work/AQM/ProjectBoard2.png";
 import AQM12 from "../../assets/work/AQM/AQMMobileApp1.jpg";
 import AQM13 from "../../assets/work/AQM/AQMMobileApp2.jpg";
 import AQM14 from "../../assets/work/AQM/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf";
-
+import AndroidFeat1 from "../../assets/work/AndroidFeatures/Project Structure1.png";
+import AndroidFeat2 from "../../assets/work/AndroidFeatures/Project Structure2.png";
+import AndroidFeat3 from "../../assets/work/AndroidFeatures/XMLBranchesFeatures.png";
+import AndroidFeat4 from "../../assets/work/AndroidFeatures/jetpackComposeAppbranches.png";
+import AndroidFeat5 from "../../assets/work/AndroidFeatures/xmlscreen1.png";
+import AndroidFeat6 from "../../assets/work/AndroidFeatures/Xmlscreen2.png";
+import OpenWeatherApp1 from "../../assets/work/WeatherDashboard/WeatherDashboard1.png";
+import OpenWeatherApp2 from "../../assets/work/WeatherDashboard/WeatherDashboard2.png";
+import SK1 from "../../assets/work/StockKeeper/WelcomeScreen1.png";
+import SK2 from "../../assets/work/StockKeeper/WelcomeScreenError.png";
+import SK3 from "../../assets/work/StockKeeper/StockScreen.png";
+import SK4 from "../../assets/work/StockKeeper/AddNewStock.png";
+import SK5 from "../../assets/work/StockKeeper/allstocks.png";
+import SK6 from "../../assets/work/StockKeeper/DynamicDarkMaterialTheme.png";
+import SK7 from "../../assets/work/StockKeeper/searchStock.png";
+import SK8 from "../../assets/work/StockKeeper/stockbyexpirydate.png";
+import SK9 from "../../assets/work/StockKeeper/stockbyquantity.png";
+import SK10 from "../../assets/work/StockKeeper/PlanScreen.png";
+import SK11 from "../../assets/work/StockKeeper/PlanMakerAll.png";
+import SK12 from "../../assets/work/StockKeeper/PlanMakerByCategory.png";
+import SK13 from "../../assets/work/StockKeeper/PlanMakerByShop.png";
+import SK14 from "../../assets/work/StockKeeper/PlanScreen2.png";
+import SK15 from "../../assets/work/StockKeeper/ProfileScreen.png";
+import SK16 from "../../assets/work/StockKeeper/AlertsScreen.png";
+import CN1 from "../../assets/work/Cloudnine/Home.png";
+import CN2 from "../../assets/work/Cloudnine/Home2.png";
+import CN3 from "../../assets/work/Cloudnine/Gallery.png";
+import CN4 from "../../assets/work/Cloudnine/ServicesCorporate.png";
+import CN5 from "../../assets/work/Cloudnine/CorporatePlanner.png";
+import CN6 from "../../assets/work/Cloudnine/PlanningSpecialDayScreen.png";
+import CN7 from "../../assets/work/Cloudnine/Prices.png";
+import CN8 from "../../assets/work/Cloudnine/SafteyScreen.png";
+import CN9 from "../../assets/work/Cloudnine/Enquiry.png";
+import Res1 from "../../assets/work/Restaurant/Home.png";
+import Res2 from "../../assets/work/Restaurant/About.png";
+import Res3 from "../../assets/work/Restaurant/Gallery.png";
+import Res4 from "../../assets/work/Restaurant/SignUp.png";
+import Res5 from "../../assets/work/Restaurant/login.png";
+import Res6 from "../../assets/work/Restaurant/Menu.png";
+import Res7 from "../../assets/work/Restaurant/Specials.png";
+import Res8 from "../../assets/work/Restaurant/Team.png";
+import Res9 from "../../assets/work/Restaurant/CustomerReview.png";
+import Res10 from "../../assets/work/Restaurant/Bottom Nav.png";
+import Res11 from "../../assets/work/Restaurant/Cart.png";
+import CSA1 from "../../assets/work/ClientServer/Server with 3 Clients Connected.png";
+import CSA2 from "../../assets/work/ClientServer/Server with 2 Clients Connected.png";
+import CSA3 from "../../assets/work/ClientServer/Client Disconnected with Server.png";
+import CSA4 from "../../assets/work/ClientServer/Client Connected with Server.png";
+import CSA5 from "../../assets/work/ClientServer/Server with 3 Clients Connected with Client windows.png";
+import CSA6 from "../../assets/work/ClientServer/Server with 2 Clients Connected and Client windows.png";
+import CSA7 from "../../assets/work/ClientServer/Server with 2 Clients Collision.png";
+import CSA8 from "../../assets/work/ClientServer/Server with 3 Clients Connected with prev coordinates.png";
+import CSA9 from "../../assets/work/ClientServer/Server with 3 Clients Connected and 2 Colliding.png";
+import DAML1 from "../../assets/work/DAML/DAML1.png";
+import DAML2 from "../../assets/work/DAML/DAML2.png";
+import DAML3 from "../../assets/work/DAML/DAML3.png";
+import DAML4 from "../../assets/work/DAML/DAML4.png";
+import DAML5 from "../../assets/work/DAML/DAML5.png";
+import DAML6 from "../../assets/work/DAML/DAML6.png";
+import DAML7 from "../../assets/work/DAML/DAML7.png";
+import DAML8 from "../../assets/work/DAML/DAML8.png";
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -78,7 +138,6 @@ const Projects = React.forwardRef((props, ref) => {
         AQM11,
         AQM12,
         AQM13,
-        AQM14,
       ],
       category: "IoT",
       links: [
@@ -110,8 +169,18 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
         "OkHttp",
+        "DataStore",
+        "Material Design",
+        "SonarQube Integration",
       ],
-      media: [],
+      media: [
+        AndroidFeat1,
+        AndroidFeat2,
+        AndroidFeat3,
+        AndroidFeat4,
+        AndroidFeat5,
+        AndroidFeat6,
+      ],
       category: "Mobile Development",
       links: [
         {
@@ -127,7 +196,7 @@ const Projects = React.forwardRef((props, ref) => {
     {
       name: "StocKeeper - Android Stock Management App",
       description:
-        "Developed a feature-rich inventory management application for tracking stock, sending customizable alerts, and optimizing purchases.",
+        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
       technologies: [
         "Kotlin",
         "Jetpack Compose",
@@ -136,23 +205,63 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
       ],
-      media: [],
+      media: [
+        SK1,
+        SK2,
+        SK3,
+        SK4,
+        SK5,
+        SK6,
+        SK7,
+        SK8,
+        SK9,
+        SK10,
+        SK11,
+        SK12,
+        SK13,
+        SK14,
+        SK15,
+        SK16,
+      ],
       category: "Mobile Development",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
       ],
     },
     {
-      name: "Full-Stack Web Applications",
+      name: "Full-Stack Web Chat Application",
       description:
         "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
       technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [],
+      media: [
+        Res1,
+        Res2,
+        Res3,
+        Res4,
+        Res5,
+        Res6,
+        Res7,
+        Res8,
+        Res9,
+        Res10,
+        Res11,
+      ],
+      category: "Full-Stack Development",
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
+      ],
+    },
+
+    {
+      name: "Balloon Decor Business Website",
+      description:
+        "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
+      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
+      media: [CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9],
       category: "Full-Stack Development",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
         { type: "github", url: "https://github.com/Vishnusimha/webapp" },
-        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
       ],
     },
     {
@@ -160,7 +269,7 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [],
+      media: [OpenWeatherApp1, OpenWeatherApp2],
       category: "Web Development",
       links: [
         {
@@ -174,11 +283,22 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Java Client-Server Application",
+      name: "Java Client-Server Architecture for Multi-Agent Robot Simulation",
       description:
-        "Created a multi-robot control application with real-time coordination via a Java Swing GUI, demonstrating concurrent communication and GUI design.",
-      technologies: ["Java", "Swing", "Client-Server Architecture"],
-      media: [],
+        "Implemented a multi-threaded client-server application in Java for simulating and controlling multiple robot clients. The architecture features a Swing-based GUI on both ends, enabling real-time interaction and visualization. Key functionalities include network communication via Robot objects, concurrent handling of multiple clients, dynamic GUI updates (robot positions, collision alerts, connection status), and client-side speed control with optional automatic updates.",
+      technologies: [
+        "Client-Server Architecture",
+        "Real-time Control",
+        "Object Serialization",
+        "Multi-threading",
+        "Event Handling",
+        "Java Sockets",
+        "Java GUI",
+        "Java AWT Canvas",
+        "Java Swing",
+        "Automatic Updates",
+      ],
+      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
       category: "Software Systems",
       links: [
         {
@@ -192,13 +312,13 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
       technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [],
+      media: [DAML1, DAML2, DAML3, DAML4, DAML5, DAML6, DAML7, DAML8],
       category: "Data Science / Machine Learning",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
         {
-          type: "demo",
-          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/README.md",
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/DA_ML%20for%20git.pdf",
         },
       ],
     },
