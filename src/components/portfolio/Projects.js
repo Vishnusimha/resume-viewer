@@ -1,8 +1,8 @@
-import HID1 from "../../assets/HID Mobile Access one.png";
-import HID2 from "../../assets/HID Mobile Access two.png";
-import HID3 from "../../assets/HID Mobile Access three.png";
-import HID4 from "../../assets/HID Mobile Access four.png";
-import HID5 from "../../assets/HID Mobile Access five.png";
+import HID1 from "../../assets/work/HID/HID Mobile Access one.png";
+import HID2 from "../../assets/work/HID/HID Mobile Access two.png";
+import HID3 from "../../assets/work/HID/HID Mobile Access three.png";
+import HID4 from "../../assets/work/HID/HID Mobile Access four.png";
+import HID5 from "../../assets/work/HID/HID Mobile Access five.png";
 import AQM1 from "../../assets/work/AQM/AdafruitAndRaspberryPi4.jpg";
 import AQM2 from "../../assets/work/AQM/AQMhardware.jpg";
 import AQM3 from "../../assets/work/AQM/AQMhardware2.jpg";
@@ -168,7 +168,7 @@ const Projects = React.forwardRef((props, ref) => {
     {
       name: "StocKeeper - Android Stock Management App",
       description:
-        "Developed a feature-rich inventory management application for tracking stock, sending customizable alerts, and optimizing purchases.",
+        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
       technologies: [
         "Kotlin",
         "Jetpack Compose",
