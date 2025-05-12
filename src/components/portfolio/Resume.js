@@ -10,8 +10,12 @@ const Resume = React.forwardRef((props, ref) => {
   const handleViewResume = () => navigate("/resume-viewer");
 
   return (
-    <section ref={ref} className="section resume-section">
-      <h2 className="resume-title">Resume</h2>
+    <section ref={ref} className="resume-container">
+      <div className="resume-header">
+        <h2>Resume</h2>
+        <div className="resume-divider"></div>
+      </div>
+
       <p className="resume-download-text">
         Download my resume{" "}
         <a
@@ -22,6 +26,7 @@ const Resume = React.forwardRef((props, ref) => {
           here
         </a>
       </p>
+
       <div className="resume-embed-container">
         {loading && <div className="resume-loading">Loading resume...</div>}
         {error && (
