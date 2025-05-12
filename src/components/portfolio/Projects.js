@@ -70,6 +70,14 @@ import CSA6 from "../../assets/work/ClientServer/Server with 2 Clients Connected
 import CSA7 from "../../assets/work/ClientServer/Server with 2 Clients Collision.png";
 import CSA8 from "../../assets/work/ClientServer/Server with 3 Clients Connected with prev coordinates.png";
 import CSA9 from "../../assets/work/ClientServer/Server with 3 Clients Connected and 2 Colliding.png";
+import DAML1 from "../../assets/work/DAML/DAML1.png";
+import DAML2 from "../../assets/work/DAML/DAML2.png";
+import DAML3 from "../../assets/work/DAML/DAML3.png";
+import DAML4 from "../../assets/work/DAML/DAML4.png";
+import DAML5 from "../../assets/work/DAML/DAML5.png";
+import DAML6 from "../../assets/work/DAML/DAML6.png";
+import DAML7 from "../../assets/work/DAML/DAML7.png";
+import DAML8 from "../../assets/work/DAML/DAML8.png";
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -304,13 +312,13 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
       technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [],
+      media: [DAML1, DAML2, DAML3, DAML4, DAML5, DAML6, DAML7, DAML8],
       category: "Data Science / Machine Learning",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
         {
-          type: "demo",
-          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/README.md",
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/DA_ML%20for%20git.pdf",
         },
       ],
     },
