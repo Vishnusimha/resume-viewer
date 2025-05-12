@@ -34,15 +34,15 @@ const Home = React.forwardRef((props, ref) => {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
+      {/* Welcome Section */}
       <section ref={ref} className="home-welcome-section">
-        <div className="welcome-content">
-          <div className="welcome-text">
-            <h1 className="greeting">Hi There!</h1>
-            <h1 className="name">
+        <div className="home-welcome-content">
+          <div className="home-welcome-text">
+            <h1 className="home-greeting">Hi There!</h1>
+            <h1 className="home-name">
               I'M <span className="highlight">Vishnu Simha</span>
             </h1>
-            <h2 className="typing-text">
+            <h2 className="home-typing-text">
               <ReactTyped
                 strings={[
                   "Software Engineer",
