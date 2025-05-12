@@ -61,7 +61,15 @@ import Res8 from "../../assets/work/Restaurant/Team.png";
 import Res9 from "../../assets/work/Restaurant/CustomerReview.png";
 import Res10 from "../../assets/work/Restaurant/Bottom Nav.png";
 import Res11 from "../../assets/work/Restaurant/Cart.png";
-
+import CSA1 from "../../assets/work/ClientServer/Server with 3 Clients Connected.png";
+import CSA2 from "../../assets/work/ClientServer/Server with 2 Clients Connected.png";
+import CSA3 from "../../assets/work/ClientServer/Client Disconnected with Server.png";
+import CSA4 from "../../assets/work/ClientServer/Client Connected with Server.png";
+import CSA5 from "../../assets/work/ClientServer/Server with 3 Clients Connected with Client windows.png";
+import CSA6 from "../../assets/work/ClientServer/Server with 2 Clients Connected and Client windows.png";
+import CSA7 from "../../assets/work/ClientServer/Server with 2 Clients Collision.png";
+import CSA8 from "../../assets/work/ClientServer/Server with 3 Clients Connected with prev coordinates.png";
+import CSA9 from "../../assets/work/ClientServer/Server with 3 Clients Connected and 2 Colliding.png";
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -267,11 +275,22 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Java Client-Server Application",
+      name: "Java Client-Server Architecture for Multi-Agent Robot Simulation",
       description:
-        "Created a multi-robot control application with real-time coordination via a Java Swing GUI, demonstrating concurrent communication and GUI design.",
-      technologies: ["Java", "Swing", "Client-Server Architecture"],
-      media: [],
+        "Implemented a multi-threaded client-server application in Java for simulating and controlling multiple robot clients. The architecture features a Swing-based GUI on both ends, enabling real-time interaction and visualization. Key functionalities include network communication via Robot objects, concurrent handling of multiple clients, dynamic GUI updates (robot positions, collision alerts, connection status), and client-side speed control with optional automatic updates.",
+      technologies: [
+        "Client-Server Architecture",
+        "Real-time Control",
+        "Object Serialization",
+        "Multi-threading",
+        "Event Handling",
+        "Java Sockets",
+        "Java GUI",
+        "Java AWT Canvas",
+        "Java Swing",
+        "Automatic Updates",
+      ],
+      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
       category: "Software Systems",
       links: [
         {
