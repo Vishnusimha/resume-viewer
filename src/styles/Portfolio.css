@@ -258,7 +258,7 @@ body {
 }
 
 .home-welcome-image {
-  margin-top: -50px;
+  margin-top: -20px;
   /* transform: translateY(-50px);  */
   max-width: 100%;
   max-width: 500px;
@@ -1099,6 +1099,7 @@ body {
   }
 
   .home-welcome-image {
+    margin-top: 50px;
     max-width: 100%;
   }
 
@@ -1114,7 +1115,6 @@ body {
 
 @media (max-width: 480px) {
   .home-welcome-image {
-    margin-top: 100px;
     max-width: 100%;
   }
 
@@ -1219,7 +1219,6 @@ body {
 
 @media (max-width: 375px) {
   .home-welcome-image {
-    margin-top: 60px;
     max-width: 100%;
   }
   .home-name {
