@@ -24,6 +24,23 @@ import AndroidFeat4 from "../../assets/work/AndroidFeatures/jetpackComposeAppbra
 import AndroidFeat5 from "../../assets/work/AndroidFeatures/xmlscreen1.png";
 import AndroidFeat6 from "../../assets/work/AndroidFeatures/Xmlscreen2.png";
 import OpenWeatherApp from "../../assets/work/WeatherDashboard.png";
+import SK1 from "../../assets/work/StockKeeper/WelcomeScreen1.png";
+import SK2 from "../../assets/work/StockKeeper/WelcomeScreenError.png";
+import SK3 from "../../assets/work/StockKeeper/StockScreen.png";
+import SK4 from "../../assets/work/StockKeeper/AddNewStock.png";
+import SK5 from "../../assets/work/StockKeeper/allstocks.png";
+import SK6 from "../../assets/work/StockKeeper/DynamicDarkMaterialTheme.png";
+import SK7 from "../../assets/work/StockKeeper/searchStock.png";
+import SK8 from "../../assets/work/StockKeeper/stockbyexpirydate.png";
+import SK9 from "../../assets/work/StockKeeper/stockbyquantity.png";
+import SK10 from "../../assets/work/StockKeeper/PlanScreen.png";
+import SK11 from "../../assets/work/StockKeeper/PlanMakerAll.png";
+import SK12 from "../../assets/work/StockKeeper/PlanMakerByCategory.png";
+import SK13 from "../../assets/work/StockKeeper/PlanMakerByShop.png";
+import SK14 from "../../assets/work/StockKeeper/PlanScreen2.png";
+import SK15 from "../../assets/work/StockKeeper/ProfileScreen.png";
+import SK16 from "../../assets/work/StockKeeper/AlertsScreen.png";
+
 import React, { useState } from "react";
 import {
   FiGithub,
@@ -151,7 +168,24 @@ const Projects = React.forwardRef((props, ref) => {
         "Hilt",
         "Coroutines",
       ],
-      media: [],
+      media: [
+        SK1,
+        SK2,
+        SK3,
+        SK4,
+        SK5,
+        SK6,
+        SK7,
+        SK8,
+        SK9,
+        SK10,
+        SK11,
+        SK12,
+        SK13,
+        SK14,
+        SK15,
+        SK16,
+      ],
       category: "Mobile Development",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
