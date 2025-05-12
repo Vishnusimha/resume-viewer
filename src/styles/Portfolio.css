@@ -258,7 +258,7 @@ body {
 }
 
 .home-welcome-image {
-  margin-top: -50px;
+  margin-top: -20px;
   /* transform: translateY(-50px);  */
   max-width: 100%;
   max-width: 500px;
@@ -436,7 +436,7 @@ body {
 .projects-title {
   margin: 0;
   padding: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 0.8;
   color: var(--accent-color);
 }
@@ -697,30 +697,50 @@ body {
 /* RESUME PAGE STYLES */
 /* ============================================= */
 
-.section.resume-section {
-  max-width: 100%;
-  margin: 0;
+.resume-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2rem;
+  overflow-x: hidden;
+  color: var(--text-light);
   background-color: var(--primary-bg);
-  padding-bottom: 30px;
 }
 
-.resume-title {
+.resume-header {
+  text-align: center;
+}
+
+.resume-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.resume-divider {
+  width: 130px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.resume-header {
+  margin-top: 1rem;
   font-size: 2rem;
   color: var(--accent-color);
   text-align: center;
-  margin: 0;
 }
 
 .resume-download-text {
   text-align: center;
-  margin: 10px 0;
+  margin: 1rem 0;
   font-size: 1rem;
 }
 
 .resume-download-link {
   color: var(--links-accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .resume-download-link:hover {
@@ -729,28 +749,27 @@ body {
 }
 
 .resume-embed-container {
-  width: 100%;
-  max-width: 800px;
-  min-height: 400px;
+  max-width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
 }
 
 .resume-iframe {
   width: 100%;
-  height: 400px;
+  min-height: 500px;
   border: none;
   border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 .resume-loading,
 .resume-error {
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
   font-size: 1rem;
+  color: var(--text-light);
 }
 
 /* ============================================= */
@@ -759,7 +778,7 @@ body {
 
 .contact-section {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -773,6 +792,14 @@ body {
   color: var(--accent-color);
   text-align: center;
   margin: 0 0 1rem;
+}
+
+.contact-divider {
+  width: 120px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
 }
 
 .contact-info {
@@ -929,6 +956,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .resume-embed-container {
+    max-width: 80%;
+    padding: 0 1rem;
+  }
+
   .resume-iframe {
     height: 600px;
   }
@@ -958,6 +990,15 @@ body {
     margin-top: 3rem;
     flex: auto;
   }
+
+  .resume-embed-container {
+    max-width: 85%;
+    padding: 0 1rem;
+  }
+
+  .resume-iframe {
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -983,6 +1024,7 @@ body {
 
   .home-welcome-image {
     max-width: 100%;
+    margin-top: 22rem;
   }
 
   .cta-buttons {
@@ -1005,6 +1047,15 @@ body {
   .projects-header,
   .projects-container {
     padding: 0 15px;
+  }
+
+  .resume-embed-container {
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+
+  .resume-iframe {
+    min-height: 400px;
   }
 
   .contact-section {
@@ -1056,11 +1107,25 @@ body {
   }
 
   .home-welcome-image {
+    margin-top: 50px;
     max-width: 100%;
+  }
+
+  .resume-embed-container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .resume-iframe {
+    min-height: 350px;
   }
 }
 
 @media (max-width: 480px) {
+  .home-welcome-image {
+    max-width: 100%;
+  }
+
   .navbar {
     padding: 10px 12px;
   }
@@ -1137,6 +1202,15 @@ body {
     height: 28px;
   }
 
+  .resume-embed-container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .resume-iframe {
+    min-height: 300px;
+  }
+
   .contact-title {
     font-size: 1.6rem;
   }
@@ -1152,6 +1226,9 @@ body {
 }
 
 @media (max-width: 375px) {
+  .home-welcome-image {
+    max-width: 100%;
+  }
   .home-name {
     font-size: 2rem;
   }
@@ -1175,5 +1252,14 @@ body {
 
   .stat-card {
     padding: 1.2rem;
+  }
+
+  .resume-embed-container {
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .resume-iframe {
+    min-height: 280px;
   }
 }

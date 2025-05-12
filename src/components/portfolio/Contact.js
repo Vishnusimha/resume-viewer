@@ -6,7 +6,10 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
     <section ref={ref} className="contact-section">
-      <h2 className="contact-title">Contact</h2>
+      <div className="contact-header">
+        <h2 className="contact-title">Contact</h2>
+        <div className="contact-divider"></div>
+      </div>
 
       <div className="contact-info">
         <p>
