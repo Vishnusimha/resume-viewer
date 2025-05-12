@@ -40,6 +40,15 @@ import SK13 from "../../assets/work/StockKeeper/PlanMakerByShop.png";
 import SK14 from "../../assets/work/StockKeeper/PlanScreen2.png";
 import SK15 from "../../assets/work/StockKeeper/ProfileScreen.png";
 import SK16 from "../../assets/work/StockKeeper/AlertsScreen.png";
+import CN1 from "../../assets/work/Cloudnine/Home.png";
+import CN2 from "../../assets/work/Cloudnine/Home2.png";
+import CN3 from "../../assets/work/Cloudnine/Gallery.png";
+import CN4 from "../../assets/work/Cloudnine/ServicesCorporate.png";
+import CN5 from "../../assets/work/Cloudnine/CorporatePlanner.png";
+import CN6 from "../../assets/work/Cloudnine/PlanningSpecialDayScreen.png";
+import CN7 from "../../assets/work/Cloudnine/Prices.png";
+import CN8 from "../../assets/work/Cloudnine/SafteyScreen.png";
+import CN9 from "../../assets/work/Cloudnine/Enquiry.png";
 
 import React, { useState } from "react";
 import {
@@ -192,16 +201,28 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Full-Stack Web Applications",
+      name: "Full-Stack Web Chat Application",
       description:
         "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
       technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
       media: [],
       category: "Full-Stack Development",
       links: [
+        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
+        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
+      ],
+    },
+
+    {
+      name: "Balloon Decor Business Website",
+      description:
+        "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
+      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
+      media: [CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9],
+      category: "Full-Stack Development",
+      links: [
         { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
         { type: "github", url: "https://github.com/Vishnusimha/webapp" },
-        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
       ],
     },
     {
