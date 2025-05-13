@@ -695,6 +695,11 @@ body {
   background: var(--links-hover-accent);
 }
 
+.inline-icon {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
 /* ============================================= */
 /* RESUME PAGE STYLES */
 /* ============================================= */
