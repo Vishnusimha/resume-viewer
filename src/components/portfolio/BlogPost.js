@@ -104,6 +104,12 @@ const BlogPost = () => {
     return null;
   };
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   // Handle checkbox changes
   useEffect(() => {
     const handleCheckboxChange = (e) => {
@@ -214,7 +220,11 @@ const BlogPost = () => {
 
   return (
     <div className="blog-layout">
-      <div className="blog-sidebar">
+      {/* Toggle button only visible on mobile */}
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        ☰
+      </button>
+      <div className={`blog-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <h3>Documentation</h3>
           <div className="sidebar-search">
@@ -231,7 +241,7 @@ const BlogPost = () => {
         </div>
       </div>
 
-      <div className="blog-content">
+      <div className="blog-content" onClick={() => setSidebarOpen(false)}>
         {selectedPost && (
           <div className="post-container">
             <div className="post-header">
