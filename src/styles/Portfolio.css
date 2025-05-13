@@ -366,12 +366,12 @@ body {
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.5rem;
 }
 
 .tech-tags span {
   background-color: var(--deep-slate);
-  color: var(--text-light);
+  color: var(--links-hover-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
