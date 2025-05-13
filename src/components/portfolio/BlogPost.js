@@ -2,50 +2,49 @@ import React, { useEffect, useState } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
-
-// Import your blog posts
-import post1 from "./blogs/post1.md";
-import post2 from "./blogs/post2.md";
-import post3 from "./blogs/post3.md";
-
+import AuthenticationVSAuthorisation from "../../assets/blogs/android/AuthenticationVSAuthorisation.md";
+import SSLPinning from "../../assets/blogs/android/Implementing SSL Pinning with OkHttp and Retrofit.md";
+import KotlinDSLVSGroovy from "../../assets/blogs/android/KotlinDSLVSGroovy.md";
+import SerializableVSParcelable from "../../assets/blogs/android/SerializableVSParcelable.md";
+import FeaturesCompose from "../../assets/blogs/android/FeaturesCompose.md";
 // Mock folder structure
 const folderStructure = [
   {
-    name: "blogs",
+    name: "Blogs",
     type: "folder",
     children: [
       {
-        name: "getting-started",
+        name: "Android",
         type: "folder",
         children: [
-          { name: "intro.md", type: "file", content: post1 },
-          { name: "setup.md", type: "file", content: post2 },
-        ],
-      },
-      {
-        name: "advanced",
-        type: "folder",
-        children: [{ name: "performance.md", type: "file", content: post3 }],
-      },
-      {
-        name: "snippets",
-        type: "folder",
-        children: [
-          { name: "kotlin-examples.md", type: "file", content: post1 },
-          { name: "python-tips.md", type: "file", content: post2 },
+          {
+            name: "Features Compose.md",
+            type: "file",
+            content: FeaturesCompose,
+          },
+          { name: "SSL Pinning.md", type: "file", content: SSLPinning },
+          {
+            name: "Kotlin DSL VS Groovy.md",
+            type: "file",
+            content: KotlinDSLVSGroovy,
+          },
+          {
+            name: "Serializable VS Parcelable.md",
+            type: "file",
+            content: SerializableVSParcelable,
+          },
         ],
       },
     ],
   },
   {
-    name: "tutorials",
+    name: "Coding Concepts",
     type: "folder",
     children: [
-      { name: "react-basics.md", type: "file", content: post1 },
       {
-        name: "nodejs-guidenodejs-guidenodejs-guidenodejs-guidenodejs-guide.md",
+        name: "Authentication VS Authorisation.md",
         type: "file",
-        content: post2,
+        content: AuthenticationVSAuthorisation,
       },
     ],
   },
