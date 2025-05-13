@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vishnuportfolio/static/css/main.6a8dcf33.css",
-    "main.js": "/vishnuportfolio/static/js/main.effeef20.js",
+    "main.css": "/vishnuportfolio/static/css/main.497152d3.css",
+    "main.js": "/vishnuportfolio/static/js/main.83c50d04.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -84,13 +84,18 @@
     "static/media/PlanScreen.png": "/vishnuportfolio/static/media/PlanScreen.1f068da0bd0304cf4644.png",
     "static/media/co2_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/co2_data_2023-08-05T21_41_29+0100.59dac02611db6a765c6c.png",
     "static/media/Client Disconnected with Server.png": "/vishnuportfolio/static/media/Client Disconnected with Server.05743f02099bd0c1c949.png",
+    "static/media/FeaturesCompose.md": "/vishnuportfolio/static/media/FeaturesCompose.e182cf9a42c1205315aa.md",
+    "static/media/Implementing SSL Pinning with OkHttp and Retrofit.md": "/vishnuportfolio/static/media/Implementing SSL Pinning with OkHttp and Retrofit.7a167288ca62ae49d880.md",
+    "static/media/KotlinDSLVSGroovy.md": "/vishnuportfolio/static/media/KotlinDSLVSGroovy.607ba4d29465a7b5f0b5.md",
+    "static/media/SerializableVSParcelable.md": "/vishnuportfolio/static/media/SerializableVSParcelable.da0dda6570a777247de6.md",
+    "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
-    "main.6a8dcf33.css.map": "/vishnuportfolio/static/css/main.6a8dcf33.css.map",
-    "main.effeef20.js.map": "/vishnuportfolio/static/js/main.effeef20.js.map",
+    "main.497152d3.css.map": "/vishnuportfolio/static/css/main.497152d3.css.map",
+    "main.83c50d04.js.map": "/vishnuportfolio/static/js/main.83c50d04.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a8dcf33.css",
-    "static/js/main.effeef20.js"
+    "static/css/main.497152d3.css",
+    "static/js/main.83c50d04.js"
   ]
 }
