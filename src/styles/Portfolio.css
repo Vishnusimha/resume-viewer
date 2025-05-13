@@ -1081,11 +1081,10 @@ body {
 /* --------------------------- */
 .blog-content {
   flex: 1;
-  padding: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 2rem;
   transition: transform 0.3s ease;
-  width: 100%;
+  width: 0; /* This helps flexbox calculation */
+  min-width: 0; /* Prevent content from overflowing */
 }
 
 .post-container {
@@ -1531,8 +1530,9 @@ body {
   }
 
   .blog-content {
-    margin-left: 25%;
-    transform: none !important;
+    padding: 2rem 3rem;
+    width: auto; /* Reset width */
+    max-width: none; /* Remove max-width constraint */
   }
 
   .contact-section {
