@@ -18,18 +18,17 @@ const Home = React.forwardRef((props, ref) => {
   const techStack = [
     "Kotlin",
     "Java",
+    "Python",
+    "Android",
     "Jetpack Compose",
-    "Firebase",
-    "Coroutines",
-    "Hilt",
-    "Retrofit",
+    "Spring Boot/Microservices",
     "SQL",
-    "Spring Boot",
-    "Microservices",
+    "AWS",
+    "React/HTML/CSS",
     "Docker",
     "Kubernetes",
-    "AWS",
-    "Python",
+    "Github Actions",
+    "Jenkins",
   ];
 
   return (
@@ -47,11 +46,11 @@ const Home = React.forwardRef((props, ref) => {
                 strings={[
                   "Software Engineer",
                   "Android Developer",
-                  "Backend Developer",
-                  "AWS Solution Architect",
+                  "Full stack Developer",
+                  "AWS Solution Architect - Associate",
                 ]}
-                typeSpeed={50}
-                backSpeed={30}
+                typeSpeed={30}
+                backSpeed={10}
                 loop
               />
             </h2>

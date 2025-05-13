@@ -70,6 +70,7 @@
   align-items: center;
   font-size: 0.95rem;
   margin-top: 10px;
+  color: var(--resume-text-color);
 }
 
 .resume-viewer-container .contact-info p {

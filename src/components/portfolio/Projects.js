@@ -80,11 +80,23 @@ import DAML7 from "../../assets/work/DAML/DAML7.png";
 import DAML8 from "../../assets/work/DAML/DAML8.png";
 import React, { useState } from "react";
 import {
+  FiCpu,
   FiGithub,
   FiExternalLink,
   FiChevronLeft,
   FiChevronRight,
+  FiServer,
+  FiGlobe,
+  FiDatabase,
+  FiActivity,
 } from "react-icons/fi";
+
+import { FaMobileAlt, FaCloud, FaCodeBranch } from "react-icons/fa";
+import { FaChartBar, FaBrain } from "react-icons/fa";
+import { AiOutlineLineChart } from "react-icons/ai";
+import { BsBarChartLine } from "react-icons/bs";
+import { GoDatabase } from "react-icons/go";
+import { GiArtificialIntelligence } from "react-icons/gi";
 
 const Projects = React.forwardRef((props, ref) => {
   const projects = [
@@ -328,6 +340,56 @@ const Projects = React.forwardRef((props, ref) => {
     Array(projects.length).fill(0)
   );
 
+  const getCategoryIcons = (category) => {
+    switch (category) {
+      case "Mobile Development":
+        return (
+          <>
+            <FaMobileAlt className="inline-icon" />
+          </>
+        );
+      case "IoT":
+        return (
+          <>
+            <FiCpu className="inline-icon" />
+            <FiActivity className="inline-icon" />
+            <FiGlobe className="inline-icon" />
+            <FaMobileAlt className="inline-icon" />
+          </>
+        );
+      case "Full-Stack Development":
+        return (
+          <>
+            <FiGlobe className="inline-icon" />
+            <FaCodeBranch className="inline-icon" />
+            <FaCloud className="inline-icon" />
+            <FiDatabase className="inline-icon" />
+            <FiServer className="inline-icon" />
+          </>
+        );
+      case "Web Development":
+        return (
+          <>
+            <FiGlobe className="inline-icon" />
+            <FaCloud className="inline-icon" />
+          </>
+        );
+      case "Data Science / Machine Learning":
+        return (
+          <>
+            <FaBrain className="inline-icon" />
+            <GoDatabase className="inline-icon" />
+            <GiArtificialIntelligence className="inline-icon" />
+            <FaChartBar className="inline-icon" />
+            <AiOutlineLineChart className="inline-icon" />
+            <BsBarChartLine className="inline-icon" />
+          </>
+        );
+      default:
+        return <FiCpu className="inline-icon" />;
+    }
+  };
+
   const handleNextMedia = (projectIndex) => {
     setCurrentMediaIndex((prevIndexes) =>
       prevIndexes.map((index, i) =>
@@ -423,7 +485,9 @@ const Projects = React.forwardRef((props, ref) => {
 
               <div className="project-content">
                 <div className="project-header">
-                  <span className="project-category">{project.category}</span>
+                  <span className="project-category">
+                    {getCategoryIcons(project.category)} {project.category}
+                  </span>
                   <h3 className="project-title">{project.name}</h3>
                 </div>
 
