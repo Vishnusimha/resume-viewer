@@ -18,18 +18,18 @@ const folderStructure = [
         type: "folder",
         children: [
           {
-            name: "Features Compose.md",
+            name: "Features Compose",
             type: "file",
             content: FeaturesCompose,
           },
-          { name: "SSL Pinning.md", type: "file", content: SSLPinning },
+          { name: "SSL Pinning", type: "file", content: SSLPinning },
           {
-            name: "Kotlin DSL VS Groovy.md",
+            name: "Kotlin DSL VS Groovy",
             type: "file",
             content: KotlinDSLVSGroovy,
           },
           {
-            name: "Serializable VS Parcelable.md",
+            name: "Serializable VS Parcelable",
             type: "file",
             content: SerializableVSParcelable,
           },
@@ -42,7 +42,7 @@ const folderStructure = [
     type: "folder",
     children: [
       {
-        name: "Authentication VS Authorisation.md",
+        name: "Authentication VS Authorisation",
         type: "file",
         content: AuthenticationVSAuthorisation,
       },
