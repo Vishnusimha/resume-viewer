@@ -110,6 +110,17 @@ const BlogPost = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
+  // Close sidebar when clicking on content
+  const handleContentClick = (e) => {
+    if (
+      window.innerWidth <= 767 &&
+      sidebarOpen &&
+      e.target === e.currentTarget
+    ) {
+      setSidebarOpen(false);
+    }
+  };
+
   // Handle checkbox changes
   useEffect(() => {
     const handleCheckboxChange = (e) => {
@@ -221,9 +232,17 @@ const BlogPost = () => {
   return (
     <div className="blog-layout">
       {/* Toggle button only visible on mobile */}
-      <button className="sidebar-toggle" onClick={toggleSidebar}>
-        ☰
+      <button
+        className={`sidebar-toggle ${sidebarOpen ? "open" : ""}`}
+        onClick={toggleSidebar}
+        aria-label="Toggle sidebar"
+      >
+        {sidebarOpen ? "✕" : "☰"}
       </button>
+      {/* Overlay when sidebar is open */}
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={toggleSidebar} />
+      )}
       <div className={`blog-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <h3>Documentation</h3>
@@ -241,7 +260,7 @@ const BlogPost = () => {
         </div>
       </div>
 
-      <div className="blog-content" onClick={() => setSidebarOpen(false)}>
+      <div className="blog-content" onClick={handleContentClick}>
         {selectedPost && (
           <div className="post-container">
             <div className="post-header">
