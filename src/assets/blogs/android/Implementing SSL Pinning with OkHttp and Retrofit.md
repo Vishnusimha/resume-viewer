@@ -1,8 +1,9 @@
 
 # Implementing SSL Pinning with OkHttp and Retrofit
+
  Implementing SSL pinning with OkHttp (and by extension with Retrofit, which uses OkHttp as its networking layer) involves configuring OkHttp to trust a specific certificate or public key instead of the default system trust store.
 
-#### Step 1: Obtain the Certificate
+## Step 1: Obtain the Certificate
 
 You need the certificate in `.crt` or `.pem` format. You can get it using tools like OpenSSL or by exporting it from a
 browser.
@@ -13,12 +14,12 @@ Example command to fetch the certificate from a domain:
 echo | openssl s_client -showcerts -servername example.com -connect example.com:443 2>/dev/null | openssl x509 -outform PEM > server.crt
 ```
 
-#### **Step 2: Convert the Certificate to a Format OkHttp Understands**
+## **Step 2: Convert the Certificate to a Format OkHttp Understands**
 
 OkHttp uses the `CertificatePinner` class to pin SSL certificates. The certificate needs to be in `.pem` format (Base64
 encoded).
 
-#### **Step 3: Create the Certificate Pinner Configuration in OkHttp**
+## **Step 3: Create the Certificate Pinner Configuration in OkHttp**
 
 Here's how you can set up SSL pinning with OkHttp:
 
@@ -45,7 +46,7 @@ openssl x509 -pubkey -noout -in server.crt | openssl pkey -pubin -outform DER | 
 
 This command generates the Base64 encoded hash that you will place in the `CertificatePinner` setup.
 
-#### **Step 4: Use the OkHttpClient in Retrofit**
+## **Step 4: Use the OkHttpClient in Retrofit**
 
 Integrate the OkHttpClient with Retrofit:
 

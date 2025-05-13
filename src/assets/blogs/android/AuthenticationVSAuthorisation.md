@@ -1,4 +1,5 @@
 # Authentication VS Authorisation
+
 Authentication and Authorization are the key components of **secure data access control** 👨‍💻🔐
 
 📍**Authentication** means verifying someone's identity - usually through credentials like a username and password. It's like checking employees IDs to enter the company.

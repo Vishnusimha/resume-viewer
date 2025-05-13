@@ -1,4 +1,5 @@
 # Serializable VS Parcelable
+
 **Serializable** and **Parcelable** are two interfaces the mainly uses of them is related to the passing of data.🚀👨‍💻
 
 1. Serializable:
