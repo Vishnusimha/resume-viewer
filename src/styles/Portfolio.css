@@ -7,6 +7,7 @@
   --deep-neon-green: #39ff14; /* Neon Green */
   --spring-green: #00ff7f; /* Spring Green */
   --deep-neon-blue: #0ff0fc; /* Deep Neon Blue */
+  --dark-neon-blue: #228287; /* Dark Neon Blue */
   --darker-blue: #1a6fb3; /* Slightly darker blue for accents */
   --subtle-gray: #8b949e; /* Subtle Gray */
   --pale-white-blue: #f0f6fc; /* Pale White-Blue */
@@ -1059,6 +1060,12 @@ body {
   color: var(--accent-color);
   font-size: 1.3rem;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sidebar-header h3:hover {
+  color: var(--deep-neon-green);
 }
 
 .sidebar-search input {
@@ -1074,6 +1081,31 @@ body {
 .sidebar-search input:focus {
   outline: none;
   border-color: var(--accent-color);
+}
+/* --------------------------- */
+/* Blog Landing Style */
+/* --------------------------- */
+
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.blog-card {
+  background: var(--deep-slate);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--pale-white-blue);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+  background-color: var(--dark-neon-blue);
 }
 
 /* --------------------------- */

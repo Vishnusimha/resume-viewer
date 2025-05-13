@@ -46,6 +46,15 @@ const folderStructure = [
     ],
   },
 ];
+const stripMarkdown = (md) => {
+  return md
+    .replace(/!\[.*?\]\(.*?\)/g, "") // images
+    .replace(/\[.*?\]\(.*?\)/g, "") // links
+    .replace(/[`*_>#\-~]/g, "") // inline markdown
+    .replace(/\n{2,}/g, "\n") // collapse newlines
+    .replace(/#{1,6}\s/g, "") // headings
+    .trim();
+};
 
 const BlogPost = () => {
   const [selectedPost, setSelectedPost] = useState(null);
@@ -53,6 +62,7 @@ const BlogPost = () => {
   const [expandedFolders, setExpandedFolders] = useState({});
   const [searchQuery, setSearchQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
     marked.setOptions({
@@ -63,22 +73,37 @@ const BlogPost = () => {
       langPrefix: "hljs language-",
     });
 
-    const loadFirstPost = async () => {
-      const firstFile = findFirstFile(folderStructure);
-      if (firstFile) {
-        const response = await fetch(firstFile.content);
-        const text = await response.text();
-        setSelectedPost({
-          id: firstFile.name,
-          title: firstFile.name,
+    const flattenFiles = (structure) => {
+      let files = [];
+      structure.forEach((item) => {
+        if (item.type === "file") {
+          files.push(item);
+        } else if (item.children) {
+          files = files.concat(flattenFiles(item.children));
+        }
+      });
+      return files;
+    };
+
+    const loadAllPosts = async () => {
+      const flatFiles = flattenFiles(folderStructure);
+      const promises = flatFiles.map(async (file) => {
+        const res = await fetch(file.content);
+        const text = await res.text();
+        return {
+          id: file.name,
+          title: file.name,
           html: marked.parse(text),
+          preview: stripMarkdown(text).slice(0, 150) + "...",
           wordCount: text.split(/\s+/).length,
-        });
-      }
+        };
+      });
+      const results = await Promise.all(promises);
+      setAllPosts(results);
       setLoading(false);
     };
 
-    loadFirstPost();
+    loadAllPosts();
   }, []);
 
   useEffect(() => {
@@ -95,17 +120,6 @@ const BlogPost = () => {
         c.removeEventListener("change", handleCheckboxChange)
       );
   }, [selectedPost]);
-
-  const findFirstFile = (structure) => {
-    for (const item of structure) {
-      if (item.type === "file") return item;
-      if (item.children) {
-        const found = findFirstFile(item.children);
-        if (found) return found;
-      }
-    }
-    return null;
-  };
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -191,6 +205,22 @@ const BlogPost = () => {
   const getReadingTime = (wordCount) =>
     `${Math.ceil(wordCount / 200)} min read`;
 
+  const renderCardGrid = () => (
+    <div className="blog-card-grid">
+      {allPosts.map((post) => (
+        <div
+          key={post.id}
+          className="blog-card"
+          onClick={() => setSelectedPost(post)}
+        >
+          <h3>{post.title}</h3>
+          <p>{post.preview}</p>
+          <span className="reading-time">{getReadingTime(post.wordCount)}</span>
+        </div>
+      ))}
+    </div>
+  );
+
   if (loading) {
     return (
       <div className="blog-loading">
@@ -215,7 +245,12 @@ const BlogPost = () => {
 
       <div className={`blog-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h3>Documentation</h3>
+          <h3
+            onClick={() => setSelectedPost(null)}
+            style={{ cursor: "pointer" }}
+          >
+            Documentation
+          </h3>
           <div className="sidebar-search">
             <input
               type="text"
@@ -231,7 +266,7 @@ const BlogPost = () => {
       </div>
 
       <div className="blog-content" onClick={handleContentClick}>
-        {selectedPost && (
+        {selectedPost ? (
           <div className="post-container">
             <div className="post-header">
               <h1>{selectedPost.title}</h1>
@@ -244,12 +279,10 @@ const BlogPost = () => {
                 </span>
               </div>
             </div>
-
             <article
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: selectedPost.html }}
             />
-
             <div className="post-footer">
               <div className="post-tags">
                 <span>Tags:</span>
@@ -263,6 +296,8 @@ const BlogPost = () => {
               </div>
             </div>
           </div>
+        ) : (
+          renderCardGrid()
         )}
       </div>
     </div>
