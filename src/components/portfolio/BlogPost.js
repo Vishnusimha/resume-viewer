@@ -8,19 +8,56 @@ import post1 from "./blogs/post1.md";
 import post2 from "./blogs/post2.md";
 import post3 from "./blogs/post3.md";
 
-const blogFiles = [
-  { id: 1, file: post1, title: "Post 1" },
-  { id: 2, file: post2, title: "Post 2" },
-  { id: 3, file: post3, title: "Post 3" },
+// Mock folder structure
+const folderStructure = [
+  {
+    name: "blogs",
+    type: "folder",
+    children: [
+      {
+        name: "getting-started",
+        type: "folder",
+        children: [
+          { name: "intro.md", type: "file", content: post1 },
+          { name: "setup.md", type: "file", content: post2 },
+        ],
+      },
+      {
+        name: "advanced",
+        type: "folder",
+        children: [{ name: "performance.md", type: "file", content: post3 }],
+      },
+      {
+        name: "snippets",
+        type: "folder",
+        children: [
+          { name: "kotlin-examples.md", type: "file", content: post1 },
+          { name: "python-tips.md", type: "file", content: post2 },
+        ],
+      },
+    ],
+  },
+  {
+    name: "tutorials",
+    type: "folder",
+    children: [
+      { name: "react-basics.md", type: "file", content: post1 },
+      {
+        name: "nodejs-guidenodejs-guidenodejs-guidenodejs-guidenodejs-guide.md",
+        type: "file",
+        content: post2,
+      },
+    ],
+  },
 ];
 
 const BlogPost = () => {
-  const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [expandedFolders, setExpandedFolders] = useState({});
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    // Configure marked with custom highlighting
     marked.setOptions({
       highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : "plaintext";
@@ -36,26 +73,36 @@ const BlogPost = () => {
       xhtml: false,
     });
 
-    const fetchPosts = async () => {
-      const fetchedPosts = await Promise.all(
-        blogFiles.map(async (blog) => {
-          const response = await fetch(blog.file);
-          const text = await response.text();
-          const html = marked.parse(text);
-          return {
-            id: blog.id,
-            title: blog.title,
-            html,
-          };
-        })
-      );
-      setPosts(fetchedPosts);
-      setSelectedPost(fetchedPosts[0]);
+    // Load first post by default
+    const loadFirstPost = async () => {
+      const firstFile = findFirstFile(folderStructure);
+      if (firstFile) {
+        const response = await fetch(firstFile.content);
+        const text = await response.text();
+        const html = marked.parse(text);
+        setSelectedPost({
+          id: firstFile.name,
+          title: firstFile.name.replace(".md", ""),
+          html,
+        });
+      }
       setLoading(false);
     };
 
-    fetchPosts();
+    loadFirstPost();
   }, []);
+
+  // Find first file in folder structure
+  const findFirstFile = (structure) => {
+    for (const item of structure) {
+      if (item.type === "file") return item;
+      if (item.children) {
+        const found = findFirstFile(item.children);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
 
   // Handle checkbox changes
   useEffect(() => {
@@ -63,7 +110,6 @@ const BlogPost = () => {
       e.target.classList.toggle("checked");
     };
 
-    // Add event listeners to checkboxes
     const checkboxes = document.querySelectorAll(
       ".blog-post input[type='checkbox']"
     );
@@ -78,7 +124,84 @@ const BlogPost = () => {
         checkbox.removeEventListener("change", handleCheckboxChange);
       });
     };
-  }, [selectedPost]); // Re-run when selectedPost changes
+  }, [selectedPost]);
+
+  const toggleFolder = (path) => {
+    setExpandedFolders((prev) => ({
+      ...prev,
+      [path]: !prev[path],
+    }));
+  };
+
+  const handleFileClick = async (file) => {
+    const response = await fetch(file.content);
+    const text = await response.text();
+    const html = marked.parse(text);
+    setSelectedPost({
+      id: file.name,
+      title: file.name.replace(".md", ""),
+      html,
+    });
+  };
+
+  // Render folder structure recursively
+  const renderFolder = (folder, path = "") => {
+    const currentPath = path ? `${path}/${folder.name}` : folder.name;
+    const isExpanded = expandedFolders[currentPath];
+
+    return (
+      <div key={currentPath} className="folder-container">
+        <div className="folder-item" onClick={() => toggleFolder(currentPath)}>
+          <span className={`folder-icon ${isExpanded ? "expanded" : ""}`}>
+            {isExpanded ? "📂" : "📁"}
+          </span>
+          <span className="folder-name">{folder.name}</span>
+        </div>
+
+        {isExpanded && (
+          <div className="folder-contents">
+            {folder.children.map((item) => {
+              const itemPath = `${currentPath}/${item.name}`;
+              if (item.type === "folder") {
+                return renderFolder(item, currentPath);
+              } else {
+                return (
+                  <div
+                    key={itemPath}
+                    className={`file-item ${
+                      selectedPost?.id === item.name ? "active" : ""
+                    }`}
+                    onClick={() => handleFileClick(item)}
+                  >
+                    <span className="file-icon">📄</span>
+                    <span className="file-name">{item.name}</span>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  // Filter folder structure based on search query
+  const filteredStructure = searchQuery
+    ? filterStructure(folderStructure, searchQuery.toLowerCase())
+    : folderStructure;
+
+  function filterStructure(structure, query) {
+    return structure.filter((item) => {
+      if (item.type === "file") {
+        return item.name.toLowerCase().includes(query);
+      } else {
+        const filteredChildren = filterStructure(item.children || [], query);
+        return (
+          filteredChildren.length > 0 || item.name.toLowerCase().includes(query)
+        );
+      }
+    });
+  }
 
   if (loading) {
     return (
@@ -93,23 +216,19 @@ const BlogPost = () => {
     <div className="blog-layout">
       <div className="blog-sidebar">
         <div className="sidebar-header">
-          <h3>Blog Posts</h3>
+          <h3>Documentation</h3>
           <div className="sidebar-search">
-            <input type="text" placeholder="Search posts..." />
+            <input
+              type="text"
+              placeholder="Search files..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
-        <ul className="post-list">
-          {posts.map((post) => (
-            <li
-              key={post.id}
-              className={selectedPost?.id === post.id ? "active" : ""}
-              onClick={() => setSelectedPost(post)}
-            >
-              <span className="post-title">{post.title}</span>
-              <span className="post-date">May 2023</span>
-            </li>
-          ))}
-        </ul>
+        <div className="folder-structure">
+          {filteredStructure.map((folder) => renderFolder(folder))}
+        </div>
       </div>
 
       <div className="blog-content">
@@ -118,7 +237,9 @@ const BlogPost = () => {
             <div className="post-header">
               <h1>{selectedPost.title}</h1>
               <div className="post-meta">
-                <span className="post-date">Published: May 15, 2023</span>
+                <span className="post-date">
+                  Last updated: {new Date().toLocaleDateString()}
+                </span>
                 <span className="post-reading-time">5 min read</span>
               </div>
             </div>
@@ -131,9 +252,8 @@ const BlogPost = () => {
             <div className="post-footer">
               <div className="post-tags">
                 <span>Tags:</span>
-                <span className="tag">React</span>
-                <span className="tag">JavaScript</span>
-                <span className="tag">Web Development</span>
+                <span className="tag">Documentation</span>
+                <span className="tag">Guide</span>
               </div>
               <div className="post-actions">
                 <button className="action-btn">
