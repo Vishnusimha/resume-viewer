@@ -6,10 +6,9 @@ import Resume from "./Resume";
 import Contact from "./Contact";
 import BlogPost from "./BlogPost";
 import CV from "../resume/ResumeViewer";
-import { AiOutlineHome } from "react-icons/ai";
-import { BsCodeSlash, BsPersonLinesFill } from "react-icons/bs";
-import { CgFileDocument } from "react-icons/cg";
-import { MdOutlineContactMail } from "react-icons/md";
+import { FaBriefcase, FaPencilAlt } from "react-icons/fa";
+import { FaUserTie, FaCode } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -25,7 +24,7 @@ const Portfolio = () => {
       case "CV":
         return <CV />;
       case "Blogs":
-        return <BlogPost fileName="post1.md" />;
+        return <BlogPost />;
       case "contact":
         return <Contact />;
       default:
@@ -50,19 +49,19 @@ const Portfolio = () => {
 
         <ul className="nav-links">
           <li onClick={() => setActiveSection("projects")}>
-            <BsCodeSlash style={{ marginRight: "6px" }} /> Projects
-          </li>
-          <li onClick={() => setActiveSection("CV")}>
-            <CgFileDocument style={{ marginRight: "6px" }} /> CV
-          </li>
-          <li onClick={() => setActiveSection("resume")}>
-            <BsPersonLinesFill style={{ marginRight: "6px" }} /> Resume
+            <FaCode style={{ marginRight: "6px" }} /> Projects
           </li>
           <li onClick={() => setActiveSection("Blogs")}>
-            <CgFileDocument style={{ marginRight: "6px" }} /> Blogs
+            <FaPencilAlt style={{ marginRight: "6px" }} /> Blogs
+          </li>
+          <li onClick={() => setActiveSection("CV")}>
+            <FaBriefcase style={{ marginRight: "6px" }} /> CV
+          </li>
+          <li onClick={() => setActiveSection("resume")}>
+            <FaUserTie style={{ marginRight: "6px" }} /> Resume
           </li>
           <li onClick={() => setActiveSection("contact")}>
-            <MdOutlineContactMail style={{ marginRight: "6px" }} /> Contact
+            <AiOutlineMail style={{ marginRight: "6px" }} /> Contact
           </li>
         </ul>
       </nav>

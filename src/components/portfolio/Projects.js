@@ -80,6 +80,7 @@ import DAML7 from "../../assets/work/DAML/DAML7.png";
 import DAML8 from "../../assets/work/DAML/DAML8.png";
 import React, { useState } from "react";
 import {
+  FiCpu,
   FiGithub,
   FiExternalLink,
   FiChevronLeft,
