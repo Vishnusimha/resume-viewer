@@ -310,8 +310,8 @@ const Projects = React.forwardRef((props, ref) => {
         "Java Swing",
         "Automatic Updates",
       ],
-      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
       category: "Software Systems",
+      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
       links: [
         {
           type: "github",
@@ -338,6 +338,14 @@ const Projects = React.forwardRef((props, ref) => {
 
   const [currentMediaIndex, setCurrentMediaIndex] = useState(
     Array(projects.length).fill(0)
+  );
+
+  // State to manage the active category filter, null means "All"
+  const [activeCategory, setActiveCategory] = useState(null);
+
+  // Get unique categories from the projects data
+  const categories = Array.from(
+    new Set(projects.map((project) => project.category))
   );
 
   const getCategoryIcons = (category) => {
@@ -385,6 +393,14 @@ const Projects = React.forwardRef((props, ref) => {
             <BsBarChartLine className="inline-icon" />
           </>
         );
+      case "Software Systems":
+        return (
+          <>
+            <FiCpu className="inline-icon" />
+            <FiServer className="inline-icon" />
+            <FaCodeBranch className="inline-icon" />
+          </>
+        );
       default:
         return <FiCpu className="inline-icon" />;
     }
@@ -418,6 +434,11 @@ const Projects = React.forwardRef((props, ref) => {
     );
   };
 
+  // Filter projects based on the active category
+  const filteredProjects = activeCategory
+    ? projects.filter((project) => project.category === activeCategory)
+    : projects;
+
   return (
     <section ref={ref} className="projects-section" id="projects">
       <div className="projects-header">
@@ -425,111 +446,150 @@ const Projects = React.forwardRef((props, ref) => {
         <div className="projects-divider"></div>
       </div>
 
+      {/* Category Filter Buttons */}
+      <div className="category-filters">
+        <button
+          className={`filter-button ${activeCategory === null ? "active" : ""}`}
+          onClick={() => setActiveCategory(null)} // Set active category to null for "All"
+        >
+          All
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={`filter-button ${
+              activeCategory === category ? "active" : ""
+            }`}
+            onClick={() => setActiveCategory(category)} // Set active category
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       <div className="projects-container">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <div className="project-card-inner">
-              <div className="project-media-container">
-                <div className="project-media-wrapper">
-                  <img
-                    src={project.media[currentMediaIndex[index]]}
-                    alt={`${project.name} screenshot ${
-                      currentMediaIndex[index] + 1
-                    }`}
-                    className="project-media"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="media-controls">
-                  <button
-                    onClick={() => handlePrevMedia(index)}
-                    className="media-control-button"
-                    aria-label="Previous image"
-                  >
-                    <FiChevronLeft />
-                  </button>
-                  <button
-                    onClick={() => handleNextMedia(index)}
-                    className="media-control-button"
-                    aria-label="Next image"
-                  >
-                    <FiChevronRight />
-                  </button>
-                </div>
-
-                {project.media.length > 1 && (
-                  <div className="media-thumbnails">
-                    {project.media.slice(0, 3).map((media, mediaIndex) => (
-                      <button
-                        key={mediaIndex}
-                        onClick={() => handleThumbnailClick(index, mediaIndex)}
-                        className={`thumbnail ${
-                          currentMediaIndex[index] === mediaIndex
-                            ? "active"
-                            : ""
-                        }`}
-                        aria-label={`View image ${mediaIndex + 1}`}
-                      >
-                        <img src={media} alt="" role="presentation" />
-                      </button>
-                    ))}
-                    {project.media.length > 3 && (
-                      <span className="thumbnail-count">
-                        +{project.media.length - 3}
-                      </span>
-                    )}
+        {filteredProjects.map(
+          (
+            project,
+            index // Use filteredProjects here
+          ) => (
+            <div key={project.name} className="project-card">
+              {" "}
+              {/* Using project.name as key for uniqueness */}
+              <div className="project-card-inner">
+                <div className="project-media-container">
+                  <div className="project-media-wrapper">
+                    {/* Ensure index is correct for currentMediaIndex */}
+                    <img
+                      src={
+                        project.media[
+                          currentMediaIndex[projects.indexOf(project)]
+                        ]
+                      } // Find the original index of the filtered project
+                      alt={`${project.name} screenshot ${
+                        currentMediaIndex[projects.indexOf(project)] + 1
+                      }`}
+                      className="project-media"
+                      loading="lazy"
+                    />
                   </div>
-                )}
-              </div>
 
-              <div className="project-content">
-                <div className="project-header">
-                  <span className="project-category">
-                    {getCategoryIcons(project.category)} {project.category}
-                  </span>
-                  <h3 className="project-title">{project.name}</h3>
-                </div>
-
-                <p className="project-description">{project.description}</p>
-
-                <div className="project-technologies">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="tech-tag">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="project-links">
-                  {project.links?.map((link, linkIndex) => (
-                    <a
-                      key={linkIndex}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`project-link ${link.type}`}
+                  <div className="media-controls">
+                    {/* Ensure index is correct for handlers */}
+                    <button
+                      onClick={() => handlePrevMedia(projects.indexOf(project))}
+                      className="media-control-button"
+                      aria-label="Previous image"
                     >
-                      {link.type === "github" ? (
-                        <>
-                          <FiGithub /> View Code
-                        </>
-                      ) : link.type === "demo" ? (
-                        <>
-                          <FiExternalLink /> Live Demo
-                        </>
-                      ) : link.type === "pdf" ? (
-                        <>
-                          <FiExternalLink /> View Document
-                        </>
-                      ) : null}
-                    </a>
-                  ))}
+                      <FiChevronLeft />
+                    </button>
+                    <button
+                      onClick={() => handleNextMedia(projects.indexOf(project))}
+                      className="media-control-button"
+                      aria-label="Next image"
+                    >
+                      <FiChevronRight />
+                    </button>
+                  </div>
+
+                  {project.media.length > 1 && (
+                    <div className="media-thumbnails">
+                      {project.media.slice(0, 3).map((media, mediaIndex) => (
+                        <button
+                          key={mediaIndex}
+                          onClick={() =>
+                            handleThumbnailClick(
+                              projects.indexOf(project),
+                              mediaIndex
+                            )
+                          }
+                          className={`thumbnail ${
+                            currentMediaIndex[projects.indexOf(project)] ===
+                            mediaIndex
+                              ? "active"
+                              : ""
+                          }`}
+                          aria-label={`View image ${mediaIndex + 1}`}
+                        >
+                          <img src={media} alt="" role="presentation" />
+                        </button>
+                      ))}
+                      {project.media.length > 3 && (
+                        <span className="thumbnail-count">
+                          +{project.media.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                <div className="project-content">
+                  <div className="project-header">
+                    <span className="project-category">
+                      {getCategoryIcons(project.category)} {project.category}
+                    </span>
+                    <h3 className="project-title">{project.name}</h3>
+                  </div>
+
+                  <p className="project-description">{project.description}</p>
+
+                  <div className="project-technologies">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="project-links">
+                    {project.links?.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`project-link ${link.type}`}
+                      >
+                        {link.type === "github" ? (
+                          <>
+                            <FiGithub /> View Code
+                          </>
+                        ) : link.type === "demo" ? (
+                          <>
+                            <FiExternalLink /> Live Demo
+                          </>
+                        ) : link.type === "pdf" ? (
+                          <>
+                            <FiExternalLink /> View Document
+                          </>
+                        ) : null}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
@@ -63,6 +63,8 @@ const BlogPost = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(null); // State to hold active category filter
+  const postContentRef = useRef(null);
 
   useEffect(() => {
     marked.setOptions({
@@ -70,16 +72,42 @@ const BlogPost = () => {
         const language = hljs.getLanguage(lang) ? lang : "plaintext";
         return hljs.highlight(code, { language }).value;
       },
-      langPrefix: "hljs language-",
+      langPrefix: "hljs language-", // This is important for the CSS theme
     });
+  }, []);
+
+  useEffect(() => {
+    // Helper function to flatten files within a specific folder and assign a category
+    const flattenFolderFiles = (folder, category) => {
+      let files = [];
+      if (folder.children) {
+        folder.children.forEach((item) => {
+          if (item.type === "file") {
+            files.push({ ...item, category: category });
+          } else if (item.type === "folder") {
+            // Recursively flatten files in subfolders, keeping the same category
+            files = files.concat(flattenFolderFiles(item, category));
+          }
+        });
+      }
+      return files;
+    };
 
     const flattenFiles = (structure) => {
       let files = [];
       structure.forEach((item) => {
-        if (item.type === "file") {
-          files.push(item);
-        } else if (item.children) {
-          files = files.concat(flattenFiles(item.children));
+        if (item.type === "folder") {
+          if (item.name === "Blogs" && item.children) {
+            item.children.forEach((childItem) => {
+              if (childItem.type === "folder") {
+                files = files.concat(
+                  flattenFolderFiles(childItem, childItem.name)
+                );
+              }
+            });
+          } else {
+            files = files.concat(flattenFolderFiles(item, item.name));
+          }
         }
       });
       return files;
@@ -87,17 +115,30 @@ const BlogPost = () => {
 
     const loadAllPosts = async () => {
       const flatFiles = flattenFiles(folderStructure);
-      const promises = flatFiles.map(async (file) => {
-        const res = await fetch(file.content);
-        const text = await res.text();
-        return {
-          id: file.name,
-          title: file.name,
-          html: marked.parse(text),
-          preview: stripMarkdown(text).slice(0, 150) + "...",
-          wordCount: text.split(/\s+/).length,
-        };
-      });
+      const promises = flatFiles
+        .map(async (file) => {
+          try {
+            const res = await fetch(file.content);
+            if (!res.ok) {
+              console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
+              return null; // Or handle error appropriately
+            }
+            const text = await res.text();
+            return {
+              id: file.name,
+              title: file.name,
+              html: marked.parse(text),
+              preview: stripMarkdown(text).slice(0, 150) + "...",
+              wordCount: text.split(/\s+/).length,
+              category: file.category, // Store the category
+            };
+          } catch (error) {
+            console.error(`Error processing ${file.name}:`, error);
+            return null;
+          }
+        })
+        .filter(Boolean);
+
       const results = await Promise.all(promises);
       setAllPosts(results);
       setLoading(false);
@@ -107,6 +148,64 @@ const BlogPost = () => {
   }, []);
 
   useEffect(() => {
+    if (!selectedPost || !selectedPost.html) return;
+    const highlightTimeout = setTimeout(() => {
+      if (postContentRef.current) {
+        const codeBlocks = postContentRef.current.querySelectorAll("pre code");
+        codeBlocks.forEach((block) => {
+          if (!block.classList.contains("hljs")) {
+            hljs.highlightElement(block);
+          }
+        });
+      }
+    }, 0);
+
+    const addCopyButtons = () => {
+      if (postContentRef.current) {
+        const preElements = postContentRef.current.querySelectorAll("pre");
+        preElements.forEach((pre) => {
+          // Avoid adding multiple buttons if effect runs again
+          if (
+            pre.previousElementSibling &&
+            pre.previousElementSibling.classList.contains("copy-button")
+          ) {
+            return;
+          }
+
+          const button = document.createElement("button");
+          button.textContent = "Copy";
+          button.classList.add("copy-button");
+
+          // Insert button before the <pre> element
+          pre.parentNode.insertBefore(button, pre);
+
+          // Add click event listener
+          button.addEventListener("click", () => {
+            const code = pre.querySelector("code").textContent;
+            navigator.clipboard
+              .writeText(code)
+              .then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                  button.textContent = "Copy";
+                }, 2000); // Reset button text after 2 seconds
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+                button.textContent = "Error";
+                setTimeout(() => {
+                  button.textContent = "Copy";
+                }, 2000);
+              });
+          });
+        });
+      }
+    };
+
+    const copyButtonTimeout = setTimeout(() => {
+      addCopyButtons();
+    }, 0);
+
     const checkboxes = document.querySelectorAll(
       ".blog-post input[type='checkbox']"
     );
@@ -115,10 +214,23 @@ const BlogPost = () => {
       c.disabled = false;
       c.addEventListener("change", handleCheckboxChange);
     });
-    return () =>
+
+    return () => {
+      clearTimeout(highlightTimeout);
+      clearTimeout(copyButtonTimeout);
+      if (postContentRef.current) {
+        const buttons = postContentRef.current.querySelectorAll(".copy-button");
+        buttons.forEach((button) => {
+          const pre = button.nextElementSibling;
+          if (pre && pre.tagName === "PRE") {
+          }
+          button.remove();
+        });
+      }
       checkboxes.forEach((c) =>
         c.removeEventListener("change", handleCheckboxChange)
       );
+    };
   }, [selectedPost]);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -138,29 +250,131 @@ const BlogPost = () => {
   };
 
   const handleFileClick = async (file) => {
-    const response = await fetch(file.content);
-    const text = await response.text();
-    setSelectedPost({
-      id: file.name,
-      title: file.name,
-      html: marked.parse(text),
-      wordCount: text.split(/\s+/).length,
-    });
+    try {
+      const response = await fetch(file.content);
+      if (!response.ok) {
+        console.error(`Failed to fetch ${file.name}: ${response.statusText}`);
+        return;
+      }
+      const text = await response.text();
+      setSelectedPost({
+        id: file.name,
+        title: file.name,
+        html: marked.parse(text),
+        wordCount: text.split(/\s+/).length,
+      });
+      if (window.innerWidth <= 767) {
+        setSidebarOpen(false);
+      }
+    } catch (error) {
+      console.error(`Error loading file ${file.name}:`, error);
+    }
   };
+
+  const filterStructure = (structure, query, categoryFilter) => {
+    let baseStructure = structure;
+
+    if (categoryFilter) {
+      const categoryMatch = structure.find(
+        (item) =>
+          (item.type === "folder" && item.name === categoryFilter) ||
+          (item.type === "folder" &&
+            item.children &&
+            item.children.some(
+              (child) =>
+                child.type === "folder" && child.name === categoryFilter
+            ))
+      );
+
+      if (categoryMatch) {
+        if (categoryMatch.name === categoryFilter) {
+          baseStructure = [categoryMatch];
+        } else {
+          const categoryFolder = categoryMatch.children.find(
+            (child) => child.type === "folder" && child.name === categoryFilter
+          );
+          baseStructure = categoryFolder ? [categoryFolder] : [];
+        }
+      } else {
+        baseStructure = [];
+      }
+    }
+
+    return baseStructure
+      .map((item) => {
+        if (item.type === "file") {
+          return item.name.toLowerCase().includes(query) ? item : null;
+        }
+        const filteredChildren = item.children
+          ? filterStructure(item.children, query, null)
+          : [];
+
+        if (
+          categoryFilter &&
+          (item.name === categoryFilter ||
+            (item.children &&
+              item.children.some(
+                (child) =>
+                  child.type === "folder" && child.name === categoryFilter
+              )))
+        ) {
+          const actualFolderToShow =
+            item.name === categoryFilter
+              ? item
+              : item.children.find(
+                  (child) =>
+                    child.type === "folder" && child.name === categoryFilter
+                );
+
+          if (actualFolderToShow) {
+            return { ...actualFolderToShow, children: filteredChildren };
+          } else {
+            return null;
+          }
+        } else {
+          return filteredChildren.length > 0 ||
+            item.name.toLowerCase().includes(query)
+            ? { ...item, children: filteredChildren }
+            : null;
+        }
+      })
+      .filter(Boolean);
+  };
+
+  const structureToRender =
+    searchQuery || activeCategory
+      ? filterStructure(
+          folderStructure,
+          searchQuery.toLowerCase(),
+          activeCategory
+        )
+      : folderStructure;
 
   const renderFolder = (folder, path = "") => {
     const currentPath = path ? `${path}/${folder.name}` : folder.name;
     const isExpanded = expandedFolders[currentPath];
 
+    const forceExpand =
+      activeCategory &&
+      folder.name !== activeCategory &&
+      folder.children &&
+      folder.children.some(
+        (child) => child.type === "folder" && child.name === activeCategory
+      );
+
     return (
       <div key={currentPath} className="folder-container">
         <div className="folder-item" onClick={() => toggleFolder(currentPath)}>
-          <span className={`folder-icon ${isExpanded ? "expanded" : ""}`}>
-            {isExpanded ? "📂" : "📁"}
+          <span
+            className={`folder-icon ${
+              isExpanded || forceExpand ? "expanded" : ""
+            }`}
+          >
+            {isExpanded || forceExpand ? "📂" : "📁"}
           </span>
           <span className="folder-name">{folder.name}</span>
         </div>
-        {isExpanded && (
+        {(isExpanded || forceExpand) && (
           <div className="folder-contents">
             {folder.children.map((item) =>
               item.type === "folder" ? (
@@ -184,42 +398,47 @@ const BlogPost = () => {
     );
   };
 
-  const filterStructure = (structure, query) =>
-    structure
-      .map((item) => {
-        if (item.type === "file") {
-          return item.name.toLowerCase().includes(query) ? item : null;
-        }
-        const filteredChildren = filterStructure(item.children || [], query);
-        return filteredChildren.length ||
-          item.name.toLowerCase().includes(query)
-          ? { ...item, children: filteredChildren }
-          : null;
-      })
-      .filter(Boolean);
-
-  const filteredStructure = searchQuery
-    ? filterStructure(folderStructure, searchQuery.toLowerCase())
-    : folderStructure;
-
   const getReadingTime = (wordCount) =>
     `${Math.ceil(wordCount / 200)} min read`;
 
-  const renderCardGrid = () => (
-    <div className="blog-card-grid">
-      {allPosts.map((post) => (
-        <div
-          key={post.id}
-          className="blog-card"
-          onClick={() => setSelectedPost(post)}
-        >
-          <h3>{post.title}</h3>
-          <p>{post.preview}</p>
-          <span className="reading-time">{getReadingTime(post.wordCount)}</span>
-        </div>
-      ))}
-    </div>
-  );
+  const renderCardGrid = () => {
+    const displayedPosts = activeCategory
+      ? allPosts.filter((post) => post.category === activeCategory)
+      : allPosts;
+
+    const searchedAndFilteredPosts = searchQuery
+      ? displayedPosts.filter((post) =>
+          post.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      : displayedPosts;
+
+    return (
+      <div className="blog-card-grid">
+        {searchedAndFilteredPosts.map((post) => (
+          <div
+            key={post.id}
+            className="blog-card"
+            onClick={() => setSelectedPost(post)}
+          >
+            {/* Category Tag */}
+            {post.category && (
+              <span className="category-tag">{post.category}</span>
+            )}
+            <h3>{post.title}</h3>
+            <p>{post.preview}</p>
+            <span className="reading-time">
+              {getReadingTime(post.wordCount)}
+            </span>
+          </div>
+        ))}
+        {searchedAndFilteredPosts.length === 0 && (
+          <p>
+            No posts found matching your criteria in this category or search.
+          </p>
+        )}
+      </div>
+    );
+  };
 
   if (loading) {
     return (
@@ -229,6 +448,11 @@ const BlogPost = () => {
       </div>
     );
   }
+
+  // Get unique categories from the loaded posts
+  const categories = Array.from(
+    new Set(allPosts.map((post) => post.category))
+  ).filter(Boolean);
 
   return (
     <div className="blog-layout">
@@ -246,7 +470,12 @@ const BlogPost = () => {
       <div className={`blog-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <h3
-            onClick={() => setSelectedPost(null)}
+            onClick={() => {
+              setSelectedPost(null);
+              setActiveCategory(null);
+              setSearchQuery("");
+              setExpandedFolders({});
+            }}
             style={{ cursor: "pointer" }}
           >
             Documentation
@@ -256,12 +485,73 @@ const BlogPost = () => {
               type="text"
               placeholder="Search files..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setSelectedPost(null);
+              }}
             />
+          </div>
+          {/* New div for filters */}
+          <div className="sidebar-filters">
+            <button
+              className={`filter-btn ${
+                activeCategory === null ? "active" : ""
+              }`}
+              onClick={() => {
+                setActiveCategory(null);
+                setSelectedPost(null);
+                setSearchQuery("");
+                setExpandedFolders({});
+              }}
+            >
+              All
+            </button>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`filter-btn ${
+                  activeCategory === category ? "active" : ""
+                }`}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setSelectedPost(null);
+                  setSearchQuery("");
+                  setExpandedFolders((prev) => {
+                    const newState = {};
+                    const findAndExpand = (structure, currentPath = "") => {
+                      structure.forEach((item) => {
+                        const itemPath = currentPath
+                          ? `${currentPath}/${item.name}`
+                          : item.name;
+                        if (item.type === "folder") {
+                          if (item.name === category) {
+                            newState[itemPath] = true;
+                            let parentPath = currentPath;
+                            while (parentPath) {
+                              newState[parentPath] = true;
+                              parentPath = parentPath.substring(
+                                0,
+                                parentPath.lastIndexOf("/")
+                              );
+                            }
+                          } else if (item.children) {
+                            findAndExpand(item.children, itemPath);
+                          }
+                        }
+                      });
+                    };
+                    findAndExpand(folderStructure);
+                    return newState;
+                  });
+                }}
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
         <div className="folder-structure">
-          {filteredStructure.map((folder) => renderFolder(folder))}
+          {structureToRender.map((folder) => renderFolder(folder))}
         </div>
       </div>
 
@@ -280,12 +570,16 @@ const BlogPost = () => {
               </div>
             </div>
             <article
+              ref={postContentRef} // Attach ref here
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: selectedPost.html }}
             />
             <div className="post-footer">
               <div className="post-tags">
                 <span>Tags:</span>
+                {selectedPost.category && (
+                  <span className="tag">{selectedPost.category}</span>
+                )}
                 <span className="tag">Documentation</span>
                 <span className="tag">Guide</span>
               </div>
