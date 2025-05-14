@@ -1216,7 +1216,7 @@ body {
   color: var(--pale-white-blue);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px var(--box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
