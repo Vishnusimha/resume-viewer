@@ -424,7 +424,7 @@ body {
 }
 
 .stat-card {
-  background-color: var(--deep-slate);
+  background-color: var(--secondary-bg);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
@@ -1025,7 +1025,7 @@ body {
 .blog-sidebar {
   width: 280px;
   min-height: 100vh;
-  background-color: var(--deep-slate);
+  background-color: var(--secondary-bg);
   border-right: 1px solid var(--secondary-bg);
   padding: 1.5rem;
   overflow-y: auto;
@@ -1212,10 +1212,10 @@ body {
 }
 
 .blog-card {
-  background: var(--deep-slate);
+  background: var(--secondary-bg);
   border-radius: 12px;
   padding: 1.5rem;
-  color: var(--pale-white-blue);
+  color: var(--text-light);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 15px var(--box-shadow);
