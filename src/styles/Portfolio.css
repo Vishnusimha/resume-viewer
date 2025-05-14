@@ -967,6 +967,39 @@ body {
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* --------------------------- */
+/* Sidebar Filters (New Styles) */
+/* --------------------------- */
+.sidebar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  background-color: var(--deep-slate);
+  color: var(--links-hover-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: rgba(15, 240, 252, 0.1);
+  color: var(--accent-color);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-color);
+  color: var(--jet-black-navy);
+}
+
 /* Folder Structure Styles */
 .folder-structure {
   font-family: var(--font-main);
