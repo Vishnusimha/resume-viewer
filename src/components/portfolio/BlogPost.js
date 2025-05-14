@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
@@ -64,6 +64,7 @@ const BlogPost = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null); // State to hold active category filter
+  const postContentRef = useRef(null);
 
   useEffect(() => {
     marked.setOptions({
@@ -71,7 +72,7 @@ const BlogPost = () => {
         const language = hljs.getLanguage(lang) ? lang : "plaintext";
         return hljs.highlight(code, { language }).value;
       },
-      langPrefix: "hljs language-",
+      langPrefix: "hljs language-", // This is important for the CSS theme
     });
   }, []);
 
@@ -92,7 +93,6 @@ const BlogPost = () => {
       return files;
     };
 
-    // Function to flatten the entire structure and assign categories
     const flattenFiles = (structure) => {
       let files = [];
       structure.forEach((item) => {
@@ -121,7 +121,7 @@ const BlogPost = () => {
             const res = await fetch(file.content);
             if (!res.ok) {
               console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
-              return null;
+              return null; // Or handle error appropriately
             }
             const text = await res.text();
             return {
@@ -137,7 +137,7 @@ const BlogPost = () => {
             return null;
           }
         })
-        .filter(Boolean); // Filter out any null results from failed fetches
+        .filter(Boolean);
 
       const results = await Promise.all(promises);
       setAllPosts(results);
@@ -149,6 +149,62 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (!selectedPost || !selectedPost.html) return;
+    const highlightTimeout = setTimeout(() => {
+      if (postContentRef.current) {
+        const codeBlocks = postContentRef.current.querySelectorAll("pre code");
+        codeBlocks.forEach((block) => {
+          if (!block.classList.contains("hljs")) {
+            hljs.highlightElement(block);
+          }
+        });
+      }
+    }, 0);
+
+    const addCopyButtons = () => {
+      if (postContentRef.current) {
+        const preElements = postContentRef.current.querySelectorAll("pre");
+        preElements.forEach((pre) => {
+          // Avoid adding multiple buttons if effect runs again
+          if (
+            pre.previousElementSibling &&
+            pre.previousElementSibling.classList.contains("copy-button")
+          ) {
+            return;
+          }
+
+          const button = document.createElement("button");
+          button.textContent = "Copy";
+          button.classList.add("copy-button");
+
+          // Insert button before the <pre> element
+          pre.parentNode.insertBefore(button, pre);
+
+          // Add click event listener
+          button.addEventListener("click", () => {
+            const code = pre.querySelector("code").textContent;
+            navigator.clipboard
+              .writeText(code)
+              .then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                  button.textContent = "Copy";
+                }, 2000); // Reset button text after 2 seconds
+              })
+              .catch((err) => {
+                console.error("Failed to copy: ", err);
+                button.textContent = "Error";
+                setTimeout(() => {
+                  button.textContent = "Copy";
+                }, 2000);
+              });
+          });
+        });
+      }
+    };
+
+    const copyButtonTimeout = setTimeout(() => {
+      addCopyButtons();
+    }, 0);
 
     const checkboxes = document.querySelectorAll(
       ".blog-post input[type='checkbox']"
@@ -158,10 +214,23 @@ const BlogPost = () => {
       c.disabled = false;
       c.addEventListener("change", handleCheckboxChange);
     });
-    return () =>
+
+    return () => {
+      clearTimeout(highlightTimeout);
+      clearTimeout(copyButtonTimeout);
+      if (postContentRef.current) {
+        const buttons = postContentRef.current.querySelectorAll(".copy-button");
+        buttons.forEach((button) => {
+          const pre = button.nextElementSibling;
+          if (pre && pre.tagName === "PRE") {
+          }
+          button.remove();
+        });
+      }
       checkboxes.forEach((c) =>
         c.removeEventListener("change", handleCheckboxChange)
       );
+    };
   }, [selectedPost]);
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
@@ -351,6 +420,10 @@ const BlogPost = () => {
             className="blog-card"
             onClick={() => setSelectedPost(post)}
           >
+            {/* Category Tag */}
+            {post.category && (
+              <span className="category-tag">{post.category}</span>
+            )}
             <h3>{post.title}</h3>
             <p>{post.preview}</p>
             <span className="reading-time">
@@ -497,6 +570,7 @@ const BlogPost = () => {
               </div>
             </div>
             <article
+              ref={postContentRef} // Attach ref here
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: selectedPost.html }}
             />
