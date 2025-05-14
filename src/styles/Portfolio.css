@@ -47,10 +47,12 @@
   --links-hover-accent: var(--deep-neon-blue);
   --button-hover-accent: var(--deep-neon-blue);
   --primary-button-hover: var(--semi-transparent-cyan);
+  --secondary-button-hover: var(--semi-transparent-neon-blue);
   --project-card-background: var(--semi-transparent-black-50);
   --media-control-button-background: var(--semi-transparent-black-50);
   --box-shadow: var(--box-shadow-color);
   --category-tag-hover-color: var(--semi-transparent-deep-neon-blue);
+  --filter-btn-bg: var(--semi-transparent-neon-blue);
   --sidebar-overlay: var(--semi-transparent-black-50);
   --blogpost-not-precode: var(--semi-transparent-deep-neon-blue-15);
   --blog-post-pre-before-bg-color: var(--dark-grey);
@@ -291,7 +293,7 @@ body {
 }
 
 .secondary-btn:hover {
-  background-color: var(--semi-transparent-neon-blue);
+  background-color: var(--secondary-button-hover);
   color: var(--accent-color);
 }
 
@@ -407,7 +409,7 @@ body {
 }
 
 .tech-tags span {
-  background-color: var(--deep-slate);
+  background-color: var(--secondary-bg);
   color: var(--links-hover-accent);
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -483,7 +485,7 @@ body {
 }
 
 .filter-button {
-  background-color: var(--deep-slate);
+  background-color: var(--secondary-bg);
   color: var(--links-hover-accent);
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
@@ -497,7 +499,7 @@ body {
 }
 
 .filter-button:hover {
-  background-color: var(--semi-transparent-neon-blue);
+  background-color: var(--secondary-button-hover);
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
@@ -543,7 +545,7 @@ body {
 }
 
 .project-card:hover {
-  outline: 1px solid var(--semi-transparent-neon-blue);
+  outline: 1px solid var(--secondary-button-hover);
   transform: translateY(-1.5px);
   box-shadow: 0 15px 40px var(--box-shadow);
 }
@@ -690,7 +692,7 @@ body {
   border-radius: 20px;
   font-size: 0.75rem;
   color: var(--accent-color);
-  background: var(--semi-transparent-neon-blue);
+  background: var(--secondary-button-hover);
 }
 
 .project-title {
@@ -1055,7 +1057,7 @@ body {
 }
 
 .filter-btn {
-  background-color: var(--semi-transparent-neon-blue);
+  background-color: var(--filter-btn-bg);
   color: var(--links-hover-accent);
   padding: 0.5rem 1.2rem;
   border-radius: 20px;
@@ -1069,14 +1071,14 @@ body {
 }
 
 .filter-btn:hover {
-  background-color: var(--semi-transparent-neon-blue);
+  background-color: var(--light-semi-transparent-accent-blue-15);
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
 .filter-btn.active {
   background-color: var(--accent-color);
-  color: var(--jet-black-navy);
+  color: var(--primary-bg);
   border-color: var(--accent-color);
 }
 
@@ -1168,7 +1170,7 @@ body {
   margin-bottom: 1.5rem;
   position: sticky;
   top: 0;
-  background-color: var(--deep-slate);
+  background-color: var(--secondary-bg);
   padding-top: 1rem;
   z-index: 1;
 }
@@ -1189,8 +1191,8 @@ body {
   width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  border: 1px solid var(--secondary-bg);
-  background-color: var(--jet-black-navy);
+  border: 1px solid var(--text-muted);
+  background-color: var(--primary-bg);
   color: var(--text-light);
   font-family: var(--font-main);
 }
@@ -1237,7 +1239,7 @@ body {
   border-radius: 20px;
   font-size: 0.8rem;
   color: var(--links-hover-accent);
-  background: var(--jet-black-navy);
+  background: var(--primary-bg);
   transition: all 0.3s ease;
   display: inline-block;
   margin-bottom: 0.5rem;
