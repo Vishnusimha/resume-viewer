@@ -47,9 +47,11 @@
   --links-hover-accent: var(--deep-neon-blue);
   --button-hover-accent: var(--deep-neon-blue);
   --primary-button-hover: var(--semi-transparent-cyan);
-  --background-media-sidebar: var(--semi-transparent-black-50);
+  --project-card-background: var(--semi-transparent-black-50);
+  --media-control-button-background: var(--semi-transparent-black-50);
   --box-shadow: var(--box-shadow-color);
   --category-tag-hover-color: var(--semi-transparent-deep-neon-blue);
+  --sidebar-overlay: var(--semi-transparent-black-50);
   --blogpost-not-precode: var(--semi-transparent-deep-neon-blue-15);
   --blog-post-pre-before-bg-color: var(--dark-grey);
   --blog-post-pre-bg-color: var(--very-dark-grey);
@@ -599,7 +601,7 @@ body {
   color: var(--accent-color);
   cursor: pointer;
   pointer-events: auto;
-  background: var(--background-media-sidebar);
+  background: var(--media-control-button-background);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -667,7 +669,7 @@ body {
   font-size: 0.75rem;
   font-weight: bold;
   color: white;
-  background: var(--background-media-sidebar);
+  background: var(--project-card-background);
 }
 
 .project-content {
@@ -1013,7 +1015,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background-media-sidebar);
+  background-color: var(--sidebar-overlay);
   z-index: 999;
   display: none;
 }
@@ -1226,7 +1228,7 @@ body {
 .blog-card:hover {
   transform: translateY(-8px);
   background-color: var(--dark-neon-blue);
-  box-shadow: 0 8px 20px var(--background-media-sidebar);
+  box-shadow: 0 8px 20px var(--box-shadow);
 }
 
 .blog-card .category-tag {
