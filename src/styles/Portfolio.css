@@ -55,6 +55,7 @@
   --category-tag-hover-color: var(--semi-transparent-deep-neon-blue);
   --filter-btn-bg: var(--semi-transparent-neon-blue);
   --sidebar-overlay: var(--semi-transparent-black-50);
+  --blog-card-hover: var(--dark-neon-blue);
   --blogpost-not-precode: var(--semi-transparent-deep-neon-blue-15);
   --blog-post-pre-before-bg-color: var(--dark-grey);
   --blog-post-pre-bg-color: var(--very-dark-grey);
@@ -64,6 +65,8 @@
   --tech-tag-color: var(--bright-aqua);
   --github-link-bg: var(--deep-slate);
   --github-link-hover-color: var(--jet-black-navy);
+
+  /* Fonts */
   --font-main: "Fira Code", monospace;
 }
 
@@ -1232,7 +1235,7 @@ body {
 
 .blog-card:hover {
   transform: translateY(-8px);
-  background-color: var(--dark-neon-blue);
+  background-color: var(--blog-card-hover);
   box-shadow: 0 8px 20px var(--box-shadow);
 }
 
