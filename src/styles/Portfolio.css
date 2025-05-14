@@ -1831,6 +1831,9 @@ body {
     padding: 1.5rem;
     transform: translateX(0);
   }
+  .contact-section {
+    padding: 60px 40px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1919,6 +1922,10 @@ body {
   .post-footer {
     margin-top: 2rem;
     padding-top: 1.5rem;
+  }
+
+  .contact-section {
+    padding: 60px 40px;
   }
 }
 
@@ -2035,6 +2042,9 @@ body {
     font-size: 0.9rem;
   }
 
+  .contact-section {
+    padding: 60px 40px;
+  }
   .contact-title {
     font-size: 1.6rem;
   }
@@ -2098,6 +2108,10 @@ body {
 
   .blog-post pre code {
     font-size: 0.85rem !important;
+  }
+
+  .contact-section {
+    padding: 20px 20px;
   }
 }
 
