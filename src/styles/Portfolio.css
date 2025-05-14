@@ -513,7 +513,7 @@ body {
 }
 
 .project-card:hover {
-  outline: 1px solid var(--dark-neon-blue);
+  outline: 1px solid var(--semi-transparent-neon-blue);
   transform: translateY(-1.5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
