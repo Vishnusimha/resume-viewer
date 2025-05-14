@@ -48,6 +48,7 @@
   --button-hover-accent: var(--deep-neon-blue);
   --primary-button-hover: var(--semi-transparent-cyan);
   --secondary-button-hover: var(--semi-transparent-neon-blue);
+  --card-outline-hover: var(--semi-transparent-neon-blue);
   --project-card-background: var(--semi-transparent-black-50);
   --media-control-button-background: var(--semi-transparent-black-50);
   --box-shadow: var(--box-shadow-color);
@@ -61,6 +62,8 @@
   --file-item-active: var(--semi-transparent-deep-neon-blue-15);
   --validation-error-color: var(--salmon-color);
   --tech-tag-color: var(--bright-aqua);
+  --github-link-bg: var(--deep-slate);
+  --github-link-hover-color: var(--jet-black-navy);
   --font-main: "Fira Code", monospace;
 }
 
@@ -545,7 +548,7 @@ body {
 }
 
 .project-card:hover {
-  outline: 1px solid var(--secondary-button-hover);
+  outline: 1px solid var(--card-outline-hover);
   transform: translateY(-1.5px);
   box-shadow: 0 15px 40px var(--box-shadow);
 }
@@ -750,25 +753,25 @@ body {
 }
 
 .project-link.github {
-  background-color: var(--deep-slate);
+  background-color: var(--github-link-bg);
   color: var(--links-hover-accent);
   outline: 1px solid var(--links-hover-accent);
 }
 
 .project-link.github:hover {
-  color: var(--jet-black-navy);
+  color: var(--github-link-hover-color);
   background: var(--links-hover-accent);
 }
 
 .project-link.demo,
 .project-link.pdf {
-  color: var(--jet-black-navy);
+  color: var(--github-link-hover-color);
   background: var(--accent-color);
 }
 
 .project-link.demo:hover,
 .project-link.pdf:hover {
-  color: var(--jet-black-navy);
+  color: var(--github-link-hover-color);
   background: var(--links-hover-accent);
 }
 
