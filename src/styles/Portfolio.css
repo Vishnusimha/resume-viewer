@@ -36,6 +36,24 @@
   --salmon-color: var(--validation-error-color);
   --bright-aqua: #18fadc;
 
+  /* Dark Theme Syntax Highlighting Colors */
+  --hljs-color: #d4d4d4;
+  --hljs-keyword-color: #569cd6;
+  --hljs-built_in-color: #4ec9b0;
+  --hljs-type-color: #4ec9b0;
+  --hljs-literal-color: #569cd6;
+  --hljs-number-color: #b5cea8;
+  --hljs-string-color: #ce9178;
+  --hljs-comment-color: #6a9955;
+  --hljs-function-color: #dcdcaa;
+  --hljs-params-color: #9cdcfe;
+  --hljs-title-color: #dcdcaa;
+  --hljs-meta-color: #9b9b9b;
+  --hljs-tag-color: #569cd6;
+  --hljs-attr-color: #9cdcfe;
+  --hljs-attribute-color: #d7ba7d;
+  --hljs-variable-color: #9cdcfe;
+
   /* Dark Theme Main Variables */
   --primary-bg: var(--jet-black-navy);
   --secondary-bg: var(--deep-slate);
@@ -1445,68 +1463,68 @@ body {
 
 /* Syntax Highlighting Colors */
 .hljs {
-  color: #d4d4d4 !important;
+  color: var(--hljs-color) !important;
 }
 
 .hljs-keyword {
-  color: #569cd6 !important;
+  color: var(--hljs-keyword-color) !important;
 }
 
 .hljs-built_in {
-  color: #4ec9b0 !important;
+  color: var(--hljs-built_in-color) !important;
 }
 
 .hljs-type {
-  color: #4ec9b0 !important;
+  color: var(--hljs-type-color) !important;
 }
 
 .hljs-literal {
-  color: #569cd6 !important;
+  color: var(--hljs-literal-color) !important;
 }
 
 .hljs-number {
-  color: #b5cea8 !important;
+  color: var(--hljs-number-color) !important;
 }
 
 .hljs-string {
-  color: #ce9178 !important;
+  color: var(--hljs-string-color) !important;
 }
 
 .hljs-comment {
-  color: #6a9955 !important;
+  color: var(--hljs-comment-color) !important;
   font-style: italic !important;
 }
 
 .hljs-function {
-  color: #dcdcaa !important;
+  color: var(--hljs-function-color) !important;
 }
 
 .hljs-params {
-  color: #9cdcfe !important;
+  color: var(--hljs-params-color) !important;
 }
 
 .hljs-title {
-  color: #dcdcaa !important;
+  color: var(--hljs-title-color) !important;
 }
 
 .hljs-meta {
-  color: #9b9b9b !important;
+  color: var(--hljs-meta-color) !important;
 }
 
 .hljs-tag {
-  color: #569cd6 !important;
+  color: var(--hljs-tag-color) !important;
 }
 
 .hljs-attr {
-  color: #9cdcfe !important;
+  color: var(--hljs-attr-color) !important;
 }
 
 .hljs-attribute {
-  color: #d7ba7d !important;
+  color: var(--hljs-attribute-color) !important;
 }
 
 .hljs-variable {
-  color: #9cdcfe !important;
+  color: var(--hljs-variable-color) !important;
 }
 
 /* Post Footer */
