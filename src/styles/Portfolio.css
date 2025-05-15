@@ -203,7 +203,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--primary-bg);
-  color: var(--text-light); /* Use --text-light for main body text */
+  color: var(--text-light);
   font-family: var(--font-main);
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   overflow-x: hidden;
