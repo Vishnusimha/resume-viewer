@@ -64,7 +64,7 @@
   --validation-error-color: var(--salmon-color);
   --tech-tag-color: var(--bright-aqua);
   --github-link-bg: var(--deep-slate);
-  --github-link-hover-color: var(--jet-black-navy);
+  --github-link-hover-color: var(--primary-bg);
 
   /* Fonts */
   --font-main: "Fira Code", monospace;
@@ -512,7 +512,7 @@ body {
 
 .filter-button.active {
   background-color: var(--accent-color);
-  color: var(--jet-black-navy);
+  color: var(--primary-bg);
   border-color: var(--accent-color);
 }
 
