@@ -108,6 +108,95 @@
   --font-main: "Fira Code", monospace;
 }
 
+body.light-theme {
+  --spring-green: #00ff7f;
+  --light-bg-primary: #eef2f6;
+  --light-bg-secondary: #d8e2eb;
+  --light-accent-blue: #007bff;
+  --light-text-main: #2c3e50;
+  --light-text-muted-cool: #7f8c8d;
+  --light-link-standard-blue: #3498db;
+  --light-shadow-soft: rgba(0, 0, 0, 0.1);
+  --light-code-bg-pale: #ecf0f1;
+  --light-code-header-bg-cool: #bdc3c7;
+  --light-error-muted-red: #c0392b;
+  --light-overlay-transparent-black: rgba(0, 0, 0, 0.3);
+  --light-accent-blue-transparent-15: rgba(0, 123, 255, 0.15);
+  --light-accent-blue-transparent-10: rgba(0, 123, 255, 0.1);
+  --light-accent-blue-transparent-08: rgba(0, 123, 255, 0.08);
+  --light-bg-secondary-transparent-70: rgba(216, 226, 235, 0.7);
+  --light-bg-secondary-transparent-60: rgba(216, 226, 235, 0.6);
+  --light-highlight-yellow-transparent-12: rgba(255, 255, 0, 0.12);
+
+  /* Light Theme Syntax Highlighting Colors */
+  --hljs-color: #333333; /* Dark gray for general text */
+  --hljs-keyword-color: #007bff; /* Blue for keywords */
+  --hljs-built_in-color: #28a745; /* Green for built-ins */
+  --hljs-type-color: #28a745; /* Green for types */
+  --hljs-literal-color: #007bff; /* Blue for literals */
+  --hljs-number-color: #dc3545; /* Red for numbers */
+  --hljs-string-color: #6610f2; /* Indigo for strings */
+  --hljs-comment-color: #6a737d; /* Muted gray for comments */
+  --hljs-function-color: #6f42c1; /* Purple for functions */
+  --hljs-params-color: #007bff; /* Blue for parameters */
+  --hljs-title-color: #6f42c1; /* Purple for titles (functions) */
+  --hljs-meta-color: #17a2b8; /* Cyan for meta */
+  --hljs-tag-color: #e83e8c; /* Pink for tags */
+  --hljs-attr-color: #007bff; /* Blue for attributes */
+  --hljs-attribute-color: #fd7e14; /* Orange for attribute names */
+  --hljs-variable-color: #007bff; /* Blue for variables */
+  --hljs-template-variable-color: #007bff; /* Added - Blue */
+  --hljs-symbol-color: #dc3545; /* Added - Red */
+  --hljs-regexp-color: #6610f2; /* Added - Indigo */
+  --hljs-selector-tag-color: #e83e8c; /* Added - Pink */
+  --hljs-selector-id-color: #fd7e14; /* Added - Orange */
+  --hljs-selector-class-color: #fd7e14; /* Added - Orange */
+  --hljs-selector-attr-color: #007bff; /* Added - Blue */
+  --hljs-selector-pseudo-color: #007bff; /* Added - Blue */
+  --hljs-addition-color: #28a745; /* Added - Green */
+  --hljs-deletion-color: #dc3545; /* Added - Red */
+  --hljs-section-color: #007bff; /* Added - Blue */
+  --hljs-name-color: #fd7e14; /* Added - Orange */
+  --hljs-builtin-name-color: #28a745; /* Added - Green */
+  --hljs-link-color: #007bff; /* Added - Blue */
+  --hljs-emphasis-color: #333333; /* Added - Dark gray */
+  --hljs-strong-color: #333333; /* Added - Dark gray */
+  --hljs-formula-color: #6f42c1; /* Added - Purple */
+  --hljs-quote-color: #6a737d; /* Added - Muted gray */
+  --hljs-doctag-color: #6a737d; /* Added - Muted gray */
+  --hljs-built_in-special-color: #28a745; /* Added - Green */
+
+  /* Light Theme Main Variables */
+  --primary-bg: var(--light-bg-primary);
+  --secondary-bg: var(--light-bg-secondary);
+  --accent-color: var(--light-accent-blue);
+  --text-light: var(--light-text-main);
+  --text-muted: var(--light-text-muted-cool);
+  --links-accent: var(--light-link-standard-blue);
+  --navbar-hover-accent: var(--accent-color);
+  --links-hover-accent: var(--accent-color);
+  --button-hover-accent: var(--accent-color);
+  --primary-button-hover: var(--light-accent-blue-transparent-15);
+  --secondary-button-hover: var(--light-accent-blue-transparent-10);
+  --card-outline-hover: var(--light-accent-blue-transparent-15);
+  --project-card-background: var(--light-bg-secondary-transparent-70);
+  --media-control-button-background: var(--light-bg-secondary-transparent-70);
+  --box-shadow: var(--light-shadow-soft);
+  --category-tag-hover-color: var(--light-accent-blue-transparent-10);
+  --filter-btn-bg: var(--light-bg-secondary-transparent-60);
+  --blog-card-hover: var(--light-link-standard-blue);
+  --sidebar-overlay: var(--light-overlay-transparent-black);
+  --blogpost-not-precode: var(--light-accent-blue-transparent-08);
+  --blog-post-pre-before-bg-color: var(--light-code-header-bg-cool);
+  --blog-post-pre-bg-color: var(--light-code-bg-pale);
+  --search-highlight: var(--light-highlight-yellow-transparent-12);
+  --file-item-active: var(--light-accent-blue-transparent-08);
+  --validation-error-color: var(--light-error-muted-red);
+  --tech-tag-color: var(--light-link-standard-blue);
+  --github-link-bg: var(--light-bg-secondary);
+  --github-link-hover-color: var(--primary-bg);
+}
+
 /* Base Styles */
 html,
 body {
