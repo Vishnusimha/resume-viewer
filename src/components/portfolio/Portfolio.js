@@ -6,17 +6,25 @@ import Resume from "./Resume";
 import Contact from "./Contact";
 import BlogPost from "./BlogPost";
 import CV from "../resume/ResumeViewer";
-import { FaBriefcase, FaPencilAlt, FaSun, FaMoon } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaPencilAlt,
+  FaSun,
+  FaMoon,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { FaUserTie, FaCode } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState("home");
-  // Use state to track if light theme is applied, initialized based on body class
   const [isLightTheme, setIsLightTheme] = useState(
     document.body.classList.contains("light-theme")
   );
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const themeToggleBtnRef = useRef(null);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const body = document.body;
@@ -24,33 +32,29 @@ const Portfolio = () => {
     const applyThemeClass = (theme) => {
       if (theme === "light") {
         body.classList.add("light-theme");
-        // Update state when class is applied
         setIsLightTheme(true);
       } else {
         body.classList.remove("light-theme");
-        // Update state when class is removed
         setIsLightTheme(false);
       }
     };
 
     const savedTheme = localStorage.getItem("theme");
-    // Apply theme on mount and initialize state
     applyThemeClass(savedTheme === "light" ? "light" : "dark");
 
     const themeToggleBtn = themeToggleBtnRef.current;
 
     if (themeToggleBtn) {
       const handleToggleClick = () => {
-        // Toggle the 'light-theme' class on the body
-        const themeWasLight = body.classList.contains("light-theme"); // Check before toggling
+        const themeWasLight = body.classList.contains("light-theme");
         if (themeWasLight) {
           body.classList.remove("light-theme");
-          setIsLightTheme(false); // Update state
-          localStorage.setItem("theme", "dark"); // Save preference
+          setIsLightTheme(false);
+          localStorage.setItem("theme", "dark");
         } else {
           body.classList.add("light-theme");
-          setIsLightTheme(true); // Update state
-          localStorage.setItem("theme", "light"); // Save preference
+          setIsLightTheme(true);
+          localStorage.setItem("theme", "light");
         }
       };
 
@@ -60,7 +64,21 @@ const Portfolio = () => {
         themeToggleBtn.removeEventListener("click", handleToggleClick);
       };
     }
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const renderSection = () => {
     switch (activeSection) {
@@ -81,43 +99,53 @@ const Portfolio = () => {
     }
   };
 
-  // Use the state variable to determine which icon to show
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="portfolio-container">
-      <nav className="navbar">
+      <nav className="navbar" ref={navRef}>
         <h1
           className="portfolio-title"
-          onClick={() => {
-            setActiveSection("home");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => handleNavClick("home")}
           style={{ cursor: "pointer" }}
         >
           VS
         </h1>
 
-        <ul className="nav-links">
-          <li onClick={() => setActiveSection("projects")}>
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <ul className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
+          <li onClick={() => handleNavClick("projects")}>
             <FaCode style={{ marginRight: "6px" }} /> Projects
           </li>
-          <li onClick={() => setActiveSection("Blogs")}>
+          <li onClick={() => handleNavClick("Blogs")}>
             <FaPencilAlt style={{ marginRight: "6px" }} /> Blogs
           </li>
-          <li onClick={() => setActiveSection("CV")}>
+          <li onClick={() => handleNavClick("CV")}>
             <FaBriefcase style={{ marginRight: "6px" }} /> CV
           </li>
-          <li onClick={() => setActiveSection("resume")}>
-            <FaUserTie style={{ marginRight: "6px" }} /> Resume{" "}
+          <li onClick={() => handleNavClick("resume")}>
+            <FaUserTie style={{ marginRight: "6px" }} /> Resume
           </li>
-          <li onClick={() => setActiveSection("contact")}>
+          <li onClick={() => handleNavClick("contact")}>
             <AiOutlineMail style={{ marginRight: "6px" }} /> Contact
           </li>
-
           <li>
             <button
               id="theme-toggle"
               ref={themeToggleBtnRef}
               className="theme-toggle-button"
+              aria-label="Toggle theme"
             >
               {isLightTheme ? <FaMoon /> : <FaSun />}
             </button>

@@ -319,50 +319,47 @@
 @media (max-width: 768px) {
   /* NAVIGATION */
   .navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    position: relative;
     padding: 10px 15px;
   }
-  .portfolio-title {
-    font-size: 1.2rem;
-    max-width: 50%;
-    text-align: left;
+
+  .mobile-menu-button {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
+
   .nav-links {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--secondary-bg);
-    padding: 10px 0;
-    box-shadow: 0 8px 16px var(--box-shadow);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 999;
-    overflow-x: hidden;
-    white-space: normal;
-    gap: 0;
+    background-color: var(--secondary-bg);
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px var(--box-shadow);
+    z-index: 1000;
   }
+
   .nav-links.active {
     display: flex;
   }
+
   .nav-links li {
     width: 100%;
     padding: 10px 15px;
     border-bottom: 1px solid var(--primary-bg);
-    font-size: 1rem;
   }
+
   .nav-links li:last-child {
     border-bottom: none;
   }
-  .nav-links li::after {
-    content: none;
-  }
+
   .theme-toggle-button {
-    margin-left: auto;
-    padding: 6px;
-    font-size: 1rem;
+    margin-left: 0;
   }
   .section {
     padding: 30px 15px;
