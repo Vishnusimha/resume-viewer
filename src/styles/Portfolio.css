@@ -53,6 +53,26 @@
   --hljs-attr-color: #9cdcfe;
   --hljs-attribute-color: #d7ba7d;
   --hljs-variable-color: #9cdcfe;
+  --hljs-template-variable-color: #9cdcfe;
+  --hljs-symbol-color: #b5cea8;
+  --hljs-regexp-color: #ce9178;
+  --hljs-selector-tag-color: #569cd6;
+  --hljs-selector-id-color: #d7ba7d;
+  --hljs-selector-class-color: #d7ba7d;
+  --hljs-selector-attr-color: #9cdcfe;
+  --hljs-selector-pseudo-color: #9cdcfe;
+  --hljs-addition-color: #b5cea8;
+  --hljs-deletion-color: #ce9178;
+  --hljs-section-color: #569cd6;
+  --hljs-name-color: #d7ba7d;
+  --hljs-builtin-name-color: #4ec9b0;
+  --hljs-link-color: #569cd6;
+  --hljs-emphasis-color: #d4d4d4;
+  --hljs-strong-color: #d4d4d4;
+  --hljs-formula-color: #dcdcaa;
+  --hljs-quote-color: #6a9955;
+  --hljs-doctag-color: #6a9955;
+  --hljs-built_in-special-color: #4ec9b0;
 
   /* Dark Theme Main Variables */
   --primary-bg: var(--jet-black-navy);
@@ -1525,6 +1545,88 @@ body {
 
 .hljs-variable {
   color: var(--hljs-variable-color) !important;
+}
+
+.hljs-template-variable {
+  color: var(--hljs-template-variable-color) !important;
+}
+
+.hljs-symbol {
+  color: var(--hljs-symbol-color) !important;
+}
+
+.hljs-regexp {
+  color: var(--hljs-regexp-color) !important;
+}
+
+.hljs-selector-tag {
+  color: var(--hljs-selector-tag-color) !important;
+}
+
+.hljs-selector-id {
+  color: var(--hljs-selector-id-color) !important;
+}
+
+.hljs-selector-class {
+  color: var(--hljs-selector-class-color) !important;
+}
+
+.hljs-selector-attr {
+  color: var(--hljs-selector-attr-color) !important;
+}
+
+.hljs-selector-pseudo {
+  color: var(--hljs-selector-pseudo-color) !important;
+}
+
+.hljs-addition {
+  color: var(--hljs-addition-color) !important;
+}
+
+.hljs-deletion {
+  color: var(--hljs-deletion-color) !important;
+}
+
+.hljs-section {
+  color: var(--hljs-section-color) !important;
+}
+
+.hljs-name {
+  color: var(--hljs-name-color) !important;
+}
+
+.hljs-builtin-name {
+  color: var(--hljs-builtin-name-color) !important;
+}
+
+.hljs-link {
+  color: var(--hljs-link-color) !important;
+}
+
+.hljs-emphasis {
+  color: var(--hljs-emphasis-color) !important;
+  font-style: italic !important; /* Ensure emphasis is italic */
+}
+
+.hljs-strong {
+  color: var(--hljs-strong-color) !important;
+  font-weight: bold !important; /* Ensure strong is bold */
+}
+
+.hljs-formula {
+  color: var(--hljs-formula-color) !important;
+}
+
+.hljs-quote {
+  color: var(--hljs-quote-color) !important;
+}
+
+.hljs-doctag {
+  color: var(--hljs-doctag-color) !important;
+}
+
+.hljs-built_in-special {
+  color: var(--hljs-built_in-special-color) !important;
 }
 
 /* Post Footer */
