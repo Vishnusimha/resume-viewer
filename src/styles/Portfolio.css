@@ -2768,10 +2768,10 @@ body {
 
   /* HOME PAGE */
   .home-welcome-section {
-    padding: 5px 3% 5px 3%;
+    padding: 0% 3% 0 3%;
   }
   .home-welcome-content {
-    gap: 20px;
+    gap: 5px;
   }
   .home-greeting {
     font-size: 1.1rem;
@@ -2781,15 +2781,15 @@ body {
   }
   .home-typing-text {
     font-size: 1.2rem;
-    /* min-height: 35px; */
   }
   .home-description {
     font-size: 0.85rem;
     max-width: 100%;
-    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
   }
   .cta-buttons {
     gap: 8px;
+    margin-top: 0;
   }
   .primary-btn,
   .secondary-btn {
@@ -2807,16 +2807,18 @@ body {
   }
   .home-welcome-image {
     max-width: 60%;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 1rem;
   }
   .home-about-section {
-    padding: 0px 0 20px 0;
+    padding: 0 2% 5% 2%;
   }
   .home-about-header h2 {
+    margin-top: 0;
     font-size: 1.6rem;
   }
   .home-about-text h3 {
+    margin-top: 0;
     font-size: 1.2rem;
   }
   .home-about-text p {
@@ -2836,7 +2838,7 @@ body {
   }
   .tech-tags span {
     padding: 0.2rem 0.4rem;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   .about-stats {
     gap: 0.4rem;
@@ -2846,7 +2848,8 @@ body {
     margin-right: auto;
   }
   .stat-card {
-    padding: 0.1rem;
+    margin-top: 0;
+    padding: 0rem;
   }
   .stat-card h3 {
     font-size: 0.7rem;
