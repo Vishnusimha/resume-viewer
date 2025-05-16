@@ -184,7 +184,7 @@
   .social-links {
     justify-content: center;
     gap: 1rem;
-    margin-top: 0.2rem;
+    margin-top: 2rem;
   }
   .social-links a {
     font-size: 1.6rem;
@@ -411,15 +411,16 @@
     max-width: 100%;
   }
   .cta-buttons {
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row; /* Ensure this stays row */
     gap: 15px;
+    justify-content: center;
     width: 100%;
   }
   .primary-btn,
   .secondary-btn {
-    width: fit-content;
-    margin: 0 auto;
+    flex: 0 1 auto; /* Allow buttons to shrink if needed */
+    min-width: 120px; /* Set a minimum width */
+    margin: 0; /* Remove any margins */
   }
   .social-links {
     justify-content: center;
@@ -1117,7 +1118,8 @@
     justify-content: center;
     gap: 1rem;
     font-size: 1.1rem;
-    /* margin-top: 1rem; */
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
   .social-links a {
     font-size: 1.2rem;
