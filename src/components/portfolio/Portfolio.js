@@ -83,7 +83,7 @@ const Portfolio = () => {
   const renderSection = () => {
     switch (activeSection) {
       case "home":
-        return <Home />;
+        return <Home onNavigate={handleNavClick} />;
       case "projects":
         return <Projects />;
       case "resume":
@@ -95,7 +95,7 @@ const Portfolio = () => {
       case "contact":
         return <Contact />;
       default:
-        return <Home />;
+        return <Home onNavigate={handleNavClick} />;
     }
   };
 

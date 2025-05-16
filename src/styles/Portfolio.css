@@ -444,7 +444,7 @@ body {
 
 .primary-btn {
   background-color: var(--accent-color);
-  color: var(--jet-black-navy);
+  color: var(--primary-bg);
   border: 2px solid var(--accent-color);
 }
 
@@ -456,7 +456,6 @@ body {
 }
 
 .primary-btn:hover {
-  transform: translateY(-3px);
   box-shadow: 0 10px 20px var(--primary-button-hover);
 }
 
@@ -1110,7 +1109,7 @@ body {
 .contact-form button {
   padding: 0.8rem;
   background-color: var(--accent-color);
-  color: var(--jet-black-navy);
+  color: var(--primary-bg);
   border: none;
   border-radius: 6px;
   font-weight: 600;
@@ -1120,7 +1119,6 @@ body {
 
 .contact-form button:hover {
   background-color: var(--button-hover-accent);
-  transform: translateY(-1px);
 }
 
 .contact-form button:disabled {
