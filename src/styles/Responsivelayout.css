@@ -373,7 +373,8 @@
 
   /* HOME PAGE */
   .home-welcome-section {
-    padding: 20px 5% 40px 5%;
+    padding: 0 2% 0 2%;
+    margin-top: -8rem;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -434,7 +435,8 @@
     margin-right: auto;
   }
   .home-about-section {
-    padding: 40px 5%;
+    padding-bottom: 10rem;
+    margin-top: 0rem;
     min-height: auto;
     align-items: center;
     display: flex;
