@@ -2,18 +2,32 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 import Lottie from "lottie-react";
 import codingAnimation from "../../assets/LottieFiles/vishnusimha.json";
-import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFileDownload,
+  FaEnvelope,
+} from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-
+import { AiOutlineMail } from "react-icons/ai";
 const Home = React.forwardRef((props, ref) => {
   const socialLinks = [
     { icon: <FaGithub />, url: "https://github.com/Vishnusimha" },
+    { icon: <FaEnvelope />, url: "mailto:vishnusimha98@gmail.com" },
     {
       icon: <FaLinkedin />,
       url: "https://www.linkedin.com/in/vishnusimhadussa/",
     },
     { icon: <SiLeetcode />, url: "https://leetcode.com/u/vishnusimha98/" },
   ];
+
+  const handleMyWorkClick = () => {
+    props.onNavigate("projects");
+  };
+
+  const handlePostsClick = () => {
+    props.onNavigate("Blogs");
+  };
 
   const techStack = [
     "Kotlin",
@@ -60,6 +74,22 @@ const Home = React.forwardRef((props, ref) => {
               building reliable mobile applications, backed by robust backend
               systems and cutting-edge cloud technologies.
             </p>
+
+            {/* Call to Action Buttons - Updated Names */}
+            <div className="cta-buttons">
+              <button
+                className="primary-btn"
+                onClick={handleMyWorkClick} // Use the updated handler
+              >
+                My Work
+              </button>
+              <button
+                className="secondary-btn"
+                onClick={handlePostsClick} // Use the updated handler
+              >
+                Posts
+              </button>
+            </div>
 
             <div className="social-links">
               {socialLinks.map((link, index) => (

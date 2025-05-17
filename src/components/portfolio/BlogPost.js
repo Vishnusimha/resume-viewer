@@ -67,13 +67,19 @@ const BlogPost = () => {
   const postContentRef = useRef(null);
 
   useEffect(() => {
-    marked.setOptions({
-      highlight: function (code, lang) {
-        const language = hljs.getLanguage(lang) ? lang : "plaintext";
-        return hljs.highlight(code, { language }).value;
-      },
-      langPrefix: "hljs language-", // This is important for the CSS theme
-    });
+    if (typeof marked !== "undefined" && typeof hljs !== "undefined") {
+      marked.setOptions({
+        highlight: function (code, lang) {
+          const language = hljs.getLanguage(lang) ? lang : "plaintext";
+          return hljs.highlight(code, { language }).value;
+        },
+        langPrefix: "hljs language-",
+      });
+    } else {
+      console.error(
+        "Marked or highlight.js not loaded. Ensure they are imported or available globally."
+      );
+    }
   }, []);
 
   useEffect(() => {
@@ -114,64 +120,77 @@ const BlogPost = () => {
     };
 
     const loadAllPosts = async () => {
+      setLoading(true);
       const flatFiles = flattenFiles(folderStructure);
-      const promises = flatFiles
-        .map(async (file) => {
-          try {
-            const res = await fetch(file.content);
-            if (!res.ok) {
-              console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
-              return null; // Or handle error appropriately
-            }
-            const text = await res.text();
-            return {
-              id: file.name,
-              title: file.name,
-              html: marked.parse(text),
-              preview: stripMarkdown(text).slice(0, 150) + "...",
-              wordCount: text.split(/\s+/).length,
-              category: file.category, // Store the category
-            };
-          } catch (error) {
-            console.error(`Error processing ${file.name}:`, error);
-            return null;
+      const promises = flatFiles.map(async (file) => {
+        try {
+          const res = await fetch(file.content);
+          if (!res.ok) {
+            console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
+            return null; // Or handle error appropriately
           }
-        })
-        .filter(Boolean);
+          const text = await res.text();
+          // Ensure marked.parse is available before calling
+          const htmlContent =
+            typeof marked !== "undefined"
+              ? marked.parse(text)
+              : `<p>Error: Markdown parser not available.</p>`;
+          return {
+            id: file.name,
+            title: file.name,
+            html: htmlContent,
+            preview: stripMarkdown(text).slice(0, 150) + "...",
+            wordCount: text.split(/\s+/).length,
+            category: file.category, // Store the category
+          };
+        } catch (error) {
+          console.error(`Error processing ${file.name}:`, error);
+          return null;
+        }
+      });
 
       const results = await Promise.all(promises);
-      setAllPosts(results);
+      setAllPosts(results.filter((post) => post !== null));
       setLoading(false);
     };
 
     loadAllPosts();
-  }, []);
+  }, []); // Empty dependency array means this runs only once on mount
 
   useEffect(() => {
     if (!selectedPost || !selectedPost.html) return;
+
+    // Highlight code blocks
     const highlightTimeout = setTimeout(() => {
-      if (postContentRef.current) {
+      if (postContentRef.current && typeof hljs !== "undefined") {
         const codeBlocks = postContentRef.current.querySelectorAll("pre code");
         codeBlocks.forEach((block) => {
+          // Check if the block hasn't been highlighted yet
           if (!block.classList.contains("hljs")) {
-            hljs.highlightElement(block);
+            try {
+              hljs.highlightElement(block);
+            } catch (error) {
+              console.error("Error highlighting code block:", error);
+            }
           }
         });
+      } else if (!postContentRef.current) {
+        console.log("postContentRef.current is null, cannot highlight.");
+      } else if (typeof hljs === "undefined") {
+        console.error("highlight.js not loaded, cannot highlight.");
       }
-    }, 0);
+    }, 0); // Use setTimeout to ensure DOM is updated
 
+    // Add copy buttons to code blocks
     const addCopyButtons = () => {
       if (postContentRef.current) {
+        // Remove existing buttons first to prevent duplicates on re-render
+        const existingButtons =
+          postContentRef.current.querySelectorAll(".copy-button");
+        existingButtons.forEach((button) => button.remove());
+
         const preElements = postContentRef.current.querySelectorAll("pre");
         preElements.forEach((pre) => {
-          // Avoid adding multiple buttons if effect runs again
-          if (
-            pre.previousElementSibling &&
-            pre.previousElementSibling.classList.contains("copy-button")
-          ) {
-            return;
-          }
-
           const button = document.createElement("button");
           button.textContent = "Copy";
           button.classList.add("copy-button");
@@ -204,40 +223,67 @@ const BlogPost = () => {
 
     const copyButtonTimeout = setTimeout(() => {
       addCopyButtons();
-    }, 0);
+    }, 0); // Use setTimeout to ensure DOM is updated
 
     const checkboxes = document.querySelectorAll(
       ".blog-post input[type='checkbox']"
     );
     const handleCheckboxChange = (e) => e.target.classList.toggle("checked");
     checkboxes.forEach((c) => {
-      c.disabled = false;
+      c.disabled = false; // Ensure checkboxes are interactive
       c.addEventListener("change", handleCheckboxChange);
     });
 
     return () => {
       clearTimeout(highlightTimeout);
       clearTimeout(copyButtonTimeout);
+      // Remove copy buttons on cleanup to prevent duplicates
       if (postContentRef.current) {
         const buttons = postContentRef.current.querySelectorAll(".copy-button");
         buttons.forEach((button) => {
-          const pre = button.nextElementSibling;
-          if (pre && pre.tagName === "PRE") {
-          }
-          button.remove();
+          button.remove(); // Remove the button
         });
       }
+      // Remove checkbox event listeners on cleanup
       checkboxes.forEach((c) =>
         c.removeEventListener("change", handleCheckboxChange)
       );
     };
-  }, [selectedPost]);
+  }, [selectedPost]); // Rerun this effect when selectedPost changes
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  useEffect(() => {
+    const blogSidebarElement = document.querySelector(".blog-sidebar");
+    const sidebarOverlayElement = document.querySelector(".sidebar-overlay");
+
+    if (blogSidebarElement) {
+      if (sidebarOpen) {
+        blogSidebarElement.classList.add("open");
+      } else {
+        blogSidebarElement.classList.remove("open");
+      }
+    }
+
+    if (sidebarOverlayElement) {
+      sidebarOverlayElement.style.display = sidebarOpen ? "block" : "none";
+    }
+
+    return () => {
+      if (blogSidebarElement) {
+        blogSidebarElement.classList.remove("open");
+      }
+      if (sidebarOverlayElement) {
+        sidebarOverlayElement.style.display = "none";
+      }
+    };
+  }, [sidebarOpen]); // This effect runs whenever sidebarOpen state changes
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   const handleContentClick = (e) => {
     if (
-      window.innerWidth <= 767 &&
+      window.innerWidth <= 769 && // Using 769px as per your CSS media query
       sidebarOpen &&
       e.target === e.currentTarget
     ) {
@@ -257,13 +303,18 @@ const BlogPost = () => {
         return;
       }
       const text = await response.text();
+      const htmlContent =
+        typeof marked !== "undefined"
+          ? marked.parse(text)
+          : `<p>Error: Markdown parser not available.</p>`;
       setSelectedPost({
         id: file.name,
         title: file.name,
-        html: marked.parse(text),
+        html: htmlContent,
         wordCount: text.split(/\s+/).length,
+        category: file.category,
       });
-      if (window.innerWidth <= 767) {
+      if (window.innerWidth <= 769) {
         setSidebarOpen(false);
       }
     } catch (error) {
@@ -273,7 +324,6 @@ const BlogPost = () => {
 
   const filterStructure = (structure, query, categoryFilter) => {
     let baseStructure = structure;
-
     if (categoryFilter) {
       const categoryMatch = structure.find(
         (item) =>
@@ -305,37 +355,18 @@ const BlogPost = () => {
         if (item.type === "file") {
           return item.name.toLowerCase().includes(query) ? item : null;
         }
+
         const filteredChildren = item.children
           ? filterStructure(item.children, query, null)
           : [];
 
         if (
-          categoryFilter &&
-          (item.name === categoryFilter ||
-            (item.children &&
-              item.children.some(
-                (child) =>
-                  child.type === "folder" && child.name === categoryFilter
-              )))
+          item.name.toLowerCase().includes(query) ||
+          filteredChildren.length > 0
         ) {
-          const actualFolderToShow =
-            item.name === categoryFilter
-              ? item
-              : item.children.find(
-                  (child) =>
-                    child.type === "folder" && child.name === categoryFilter
-                );
-
-          if (actualFolderToShow) {
-            return { ...actualFolderToShow, children: filteredChildren };
-          } else {
-            return null;
-          }
+          return { ...item, children: filteredChildren };
         } else {
-          return filteredChildren.length > 0 ||
-            item.name.toLowerCase().includes(query)
-            ? { ...item, children: filteredChildren }
-            : null;
+          return null;
         }
       })
       .filter(Boolean);
@@ -387,7 +418,7 @@ const BlogPost = () => {
                   }`}
                   onClick={() => handleFileClick(item)}
                 >
-                  <span className="file-icon">📄</span>
+                  <span className="file-icon">📄</span> {/* File icon */}
                   <span className="file-name">{item.name}</span>
                 </div>
               )
@@ -449,7 +480,6 @@ const BlogPost = () => {
     );
   }
 
-  // Get unique categories from the loaded posts
   const categories = Array.from(
     new Set(allPosts.map((post) => post.category))
   ).filter(Boolean);
@@ -459,13 +489,12 @@ const BlogPost = () => {
       <button
         className={`sidebar-toggle ${sidebarOpen ? "open" : ""}`}
         onClick={toggleSidebar}
+        aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
       >
         {sidebarOpen ? "✕" : "☰"}
       </button>
 
-      {sidebarOpen && (
-        <div className="sidebar-overlay" onClick={toggleSidebar} />
-      )}
+      <div className="sidebar-overlay" onClick={toggleSidebar} />
 
       <div className={`blog-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
@@ -491,7 +520,6 @@ const BlogPost = () => {
               }}
             />
           </div>
-          {/* New div for filters */}
           <div className="sidebar-filters">
             <button
               className={`filter-btn ${
@@ -562,15 +590,15 @@ const BlogPost = () => {
               <h1>{selectedPost.title}</h1>
               <div className="post-meta">
                 <span className="post-date">
-                  Last updated: {new Date().toLocaleDateString()}
+                  Last updated: {new Date().toLocaleDateString()}{" "}
                 </span>
                 <span className="post-reading-time">
-                  {getReadingTime(selectedPost.wordCount)}
+                  {getReadingTime(selectedPost.wordCount)} {/* Reading time */}
                 </span>
               </div>
             </div>
             <article
-              ref={postContentRef} // Attach ref here
+              ref={postContentRef}
               className="blog-post"
               dangerouslySetInnerHTML={{ __html: selectedPost.html }}
             />
