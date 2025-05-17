@@ -1937,6 +1937,7 @@ body {
   .home-welcome-section {
     padding: 6% 7%;
     min-height: 100vh;
+    margin-top: 0;
   }
   .home-welcome-content {
     gap: 30px;
@@ -1962,11 +1963,11 @@ body {
     font-size: 1.8rem;
   }
   .home-welcome-image {
-    max-width: 550px;
+    max-width: 36%;
     margin-top: -20px;
   }
   .home-about-section {
-    padding: 5% 8%;
+    padding: 2% 8% 10% 8%;
     min-height: 100vh;
   }
   .home-about-container {
