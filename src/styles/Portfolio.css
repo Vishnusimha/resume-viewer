@@ -2073,8 +2073,9 @@ body {
 
   /* HOME PAGE */
   .home-welcome-section {
-    padding: 5px 2% 10px 2%;
+    padding: 0px 2% 0px 2%;
     min-height: auto;
+    margin-top: -40px;
   }
   .home-welcome-content {
     flex-direction: column-reverse;
@@ -2112,7 +2113,7 @@ body {
     font-size: 1.6rem;
   }
   .home-welcome-image {
-    max-width: 40%;
+    max-width: 30%;
     margin-left: auto;
     margin-right: auto;
   }
