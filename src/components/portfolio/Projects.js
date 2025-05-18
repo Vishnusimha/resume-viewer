@@ -78,6 +78,17 @@ import DAML5 from "../../assets/work/DAML/DAML5.png";
 import DAML6 from "../../assets/work/DAML/DAML6.png";
 import DAML7 from "../../assets/work/DAML/DAML7.png";
 import DAML8 from "../../assets/work/DAML/DAML8.png";
+import AndroidPlaceholder from "../../assets/work/Android.png";
+import CppPlaceholder from "../../assets/work/cpp.png";
+import PythonPlaceholder from "../../assets/work/Python.png";
+import JavaPlaceholder from "../../assets/work/java.png";
+import NotesApp1 from "../../assets/work/NotesApp/NoteslandingScreen.png";
+import NotesApp2 from "../../assets/work/NotesApp/NotesEmpty.png";
+import NotesApp3 from "../../assets/work/NotesApp/NotesEmptyEditScreen.png";
+import NotesApp4 from "../../assets/work/NotesApp/NotesEditScreenFilled.png";
+import NotesApp5 from "../../assets/work/NotesApp/NotesListScreen.png";
+import NotesApp6 from "../../assets/work/NotesApp/PasswordGeneratorScreen.png";
+
 import React, { useState } from "react";
 import {
   FiCpu,
@@ -125,46 +136,39 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Intelligent Indoor Air Quality Monitoring System",
+      name: "StocKeeper - Android Stock Management App",
       description:
-        "Designed and implemented an IoT-based system to monitor CO2, humidity, and temperature using Raspberry Pi and Adafruit SCD40. Real-time data visualization and alerting through a custom Android app.",
+        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
       technologies: [
-        "Python Flask",
-        "Raspberry Pi",
-        "Linux",
-        "Edge Computing",
-        "Cloud Storage",
-        "Sensor Data Analysis",
+        "Kotlin",
+        "Jetpack Compose",
+        "Retrofit",
+        "Firebase",
+        "Hilt",
+        "Coroutines",
       ],
       media: [
-        AQM1,
-        AQM2,
-        AQM3,
-        AQM4,
-        AQM5,
-        AQM6,
-        AQM7,
-        AQM8,
-        AQM9,
-        AQM10,
-        AQM11,
-        AQM12,
-        AQM13,
+        AndroidPlaceholder,
+        SK1,
+        SK2,
+        SK3,
+        SK4,
+        SK5,
+        SK6,
+        SK7,
+        SK8,
+        SK9,
+        SK10,
+        SK11,
+        SK12,
+        SK13,
+        SK14,
+        SK15,
+        SK16,
       ],
-      category: "IoT",
+      category: "Mobile Development",
       links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003",
-        },
-        {
-          type: "demo",
-          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003/blob/main/README.md",
-        },
-        {
-          type: "pdf",
-          url: AQM14,
-        },
+        { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
       ],
     },
     {
@@ -186,6 +190,7 @@ const Projects = React.forwardRef((props, ref) => {
         "SonarQube Integration",
       ],
       media: [
+        AndroidPlaceholder,
         AndroidFeat1,
         AndroidFeat2,
         AndroidFeat3,
@@ -203,41 +208,6 @@ const Projects = React.forwardRef((props, ref) => {
           type: "github",
           url: "https://github.com/Vishnusimha/FeaturesXml",
         },
-      ],
-    },
-    {
-      name: "StocKeeper - Android Stock Management App",
-      description:
-        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
-      technologies: [
-        "Kotlin",
-        "Jetpack Compose",
-        "Retrofit",
-        "Firebase",
-        "Hilt",
-        "Coroutines",
-      ],
-      media: [
-        SK1,
-        SK2,
-        SK3,
-        SK4,
-        SK5,
-        SK6,
-        SK7,
-        SK8,
-        SK9,
-        SK10,
-        SK11,
-        SK12,
-        SK13,
-        SK14,
-        SK15,
-        SK16,
-      ],
-      category: "Mobile Development",
-      links: [
-        { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
       ],
     },
     {
@@ -311,7 +281,18 @@ const Projects = React.forwardRef((props, ref) => {
         "Automatic Updates",
       ],
       category: "Software Systems",
-      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
+      media: [
+        JavaPlaceholder,
+        CSA1,
+        CSA2,
+        CSA3,
+        CSA4,
+        CSA5,
+        CSA6,
+        CSA7,
+        CSA8,
+        CSA9,
+      ],
       links: [
         {
           type: "github",
@@ -324,13 +305,137 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
       technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [DAML1, DAML2, DAML3, DAML4, DAML5, DAML6, DAML7, DAML8],
+      media: [
+        PythonPlaceholder,
+        DAML1,
+        DAML2,
+        DAML3,
+        DAML4,
+        DAML5,
+        DAML6,
+        DAML7,
+        DAML8,
+      ],
       category: "Data Science / Machine Learning",
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
         {
           type: "pdf",
           url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/DA_ML%20for%20git.pdf",
+        },
+      ],
+    },
+    {
+      name: "AES-128 and PRESENT-80 Encryption-Algorithms - Academic Project",
+      description:
+        "Implemented AES-128 and PRESENT-80 cipher encryption in C++, ensuring adherence to specified key and block sizes. Validated implementation through ECB mode test encryptions and provided a concise comparison between the two algorithms.",
+      technologies: [
+        "C++",
+        "Python",
+        "Encryption Software",
+        "Object-Oriented Programming (OOP)",
+        "Software Design",
+      ],
+      // TODO : Add AES-128 and PRESENT-80 images
+      media: [CppPlaceholder, PythonPlaceholder],
+      category: "Software Systems",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/AES-Encryption-Algorithm",
+        },
+        {
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/Present80-Encryption-Algorithm",
+        },
+      ],
+    },
+    {
+      name: "Intelligent Indoor Air Quality Monitoring System",
+      description:
+        "Designed and implemented an IoT-based system to monitor CO2, humidity, and temperature using Raspberry Pi and Adafruit SCD40. Real-time data visualization and alerting through a custom Android app.",
+      technologies: [
+        "Python Flask",
+        "Raspberry Pi",
+        "Linux",
+        "Edge Computing",
+        "Cloud Storage",
+        "Sensor Data Analysis",
+      ],
+      media: [
+        PythonPlaceholder,
+        AQM1,
+        AQM2,
+        AQM3,
+        AQM4,
+        AQM5,
+        AQM6,
+        AQM7,
+        AQM8,
+        AQM9,
+        AQM10,
+        AQM11,
+        AQM12,
+        AQM13,
+      ],
+      category: "IoT",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003",
+        },
+        {
+          type: "demo",
+          url: "https://github.com/Vishnusimha/IndoorAirQualityEE5003/blob/main/README.md",
+        },
+        {
+          type: "pdf",
+          url: AQM14,
+        },
+      ],
+    },
+    {
+      name: "C++ Design Challenge - Academic Project",
+      description:
+        "Designed and implemented a robust C++ security system with keypad, fingerprint, and hybrid locks for flexible authentication. Proficiently applied OOP principles like inheritance, polymorphism, and dynamic memory management. Showcased expertise in container classes and algorithms for efficient data manipulation. Overall, demonstrated strong capabilities in software design and implementation.",
+      technologies: [
+        "C++",
+        "Object-Oriented Programming (OOP)",
+        "Software Design",
+      ],
+      // TODO :C++ Design Challenge images
+      media: [CppPlaceholder],
+      category: "Software Systems",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/CppDesignChallange",
+        },
+        {
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/CppDesignChallange/blob/main/C%2B%2B%20Design%20challenge%20code%20Documentation%20GIT.pdf",
+        },
+      ],
+    },
+    {
+      name: "Notes - Android App",
+      description:
+        "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
+      technologies: ["Kotlin", "Android", "Jetpack Compose", "Room Database"],
+      media: [
+        AndroidPlaceholder,
+        NotesApp1,
+        NotesApp2,
+        NotesApp3,
+        NotesApp4,
+        NotesApp5,
+        NotesApp6,
+      ],
+      category: "Mobile Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/Notes",
         },
       ],
     },
