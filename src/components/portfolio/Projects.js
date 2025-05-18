@@ -82,6 +82,7 @@ import AndroidPlaceholder from "../../assets/work/Android.png";
 import CppPlaceholder from "../../assets/work/cpp.png";
 import PythonPlaceholder from "../../assets/work/Python.png";
 import JavaPlaceholder from "../../assets/work/java.png";
+import JavaSpringBootPlaceholder from "../../assets/work/javaSpringBoot.png";
 import NotesApp1 from "../../assets/work/NotesApp/NoteslandingScreen.png";
 import NotesApp2 from "../../assets/work/NotesApp/NotesEmpty.png";
 import NotesApp3 from "../../assets/work/NotesApp/NotesEmptyEditScreen.png";
@@ -207,6 +208,32 @@ const Projects = React.forwardRef((props, ref) => {
         {
           type: "github",
           url: "https://github.com/Vishnusimha/FeaturesXml",
+        },
+      ],
+    },
+    {
+      name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
+      description:
+        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
+      technologies: [
+        "Kotlin",
+        "Jetpack Compose",
+        "Android",
+        "Coroutines",
+        "Java",
+        "Spring Boot",
+        "REST API",
+      ],
+      media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
+      category: "Full-Stack Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/SecretMessage",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/chat-microservices",
         },
       ],
     },
