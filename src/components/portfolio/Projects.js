@@ -252,7 +252,7 @@ const Projects = React.forwardRef((props, ref) => {
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
       technologies: ["React", "JavaScript", "REST API", "CSS"],
       media: [OpenWeatherApp1, OpenWeatherApp2],
-      category: "Web Development",
+      category: "Full-Stack Development",
       links: [
         {
           type: "github",
