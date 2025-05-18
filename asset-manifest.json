@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
-    "main.js": "/vishnuportfolio/static/js/main.5c79f7bd.js",
+    "main.js": "/vishnuportfolio/static/js/main.cfe560d9.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -9,7 +9,10 @@
     "static/media/HID Mobile Access five.png": "/vishnuportfolio/static/media/HID Mobile Access five.7320ba166dbb8f1c1f7a.png",
     "static/media/Gallery.png": "/vishnuportfolio/static/media/Gallery.13d86ca7b659acce46e0.png",
     "static/media/HID Mobile Access two.png": "/vishnuportfolio/static/media/HID Mobile Access two.a5e7835fb6e6802ef6d5.png",
+    "static/media/java.png": "/vishnuportfolio/static/media/java.c0d14d213b1eeac18cd9.png",
     "static/media/HID Mobile Access one.png": "/vishnuportfolio/static/media/HID Mobile Access one.b11096a560f4e2fd776e.png",
+    "static/media/cpp.png": "/vishnuportfolio/static/media/cpp.358dca20caaba7c91598.png",
+    "static/media/Python.png": "/vishnuportfolio/static/media/Python.f3a14368f44df2446269.png",
     "static/media/HID Mobile Access three.png": "/vishnuportfolio/static/media/HID Mobile Access three.5344316b341c1a0ef30b.png",
     "static/media/Specials.png": "/vishnuportfolio/static/media/Specials.09ee84021ce46a158ec3.png",
     "static/media/About.png": "/vishnuportfolio/static/media/About.9f5b6e03ea22419aa522.png",
@@ -37,6 +40,7 @@
     "static/media/DAML2.png": "/vishnuportfolio/static/media/DAML2.37353bd058116560abff.png",
     "static/media/Project Structure1.png": "/vishnuportfolio/static/media/Project Structure1.f8dec380f203ef59a827.png",
     "static/media/DAML1.png": "/vishnuportfolio/static/media/DAML1.a80c4efbe09110b8e88f.png",
+    "static/media/Android.png": "/vishnuportfolio/static/media/Android.9eea9f80e7dcd6abd59a.png",
     "static/media/DAML7.png": "/vishnuportfolio/static/media/DAML7.d3b635ee3865457816e7.png",
     "static/media/Project Structure2.png": "/vishnuportfolio/static/media/Project Structure2.2412e81ca1c026ce1230.png",
     "static/media/Prices.png": "/vishnuportfolio/static/media/Prices.1a574365378655ce1b25.png",
@@ -61,6 +65,7 @@
     "static/media/Server with 2 Clients Connected and Client windows.png": "/vishnuportfolio/static/media/Server with 2 Clients Connected and Client windows.4b59129ffbd3e8f05d41.png",
     "static/media/Menu.png": "/vishnuportfolio/static/media/Menu.2cd06e9bdcab45a63211.png",
     "static/media/SignUp.png": "/vishnuportfolio/static/media/SignUp.70c191b39abc80808784.png",
+    "static/media/PasswordGeneratorScreen.png": "/vishnuportfolio/static/media/PasswordGeneratorScreen.762bfcb204478db53e64.png",
     "static/media/jetpackComposeAppbranches.png": "/vishnuportfolio/static/media/jetpackComposeAppbranches.6a0f07b7f5753d80f5a0.png",
     "static/media/WeatherDashboard2.png": "/vishnuportfolio/static/media/WeatherDashboard2.2c29ca016cafcb8f0938.png",
     "static/media/AddNewStock.png": "/vishnuportfolio/static/media/AddNewStock.a5a3239e3790d33d4e85.png",
@@ -69,6 +74,7 @@
     "static/media/Server with 3 Clients Connected and 2 Colliding.png": "/vishnuportfolio/static/media/Server with 3 Clients Connected and 2 Colliding.b9725034b5fad28dcfd4.png",
     "static/media/PlanScreen2.png": "/vishnuportfolio/static/media/PlanScreen2.695fb24c416325d7942a.png",
     "static/media/Cart.png": "/vishnuportfolio/static/media/Cart.527889e88d9479cc8ad7.png",
+    "static/media/NotesListScreen.png": "/vishnuportfolio/static/media/NotesListScreen.3dc72906ddb0eaf60481.png",
     "static/media/Server with 2 Clients Collision.png": "/vishnuportfolio/static/media/Server with 2 Clients Collision.32d496803b949b9edcdb.png",
     "static/media/Server with 2 Clients Connected.png": "/vishnuportfolio/static/media/Server with 2 Clients Connected.30c8a0bd58d021143f47.png",
     "static/media/PlanMakerByShop.png": "/vishnuportfolio/static/media/PlanMakerByShop.c7943c863137a7f2339b.png",
@@ -81,8 +87,12 @@
     "static/media/24_hours_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/24_hours_data_2023-08-05T21_41_29+0100.43bce52f58947a90cdcd.png",
     "static/media/temperature_humidity_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/temperature_humidity_data_2023-08-05T21_41_29+0100.144a37cced7443a2e233.png",
     "static/media/aws-certified-cloud-practitioner.png": "/vishnuportfolio/static/media/aws-certified-cloud-practitioner.1929bbb619275d95b0e1.png",
+    "static/media/NotesEditScreenFilled.png": "/vishnuportfolio/static/media/NotesEditScreenFilled.e5265494133188dca7b3.png",
     "static/media/PlanScreen.png": "/vishnuportfolio/static/media/PlanScreen.1f068da0bd0304cf4644.png",
     "static/media/co2_data_2023-08-05T21_41_29+0100.png": "/vishnuportfolio/static/media/co2_data_2023-08-05T21_41_29+0100.59dac02611db6a765c6c.png",
+    "static/media/NotesEmpty.png": "/vishnuportfolio/static/media/NotesEmpty.2b6943140fe859b75e3c.png",
+    "static/media/NotesEmptyEditScreen.png": "/vishnuportfolio/static/media/NotesEmptyEditScreen.5ff7c3bb51db8ba259eb.png",
+    "static/media/NoteslandingScreen.png": "/vishnuportfolio/static/media/NoteslandingScreen.58d474c34694b6de4142.png",
     "static/media/Client Disconnected with Server.png": "/vishnuportfolio/static/media/Client Disconnected with Server.05743f02099bd0c1c949.png",
     "static/media/FeaturesCompose.md": "/vishnuportfolio/static/media/FeaturesCompose.e182cf9a42c1205315aa.md",
     "static/media/Implementing SSL Pinning with OkHttp and Retrofit.md": "/vishnuportfolio/static/media/Implementing SSL Pinning with OkHttp and Retrofit.7a167288ca62ae49d880.md",
@@ -91,11 +101,11 @@
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
     "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
-    "main.5c79f7bd.js.map": "/vishnuportfolio/static/js/main.5c79f7bd.js.map",
+    "main.cfe560d9.js.map": "/vishnuportfolio/static/js/main.cfe560d9.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a4d2723.css",
-    "static/js/main.5c79f7bd.js"
+    "static/js/main.cfe560d9.js"
   ]
 }
