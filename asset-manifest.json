@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
-    "main.js": "/vishnuportfolio/static/js/main.cfe560d9.js",
+    "main.js": "/vishnuportfolio/static/js/main.4311ad87.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -9,6 +9,7 @@
     "static/media/HID Mobile Access five.png": "/vishnuportfolio/static/media/HID Mobile Access five.7320ba166dbb8f1c1f7a.png",
     "static/media/Gallery.png": "/vishnuportfolio/static/media/Gallery.13d86ca7b659acce46e0.png",
     "static/media/HID Mobile Access two.png": "/vishnuportfolio/static/media/HID Mobile Access two.a5e7835fb6e6802ef6d5.png",
+    "static/media/javaSpringBoot.png": "/vishnuportfolio/static/media/javaSpringBoot.7eb1c517a3752d7d529a.png",
     "static/media/java.png": "/vishnuportfolio/static/media/java.c0d14d213b1eeac18cd9.png",
     "static/media/HID Mobile Access one.png": "/vishnuportfolio/static/media/HID Mobile Access one.b11096a560f4e2fd776e.png",
     "static/media/cpp.png": "/vishnuportfolio/static/media/cpp.358dca20caaba7c91598.png",
@@ -101,11 +102,11 @@
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
     "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
-    "main.cfe560d9.js.map": "/vishnuportfolio/static/js/main.cfe560d9.js.map",
+    "main.4311ad87.js.map": "/vishnuportfolio/static/js/main.4311ad87.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a4d2723.css",
-    "static/js/main.cfe560d9.js"
+    "static/js/main.4311ad87.js"
   ]
 }
