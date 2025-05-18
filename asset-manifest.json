@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vishnuportfolio/static/css/main.ce13b16d.css",
+    "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
     "main.js": "/vishnuportfolio/static/js/main.5c79f7bd.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
@@ -90,12 +90,12 @@
     "static/media/SerializableVSParcelable.md": "/vishnuportfolio/static/media/SerializableVSParcelable.da0dda6570a777247de6.md",
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
-    "main.ce13b16d.css.map": "/vishnuportfolio/static/css/main.ce13b16d.css.map",
+    "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
     "main.5c79f7bd.js.map": "/vishnuportfolio/static/js/main.5c79f7bd.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce13b16d.css",
+    "static/css/main.7a4d2723.css",
     "static/js/main.5c79f7bd.js"
   ]
 }
