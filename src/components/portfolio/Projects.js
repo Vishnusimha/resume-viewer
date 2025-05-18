@@ -83,6 +83,7 @@ import CppPlaceholder from "../../assets/work/cpp.png";
 import PythonPlaceholder from "../../assets/work/Python.png";
 import JavaPlaceholder from "../../assets/work/java.png";
 import JavaSpringBootPlaceholder from "../../assets/work/javaSpringBoot.png";
+import IoTPlaceholder from "../../assets/work/IoT.png";
 import NotesApp1 from "../../assets/work/NotesApp/NoteslandingScreen.png";
 import NotesApp2 from "../../assets/work/NotesApp/NotesEmpty.png";
 import NotesApp3 from "../../assets/work/NotesApp/NotesEmptyEditScreen.png";
@@ -412,6 +413,7 @@ const Projects = React.forwardRef((props, ref) => {
         "Sensor Data Analysis",
       ],
       media: [
+        IoTPlaceholder,
         PythonPlaceholder,
         AQM1,
         AQM2,
