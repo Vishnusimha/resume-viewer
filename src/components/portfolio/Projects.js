@@ -212,28 +212,24 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
+      name: "Notes - Android App",
       description:
-        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
-      technologies: [
-        "Kotlin",
-        "Jetpack Compose",
-        "Android",
-        "Coroutines",
-        "Java",
-        "Spring Boot",
-        "REST API",
+        "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
+      technologies: ["Kotlin", "Android", "Jetpack Compose", "Room Database"],
+      media: [
+        AndroidPlaceholder,
+        NotesApp1,
+        NotesApp2,
+        NotesApp3,
+        NotesApp4,
+        NotesApp5,
+        NotesApp6,
       ],
-      media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
-      category: "Full-Stack Development",
+      category: "Mobile Development",
       links: [
         {
           type: "github",
-          url: "https://github.com/Vishnusimha/SecretMessage",
-        },
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/chat-microservices",
+          url: "https://github.com/Vishnusimha/Notes",
         },
       ],
     },
@@ -271,6 +267,32 @@ const Projects = React.forwardRef((props, ref) => {
       links: [
         { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
         { type: "github", url: "https://github.com/Vishnusimha/webapp" },
+      ],
+    },
+    {
+      name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
+      description:
+        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
+      technologies: [
+        "Kotlin",
+        "Jetpack Compose",
+        "Android",
+        "Coroutines",
+        "Java",
+        "Spring Boot",
+        "REST API",
+      ],
+      media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
+      category: "Full-Stack Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/SecretMessage",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/chat-microservices",
+        },
       ],
     },
     {
@@ -441,28 +463,6 @@ const Projects = React.forwardRef((props, ref) => {
         {
           type: "pdf",
           url: "https://github.com/Vishnusimha/CppDesignChallange/blob/main/C%2B%2B%20Design%20challenge%20code%20Documentation%20GIT.pdf",
-        },
-      ],
-    },
-    {
-      name: "Notes - Android App",
-      description:
-        "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
-      technologies: ["Kotlin", "Android", "Jetpack Compose", "Room Database"],
-      media: [
-        AndroidPlaceholder,
-        NotesApp1,
-        NotesApp2,
-        NotesApp3,
-        NotesApp4,
-        NotesApp5,
-        NotesApp6,
-      ],
-      category: "Mobile Development",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/Notes",
         },
       ],
     },
