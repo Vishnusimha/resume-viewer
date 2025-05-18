@@ -2202,6 +2202,148 @@ body {
   }
 }
 
+@media (max-width: 810px) {
+  /* HOME PAGE */
+  .home-welcome-section {
+    padding: 0 2% 0 2%;
+    margin-top: -5rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-welcome-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  .home-welcome-text {
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .home-greeting {
+    font-size: 1.2rem;
+  }
+  .home-name {
+    font-size: 2rem;
+  }
+  .home-typing-text {
+    font-size: 1.5rem;
+    min-height: 50px;
+    margin: 15px 0;
+  }
+  .home-description {
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .cta-buttons {
+    flex-direction: row; /* Ensure this stays row */
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  .primary-btn,
+  .secondary-btn {
+    flex: 0 1 auto; /* Allow buttons to shrink if needed */
+    min-width: 120px; /* Set a minimum width */
+    margin: 0; /* Remove any margins */
+  }
+  .social-links {
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .home-welcome-image {
+    max-width: 40%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+  }
+  .home-about-section {
+    margin-top: 0rem;
+    padding-bottom: 6rem;
+    /* margin-bottom: 6rem; */
+    min-height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .home-about-container {
+    padding: 0;
+    width: 100%;
+  }
+  .home-about-header {
+    margin-bottom: 1.5rem;
+  }
+  .home-about-header h2 {
+    font-size: 2rem;
+  }
+  .home-about-divider {
+    margin: 0.5rem auto;
+  }
+  .home-about-content {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+  }
+  .home-about-text {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .home-about-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .home-about-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .about-tech-stack {
+    margin-top: 1.5rem;
+  }
+  .about-tech-stack h4 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .tech-tags {
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .tech-tags span {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  .about-stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .stat-card h3 {
+    font-size: 1.2rem;
+  }
+  .stat-card p {
+    font-size: 0.7rem;
+  }
+}
+
 @media (min-width: 769px) {
   .blog-layout {
     display: flex;
@@ -2298,7 +2440,7 @@ body {
   /* HOME PAGE */
   .home-welcome-section {
     padding: 0 2% 0 2%;
-    margin-top: -8rem;
+    margin-top: -10rem;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -2357,9 +2499,11 @@ body {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
   }
   .home-about-section {
-    padding-bottom: 10rem;
+    padding-bottom: 7rem;
+    margin-bottom: 7rem;
     margin-top: 0rem;
     min-height: auto;
     align-items: center;
@@ -2775,6 +2919,7 @@ body {
   /* HOME PAGE */
   .home-welcome-section {
     padding: 0% 3% 0 3%;
+    margin-top: 0;
   }
   .home-welcome-content {
     gap: 5px;
@@ -2817,7 +2962,8 @@ body {
     margin-bottom: 1rem;
   }
   .home-about-section {
-    padding: 0 2% 5% 2%;
+    padding: 0 2% 7% 2%;
+    margin-bottom: 0;
   }
   .home-about-header h2 {
     margin-top: 0;
@@ -3019,7 +3165,7 @@ body {
 @media (max-width: 375px) {
   /* HOME PAGE */
   .home-welcome-section {
-    padding: 160px 0% 1px 0%;
+    padding: 0 0% 1px 0%;
   }
   .home-welcome-content {
     gap: 2px;
@@ -3060,11 +3206,12 @@ body {
   .home-welcome-image {
     max-width: 50%;
     max-height: fit-content;
-    /* margin-top: -60px; */
+    margin-top: 0px;
   }
   .home-about-section {
     padding: 0 0 1rem 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
   }
   .home-about-header {
     margin-top: 4rem;
