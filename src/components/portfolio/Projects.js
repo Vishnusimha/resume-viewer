@@ -273,7 +273,6 @@ const Projects = React.forwardRef((props, ref) => {
         { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
       ],
     },
-
     {
       name: "Balloon Decor Business Website",
       description:
