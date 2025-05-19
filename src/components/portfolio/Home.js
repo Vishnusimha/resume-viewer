@@ -7,6 +7,7 @@ import {
   FaLinkedin,
   FaFileDownload,
   FaEnvelope,
+  FaShieldAlt,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { AiOutlineMail } from "react-icons/ai";
@@ -19,7 +20,17 @@ const Home = React.forwardRef((props, ref) => {
       url: "https://www.linkedin.com/in/vishnusimhadussa/",
     },
     { icon: <SiLeetcode />, url: "https://leetcode.com/u/vishnusimha98/" },
+    {
+      icon: <FaShieldAlt />,
+      url: "https://www.credly.com/users/vishnu-simha-dussa/",
+    },
   ];
+
+  const credlyUrl = "https://www.credly.com/users/vishnu-simha-dussa/";
+
+  const handleCertificationsClick = () => {
+    window.open(credlyUrl, "_blank");
+  };
 
   const handleMyWorkClick = () => {
     props.onNavigate("projects");
@@ -171,7 +182,11 @@ const Home = React.forwardRef((props, ref) => {
                 <h3>1M+</h3>
                 <p>Users Impacted</p>
               </div>
-              <div className="stat-card">
+              <div
+                className="stat-card"
+                style={{ cursor: "pointer" }}
+                onClick={handleCertificationsClick}
+              >
                 <h3>6+</h3>
                 <p>Certifications</p>
               </div>
