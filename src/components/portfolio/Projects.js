@@ -78,6 +78,19 @@ import DAML5 from "../../assets/work/DAML/DAML5.png";
 import DAML6 from "../../assets/work/DAML/DAML6.png";
 import DAML7 from "../../assets/work/DAML/DAML7.png";
 import DAML8 from "../../assets/work/DAML/DAML8.png";
+import AndroidPlaceholder from "../../assets/work/Android.png";
+import CppPlaceholder from "../../assets/work/cpp.png";
+import PythonPlaceholder from "../../assets/work/Python.png";
+import JavaPlaceholder from "../../assets/work/java.png";
+import JavaSpringBootPlaceholder from "../../assets/work/javaSpringBoot.png";
+import IoTPlaceholder from "../../assets/work/IoT.png";
+import NotesApp1 from "../../assets/work/NotesApp/NoteslandingScreen.png";
+import NotesApp2 from "../../assets/work/NotesApp/NotesEmpty.png";
+import NotesApp3 from "../../assets/work/NotesApp/NotesEmptyEditScreen.png";
+import NotesApp4 from "../../assets/work/NotesApp/NotesEditScreenFilled.png";
+import NotesApp5 from "../../assets/work/NotesApp/NotesListScreen.png";
+import NotesApp6 from "../../assets/work/NotesApp/PasswordGeneratorScreen.png";
+
 import React, { useState } from "react";
 import {
   FiCpu,
@@ -125,6 +138,300 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      name: "StocKeeper - Android Stock Management App",
+      description:
+        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
+      technologies: [
+        "Kotlin",
+        "Jetpack Compose",
+        "Retrofit",
+        "Firebase",
+        "Room",
+        "DataStore",
+        "Material Design",
+        "Real-time Database",
+        "Hilt",
+        "Coroutines",
+      ],
+      media: [
+        AndroidPlaceholder,
+        SK1,
+        SK2,
+        SK3,
+        SK4,
+        SK5,
+        SK6,
+        SK7,
+        SK8,
+        SK9,
+        SK10,
+        SK11,
+        SK12,
+        SK13,
+        SK14,
+        SK15,
+        SK16,
+      ],
+      category: "Mobile Development",
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
+      ],
+    },
+    {
+      name: "Feature-Rich Android Applications",
+      description:
+        "Created modern Android apps using Kotlin with Jetpack Compose and XML views, integrating technologies like Retrofit, Room, Firebase, Hilt, and Coroutines to deliver scalable, maintainable codebases.",
+      technologies: [
+        "Kotlin",
+        "Jetpack Compose",
+        "XML",
+        "Retrofit",
+        "Room",
+        "Firebase",
+        "Hilt",
+        "Coroutines",
+        "OkHttp",
+        "DataStore",
+        "Material Design",
+        "SonarQube Integration",
+      ],
+      media: [
+        AndroidPlaceholder,
+        AndroidFeat1,
+        AndroidFeat2,
+        AndroidFeat3,
+        AndroidFeat4,
+        AndroidFeat5,
+        AndroidFeat6,
+      ],
+      category: "Mobile Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/FeaturesCompose",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/FeaturesXml",
+        },
+      ],
+    },
+    {
+      name: "Notes - Android App",
+      description:
+        "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
+      technologies: ["Kotlin", "Android", "Jetpack Compose", "Room Database"],
+      media: [
+        AndroidPlaceholder,
+        NotesApp1,
+        NotesApp2,
+        NotesApp3,
+        NotesApp4,
+        NotesApp5,
+        NotesApp6,
+      ],
+      category: "Mobile Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/Notes",
+        },
+      ],
+    },
+    {
+      name: "Full-Stack Web Application - Online Business",
+      description:
+        "Developed a web application for an online takeaway restaurant business using Spring Boot and MySQL. The project features a responsive design, user authentication, and a dynamic menu. The backend is powered by Spring Boot, while the frontend is developed using HTML, CSS, and JavaScript.",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Microservices",
+        "Spring Security",
+        "Spring Data JPA",
+        "Spring MVC",
+        "Rest API",
+        "MVVM",
+        "HTML/CSS",
+        "JavaScript",
+      ],
+      media: [
+        Res1,
+        Res2,
+        Res3,
+        Res4,
+        Res5,
+        Res6,
+        Res7,
+        Res8,
+        Res9,
+        Res10,
+        Res11,
+      ],
+      category: "Full-Stack Development",
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
+      ],
+    },
+    {
+      name: "Balloon Decor Business Website",
+      description:
+        "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Microservices",
+        "MVVM",
+        "HTML/CSS",
+        "JavaScript",
+        "Rest API",
+      ],
+      media: [CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9],
+      category: "Full-Stack Development",
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
+        { type: "github", url: "https://github.com/Vishnusimha/webapp" },
+      ],
+    },
+    {
+      name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
+      description:
+        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Developed and integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
+      technologies: [
+        "Java",
+        "Kotlin",
+        "Jetpack Compose",
+        "Android",
+        "Coroutines",
+        "Retrofit",
+        "Room",
+        "Spring Boot",
+        "REST API",
+        "MySQL",
+        "API-Gateway",
+        "Microservices",
+        "Eureka Client/Server",
+        "Spring Security",
+      ],
+      media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
+      category: "Full-Stack Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/SecretMessage",
+        },
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/chat-microservices",
+        },
+      ],
+    },
+    {
+      name: "Weather Dashboard – React Project",
+      description:
+        "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
+      technologies: ["React", "JavaScript", "REST API", "CSS"],
+      media: [OpenWeatherApp1, OpenWeatherApp2],
+      category: "Full-Stack Development",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/react-weather-dashboard",
+        },
+        {
+          type: "demo",
+          url: "https://vishnusimha.github.io/react-weather-dashboard/",
+        },
+      ],
+    },
+    {
+      name: "Java Client-Server Architecture for Multi-Agent Robot Simulation",
+      description:
+        "Implemented a multi-threaded client-server application in Java for simulating and controlling multiple robot clients. The architecture features a Swing-based GUI on both ends, enabling real-time interaction and visualization. Key functionalities include network communication via Robot objects, concurrent handling of multiple clients, dynamic GUI updates (robot positions, collision alerts, connection status), and client-side speed control with optional automatic updates.",
+      technologies: [
+        "Client-Server Architecture",
+        "Real-time Control",
+        "Object Serialization",
+        "Multi-threading",
+        "Event Handling",
+        "Java Sockets",
+        "Java GUI",
+        "Java AWT Canvas",
+        "Java Swing",
+        "Automatic Updates",
+      ],
+      category: "Software Systems",
+      media: [
+        JavaPlaceholder,
+        CSA1,
+        CSA2,
+        CSA3,
+        CSA4,
+        CSA5,
+        CSA6,
+        CSA7,
+        CSA8,
+        CSA9,
+      ],
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/JavaClientServerApplication",
+        },
+      ],
+    },
+    {
+      name: "Human Activity Recognition - Data Analysis and ML",
+      description:
+        "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
+      technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
+      media: [
+        PythonPlaceholder,
+        DAML1,
+        DAML2,
+        DAML3,
+        DAML4,
+        DAML5,
+        DAML6,
+        DAML7,
+        DAML8,
+      ],
+      category: "Data Science / Machine Learning",
+      links: [
+        { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
+        {
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/DA_ML%20for%20git.pdf",
+        },
+      ],
+    },
+    {
+      name: "AES-128 and PRESENT-80 Encryption-Algorithms - Academic Project",
+      description:
+        "Implemented AES-128 and PRESENT-80 cipher encryption in C++, ensuring adherence to specified key and block sizes. Validated implementation through ECB mode test encryptions and provided a concise comparison between the two algorithms.",
+      technologies: [
+        "C++",
+        "Python",
+        "Encryption Software",
+        "Object-Oriented Programming (OOP)",
+        "Software Design",
+      ],
+      // TODO : Add AES-128 and PRESENT-80 images
+      media: [CppPlaceholder, PythonPlaceholder],
+      category: "Software Systems",
+      links: [
+        {
+          type: "github",
+          url: "https://github.com/Vishnusimha/AES-Encryption-Algorithm",
+        },
+        {
+          type: "pdf",
+          url: "https://github.com/Vishnusimha/Present80-Encryption-Algorithm",
+        },
+      ],
+    },
+    {
       name: "Intelligent Indoor Air Quality Monitoring System",
       description:
         "Designed and implemented an IoT-based system to monitor CO2, humidity, and temperature using Raspberry Pi and Adafruit SCD40. Real-time data visualization and alerting through a custom Android app.",
@@ -137,6 +444,8 @@ const Projects = React.forwardRef((props, ref) => {
         "Sensor Data Analysis",
       ],
       media: [
+        IoTPlaceholder,
+        PythonPlaceholder,
         AQM1,
         AQM2,
         AQM3,
@@ -168,169 +477,25 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Feature-Rich Android Applications",
+      name: "C++ Design Challenge - Academic Project",
       description:
-        "Created modern Android apps using Kotlin with Jetpack Compose and XML views, integrating technologies like Retrofit, Room, Firebase, Hilt, and Coroutines to deliver scalable, maintainable codebases.",
+        "Designed and implemented a robust C++ security system with keypad, fingerprint, and hybrid locks for flexible authentication. Proficiently applied OOP principles like inheritance, polymorphism, and dynamic memory management. Showcased expertise in container classes and algorithms for efficient data manipulation. Overall, demonstrated strong capabilities in software design and implementation.",
       technologies: [
-        "Kotlin",
-        "Jetpack Compose",
-        "XML",
-        "Retrofit",
-        "Room",
-        "Firebase",
-        "Hilt",
-        "Coroutines",
-        "OkHttp",
-        "DataStore",
-        "Material Design",
-        "SonarQube Integration",
+        "C++",
+        "Object-Oriented Programming (OOP)",
+        "Software Design",
       ],
-      media: [
-        AndroidFeat1,
-        AndroidFeat2,
-        AndroidFeat3,
-        AndroidFeat4,
-        AndroidFeat5,
-        AndroidFeat6,
-      ],
-      category: "Mobile Development",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/FeaturesCompose",
-        },
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/FeaturesXml",
-        },
-      ],
-    },
-    {
-      name: "StocKeeper - Android Stock Management App",
-      description:
-        "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
-      technologies: [
-        "Kotlin",
-        "Jetpack Compose",
-        "Retrofit",
-        "Firebase",
-        "Hilt",
-        "Coroutines",
-      ],
-      media: [
-        SK1,
-        SK2,
-        SK3,
-        SK4,
-        SK5,
-        SK6,
-        SK7,
-        SK8,
-        SK9,
-        SK10,
-        SK11,
-        SK12,
-        SK13,
-        SK14,
-        SK15,
-        SK16,
-      ],
-      category: "Mobile Development",
-      links: [
-        { type: "github", url: "https://github.com/Vishnusimha/StocKeeper" },
-      ],
-    },
-    {
-      name: "Full-Stack Web Chat Application",
-      description:
-        "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
-      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [
-        Res1,
-        Res2,
-        Res3,
-        Res4,
-        Res5,
-        Res6,
-        Res7,
-        Res8,
-        Res9,
-        Res10,
-        Res11,
-      ],
-      category: "Full-Stack Development",
-      links: [
-        { type: "github", url: "https://github.com/Vishnusimha/ee417-project" },
-      ],
-    },
-
-    {
-      name: "Balloon Decor Business Website",
-      description:
-        "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
-      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
-      media: [CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9],
-      category: "Full-Stack Development",
-      links: [
-        { type: "github", url: "https://github.com/Vishnusimha/cloudnine" },
-        { type: "github", url: "https://github.com/Vishnusimha/webapp" },
-      ],
-    },
-    {
-      name: "Weather Dashboard – React Project",
-      description:
-        "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
-      technologies: ["React", "JavaScript", "REST API", "CSS"],
-      media: [OpenWeatherApp1, OpenWeatherApp2],
-      category: "Web Development",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/react-weather-dashboard",
-        },
-        {
-          type: "demo",
-          url: "https://vishnusimha.github.io/react-weather-dashboard/",
-        },
-      ],
-    },
-    {
-      name: "Java Client-Server Architecture for Multi-Agent Robot Simulation",
-      description:
-        "Implemented a multi-threaded client-server application in Java for simulating and controlling multiple robot clients. The architecture features a Swing-based GUI on both ends, enabling real-time interaction and visualization. Key functionalities include network communication via Robot objects, concurrent handling of multiple clients, dynamic GUI updates (robot positions, collision alerts, connection status), and client-side speed control with optional automatic updates.",
-      technologies: [
-        "Client-Server Architecture",
-        "Real-time Control",
-        "Object Serialization",
-        "Multi-threading",
-        "Event Handling",
-        "Java Sockets",
-        "Java GUI",
-        "Java AWT Canvas",
-        "Java Swing",
-        "Automatic Updates",
-      ],
+      // TODO :C++ Design Challenge images
+      media: [CppPlaceholder],
       category: "Software Systems",
-      media: [CSA1, CSA2, CSA3, CSA4, CSA5, CSA6, CSA7, CSA8, CSA9],
       links: [
         {
           type: "github",
-          url: "https://github.com/Vishnusimha/JavaClientServerApplication",
+          url: "https://github.com/Vishnusimha/CppDesignChallange",
         },
-      ],
-    },
-    {
-      name: "Human Activity Recognition - Data Analysis and ML",
-      description:
-        "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
-      technologies: ["Python", "Jupyter Notebook", "Pandas", "NumPy", "ML"],
-      media: [DAML1, DAML2, DAML3, DAML4, DAML5, DAML6, DAML7, DAML8],
-      category: "Data Science / Machine Learning",
-      links: [
-        { type: "github", url: "https://github.com/Vishnusimha/GoogleCollab" },
         {
           type: "pdf",
-          url: "https://github.com/Vishnusimha/GoogleCollab/blob/main/DA_ML%20for%20git.pdf",
+          url: "https://github.com/Vishnusimha/CppDesignChallange/blob/main/C%2B%2B%20Design%20challenge%20code%20Documentation%20GIT.pdf",
         },
       ],
     },
