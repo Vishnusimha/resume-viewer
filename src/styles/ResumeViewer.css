@@ -1,0 +1,470 @@
+/* ResumeViewer.css - Scoped to only affect the ResumeViewer component */
+.resume-viewer-container {
+  /* Local color variables - only used in this component */
+  --resume-primary-color: #2c3e50;
+  --resume-secondary-color: #1d78c1;
+  --resume-accent-color: #1a6fb3;
+  --resume-text-color: #2c3e50;
+  --resume-light-gray: #e9eef5;
+  --resume-background-color: #f7f9fc;
+  --resume-heading-color: #1d78c1;
+  --resume-border-color: #ddd;
+}
+
+/* All styles are scoped under .resume-viewer-container */
+.resume-viewer-container .resume-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 5px 5% 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-viewer-container .side-heading,
+.resume-viewer-container .name,
+.resume-viewer-container .title,
+.resume-viewer-container .section-title {
+  color: var(--resume-heading-color);
+}
+
+/* Header Styles */
+.resume-viewer-container .resume-header {
+  text-align: center;
+  padding: 8px 12px;
+  margin: 0 auto 10px auto;
+  background-color: var(--resume-light-gray);
+  border-bottom: 1px solid var(--resume-secondary-color);
+  border-radius: 6px;
+}
+
+.resume-viewer-container .side-heading {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--resume-accent-color);
+  list-style: none;
+}
+
+.resume-viewer-container .name {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--resume-secondary-color);
+  font-weight: 700;
+}
+
+.resume-viewer-container .title {
+  font-size: 1.2rem;
+  margin: 4px 0 6px;
+  color: var(--resume-accent-color);
+  font-weight: 600;
+}
+
+.resume-viewer-container .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container .contact-info p {
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.resume-viewer-container .contact-info a {
+  color: var(--resume-accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resume-viewer-container .contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Section Styles */
+.resume-viewer-container .resume-section {
+  margin-bottom: 10px;
+  background-color: var(--resume-light-gray);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.resume-viewer-container .section-title {
+  font-size: 1.8rem;
+  color: var(--resume-secondary-color);
+  border-bottom: 2px solid rgba(29, 120, 193, 0.3);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.resume-viewer-container .section-content {
+  padding-left: 15px;
+}
+
+/* Flex Layout */
+.resume-viewer-container .side-by-side-sections {
+  display: flex;
+  gap: 20px;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.resume-viewer-container .technical-skills-section,
+.resume-viewer-container .certifications-section {
+  flex: 1;
+  min-width: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid var(--resume-border-color);
+}
+
+.resume-viewer-container .technical-skills-list,
+.resume-viewer-container .certifications-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-viewer-container .technical-skills-list li,
+.resume-viewer-container .certifications-list li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+.resume-viewer-container .technical-skills-list li strong,
+.resume-viewer-container .certifications-list li strong {
+  font-weight: 700;
+  color: var(--resume-primary-color);
+}
+
+.resume-viewer-container .certification-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.resume-viewer-container .certification-logos img {
+  max-height: 100px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience Styles */
+.resume-viewer-container .experience {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+}
+
+.resume-viewer-container .company {
+  font-size: 1.4rem;
+  color: var(--resume-primary-color);
+  font-weight: 700;
+}
+
+.resume-viewer-container .position {
+  font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+}
+
+.resume-viewer-container .position-duration {
+  font-style: italic;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.resume-viewer-container .experience-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-viewer-container .experience-details li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+/* Education and Internship */
+.resume-viewer-container .education,
+.resume-viewer-container .internship {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resume-viewer-container .institution,
+.resume-viewer-container .internship-company {
+  font-size: 1.4rem;
+  color: var(--resume-primary-color);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.resume-viewer-container .degree-duration,
+.resume-viewer-container .name-duration {
+  font-style: italic;
+  margin-bottom: 8px;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.resume-viewer-container .degree,
+.resume-viewer-container .internship-name {
+  font-weight: 600;
+  color: rgba(44, 62, 80, 0.9);
+}
+
+.resume-viewer-container .duration {
+  font-weight: normal;
+  color: rgba(127, 140, 141, 0.8);
+}
+
+.resume-viewer-container .education-details,
+.resume-viewer-container .internship-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-viewer-container .education-details li,
+.resume-viewer-container .internship-details li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+/* Projects */
+.resume-viewer-container .project {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+}
+
+.resume-viewer-container .project-name {
+  font-size: 1.3rem;
+  color: var(--resume-primary-color);
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.resume-viewer-container .project-details {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-viewer-container .project-details li {
+  margin-bottom: 8px;
+  color: rgba(51, 51, 51, 0.9);
+}
+
+/* Summary */
+.resume-viewer-container .summary {
+  text-align: justify;
+  line-height: 1.8;
+  color: rgba(51, 51, 51, 0.9);
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+}
+
+/* Theme Toggle - Top Right Corner of Resume */
+.resume-viewer-container .theme-toggle {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  padding: 6px 12px;
+  background-color: var(--resume-accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px 0 0 4px; /* Rounded left corners only */
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 0.9rem;
+  box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-viewer-container .resume-container {
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-viewer-container .resume-container {
+    padding: 15px;
+    box-shadow: none;
+  }
+
+  .resume-viewer-container .name {
+    font-size: 2rem;
+  }
+
+  .resume-viewer-container .title {
+    font-size: 1.5rem;
+  }
+
+  .resume-viewer-container .section-title {
+    font-size: 1.5rem;
+  }
+
+  .resume-viewer-container .company,
+  .resume-viewer-container .institution {
+    font-size: 1.2rem;
+  }
+
+  .resume-viewer-container .project-name,
+  .resume-viewer-container .internship-company {
+    font-size: 1.1rem;
+  }
+
+  .resume-viewer-container .resume-section,
+  .resume-viewer-container .experience,
+  .resume-viewer-container .education,
+  .resume-viewer-container .project,
+  .resume-viewer-container .internship {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .resume-viewer-container .side-by-side-sections {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Dark Theme */
+.resume-viewer-container.dark-theme {
+  --resume-primary-color: #202123;
+  --resume-secondary-color: #58a6ff;
+  --resume-accent-color: #4aa3f0;
+  --resume-text-color: #f0f6fc;
+  --resume-light-gray: #2d2f34;
+  --resume-background-color: #0d1117;
+  --resume-heading-color: #3498db;
+  --resume-border-color: #444;
+}
+
+.resume-viewer-container.dark-theme .resume-container {
+  background-color: var(--resume-light-gray);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.resume-viewer-container.dark-theme .resume-header {
+  background-color: var(--resume-primary-color);
+  border-bottom: 1px solid var(--resume-secondary-color);
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container.dark-theme .side-heading {
+  color: var(--resume-secondary-color);
+}
+
+.resume-viewer-container.dark-theme .name {
+  color: var(--resume-secondary-color);
+}
+
+.resume-viewer-container.dark-theme .title {
+  color: var(--resume-accent-color);
+}
+
+.resume-viewer-container.dark-theme .contact-info a {
+  color: var(--resume-accent-color);
+}
+
+.resume-viewer-container.dark-theme .contact-info a:hover {
+  color: var(--resume-secondary-color);
+  text-decoration: underline;
+}
+
+.resume-viewer-container.dark-theme .resume-section {
+  background-color: var(--resume-light-gray);
+  border: 1px solid var(--resume-border-color);
+}
+
+.resume-viewer-container.dark-theme .section-title {
+  color: var(--resume-secondary-color);
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+}
+
+.resume-viewer-container.dark-theme .section-content {
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container.dark-theme .technical-skills-section,
+.resume-viewer-container.dark-theme .certifications-section {
+  background-color: var(--resume-primary-color);
+  border: 1px solid var(--resume-border-color);
+}
+
+.resume-viewer-container.dark-theme .technical-skills-list li,
+.resume-viewer-container.dark-theme .certifications-list li {
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container.dark-theme .technical-skills-list li strong,
+.resume-viewer-container.dark-theme .certifications-list li strong {
+  color: var(--resume-secondary-color);
+}
+
+.resume-viewer-container.dark-theme .certification-logos img {
+  filter: grayscale(50%);
+}
+
+.resume-viewer-container.dark-theme .certification-logos img:hover {
+  filter: grayscale(0%);
+}
+
+.resume-viewer-container.dark-theme .experience,
+.resume-viewer-container.dark-theme .education,
+.resume-viewer-container.dark-theme .project,
+.resume-viewer-container.dark-theme .internship {
+  background-color: var(--resume-primary-color);
+  border: 1px solid var(--resume-border-color);
+}
+
+.resume-viewer-container.dark-theme .company,
+.resume-viewer-container.dark-theme .institution,
+.resume-viewer-container.dark-theme .project-name,
+.resume-viewer-container.dark-theme .internship-company {
+  color: var(--resume-secondary-color);
+}
+
+.resume-viewer-container.dark-theme .position,
+.resume-viewer-container.dark-theme .degree {
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container.dark-theme .position-duration,
+.resume-viewer-container.dark-theme .degree-duration,
+.resume-viewer-container.dark-theme .internship-duration {
+  color: rgba(229, 231, 235, 0.8);
+}
+
+.resume-viewer-container.dark-theme .experience-details li,
+.resume-viewer-container.dark-theme .education-details li,
+.resume-viewer-container.dark-theme .project-details li,
+.resume-viewer-container.dark-theme .internship-details li {
+  color: var(--resume-text-color);
+}
+
+.resume-viewer-container.dark-theme .summary {
+  background-color: var(--resume-primary-color);
+  color: var(--resume-text-color);
+  border: 1px solid var(--resume-border-color);
+}

@@ -1,28 +1,40 @@
 {
-  "name": "resume-viewer",
+  "name": "vishnuportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@formspree/react": "^3.0.0",
+    "@react-pdf/renderer": "^4.3.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.7.4",
+    "highlight.js": "^11.11.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.503.0",
+    "marked": "^15.0.11",
     "pdfjs-dist": "^3.11.174",
+    "raw-loader": "^4.0.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-pdf": "^9.2.1",
+    "react-router-dom": "^7.5.3",
     "react-scripts": "5.0.1",
+    "react-typed": "^2.0.12",
+    "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://vishnusimha.github.io/vishnuportfolio",
   "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +54,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://vishnusimha.github.io/resume-viewer",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "gh-pages": "^6.3.0",
