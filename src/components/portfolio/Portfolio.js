@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/Portfolio.css";
 import Home from "./Home";
 import Projects from "./Projects";
@@ -17,14 +18,19 @@ import {
 import { FaUserTie, FaCode } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 
-const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState("home");
+const Portfolio = ({ section = "home" }) => {
+  const [activeSection, setActiveSection] = useState(section);
   const [isLightTheme, setIsLightTheme] = useState(
     document.body.classList.contains("light-theme")
   );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const themeToggleBtnRef = useRef(null);
   const navRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setActiveSection(section);
+  }, [section]);
 
   useEffect(() => {
     const body = document.body;
@@ -99,8 +105,9 @@ const Portfolio = () => {
     }
   };
 
-  const handleNavClick = (section) => {
-    setActiveSection(section);
+  const handleNavClick = (targetSection) => {
+    setActiveSection(targetSection);
+    navigate(`/${targetSection}`);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
