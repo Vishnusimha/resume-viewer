@@ -300,11 +300,13 @@ const Projects = React.forwardRef((props, ref) => {
       description:
         "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Developed and integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
       technologies: [
+        "Java",
         "Kotlin",
         "Jetpack Compose",
         "Android",
         "Coroutines",
-        "Java",
+        "Retrofit",
+        "Room",
         "Spring Boot",
         "REST API",
         "MySQL",
