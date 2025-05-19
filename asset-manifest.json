@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
-    "main.js": "/vishnuportfolio/static/js/main.a7e09ac0.js",
+    "main.js": "/vishnuportfolio/static/js/main.349a66fe.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -37,7 +37,6 @@
     "static/media/AdafruitAndRaspberryPi4.jpg": "/vishnuportfolio/static/media/AdafruitAndRaspberryPi4.ea26d0d9469e1546c3ee.jpg",
     "static/media/ProjectBoard2.png": "/vishnuportfolio/static/media/ProjectBoard2.c40f64a1addbc67050d5.png",
     "static/media/Server with 3 Clients Connected with Client windows.png": "/vishnuportfolio/static/media/Server with 3 Clients Connected with Client windows.a6c1489e934c6da04634.png",
-    "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.1923440dbd7fa0bf06e8.pdf",
     "static/media/WeatherDashboard1.png": "/vishnuportfolio/static/media/WeatherDashboard1.f2c1985de9ca46273b20.png",
     "static/media/DAML2.png": "/vishnuportfolio/static/media/DAML2.37353bd058116560abff.png",
     "static/media/Project Structure1.png": "/vishnuportfolio/static/media/Project Structure1.f8dec380f203ef59a827.png",
@@ -97,17 +96,18 @@
     "static/media/NoteslandingScreen.png": "/vishnuportfolio/static/media/NoteslandingScreen.58d474c34694b6de4142.png",
     "static/media/Client Disconnected with Server.png": "/vishnuportfolio/static/media/Client Disconnected with Server.05743f02099bd0c1c949.png",
     "static/media/FeaturesCompose.md": "/vishnuportfolio/static/media/FeaturesCompose.e182cf9a42c1205315aa.md",
+    "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.f8841dc0f9977e13becc.pdf",
     "static/media/Implementing SSL Pinning with OkHttp and Retrofit.md": "/vishnuportfolio/static/media/Implementing SSL Pinning with OkHttp and Retrofit.7a167288ca62ae49d880.md",
     "static/media/KotlinDSLVSGroovy.md": "/vishnuportfolio/static/media/KotlinDSLVSGroovy.607ba4d29465a7b5f0b5.md",
     "static/media/SerializableVSParcelable.md": "/vishnuportfolio/static/media/SerializableVSParcelable.da0dda6570a777247de6.md",
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
     "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
-    "main.a7e09ac0.js.map": "/vishnuportfolio/static/js/main.a7e09ac0.js.map",
+    "main.349a66fe.js.map": "/vishnuportfolio/static/js/main.349a66fe.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a4d2723.css",
-    "static/js/main.a7e09ac0.js"
+    "static/js/main.349a66fe.js"
   ]
 }
