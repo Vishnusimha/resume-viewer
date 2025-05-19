@@ -146,6 +146,10 @@ const Projects = React.forwardRef((props, ref) => {
         "Jetpack Compose",
         "Retrofit",
         "Firebase",
+        "Room",
+        "DataStore",
+        "Material Design",
+        "Real-time Database",
         "Hilt",
         "Coroutines",
       ],
@@ -235,10 +239,22 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Full-Stack Web Chat Application",
+      name: "Full-Stack Web Application - Online Business",
       description:
-        "Built web platforms for an online business and takeaway restaurant using Spring Boot and MySQL. Included chat functionality with microservices integrated into an Android app (MVVM architecture).",
-      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
+        "Developed a web application for an online takeaway restaurant business using Spring Boot and MySQL. The project features a responsive design, user authentication, and a dynamic menu. The backend is powered by Spring Boot, while the frontend is developed using HTML, CSS, and JavaScript.",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Microservices",
+        "Spring Security",
+        "Spring Data JPA",
+        "Spring MVC",
+        "Rest API",
+        "MVVM",
+        "HTML/CSS",
+        "JavaScript",
+      ],
       media: [
         Res1,
         Res2,
@@ -262,7 +278,16 @@ const Projects = React.forwardRef((props, ref) => {
       name: "Balloon Decor Business Website",
       description:
         "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
-      technologies: ["Spring Boot", "MySQL", "Java", "Microservices", "MVVM"],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Microservices",
+        "MVVM",
+        "HTML/CSS",
+        "JavaScript",
+        "Rest API",
+      ],
       media: [CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9],
       category: "Full-Stack Development",
       links: [
@@ -273,7 +298,7 @@ const Projects = React.forwardRef((props, ref) => {
     {
       name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
       description:
-        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
+        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Developed and integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
       technologies: [
         "Kotlin",
         "Jetpack Compose",
@@ -282,6 +307,11 @@ const Projects = React.forwardRef((props, ref) => {
         "Java",
         "Spring Boot",
         "REST API",
+        "MySQL",
+        "API-Gateway",
+        "Microservices",
+        "Eureka Client/Server",
+        "Spring Security",
       ],
       media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
       category: "Full-Stack Development",
