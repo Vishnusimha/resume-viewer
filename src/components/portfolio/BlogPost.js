@@ -45,6 +45,18 @@ const folderStructure = [
       },
     ],
   },
+  {
+    name: "Random",
+    type: "folder",
+    children: [
+      {
+        name: "About Me",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Vishnusimha/main/README.md",
+      },
+    ],
+  },
 ];
 const stripMarkdown = (md) => {
   return md
@@ -124,6 +136,9 @@ const BlogPost = () => {
       const flatFiles = flattenFiles(folderStructure);
       const promises = flatFiles.map(async (file) => {
         try {
+          // If the file content is a string starting with 'http', assume it's a URL
+          const isUrl =
+            typeof file.content === "string" && file.content.startsWith("http");
           const res = await fetch(file.content);
           if (!res.ok) {
             console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
