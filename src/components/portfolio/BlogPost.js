@@ -90,11 +90,11 @@ const folderStructure = [
 ];
 const stripMarkdown = (md) => {
   return md
-    .replace(/!\[.*?\]\(.*?\)/g, "") // images
-    .replace(/\[.*?\]\(.*?\)/g, "") // links
-    .replace(/[`*_>#\-~]/g, "") // inline markdown
-    .replace(/\n{2,}/g, "\n") // collapse newlines
-    .replace(/#{1,6}\s/g, "") // headings
+    .replace(/!\[(.*?)\]\(.*?\)/g, "$1") // Keep alt text for images
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Keep link text
+    .replace(/[`*_>#\-~]/g, "")
+    .replace(/\n{2,}/g, "\n")
+    .replace(/#{1,6}\s/g, "")
     .trim();
 };
 
@@ -141,6 +141,22 @@ const BlogPost = () => {
       return files;
     };
 
+    const processImageUrls = (html, baseUrl) => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+      const images = doc.querySelectorAll("img");
+
+      images.forEach((img) => {
+        const src = img.getAttribute("src");
+        if (src && !src.startsWith("http") && !src.startsWith("data:")) {
+          const absoluteUrl = new URL(src, baseUrl).href;
+          img.setAttribute("src", absoluteUrl);
+        }
+      });
+
+      return doc.body.innerHTML;
+    };
+
     const flattenFiles = (structure) => {
       let files = [];
       structure.forEach((item) => {
@@ -176,17 +192,24 @@ const BlogPost = () => {
           }
           const text = await res.text();
           // Ensure marked.parse is available before calling
-          const htmlContent =
-            typeof marked !== "undefined"
-              ? marked.parse(text)
-              : `<p>Error: Markdown parser not available.</p>`;
+          let htmlContent = marked.parse(text);
+
+          // Process images for external URLs
+          if (isUrl) {
+            const baseUrl = file.content.substring(
+              0,
+              file.content.lastIndexOf("/") + 1
+            );
+            htmlContent = processImageUrls(htmlContent, baseUrl);
+          }
+
           return {
             id: file.name,
             title: file.name,
             html: htmlContent,
             preview: stripMarkdown(text).slice(0, 150) + "...",
             wordCount: text.split(/\s+/).length,
-            category: file.category, // Store the category
+            category: file.category,
           };
         } catch (error) {
           console.error(`Error processing ${file.name}:`, error);
