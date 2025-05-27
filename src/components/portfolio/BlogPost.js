@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
-import AuthenticationVSAuthorisation from "../../assets/blogs/android/AuthenticationVSAuthorisation.md";
+import AuthenticationVSAuthorisation from "../../assets/blogs/codingconcepts/AuthenticationVSAuthorisation.md";
 import SSLPinning from "../../assets/blogs/android/Implementing SSL Pinning with OkHttp and Retrofit.md";
 import KotlinDSLVSGroovy from "../../assets/blogs/android/KotlinDSLVSGroovy.md";
 import SerializableVSParcelable from "../../assets/blogs/android/SerializableVSParcelable.md";
