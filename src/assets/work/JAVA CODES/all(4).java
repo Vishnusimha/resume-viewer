@@ -2,24 +2,22 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class Codechef
-{
-    public static void main(String[] args) throws java.lang.Exception
-    {
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
         int[] arrayA = {
-            2,
-            4,
-            3,
-            1,
-            6
+                2,
+                4,
+                3,
+                1,
+                6
         };
 
         int[] arrayB = {
-            4,
-            0,
-            3,
-            2,
-            0
+                4,
+                0,
+                3,
+                2,
+                0
         };
         System.out.println("Maximum value encountered in arrayB: " + solution(arrayA, arrayB));
     }
