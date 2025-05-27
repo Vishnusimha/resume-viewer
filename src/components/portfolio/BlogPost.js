@@ -58,6 +58,25 @@ const folderStructure = [
     ],
   },
   {
+    name: "Cloud and DevOps",
+    type: "folder",
+    children: [
+      {
+        name: "Docker",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Docker.md",
+      },
+      {
+        name: "Kubernetes",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Kubernetes.md",
+      },
+    ],
+  },
+
+  {
     name: "SQL",
     type: "folder",
     children: [
@@ -72,6 +91,30 @@ const folderStructure = [
         type: "file",
         content:
           "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQLInterviewQuestions.md",
+      },
+    ],
+  },
+  {
+    name: "Spring Boot",
+    type: "folder",
+    children: [
+      {
+        name: "Spring Boot",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springboot.md",
+      },
+      {
+        name: "Spring Data",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springdata.md",
+      },
+      {
+        name: "Spring Security",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springSecurity.md",
       },
     ],
   },
