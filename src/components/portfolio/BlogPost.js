@@ -46,6 +46,36 @@ const folderStructure = [
     ],
   },
   {
+    name: "Linux",
+    type: "folder",
+    children: [
+      {
+        name: "Linux Guide",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Linux/LinuxGuide.md",
+      },
+    ],
+  },
+  {
+    name: "SQL",
+    type: "folder",
+    children: [
+      {
+        name: "SQL Guide",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQL-NOTES.md",
+      },
+      {
+        name: "SQL Interview Questions",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQLInterviewQuestions.md",
+      },
+    ],
+  },
+  {
     name: "Random",
     type: "folder",
     children: [
