@@ -11,31 +11,19 @@ import FeaturesCompose from "../../assets/blogs/android/FeaturesCompose.md";
 // Folder structure
 const folderStructure = [
   {
-    name: "Blogs",
-    type: "folder",
+    name: "About Me",
+    // type: "folder", uncomment if you do not want this as a Filter option
     children: [
       {
-        name: "Android",
-        type: "folder",
-        children: [
-          { name: "Features Compose", type: "file", content: FeaturesCompose },
-          { name: "SSL Pinning", type: "file", content: SSLPinning },
-          {
-            name: "Kotlin DSL VS Groovy",
-            type: "file",
-            content: KotlinDSLVSGroovy,
-          },
-          {
-            name: "Serializable VS Parcelable",
-            type: "file",
-            content: SerializableVSParcelable,
-          },
-        ],
+        name: "About Me",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Vishnusimha/main/README.md",
       },
     ],
   },
   {
-    name: "Coding Concepts",
+    name: "Dev Concepts",
     type: "folder",
     children: [
       {
@@ -43,54 +31,53 @@ const folderStructure = [
         type: "file",
         content: AuthenticationVSAuthorisation,
       },
-    ],
-  },
-  {
-    name: "Linux",
-    type: "folder",
-    children: [
       {
-        name: "Linux Guide",
-        type: "file",
-        content:
-          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Linux/LinuxGuide.md",
+        name: "SQL",
+        type: "folder",
+        children: [
+          {
+            name: "SQL Guide",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQL-NOTES.md",
+          },
+          {
+            name: "SQL Interview Questions",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQLInterviewQuestions.md",
+          },
+        ],
+      },
+      {
+        name: "Linux",
+        type: "folder",
+        children: [
+          {
+            name: "Linux Guide",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Linux/LinuxGuide.md",
+          },
+        ],
       },
     ],
   },
   {
-    name: "Cloud and DevOps",
+    name: "Android",
     type: "folder",
     children: [
+      { name: "Features Compose", type: "file", content: FeaturesCompose },
+      { name: "SSL Pinning", type: "file", content: SSLPinning },
       {
-        name: "Docker",
+        name: "Kotlin DSL VS Groovy",
         type: "file",
-        content:
-          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Docker.md",
+        content: KotlinDSLVSGroovy,
       },
       {
-        name: "Kubernetes",
+        name: "Serializable VS Parcelable",
         type: "file",
-        content:
-          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Kubernetes.md",
-      },
-    ],
-  },
-
-  {
-    name: "SQL",
-    type: "folder",
-    children: [
-      {
-        name: "SQL Guide",
-        type: "file",
-        content:
-          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQL-NOTES.md",
-      },
-      {
-        name: "SQL Interview Questions",
-        type: "file",
-        content:
-          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQLInterviewQuestions.md",
+        content: SerializableVSParcelable,
       },
     ],
   },
@@ -119,16 +106,27 @@ const folderStructure = [
     ],
   },
   {
-    name: "Random",
+    name: "Cloud and DevOps",
     type: "folder",
     children: [
       {
-        name: "About Me",
+        name: "Docker",
         type: "file",
         content:
-          "https://raw.githubusercontent.com/Vishnusimha/Vishnusimha/main/README.md",
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Docker.md",
+      },
+      {
+        name: "Kubernetes",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Kubernetes.md",
       },
     ],
+  },
+  {
+    name: "Notes",
+    type: "folder",
+    children: [],
   },
 ];
 const stripMarkdown = (md) => {
