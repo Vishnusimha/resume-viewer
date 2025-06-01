@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
-import AuthenticationVSAuthorisation from "../../assets/blogs/android/AuthenticationVSAuthorisation.md";
+import AuthenticationVSAuthorisation from "../../assets/blogs/codingconcepts/AuthenticationVSAuthorisation.md";
 import SSLPinning from "../../assets/blogs/android/Implementing SSL Pinning with OkHttp and Retrofit.md";
 import KotlinDSLVSGroovy from "../../assets/blogs/android/KotlinDSLVSGroovy.md";
 import SerializableVSParcelable from "../../assets/blogs/android/SerializableVSParcelable.md";
@@ -11,31 +11,19 @@ import FeaturesCompose from "../../assets/blogs/android/FeaturesCompose.md";
 // Folder structure
 const folderStructure = [
   {
-    name: "Blogs",
-    type: "folder",
+    name: "About Me",
+    // type: "folder", uncomment if you do not want this as a Filter option
     children: [
       {
-        name: "Android",
-        type: "folder",
-        children: [
-          { name: "Features Compose", type: "file", content: FeaturesCompose },
-          { name: "SSL Pinning", type: "file", content: SSLPinning },
-          {
-            name: "Kotlin DSL VS Groovy",
-            type: "file",
-            content: KotlinDSLVSGroovy,
-          },
-          {
-            name: "Serializable VS Parcelable",
-            type: "file",
-            content: SerializableVSParcelable,
-          },
-        ],
+        name: "About Me",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Vishnusimha/main/README.md",
       },
     ],
   },
   {
-    name: "Coding Concepts",
+    name: "Dev Concepts",
     type: "folder",
     children: [
       {
@@ -43,16 +31,111 @@ const folderStructure = [
         type: "file",
         content: AuthenticationVSAuthorisation,
       },
+      {
+        name: "SQL",
+        type: "folder",
+        children: [
+          {
+            name: "SQL Guide",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQL-NOTES.md",
+          },
+          {
+            name: "SQL Interview Questions",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/SQL/SQLInterviewQuestions.md",
+          },
+        ],
+      },
+      {
+        name: "Linux",
+        type: "folder",
+        children: [
+          {
+            name: "Linux Guide",
+            type: "file",
+            content:
+              "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Linux/LinuxGuide.md",
+          },
+        ],
+      },
     ],
+  },
+  {
+    name: "Android",
+    type: "folder",
+    children: [
+      { name: "Features Compose", type: "file", content: FeaturesCompose },
+      { name: "SSL Pinning", type: "file", content: SSLPinning },
+      {
+        name: "Kotlin DSL VS Groovy",
+        type: "file",
+        content: KotlinDSLVSGroovy,
+      },
+      {
+        name: "Serializable VS Parcelable",
+        type: "file",
+        content: SerializableVSParcelable,
+      },
+    ],
+  },
+  {
+    name: "Spring Boot",
+    type: "folder",
+    children: [
+      {
+        name: "Spring Boot",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springboot.md",
+      },
+      {
+        name: "Spring Data",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springdata.md",
+      },
+      {
+        name: "Spring Security",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/springSecurity.md",
+      },
+    ],
+  },
+  {
+    name: "Cloud and DevOps",
+    type: "folder",
+    children: [
+      {
+        name: "Docker",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Docker.md",
+      },
+      {
+        name: "Kubernetes",
+        type: "file",
+        content:
+          "https://raw.githubusercontent.com/Vishnusimha/Blogs/main/Spring/Kubernetes.md",
+      },
+    ],
+  },
+  {
+    name: "Notes",
+    type: "folder",
+    children: [],
   },
 ];
 const stripMarkdown = (md) => {
   return md
-    .replace(/!\[.*?\]\(.*?\)/g, "") // images
-    .replace(/\[.*?\]\(.*?\)/g, "") // links
-    .replace(/[`*_>#\-~]/g, "") // inline markdown
-    .replace(/\n{2,}/g, "\n") // collapse newlines
-    .replace(/#{1,6}\s/g, "") // headings
+    .replace(/!\[(.*?)\]\(.*?\)/g, "$1") // Keep alt text for images
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Keep link text
+    .replace(/[`*_>#\-~]/g, "")
+    .replace(/\n{2,}/g, "\n")
+    .replace(/#{1,6}\s/g, "")
     .trim();
 };
 
@@ -99,6 +182,22 @@ const BlogPost = () => {
       return files;
     };
 
+    const processImageUrls = (html, baseUrl) => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+      const images = doc.querySelectorAll("img");
+
+      images.forEach((img) => {
+        const src = img.getAttribute("src");
+        if (src && !src.startsWith("http") && !src.startsWith("data:")) {
+          const absoluteUrl = new URL(src, baseUrl).href;
+          img.setAttribute("src", absoluteUrl);
+        }
+      });
+
+      return doc.body.innerHTML;
+    };
+
     const flattenFiles = (structure) => {
       let files = [];
       structure.forEach((item) => {
@@ -124,6 +223,9 @@ const BlogPost = () => {
       const flatFiles = flattenFiles(folderStructure);
       const promises = flatFiles.map(async (file) => {
         try {
+          // If the file content is a string starting with 'http', assume it's a URL
+          const isUrl =
+            typeof file.content === "string" && file.content.startsWith("http");
           const res = await fetch(file.content);
           if (!res.ok) {
             console.error(`Failed to fetch ${file.name}: ${res.statusText}`);
@@ -131,17 +233,24 @@ const BlogPost = () => {
           }
           const text = await res.text();
           // Ensure marked.parse is available before calling
-          const htmlContent =
-            typeof marked !== "undefined"
-              ? marked.parse(text)
-              : `<p>Error: Markdown parser not available.</p>`;
+          let htmlContent = marked.parse(text);
+
+          // Process images for external URLs
+          if (isUrl) {
+            const baseUrl = file.content.substring(
+              0,
+              file.content.lastIndexOf("/") + 1
+            );
+            htmlContent = processImageUrls(htmlContent, baseUrl);
+          }
+
           return {
             id: file.name,
             title: file.name,
             html: htmlContent,
             preview: stripMarkdown(text).slice(0, 150) + "...",
             wordCount: text.split(/\s+/).length,
-            category: file.category, // Store the category
+            category: file.category,
           };
         } catch (error) {
           console.error(`Error processing ${file.name}:`, error);
