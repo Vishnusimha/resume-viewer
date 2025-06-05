@@ -70,8 +70,8 @@ const Home = React.forwardRef((props, ref) => {
               <ReactTyped
                 strings={[
                   "Software Engineer",
-                  "Android Developer",
                   "Full stack Developer",
+                  "Android Developer",
                   "AWS Solution Architect - Associate",
                 ]}
                 typeSpeed={30}
