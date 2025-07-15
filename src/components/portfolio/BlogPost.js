@@ -7,6 +7,7 @@ import SSLPinning from "../../assets/blogs/android/Implementing SSL Pinning with
 import KotlinDSLVSGroovy from "../../assets/blogs/android/KotlinDSLVSGroovy.md";
 import SerializableVSParcelable from "../../assets/blogs/android/SerializableVSParcelable.md";
 import FeaturesCompose from "../../assets/blogs/android/FeaturesCompose.md";
+import DOMPurify from "dompurify";
 
 // Folder structure
 const folderStructure = [
@@ -244,10 +245,12 @@ const BlogPost = () => {
             htmlContent = processImageUrls(htmlContent, baseUrl);
           }
 
+          const sanitizedHtml = DOMPurify.sanitize(htmlContent);
+
           return {
             id: file.name,
             title: file.name,
-            html: htmlContent,
+            html: sanitizedHtml,
             preview: stripMarkdown(text).slice(0, 150) + "...",
             wordCount: text.split(/\s+/).length,
             category: file.category,
@@ -416,10 +419,13 @@ const BlogPost = () => {
         typeof marked !== "undefined"
           ? marked.parse(text)
           : `<p>Error: Markdown parser not available.</p>`;
+
+      const sanitizedHtml = DOMPurify.sanitize(htmlContent);
+
       setSelectedPost({
         id: file.name,
         title: file.name,
-        html: htmlContent,
+        html: sanitizedHtml,
         wordCount: text.split(/\s+/).length,
         category: file.category,
       });

@@ -83,6 +83,7 @@ import CppPlaceholder from "../../assets/work/cpp.png";
 import PythonPlaceholder from "../../assets/work/Python.png";
 import JavaPlaceholder from "../../assets/work/java.png";
 import JavaSpringBootPlaceholder from "../../assets/work/javaSpringBoot.png";
+import JavaSpringBootReactPlaceholder from "../../assets/work/JavaSpringBootReact.png";
 import IoTPlaceholder from "../../assets/work/IoT.png";
 import NotesApp1 from "../../assets/work/NotesApp/NoteslandingScreen.png";
 import NotesApp2 from "../../assets/work/NotesApp/NotesEmpty.png";
@@ -90,6 +91,15 @@ import NotesApp3 from "../../assets/work/NotesApp/NotesEmptyEditScreen.png";
 import NotesApp4 from "../../assets/work/NotesApp/NotesEditScreenFilled.png";
 import NotesApp5 from "../../assets/work/NotesApp/NotesListScreen.png";
 import NotesApp6 from "../../assets/work/NotesApp/PasswordGeneratorScreen.png";
+import ChatApp1 from "../../assets/work/fullstackChatApp/ChatSphereSignup.png";
+import ChatApp2 from "../../assets/work/fullstackChatApp/ChatSphereLogin.png";
+import ChatApp3 from "../../assets/work/fullstackChatApp/ChatSphereUpdatedDashboard.png";
+import ChatApp4 from "../../assets/work/fullstackChatApp/ChatSpherePostAndComment.png";
+import ChatApp5 from "../../assets/work/fullstackChatApp/ChatSphereDashboard.png";
+import ChatApp6 from "../../assets/work/fullstackChatApp/ChatSphereFeedPostCategories.png";
+import ChatApp7 from "../../assets/work/fullstackChatApp/ChatSphereQuestion.png";
+import ChatApp8 from "../../assets/work/fullstackChatApp/ChatSphereCategories.png";
+import ChatApp9 from "../../assets/work/fullstackChatApp/ChatSphereCategories2.png";
 
 import React, { useState } from "react";
 import {
@@ -297,24 +307,42 @@ const Projects = React.forwardRef((props, ref) => {
     {
       name: "Anonymous Chat Application - Full-Stack (Android + Spring Boot)",
       description:
-        "Developed a secure anonymous chat application for Android using Kotlin, and Jetpack Compose. Developed and integrated with a Springboot backend APIS for anonymous user management, and real-time messaging features.",
+        "Built a scalable full-stack social chat app using Java (Spring Boot) microservices and React. Designed secure REST APIs for users, posts, and comments, with JWT authentication, resilient service communication, and MySQL data storage. Created a responsive React frontend for seamless user experience, routing all requests via an API gateway.",
       technologies: [
-        "Java",
+        "Java 17+",
+        "Spring Boot",
+        "Spring Cloud Gateway",
+        "Eureka",
+        "Spring Data JPA",
+        "Resilience4j",
+        "MySQL",
+        "JWT",
+        "Gradle",
+        "Docker",
+        "React (19+)",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+        "Android",
         "Kotlin",
         "Jetpack Compose",
-        "Android",
         "Coroutines",
         "Retrofit",
         "Room",
-        "Spring Boot",
-        "REST API",
-        "MySQL",
-        "API-Gateway",
-        "Microservices",
-        "Eureka Client/Server",
-        "Spring Security",
       ],
-      media: [JavaSpringBootPlaceholder, AndroidPlaceholder],
+      media: [
+        JavaSpringBootReactPlaceholder,
+        ChatApp1,
+        ChatApp2,
+        ChatApp3,
+        ChatApp4,
+        ChatApp5,
+        ChatApp6,
+        ChatApp7,
+        ChatApp8,
+        ChatApp9,
+        AndroidPlaceholder,
+      ],
       category: "Full-Stack Development",
       links: [
         {
