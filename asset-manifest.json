@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
-    "main.js": "/vishnuportfolio/static/js/main.a7e09ac0.js",
+    "main.js": "/vishnuportfolio/static/js/main.ff158d14.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -19,6 +19,7 @@
     "static/media/Specials.png": "/vishnuportfolio/static/media/Specials.09ee84021ce46a158ec3.png",
     "static/media/About.png": "/vishnuportfolio/static/media/About.9f5b6e03ea22419aa522.png",
     "static/media/Home.png": "/vishnuportfolio/static/media/Home.8499ef20058510bb6c8f.png",
+    "static/media/JavaSpringBootReact.png": "/vishnuportfolio/static/media/JavaSpringBootReact.6760ab792a086485172b.png",
     "static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf": "/vishnuportfolio/static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.891ba9aedcec9c3c80c1.pdf",
     "static/media/Home2.png": "/vishnuportfolio/static/media/Home2.a2b285280a3808104f40.png",
     "static/media/Team.png": "/vishnuportfolio/static/media/Team.389899a36dcd06a2d9ec.png",
@@ -29,17 +30,26 @@
     "static/media/Bottom Nav.png": "/vishnuportfolio/static/media/Bottom Nav.be11a4e02e2a0dbcbfd9.png",
     "static/media/CustomerReview.png": "/vishnuportfolio/static/media/CustomerReview.99e33b3758944e9ccc3c.png",
     "static/media/CorporatePlanner.png": "/vishnuportfolio/static/media/CorporatePlanner.c11c0559ec19e957b336.png",
+    "static/media/ChatSphereDashboard.png": "/vishnuportfolio/static/media/ChatSphereDashboard.21e7f3f99afcbc4c1bc2.png",
+    "static/media/ChatSpherePostAndComment.png": "/vishnuportfolio/static/media/ChatSpherePostAndComment.fdacda2eea6d831acd3d.png",
     "static/media/HID Mobile Access four.png": "/vishnuportfolio/static/media/HID Mobile Access four.7fb7c8cea93e73dfac1a.png",
     "static/media/AQMMobileApp1.jpg": "/vishnuportfolio/static/media/AQMMobileApp1.2c13d6c8beb25e4c31eb.jpg",
     "static/media/SafteyScreen.png": "/vishnuportfolio/static/media/SafteyScreen.3fd23cdda403999d9c20.png",
+    "static/media/ChatSphereFeedPostCategories.png": "/vishnuportfolio/static/media/ChatSphereFeedPostCategories.aa9238ece273faf3456a.png",
     "static/media/AQMMobileApp2.jpg": "/vishnuportfolio/static/media/AQMMobileApp2.751d5ddce7b06b651a63.jpg",
     "static/media/ProjectBoard1.png": "/vishnuportfolio/static/media/ProjectBoard1.6fa04debe43a62322307.png",
     "static/media/AdafruitAndRaspberryPi4.jpg": "/vishnuportfolio/static/media/AdafruitAndRaspberryPi4.ea26d0d9469e1546c3ee.jpg",
     "static/media/ProjectBoard2.png": "/vishnuportfolio/static/media/ProjectBoard2.c40f64a1addbc67050d5.png",
+    "static/media/ChatSphereCategories.png": "/vishnuportfolio/static/media/ChatSphereCategories.9367f1ad85e4c4c6a19d.png",
     "static/media/Server with 3 Clients Connected with Client windows.png": "/vishnuportfolio/static/media/Server with 3 Clients Connected with Client windows.a6c1489e934c6da04634.png",
+    "static/media/ChatSphereCategories2.png": "/vishnuportfolio/static/media/ChatSphereCategories2.b2009f7e5323516a32e9.png",
     "static/media/Vishnu Simha Software Engineer Resume.pdf": "/vishnuportfolio/static/media/Vishnu Simha Software Engineer Resume.1923440dbd7fa0bf06e8.pdf",
+    "static/media/ChatSphereUpdatedDashboard.png": "/vishnuportfolio/static/media/ChatSphereUpdatedDashboard.dd2fabef7ca0af8a1586.png",
+    "static/media/ChatSphereQuestion.png": "/vishnuportfolio/static/media/ChatSphereQuestion.0c3e0b4bc280f1907324.png",
     "static/media/WeatherDashboard1.png": "/vishnuportfolio/static/media/WeatherDashboard1.f2c1985de9ca46273b20.png",
     "static/media/DAML2.png": "/vishnuportfolio/static/media/DAML2.37353bd058116560abff.png",
+    "static/media/ChatSphereSignup.png": "/vishnuportfolio/static/media/ChatSphereSignup.d445fed257bf660aaadc.png",
+    "static/media/ChatSphereLogin.png": "/vishnuportfolio/static/media/ChatSphereLogin.8ce66d92280a011a4832.png",
     "static/media/Project Structure1.png": "/vishnuportfolio/static/media/Project Structure1.f8dec380f203ef59a827.png",
     "static/media/DAML1.png": "/vishnuportfolio/static/media/DAML1.a80c4efbe09110b8e88f.png",
     "static/media/Android.png": "/vishnuportfolio/static/media/Android.9eea9f80e7dcd6abd59a.png",
@@ -103,11 +113,11 @@
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
     "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
-    "main.a7e09ac0.js.map": "/vishnuportfolio/static/js/main.a7e09ac0.js.map",
+    "main.ff158d14.js.map": "/vishnuportfolio/static/js/main.ff158d14.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a4d2723.css",
-    "static/js/main.a7e09ac0.js"
+    "static/js/main.ff158d14.js"
   ]
 }
