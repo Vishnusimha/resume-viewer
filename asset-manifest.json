@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vishnuportfolio/static/css/main.7a4d2723.css",
-    "main.js": "/vishnuportfolio/static/js/main.ff158d14.js",
+    "main.js": "/vishnuportfolio/static/js/main.11d90636.js",
     "static/js/453.f0a88af8.chunk.js": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js",
     "static/media/AQMhardware2.jpg": "/vishnuportfolio/static/media/AQMhardware2.91b04c22d1ebc741ca27.jpg",
     "static/media/AQMhardware.jpg": "/vishnuportfolio/static/media/AQMhardware.61a59f4ed20d0e5dc17c.jpg",
@@ -22,6 +22,7 @@
     "static/media/JavaSpringBootReact.png": "/vishnuportfolio/static/media/JavaSpringBootReact.6760ab792a086485172b.png",
     "static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.pdf": "/vishnuportfolio/static/media/Intelligent Indoor Air Quality and Ventilation Management in Confined Spaces using IoT - 22262621 - Vishnu Simha Dussa.891ba9aedcec9c3c80c1.pdf",
     "static/media/Home2.png": "/vishnuportfolio/static/media/Home2.a2b285280a3808104f40.png",
+    "static/media/ReactJavaScript.png": "/vishnuportfolio/static/media/ReactJavaScript.2463ee80149355e407df.png",
     "static/media/Team.png": "/vishnuportfolio/static/media/Team.389899a36dcd06a2d9ec.png",
     "static/media/WelcomeScreenError.png": "/vishnuportfolio/static/media/WelcomeScreenError.502b06a14b54861585c4.png",
     "static/media/WelcomeScreen1.png": "/vishnuportfolio/static/media/WelcomeScreen1.25b612c19fe3150d82ff.png",
@@ -113,11 +114,11 @@
     "static/media/AuthenticationVSAuthorisation.md": "/vishnuportfolio/static/media/AuthenticationVSAuthorisation.cd23ab48ec308909305d.md",
     "index.html": "/vishnuportfolio/index.html",
     "main.7a4d2723.css.map": "/vishnuportfolio/static/css/main.7a4d2723.css.map",
-    "main.ff158d14.js.map": "/vishnuportfolio/static/js/main.ff158d14.js.map",
+    "main.11d90636.js.map": "/vishnuportfolio/static/js/main.11d90636.js.map",
     "453.f0a88af8.chunk.js.map": "/vishnuportfolio/static/js/453.f0a88af8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a4d2723.css",
-    "static/js/main.ff158d14.js"
+    "static/js/main.11d90636.js"
   ]
 }
