@@ -1,28 +1,62 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { ReactTyped } from "react-typed";
 import Lottie from "lottie-react";
 import codingAnimation from "../../assets/LottieFiles/vishnusimha.json";
 import {
   FaGithub,
   FaLinkedin,
-  FaFileDownload,
   FaEnvelope,
   FaShieldAlt,
+  FaSync,
+  FaCalendarAlt,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { AiOutlineMail } from "react-icons/ai";
+
 const Home = React.forwardRef((props, ref) => {
+  // Constants
+  const REFRESH_DELAY = 1000;
+  const SKELETON_HEIGHT = { desktop: 250, tablet: 180, mobile: 150 };
+
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleRefreshStats = useCallback(() => {
+    setIsRefreshing(true);
+    setError(null);
+    setRefreshKey((prev) => prev + 1);
+
+    // Simulate refresh delay
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, REFRESH_DELAY);
+  }, [REFRESH_DELAY]);
+
   const socialLinks = [
-    { icon: <FaGithub />, url: "https://github.com/Vishnusimha" },
-    { icon: <FaEnvelope />, url: "mailto:vishnusimha98@gmail.com" },
+    {
+      icon: <FaGithub />,
+      url: "https://github.com/Vishnusimha",
+      label: "GitHub Profile",
+    },
+    {
+      icon: <FaEnvelope />,
+      url: "mailto:vishnusimha98@gmail.com",
+      label: "Email Contact",
+    },
     {
       icon: <FaLinkedin />,
       url: "https://www.linkedin.com/in/vishnusimhadussa/",
+      label: "LinkedIn Profile",
     },
-    { icon: <SiLeetcode />, url: "https://leetcode.com/u/vishnusimha98/" },
+    {
+      icon: <SiLeetcode />,
+      url: "https://leetcode.com/u/vishnusimha98/",
+      label: "LeetCode Profile",
+    },
     {
       icon: <FaShieldAlt />,
       url: "https://www.credly.com/users/vishnu-simha-dussa/",
+      label: "Credly Certifications",
     },
   ];
 
@@ -39,6 +73,39 @@ const Home = React.forwardRef((props, ref) => {
   const handlePostsClick = () => {
     props.onNavigate("Blogs");
   };
+
+  const GitHubStatsCard = ({ src, alt, title, href, className = "" }) => (
+    <div className={`github-stats-container ${className}`}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={title}
+        aria-label={`View ${title} on GitHub`}
+      >
+        {isRefreshing ? (
+          <div
+            className="stats-loading-skeleton"
+            role="img"
+            aria-label="Loading GitHub statistics"
+          >
+            <div className="skeleton-content"></div>
+          </div>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            className="github-stats-image"
+            loading="lazy"
+            onError={(e) => {
+              setError(`Failed to load ${alt}`);
+              console.error(`Failed to load GitHub stat: ${alt}`);
+            }}
+          />
+        )}
+      </a>
+    </div>
+  );
 
   const techStack = [
     "Kotlin",
@@ -109,7 +176,8 @@ const Home = React.forwardRef((props, ref) => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Social link ${index}`}
+                  aria-label={link.label}
+                  title={link.label}
                 >
                   {link.icon}
                 </a>
@@ -190,6 +258,92 @@ const Home = React.forwardRef((props, ref) => {
                 <h3>6+</h3>
                 <p>Certifications</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GitHub Stats Section - Third Half */}
+      <section className="home-github-section">
+        <div className="home-github-container">
+          <div className="home-github-header">
+            <h2>GitHub Stats</h2>
+            <div className="home-github-divider"></div>
+          </div>
+
+          <div className="github-stats-content">
+            {error && (
+              <div className="error-message" role="alert" aria-live="polite">
+                <span>⚠️ {error}</span>
+                <button
+                  onClick={() => setError(null)}
+                  aria-label="Dismiss error message"
+                  className="error-dismiss-btn"
+                >
+                  ×
+                </button>
+              </div>
+            )}
+            <div className="github-stats-header">
+              <h4>Real-time Coding Activity:</h4>
+              <div className="github-controls">
+                <div className="current-date">
+                  <FaCalendarAlt aria-hidden="true" />
+                  <span>
+                    {new Date().toLocaleDateString("en-US", {
+                      weekday: "short",
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+                <button
+                  className="refresh-stats-btn"
+                  onClick={handleRefreshStats}
+                  disabled={isRefreshing}
+                  title="Refresh GitHub Stats"
+                  aria-label="Refresh GitHub statistics"
+                  aria-describedby="refresh-status"
+                >
+                  <FaSync
+                    className={isRefreshing ? "spinning" : ""}
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only" id="refresh-status">
+                    {isRefreshing
+                      ? "Refreshing statistics..."
+                      : "Click to refresh"}
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="github-stats-grid">
+              <GitHubStatsCard
+                src={`https://github-readme-stats.vercel.app/api?username=Vishnusimha&theme=dark&hide_border=false&include_all_commits=true&count_private=true&v=${refreshKey}`}
+                alt="GitHub Profile Stats"
+                title="View my GitHub profile stats"
+                href="https://github.com/Vishnusimha"
+              />
+              <GitHubStatsCard
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Vishnusimha&theme=dark&hide_border=false&layout=compact&v=${refreshKey}`}
+                alt="GitHub Top Languages"
+                title="View my GitHub languages"
+                href="https://github.com/Vishnusimha"
+              />
+              <GitHubStatsCard
+                src={`https://github-readme-streak-stats.herokuapp.com/?user=Vishnusimha&theme=dark&hide_border=false&v=${refreshKey}`}
+                alt="GitHub Streak Stats"
+                title="View my GitHub streak"
+                href="https://github.com/Vishnusimha"
+              />
+              <GitHubStatsCard
+                src={`https://github-readme-activity-graph.vercel.app/graph?username=Vishnusimha&theme=github-dark&hide_border=false&area=true&custom_title=GitHub%20Activity%20Graph&v=${refreshKey}`}
+                alt="GitHub Activity Graph"
+                title="View my GitHub activity graph"
+                href="https://github.com/Vishnusimha"
+                className="activity-graph-card"
+              />
             </div>
           </div>
         </div>
