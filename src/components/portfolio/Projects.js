@@ -102,7 +102,13 @@ import ChatApp7 from "../../assets/work/fullstackChatApp/ChatSphereQuestion.png"
 import ChatApp8 from "../../assets/work/fullstackChatApp/ChatSphereCategories.png";
 import ChatApp9 from "../../assets/work/fullstackChatApp/ChatSphereCategories2.png";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+  useCallback,
+} from "react";
 import {
   FiCpu,
   FiGithub,
@@ -602,6 +608,15 @@ const Projects = React.forwardRef((props, ref) => {
     new Set(projects.map((project) => project.category))
   );
 
+  // Create a mapping of projects to their indices for better performance
+  const projectIndexMap = useMemo(() => {
+    const map = new Map();
+    projects.forEach((project, index) => {
+      map.set(project.name, index);
+    });
+    return map;
+  }, [projects]);
+
   // Auto-carousel functionality
   const startAutoPlay = (projectIndex) => {
     if (projects[projectIndex].media.length <= 1) return;
@@ -716,8 +731,8 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   // Keyboard navigation for lightbox
-  useEffect(() => {
-    const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback(
+    (e) => {
       if (!lightboxOpen) return;
 
       switch (e.key) {
@@ -741,11 +756,14 @@ const Projects = React.forwardRef((props, ref) => {
         default:
           break;
       }
-    };
+    },
+    [lightboxOpen, lightboxImageIndex, lightboxProject]
+  );
 
+  useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxOpen, lightboxImageIndex, lightboxProject]);
+  }, [handleKeyDown]);
 
   // Handle fullscreen change events
   useEffect(() => {
@@ -796,7 +814,7 @@ const Projects = React.forwardRef((props, ref) => {
     }, 100);
   }, [activeCategory]);
 
-  const getCategoryIcons = (category) => {
+  const getCategoryIcons = useCallback((category) => {
     switch (category) {
       case "Mobile Development":
         return (
@@ -852,7 +870,7 @@ const Projects = React.forwardRef((props, ref) => {
       default:
         return <FiCpu className="inline-icon" />;
     }
-  };
+  }, []);
 
   const handleNextMedia = (projectIndex) => {
     // Stop auto-play when user interacts and mark as manually paused
@@ -892,9 +910,11 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   // Filter projects based on the active category
-  const filteredProjects = activeCategory
-    ? projects.filter((project) => project.category === activeCategory)
-    : projects;
+  const filteredProjects = useMemo(() => {
+    return activeCategory
+      ? projects.filter((project) => project.category === activeCategory)
+      : projects;
+  }, [activeCategory, projects]);
 
   return (
     <section ref={ref} className="projects-section" id="projects">
@@ -925,33 +945,24 @@ const Projects = React.forwardRef((props, ref) => {
       </div>
 
       <div className="projects-container">
-        {filteredProjects.map(
-          (
-            project,
-            index // Use filteredProjects here
-          ) => (
+        {filteredProjects.map((project, index) => {
+          const projectIndex = projectIndexMap.get(project.name);
+          return (
             <div key={project.name} className="project-card">
-              {" "}
-              {/* Using project.name as key for uniqueness */}
               <div className="project-card-inner">
                 <div className="project-media-container">
                   <div className="project-media-wrapper">
-                    {/* Ensure index is correct for currentMediaIndex */}
                     <img
-                      src={
-                        project.media[
-                          currentMediaIndex[projects.indexOf(project)]
-                        ]
-                      } // Find the original index of the filtered project
+                      src={project.media[currentMediaIndex[projectIndex]]}
                       alt={`${project.name} screenshot ${
-                        currentMediaIndex[projects.indexOf(project)] + 1
+                        currentMediaIndex[projectIndex] + 1
                       }`}
                       className="project-media"
                       loading="lazy"
                       onClick={() =>
                         openLightbox(
-                          projects.indexOf(project),
-                          currentMediaIndex[projects.indexOf(project)]
+                          projectIndex,
+                          currentMediaIndex[projectIndex]
                         )
                       }
                       style={{ cursor: "pointer" }}
@@ -959,38 +970,32 @@ const Projects = React.forwardRef((props, ref) => {
                   </div>
 
                   <div className="media-controls">
-                    {/* Auto-play toggle button */}
                     <button
-                      onClick={() => toggleAutoPlay(projects.indexOf(project))}
+                      onClick={() => toggleAutoPlay(projectIndex)}
                       className="media-control-button auto-play-toggle"
                       aria-label={
-                        isAutoPlaying[projects.indexOf(project)]
+                        isAutoPlaying[projectIndex]
                           ? "Pause slideshow"
                           : "Play slideshow"
                       }
                       title={
-                        isAutoPlaying[projects.indexOf(project)]
+                        isAutoPlaying[projectIndex]
                           ? "Pause slideshow"
                           : "Play slideshow"
                       }
                     >
-                      {isAutoPlaying[projects.indexOf(project)] ? (
-                        <FiPause />
-                      ) : (
-                        <FiPlay />
-                      )}
+                      {isAutoPlaying[projectIndex] ? <FiPause /> : <FiPlay />}
                     </button>
 
-                    {/* Ensure index is correct for handlers */}
                     <button
-                      onClick={() => handlePrevMedia(projects.indexOf(project))}
+                      onClick={() => handlePrevMedia(projectIndex)}
                       className="media-control-button"
                       aria-label="Previous image"
                     >
                       <FiChevronLeft />
                     </button>
                     <button
-                      onClick={() => handleNextMedia(projects.indexOf(project))}
+                      onClick={() => handleNextMedia(projectIndex)}
                       className="media-control-button"
                       aria-label="Next image"
                     >
@@ -1004,14 +1009,10 @@ const Projects = React.forwardRef((props, ref) => {
                         <button
                           key={mediaIndex}
                           onClick={() =>
-                            handleThumbnailClick(
-                              projects.indexOf(project),
-                              mediaIndex
-                            )
+                            handleThumbnailClick(projectIndex, mediaIndex)
                           }
                           className={`thumbnail ${
-                            currentMediaIndex[projects.indexOf(project)] ===
-                            mediaIndex
+                            currentMediaIndex[projectIndex] === mediaIndex
                               ? "active"
                               : ""
                           }`}
@@ -1074,8 +1075,8 @@ const Projects = React.forwardRef((props, ref) => {
                 </div>
               </div>
             </div>
-          )
-        )}
+          );
+        })}
       </div>
 
       {/* Lightbox/Modal */}
