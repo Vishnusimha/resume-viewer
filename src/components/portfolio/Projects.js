@@ -118,6 +118,7 @@ import {
   FiX,
   FiZoomIn,
   FiMaximize2,
+  FiMinimize2,
 } from "react-icons/fi";
 
 import { FaMobileAlt, FaCloud, FaCodeBranch } from "react-icons/fa";
@@ -594,6 +595,7 @@ const Projects = React.forwardRef((props, ref) => {
   const [lightboxProject, setLightboxProject] = useState(null);
   const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
   const [lightboxZoomed, setLightboxZoomed] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   // Get unique categories from the projects data
   const categories = Array.from(
@@ -662,6 +664,11 @@ const Projects = React.forwardRef((props, ref) => {
     setLightboxProject(null);
     setLightboxImageIndex(0);
     setLightboxZoomed(false);
+    setIsFullScreen(false);
+    // Exit fullscreen if currently in fullscreen mode
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
   };
 
   const nextLightboxImage = () => {
@@ -685,6 +692,29 @@ const Projects = React.forwardRef((props, ref) => {
     setLightboxZoomed(!lightboxZoomed);
   };
 
+  const toggleFullScreen = async () => {
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      const lightboxContainer = document.querySelector(".lightbox-container");
+      if (lightboxContainer && lightboxContainer.requestFullscreen) {
+        try {
+          await lightboxContainer.requestFullscreen();
+          setIsFullScreen(true);
+        } catch (err) {
+          console.error("Error entering fullscreen:", err);
+        }
+      }
+    } else {
+      // Exit fullscreen
+      try {
+        await document.exitFullscreen();
+        setIsFullScreen(false);
+      } catch (err) {
+        console.error("Error exiting fullscreen:", err);
+      }
+    }
+  };
+
   // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -704,6 +734,10 @@ const Projects = React.forwardRef((props, ref) => {
         case "Z":
           toggleLightboxZoom();
           break;
+        case "f":
+        case "F":
+          toggleFullScreen();
+          break;
         default:
           break;
       }
@@ -712,6 +746,17 @@ const Projects = React.forwardRef((props, ref) => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [lightboxOpen, lightboxImageIndex, lightboxProject]);
+
+  // Handle fullscreen change events
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullScreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   // Start auto-play for all projects on component mount
   useEffect(() => {
@@ -1052,6 +1097,13 @@ const Projects = React.forwardRef((props, ref) => {
                 </button>
                 <button
                   className="lightbox-control-btn"
+                  onClick={toggleFullScreen}
+                  title={isFullScreen ? "Exit fullscreen" : "Enter fullscreen"}
+                >
+                  {isFullScreen ? <FiMinimize2 /> : <FiMaximize2 />}
+                </button>
+                <button
+                  className="lightbox-control-btn"
                   onClick={closeLightbox}
                   title="Close"
                 >
@@ -1097,7 +1149,7 @@ const Projects = React.forwardRef((props, ref) => {
                 </div>
                 <div className="lightbox-instructions">
                   Use arrow keys to navigate • Press ESC to close • Press Z to
-                  zoom
+                  zoom • Press F for fullscreen
                 </div>
               </div>
             </div>
