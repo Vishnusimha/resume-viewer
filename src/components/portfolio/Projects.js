@@ -115,6 +115,9 @@ import {
   FiActivity,
   FiPlay,
   FiPause,
+  FiX,
+  FiZoomIn,
+  FiMaximize2,
 } from "react-icons/fi";
 
 import { FaMobileAlt, FaCloud, FaCodeBranch } from "react-icons/fa";
@@ -586,6 +589,12 @@ const Projects = React.forwardRef((props, ref) => {
     Array(projects.length).fill(false)
   );
 
+  // Lightbox/Modal states
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxProject, setLightboxProject] = useState(null);
+  const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
+  const [lightboxZoomed, setLightboxZoomed] = useState(false);
+
   // Get unique categories from the projects data
   const categories = Array.from(
     new Set(projects.map((project) => project.category))
@@ -639,6 +648,70 @@ const Projects = React.forwardRef((props, ref) => {
       startAutoPlay(projectIndex);
     }
   };
+
+  // Lightbox/Modal functions
+  const openLightbox = (projectIndex, imageIndex) => {
+    setLightboxProject(projects[projectIndex]);
+    setLightboxImageIndex(imageIndex);
+    setLightboxOpen(true);
+    setLightboxZoomed(false);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxProject(null);
+    setLightboxImageIndex(0);
+    setLightboxZoomed(false);
+  };
+
+  const nextLightboxImage = () => {
+    if (
+      lightboxProject &&
+      lightboxImageIndex < lightboxProject.media.length - 1
+    ) {
+      setLightboxImageIndex(lightboxImageIndex + 1);
+      setLightboxZoomed(false);
+    }
+  };
+
+  const prevLightboxImage = () => {
+    if (lightboxProject && lightboxImageIndex > 0) {
+      setLightboxImageIndex(lightboxImageIndex - 1);
+      setLightboxZoomed(false);
+    }
+  };
+
+  const toggleLightboxZoom = () => {
+    setLightboxZoomed(!lightboxZoomed);
+  };
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!lightboxOpen) return;
+
+      switch (e.key) {
+        case "Escape":
+          closeLightbox();
+          break;
+        case "ArrowLeft":
+          prevLightboxImage();
+          break;
+        case "ArrowRight":
+          nextLightboxImage();
+          break;
+        case "z":
+        case "Z":
+          toggleLightboxZoom();
+          break;
+        default:
+          break;
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen, lightboxImageIndex, lightboxProject]);
 
   // Start auto-play for all projects on component mount
   useEffect(() => {
@@ -830,6 +903,13 @@ const Projects = React.forwardRef((props, ref) => {
                       }`}
                       className="project-media"
                       loading="lazy"
+                      onClick={() =>
+                        openLightbox(
+                          projects.indexOf(project),
+                          currentMediaIndex[projects.indexOf(project)]
+                        )
+                      }
+                      style={{ cursor: "pointer" }}
                     />
                   </div>
 
@@ -952,6 +1032,78 @@ const Projects = React.forwardRef((props, ref) => {
           )
         )}
       </div>
+
+      {/* Lightbox/Modal */}
+      {lightboxOpen && lightboxProject && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div
+            className="lightbox-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="lightbox-header">
+              <h3 className="lightbox-title">{lightboxProject.name}</h3>
+              <div className="lightbox-controls">
+                <button
+                  className="lightbox-control-btn"
+                  onClick={toggleLightboxZoom}
+                  title={lightboxZoomed ? "Zoom out" : "Zoom in"}
+                >
+                  {lightboxZoomed ? <FiMaximize2 /> : <FiZoomIn />}
+                </button>
+                <button
+                  className="lightbox-control-btn"
+                  onClick={closeLightbox}
+                  title="Close"
+                >
+                  <FiX />
+                </button>
+              </div>
+            </div>
+
+            <div className="lightbox-content">
+              <div className="lightbox-image-container">
+                {lightboxImageIndex > 0 && (
+                  <button
+                    className="lightbox-nav-btn lightbox-nav-prev"
+                    onClick={prevLightboxImage}
+                    title="Previous image"
+                  >
+                    <FiChevronLeft />
+                  </button>
+                )}
+
+                <img
+                  src={lightboxProject.media[lightboxImageIndex]}
+                  alt={`${lightboxProject.name} screenshot ${
+                    lightboxImageIndex + 1
+                  }`}
+                  className={`lightbox-image ${lightboxZoomed ? "zoomed" : ""}`}
+                />
+
+                {lightboxImageIndex < lightboxProject.media.length - 1 && (
+                  <button
+                    className="lightbox-nav-btn lightbox-nav-next"
+                    onClick={nextLightboxImage}
+                    title="Next image"
+                  >
+                    <FiChevronRight />
+                  </button>
+                )}
+              </div>
+
+              <div className="lightbox-info">
+                <div className="lightbox-image-counter">
+                  {lightboxImageIndex + 1} / {lightboxProject.media.length}
+                </div>
+                <div className="lightbox-instructions">
+                  Use arrow keys to navigate • Press ESC to close • Press Z to
+                  zoom
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 });
