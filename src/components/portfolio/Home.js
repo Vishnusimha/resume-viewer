@@ -9,6 +9,13 @@ import {
   FaShieldAlt,
   FaSync,
   FaCalendarAlt,
+  FaArrowUp,
+  FaMapMarkerAlt,
+  FaDownload,
+  FaCode,
+  FaHeart,
+  FaCoffee,
+  FaVideo,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
@@ -72,6 +79,65 @@ const Home = React.forwardRef((props, ref) => {
 
   const handlePostsClick = () => {
     props.onNavigate("Blogs");
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleDownloadResume = () => {
+    // Replace with your actual resume URL
+    const resumeUrl = "/assets/Vishnu Simha Software Engineer Resume.pdf";
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "Vishnu_Simha_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleScheduleCall = () => {
+    // Create Google Calendar event with Google Meet
+    const now = new Date();
+    const startDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // Tomorrow
+    const endDate = new Date(startDate.getTime() + 30 * 60 * 1000); // 30 minutes later
+
+    const formatDate = (date) => {
+      return date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+    };
+
+    const eventDetails = {
+      text: "Technical Discussion with Vishnu Simha",
+      dates: `${formatDate(startDate)}/${formatDate(endDate)}`,
+      details: `Hi Vishnu! I'm interested in discussing a potential collaboration opportunity with you.
+
+📋 Meeting Agenda:
+• Introduction and project requirements
+• Technical discussion and approach
+• Timeline and next steps
+• Q&A session
+
+🔗 This meeting will include Google Meet for video conferencing.
+📧 Meeting with: vishnusimha98@gmail.com
+
+Looking forward to connecting with you!`,
+      location: "Google Meet (link will be provided)",
+      add: "vishnusimha98@gmail.com", // Add Vishnu as attendee
+      src: "Google Meet", // This helps Google Calendar recognize it should add Meet
+      trp: false, // Don't show guests in the event
+    };
+
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      eventDetails.text
+    )}&dates=${eventDetails.dates}&details=${encodeURIComponent(
+      eventDetails.details
+    )}&location=${encodeURIComponent(
+      eventDetails.location
+    )}&add=${encodeURIComponent(eventDetails.add)}&src=${encodeURIComponent(
+      eventDetails.src
+    )}&trp=${eventDetails.trp}`;
+
+    window.open(googleCalendarUrl, "_blank");
   };
 
   const GitHubStatsCard = ({ src, alt, title, href, className = "" }) => (
@@ -348,6 +414,201 @@ const Home = React.forwardRef((props, ref) => {
           </div>
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="home-footer">
+        {/* CTA Section */}
+        <div className="footer-cta-section">
+          <div className="footer-cta-container">
+            <div className="footer-cta-content">
+              <h2>Let's Build Something Amazing Together</h2>
+              <p>
+                Ready to turn your ideas into scalable, high-performance
+                applications?
+              </p>
+              <div className="footer-cta-buttons">
+                <button
+                  className="footer-primary-btn"
+                  onClick={() =>
+                    window.open(
+                      "mailto:vishnusimha98@gmail.com?subject=Project Collaboration&body=Hi Vishnu, I would like to discuss a project opportunity with you.",
+                      "_blank"
+                    )
+                  }
+                >
+                  <FaEnvelope />
+                  Start a Project
+                </button>
+                <button
+                  className="footer-secondary-btn"
+                  onClick={handleScheduleCall}
+                >
+                  <FaVideo />
+                  Schedule Call
+                </button>
+              </div>
+            </div>
+            <div className="footer-cta-status">
+              <div className="status-indicator">
+                <div className="status-dot"></div>
+                <span>Available for new opportunities</span>
+              </div>
+              <div className="coffee-chat">
+                <FaCoffee style={{ fontSize: "1.2em" }} />
+                <span>Always up for a coffee chat about tech!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="footer-main">
+          <div className="footer-container">
+            <div className="footer-grid">
+              {/* About Column */}
+              <div className="footer-column">
+                <h3>Vishnu Simha</h3>
+                <p className="footer-description">
+                  Full Stack Developer specializing in Android, Spring Boot, and
+                  AWS. I build scalable applications that impact millions.
+                </p>
+                <div className="footer-location">
+                  <FaMapMarkerAlt />
+                  <span>Based in 🇮🇳India/🇮🇪Ireland</span>
+                </div>
+                <div className="footer-social-links">
+                  {socialLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                      title={link.label}
+                      className="footer-social-link"
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quick Links Column */}
+              <div className="footer-column">
+                <h4>Quick Links</h4>
+                <ul className="footer-links">
+                  <li>
+                    <a href="#home" onClick={() => scrollToTop()}>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" onClick={() => props.onNavigate("home")}>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#projects"
+                      onClick={() => props.onNavigate("projects")}
+                    >
+                      Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#blog" onClick={() => props.onNavigate("Blogs")}>
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#resume"
+                      onClick={() => props.onNavigate("resume")}
+                    >
+                      Resume
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      onClick={() => props.onNavigate("contact")}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Services Column */}
+              <div className="footer-column">
+                <h4>Services</h4>
+                <ul className="footer-links">
+                  <li>Android App Development</li>
+                  <li>Full Stack Web Development</li>
+                  <li>IoT Solutions</li>
+                  <li>Technical Consulting</li>
+                </ul>
+              </div>
+
+              {/* Technologies Column */}
+              <div className="footer-column">
+                <h4>Technologies</h4>
+                <div className="footer-tech-grid">
+                  <span className="footer-tech-tag">Kotlin</span>
+                  <span className="footer-tech-tag">Java</span>
+                  <span className="footer-tech-tag">Android</span>
+                  <span className="footer-tech-tag">Spring Boot</span>
+                </div>
+                <div className="footer-experience">
+                  <div className="experience-item">
+                    <strong>4+</strong>
+                    <span>Years Experience</span>
+                  </div>
+                  <div className="experience-item">
+                    <strong>20+</strong>
+                    <span>Projects Delivered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="footer-container">
+            <div className="footer-bottom-content">
+              <div className="footer-copyright">
+                <p>
+                  © {new Date().getFullYear()} Vishnu Simha. All rights
+                  reserved.
+                </p>
+                <p className="footer-built-with">
+                  Built with <FaHeart className="heart-icon" /> using <FaCode />{" "}
+                  React & deployed on Vercel
+                </p>
+              </div>
+              <div className="footer-bottom-right">
+                <div className="footer-last-updated">
+                  Last updated:{" "}
+                  {new Date().toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </div>
+                <button
+                  className="back-to-top"
+                  onClick={scrollToTop}
+                  aria-label="Back to top"
+                >
+                  <FaArrowUp />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 });
