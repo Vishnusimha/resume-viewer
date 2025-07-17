@@ -11,7 +11,6 @@ import {
   FaCalendarAlt,
   FaArrowUp,
   FaMapMarkerAlt,
-  FaDownload,
   FaCode,
   FaHeart,
   FaCoffee,
@@ -22,7 +21,6 @@ import { SiLeetcode } from "react-icons/si";
 const Home = React.forwardRef((props, ref) => {
   // Constants
   const REFRESH_DELAY = 1000;
-  const SKELETON_HEIGHT = { desktop: 250, tablet: 180, mobile: 150 };
 
   const [refreshKey, setRefreshKey] = useState(0);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -83,17 +81,6 @@ const Home = React.forwardRef((props, ref) => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleDownloadResume = () => {
-    // Replace with your actual resume URL
-    const resumeUrl = "/assets/Vishnu Simha Software Engineer Resume.pdf";
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Vishnu_Simha_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   const handleScheduleCall = () => {
@@ -451,7 +438,9 @@ Looking forward to connecting with you!`,
             <div className="footer-cta-status">
               <div className="status-indicator">
                 <div className="status-dot"></div>
-                <span>Available for new opportunities</span>
+                <span>
+                  <strong>Available for new opportunities</strong>
+                </span>
               </div>
               <div className="coffee-chat">
                 <FaCoffee style={{ fontSize: "1.2em" }} />

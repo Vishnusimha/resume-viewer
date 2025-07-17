@@ -36,6 +36,23 @@
   --salmon-color: var(--validation-error-color);
   --bright-aqua: #18fadc;
 
+  /* Status Dot Colors - Dark Theme (Bright Green) */
+  --status-dot-primary: #00ff66; /* Bright green center */
+  --status-dot-secondary: #00ee44; /* Vibrant green */
+  --status-dot-tertiary: #00dd33; /* Medium green */
+  --status-dot-quaternary: #00cc22; /* Darker green */
+  --status-dot-border: #00aa11; /* Deep green edge */
+  --status-dot-glow: rgba(0, 255, 102, 1); /* Main glow color */
+  --status-dot-glow-soft: rgba(0, 255, 102, 0.9); /* Softer glow */
+  --status-dot-glow-subtle: rgba(0, 255, 102, 0.1); /* Subtle outer glow */
+  --status-dot-inner-light: #ccffcc; /* Light green center for inner dot */
+
+  /* Status Indicator Background - Always Bright Green */
+  --status-indicator-bg: rgba(0, 255, 0, 0.1);
+  --status-indicator-border: rgba(0, 255, 0, 0.3);
+  --status-indicator-shadow: rgba(0, 255, 0, 0.2);
+  --status-indicator-shimmer: rgba(0, 255, 0, 0.2);
+
   /* Dark Theme Syntax Highlighting Colors */
   --hljs-color: #d4d4d4;
   --hljs-keyword-color: #569cd6;
@@ -113,6 +130,12 @@
   --footer-cta-shimmer-accent: rgba(15, 240, 252, 0.25);
   --footer-cta-border: transparent;
 
+  /* Additional missing variables */
+  --text-primary: var(--text-light);
+  --text-secondary: var(--text-muted);
+  --border-color: rgba(15, 240, 252, 0.2);
+  --accent-color-20: rgba(15, 240, 252, 0.2);
+
   /* Fonts */
   --font-main: "Fira Code", monospace;
 }
@@ -136,6 +159,38 @@ body.light-theme {
   --light-bg-secondary-transparent-70: rgba(216, 226, 235, 0.7);
   --light-bg-secondary-transparent-60: rgba(216, 226, 235, 0.6);
   --light-highlight-yellow-transparent-12: rgba(255, 255, 0, 0.12);
+
+  /* Status Dot Colors - Light Theme (Dark Green Dot, Bright Green Glow) */
+  --status-dot-primary: #0d4d1a; /* Dark green center for dot */
+  --status-dot-secondary: #155a21; /* Medium dark green for dot */
+  --status-dot-tertiary: #1f6928; /* Slightly lighter dark green for dot */
+  --status-dot-quaternary: #28762f; /* Medium green for dot */
+  --status-dot-border: #318436; /* Forest green edge for dot */
+  --status-dot-glow: rgba(
+    0,
+    255,
+    102,
+    1
+  ); /* Keep bright green glow same as dark theme */
+  --status-dot-glow-soft: rgba(
+    0,
+    255,
+    102,
+    0.9
+  ); /* Keep bright green glow same as dark theme */
+  --status-dot-glow-subtle: rgba(
+    0,
+    255,
+    102,
+    0.1
+  ); /* Keep bright green glow same as dark theme */
+  --status-dot-inner-light: #4a9a52; /* Lighter green center for inner dot */
+
+  /* Status Indicator Background - Keep Bright Green Same as Dark Theme */
+  --status-indicator-bg: rgba(0, 255, 0, 0.1);
+  --status-indicator-border: rgba(0, 255, 0, 0.3);
+  --status-indicator-shadow: rgba(0, 255, 0, 0.2);
+  --status-indicator-shimmer: rgba(0, 255, 0, 0.2);
 
   /* Light Theme Syntax Highlighting Colors */
   --hljs-color: #333333; /* Dark gray for general text */
@@ -213,6 +268,12 @@ body.light-theme {
   --footer-cta-shimmer-primary: var(--light-accent-blue-transparent-08);
   --footer-cta-shimmer-accent: var(--light-accent-blue-transparent-15);
   --footer-cta-border: var(--light-accent-blue-transparent-15);
+
+  /* Additional missing variables for light theme */
+  --text-primary: var(--light-text-main);
+  --text-secondary: var(--light-text-muted-cool);
+  --border-color: var(--light-accent-blue-transparent-15);
+  --accent-color-20: var(--light-accent-blue-transparent-15);
 }
 
 /* Base Styles */
@@ -489,8 +550,6 @@ body {
 
 .home-welcome-image {
   margin-top: -20px;
-  /* transform: translateY(-50px);  */
-  max-width: 100%;
   max-width: 500px;
   height: auto;
   flex: 0 0 auto;
@@ -1093,28 +1152,242 @@ body {
 .status-indicator {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-  font-size: 1rem;
+  gap: 0.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: var(--status-indicator-bg);
+  border: 2px solid var(--status-indicator-border);
+  border-radius: 25px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 0 20px var(--status-indicator-shadow);
+  animation: statusGlow 3s ease-in-out infinite alternate;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-indicator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--status-indicator-shimmer),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes statusGlow {
+  0% {
+    box-shadow: 0 0 20px var(--status-indicator-shadow);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 30px var(--status-indicator-shadow);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .status-dot {
-  width: 12px;
-  height: 12px;
-  background: #00ff00;
+  width: 14px;
+  height: 14px;
+  /* Theme-aware green glowing gradient */
+  background: radial-gradient(
+    circle at center,
+    var(--status-dot-primary) 0%,
+    var(--status-dot-secondary) 25%,
+    var(--status-dot-tertiary) 50%,
+    var(--status-dot-quaternary) 75%,
+    var(--status-dot-border) 100%
+  );
   border-radius: 50%;
-  animation: pulse 2s infinite;
+  border: 1.5px solid var(--status-dot-primary);
+  position: relative;
+
+  /* Enhanced glow layers - theme-aware */
+  box-shadow: 
+    /* Inner glow layers */ inset 0 0 6px
+      var(--status-dot-glow-soft),
+    inset 0 0 12px var(--status-dot-glow-subtle),
+    /* Outer glow layers */ 0 0 10px var(--status-dot-glow),
+    0 0 20px var(--status-dot-glow-soft), 0 0 30px var(--status-dot-glow-soft),
+    0 0 40px var(--status-dot-glow-subtle),
+    0 0 55px var(--status-dot-glow-subtle),
+    0 0 70px var(--status-dot-glow-subtle),
+    /* Far outer glow for atmospheric effect */ 0 0 100px
+      var(--status-dot-glow-subtle);
+
+  /* Animations for life */
+  animation: enhancedPulse 1.8s infinite, rotate 4s linear infinite;
+
+  /* Ensure perfect circle */
+  min-width: 14px;
+  min-height: 14px;
+  max-width: 14px;
+  max-height: 14px;
+  flex-shrink: 0;
+
+  /* Enhanced visual filters */
+  filter: brightness(1.3) saturate(1.5) hue-rotate(0deg);
 }
 
-@keyframes pulse {
+.status-dot::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--status-dot-glow-soft),
+    var(--status-dot-glow),
+    transparent,
+    var(--status-dot-glow-soft),
+    var(--status-dot-glow),
+    transparent
+  );
+  border-radius: 50%;
+  animation: rotate 3s linear infinite reverse;
+  z-index: -1;
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(
+    circle at center,
+    var(--status-dot-inner-light) 0%,
+    var(--status-dot-primary) 50%,
+    var(--status-dot-quaternary) 100%
+  );
+  border-radius: 50%;
+  opacity: 0.95;
+  animation: innerPulse 1.2s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--status-dot-glow),
+    0 0 16px var(--status-dot-glow-soft), 0 0 24px var(--status-dot-glow-subtle);
+  /* Ensure perfect circle for inner dot */
+  min-width: 8px;
+  min-height: 8px;
+  max-width: 8px;
+  max-height: 8px;
+  flex-shrink: 0;
+  filter: brightness(1.3);
+}
+
+@keyframes enhancedPulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+    box-shadow: 
+      /* Inner glow layers */ inset 0 0 10px
+        var(--status-dot-glow-soft),
+      inset 0 0 20px var(--status-dot-glow-subtle),
+      /* Outer glow layers */ 0 0 15px var(--status-dot-glow),
+      0 0 30px var(--status-dot-glow-soft), 0 0 45px var(--status-dot-glow-soft),
+      0 0 60px var(--status-dot-glow-subtle),
+      0 0 80px var(--status-dot-glow-subtle),
+      0 0 100px var(--status-dot-glow-subtle),
+      0 0 150px var(--status-dot-glow-subtle);
+    transform: scale(1);
+    filter: brightness(1.2) saturate(1.3);
   }
-  70% {
-    box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+  25% {
+    box-shadow: 
+      /* Inner glow layers */ inset 0 0 15px
+        var(--status-dot-glow),
+      inset 0 0 30px var(--status-dot-glow-subtle),
+      /* Outer glow layers - enhanced */ 0 0 25px var(--status-dot-glow),
+      0 0 50px var(--status-dot-glow), 0 0 75px var(--status-dot-glow-soft),
+      0 0 100px var(--status-dot-glow-soft),
+      0 0 130px var(--status-dot-glow-subtle),
+      0 0 160px var(--status-dot-glow-subtle),
+      0 0 200px var(--status-dot-glow-subtle);
+    transform: scale(1.08);
+    filter: brightness(1.4) saturate(1.5);
+  }
+  50% {
+    box-shadow: 
+      /* Inner glow layers - maximum intensity */ inset 0 0 20px
+        var(--status-dot-glow),
+      inset 0 0 40px var(--status-dot-glow-soft),
+      /* Outer glow layers - maximum */ 0 0 35px var(--status-dot-glow),
+      0 0 70px var(--status-dot-glow), 0 0 105px var(--status-dot-glow),
+      0 0 140px var(--status-dot-glow-soft),
+      0 0 180px var(--status-dot-glow-subtle),
+      0 0 220px var(--status-dot-glow-subtle),
+      0 0 280px var(--status-dot-glow-subtle);
+    transform: scale(1.15);
+    filter: brightness(1.6) saturate(1.7);
+  }
+  75% {
+    box-shadow: 
+      /* Inner glow layers */ inset 0 0 15px
+        var(--status-dot-glow),
+      inset 0 0 30px var(--status-dot-glow-subtle),
+      /* Outer glow layers - enhanced */ 0 0 25px var(--status-dot-glow),
+      0 0 50px var(--status-dot-glow), 0 0 75px var(--status-dot-glow-soft),
+      0 0 100px var(--status-dot-glow-soft),
+      0 0 130px var(--status-dot-glow-subtle),
+      0 0 160px var(--status-dot-glow-subtle),
+      0 0 200px var(--status-dot-glow-subtle);
+    transform: scale(1.08);
+    filter: brightness(1.4) saturate(1.5);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    box-shadow: 
+      /* Inner glow layers */ inset 0 0 10px
+        var(--status-dot-glow-soft),
+      inset 0 0 20px var(--status-dot-glow-subtle),
+      /* Outer glow layers */ 0 0 15px var(--status-dot-glow),
+      0 0 30px var(--status-dot-glow-soft), 0 0 45px var(--status-dot-glow-soft),
+      0 0 60px var(--status-dot-glow-subtle),
+      0 0 80px var(--status-dot-glow-subtle),
+      0 0 100px var(--status-dot-glow-subtle),
+      0 0 150px var(--status-dot-glow-subtle);
+    transform: scale(1);
+    filter: brightness(1.2) saturate(1.3);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes innerPulse {
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.8);
   }
 }
 
@@ -4199,7 +4472,12 @@ body {
     justify-content: center;
   }
 
-  .status-indicator,
+  .status-indicator {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    gap: 0.6rem;
+  }
+
   .coffee-chat {
     font-size: 0.8rem;
   }
