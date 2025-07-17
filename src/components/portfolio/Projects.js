@@ -102,7 +102,7 @@ import ChatApp7 from "../../assets/work/fullstackChatApp/ChatSphereQuestion.png"
 import ChatApp8 from "../../assets/work/fullstackChatApp/ChatSphereCategories.png";
 import ChatApp9 from "../../assets/work/fullstackChatApp/ChatSphereCategories2.png";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FiCpu,
   FiGithub,
@@ -113,6 +113,8 @@ import {
   FiGlobe,
   FiDatabase,
   FiActivity,
+  FiPlay,
+  FiPause,
 } from "react-icons/fi";
 
 import { FaMobileAlt, FaCloud, FaCodeBranch } from "react-icons/fa";
@@ -575,10 +577,106 @@ const Projects = React.forwardRef((props, ref) => {
   // State to manage the active category filter, null means "All"
   const [activeCategory, setActiveCategory] = useState(null);
 
+  // Auto-carousel states
+  const [isAutoPlaying, setIsAutoPlaying] = useState(
+    Array(projects.length).fill(true)
+  );
+  const intervalRefs = useRef(Array(projects.length).fill(null));
+  const [userPausedProjects, setUserPausedProjects] = useState(
+    Array(projects.length).fill(false)
+  );
+
   // Get unique categories from the projects data
   const categories = Array.from(
     new Set(projects.map((project) => project.category))
   );
+
+  // Auto-carousel functionality
+  const startAutoPlay = (projectIndex) => {
+    if (projects[projectIndex].media.length <= 1) return;
+
+    // Clear existing interval if any
+    if (intervalRefs.current[projectIndex]) {
+      clearInterval(intervalRefs.current[projectIndex]);
+    }
+
+    const intervalId = setInterval(() => {
+      setCurrentMediaIndex((prevIndexes) =>
+        prevIndexes.map((index, i) =>
+          i === projectIndex
+            ? (index + 1) % projects[projectIndex].media.length
+            : index
+        )
+      );
+    }, 3000); // Change slide every 3 seconds
+
+    intervalRefs.current[projectIndex] = intervalId;
+    setIsAutoPlaying((prev) =>
+      prev.map((playing, i) => (i === projectIndex ? true : playing))
+    );
+    setUserPausedProjects((prev) =>
+      prev.map((paused, i) => (i === projectIndex ? false : paused))
+    );
+  };
+
+  const stopAutoPlay = (projectIndex) => {
+    if (intervalRefs.current[projectIndex]) {
+      clearInterval(intervalRefs.current[projectIndex]);
+      intervalRefs.current[projectIndex] = null;
+    }
+    setIsAutoPlaying((prev) =>
+      prev.map((playing, i) => (i === projectIndex ? false : playing))
+    );
+    setUserPausedProjects((prev) =>
+      prev.map((paused, i) => (i === projectIndex ? true : paused))
+    );
+  };
+
+  const toggleAutoPlay = (projectIndex) => {
+    if (isAutoPlaying[projectIndex]) {
+      stopAutoPlay(projectIndex);
+    } else {
+      startAutoPlay(projectIndex);
+    }
+  };
+
+  // Start auto-play for all projects on component mount
+  useEffect(() => {
+    projects.forEach((project, index) => {
+      if (project.media.length > 1) {
+        startAutoPlay(index);
+      }
+    });
+
+    // Cleanup intervals on unmount
+    return () => {
+      intervalRefs.current.forEach((intervalId) => {
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      });
+    };
+  }, []); // Empty dependency array - only run once on mount
+
+  // Handle category changes
+  useEffect(() => {
+    // Clear all intervals when category changes
+    intervalRefs.current.forEach((intervalId) => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    });
+    intervalRefs.current = Array(projects.length).fill(null);
+
+    // Restart auto-play for projects that weren't manually paused
+    setTimeout(() => {
+      projects.forEach((project, index) => {
+        if (project.media.length > 1 && !userPausedProjects[index]) {
+          startAutoPlay(index);
+        }
+      });
+    }, 100);
+  }, [activeCategory]);
 
   const getCategoryIcons = (category) => {
     switch (category) {
@@ -639,6 +737,9 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   const handleNextMedia = (projectIndex) => {
+    // Stop auto-play when user interacts and mark as manually paused
+    stopAutoPlay(projectIndex);
+
     setCurrentMediaIndex((prevIndexes) =>
       prevIndexes.map((index, i) =>
         i === projectIndex
@@ -649,6 +750,9 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   const handlePrevMedia = (projectIndex) => {
+    // Stop auto-play when user interacts and mark as manually paused
+    stopAutoPlay(projectIndex);
+
     setCurrentMediaIndex((prevIndexes) =>
       prevIndexes.map((index, i) =>
         i === projectIndex
@@ -661,6 +765,9 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   const handleThumbnailClick = (projectIndex, mediaIndex) => {
+    // Stop auto-play when user interacts and mark as manually paused
+    stopAutoPlay(projectIndex);
+
     setCurrentMediaIndex((prevIndexes) =>
       prevIndexes.map((index, i) => (i === projectIndex ? mediaIndex : index))
     );
@@ -727,6 +834,28 @@ const Projects = React.forwardRef((props, ref) => {
                   </div>
 
                   <div className="media-controls">
+                    {/* Auto-play toggle button */}
+                    <button
+                      onClick={() => toggleAutoPlay(projects.indexOf(project))}
+                      className="media-control-button auto-play-toggle"
+                      aria-label={
+                        isAutoPlaying[projects.indexOf(project)]
+                          ? "Pause slideshow"
+                          : "Play slideshow"
+                      }
+                      title={
+                        isAutoPlaying[projects.indexOf(project)]
+                          ? "Pause slideshow"
+                          : "Play slideshow"
+                      }
+                    >
+                      {isAutoPlaying[projects.indexOf(project)] ? (
+                        <FiPause />
+                      ) : (
+                        <FiPlay />
+                      )}
+                    </button>
+
                     {/* Ensure index is correct for handlers */}
                     <button
                       onClick={() => handlePrevMedia(projects.indexOf(project))}
