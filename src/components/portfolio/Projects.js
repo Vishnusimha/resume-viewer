@@ -137,6 +137,7 @@ import { GiArtificialIntelligence } from "react-icons/gi";
 const Projects = React.forwardRef((props, ref) => {
   const projects = [
     {
+      id: "hid-mobile-access",
       name: "HID Mobile Access",
       description:
         "Contributed to the development and maintenance of HID Mobile Access, including app, SDK, and Android watch features. Worked in an agile team, handled sprint stories and customer issues using JIRA.",
@@ -161,6 +162,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "stockkeeper-android-app",
       name: "StocKeeper - Android Stock Management App",
       description:
         "The ultimate stock management tool for homes and businesses. Track, plan, and purchase with ease. You can take care of your inventory with this StocKeeper app. Track stock levels, set alerts, and optimize your purchases. Perfect for homes and businesses. ",
@@ -201,6 +203,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "iot-air-quality-monitoring",
       name: "IoT Indoor Air Quality Monitoring System",
       description:
         "Designed and implemented an IoT-based system to monitor CO2, humidity, and temperature using Raspberry Pi and Adafruit SCD40. Real-time data visualization and alerting through a custom Android app.",
@@ -246,6 +249,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "social-chat-fullstack",
       name: "Social Chat Application - Full-Stack (Android + Spring Boot)",
       description:
         "Built a scalable full-stack social chat app using Java (Spring Boot) microservices and React. Designed secure REST APIs for users, posts, and comments, with JWT authentication, resilient service communication, and MySQL data storage. Created a responsive React frontend for seamless user experience, routing all requests via an API gateway.",
@@ -297,6 +301,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "fullstack-restaurant-webapp",
       name: "Full-Stack Web Application - Online Business",
       description:
         "Developed a web application for an online takeaway restaurant business using Spring Boot and MySQL. The project features a responsive design, user authentication, and a dynamic menu. The backend is powered by Spring Boot, while the frontend is developed using HTML, CSS, and JavaScript.",
@@ -332,6 +337,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "balloon-decor-website",
       name: "Balloon Decor Business Website",
       description:
         "A complete online business website for a balloon decor venture. This full-stack project utilizes Spring Boot and MySQL for the server-side logic and database, complemented by a basic HTML/CSS frontend",
@@ -353,6 +359,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "feature-rich-android-apps",
       name: "Feature-Rich Android Applications",
       description:
         "Created modern Android apps using Kotlin with Jetpack Compose and XML views, integrating technologies like Retrofit, Room, Firebase, Hilt, and Coroutines to deliver scalable, maintainable codebases.",
@@ -392,6 +399,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "notes-android-app",
       name: "Notes - Android App",
       description:
         "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
@@ -414,6 +422,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "personal-portfolio-website",
       name: "Personal Portfolio Website",
       description:
         "A modern, responsive portfolio website built with React showcasing professional experience, projects, and technical skills. Features interactive project galleries, markdown-based blog system with syntax highlighting, downloadable resume, contact form integration, and dark/light theme toggle. Implements XSS protection with DOMPurify for secure content rendering.",
@@ -452,6 +461,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "weather-dashboard-react",
       name: "Weather Dashboard – React Project",
       description:
         "Developed a responsive weather dashboard using React and OpenWeatherMap API. Features include data fetching, error handling, and real-time UI updates. Deployed via GitHub Pages.",
@@ -470,6 +480,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "java-client-server-robot-simulation",
       name: "Java Client-Server Architecture for Multi-Agent Robot Simulation",
       description:
         "Implemented a multi-threaded client-server application in Java for simulating and controlling multiple robot clients. The architecture features a Swing-based GUI on both ends, enabling real-time interaction and visualization. Key functionalities include network communication via Robot objects, concurrent handling of multiple clients, dynamic GUI updates (robot positions, collision alerts, connection status), and client-side speed control with optional automatic updates.",
@@ -506,6 +517,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "human-activity-recognition-ml",
       name: "Human Activity Recognition - Data Analysis and ML",
       description:
         "Built a predictive model using supervised learning on sensor data from the Extrasensory dataset. Performed feature engineering, performance analysis, and model selection.",
@@ -531,6 +543,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "aes-present-encryption-algorithms",
       name: "AES-128 and PRESENT-80 Encryption-Algorithms - Academic Project",
       description:
         "Implemented AES-128 and PRESENT-80 cipher encryption in C++, ensuring adherence to specified key and block sizes. Validated implementation through ECB mode test encryptions and provided a concise comparison between the two algorithms.",
@@ -556,6 +569,7 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
+      id: "cpp-design-challenge",
       name: "C++ Design Challenge - Academic Project",
       description:
         "Designed and implemented a robust C++ security system with keypad, fingerprint, and hybrid locks for flexible authentication. Proficiently applied OOP principles like inheritance, polymorphism, and dynamic memory management. Showcased expertise in container classes and algorithms for efficient data manipulation. Overall, demonstrated strong capabilities in software design and implementation.",
@@ -603,16 +617,19 @@ const Projects = React.forwardRef((props, ref) => {
   const [lightboxZoomed, setLightboxZoomed] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
+  // Ref for lightbox container to avoid DOM queries
+  const lightboxContainerRef = useRef(null);
+
   // Get unique categories from the projects data
   const categories = Array.from(
     new Set(projects.map((project) => project.category))
   );
 
-  // Create a mapping of projects to their indices for better performance
+  // Create a mapping of project IDs to their indices for better performance
   const projectIndexMap = useMemo(() => {
     const map = new Map();
     projects.forEach((project, index) => {
-      map.set(project.name, index);
+      map.set(project.id, index);
     });
     return map;
   }, [projects]);
@@ -710,7 +727,7 @@ const Projects = React.forwardRef((props, ref) => {
   const toggleFullScreen = async () => {
     if (!document.fullscreenElement) {
       // Enter fullscreen
-      const lightboxContainer = document.querySelector(".lightbox-container");
+      const lightboxContainer = lightboxContainerRef.current;
       if (lightboxContainer && lightboxContainer.requestFullscreen) {
         try {
           await lightboxContainer.requestFullscreen();
@@ -760,6 +777,42 @@ const Projects = React.forwardRef((props, ref) => {
     [lightboxOpen, lightboxImageIndex, lightboxProject]
   );
 
+  // Focus trap for lightbox accessibility
+  useEffect(() => {
+    if (lightboxOpen && lightboxContainerRef.current) {
+      const container = lightboxContainerRef.current;
+      const focusableElements = container.querySelectorAll(
+        'button, [href], [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      const handleTabKey = (e) => {
+        if (e.key === "Tab") {
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              lastElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              firstElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      };
+
+      // Focus the first element when lightbox opens
+      if (firstElement) {
+        firstElement.focus();
+      }
+
+      document.addEventListener("keydown", handleTabKey);
+      return () => document.removeEventListener("keydown", handleTabKey);
+    }
+  }, [lightboxOpen]);
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
@@ -775,6 +828,44 @@ const Projects = React.forwardRef((props, ref) => {
     return () =>
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
+
+  // Sync array lengths with projects count to handle dynamic project changes
+  useEffect(() => {
+    const projectCount = projects.length;
+
+    // Update state arrays if project count has changed
+    setCurrentMediaIndex((prev) => {
+      if (prev.length !== projectCount) {
+        return Array(projectCount).fill(0);
+      }
+      return prev;
+    });
+
+    setIsAutoPlaying((prev) => {
+      if (prev.length !== projectCount) {
+        return Array(projectCount).fill(true);
+      }
+      return prev;
+    });
+
+    setUserPausedProjects((prev) => {
+      if (prev.length !== projectCount) {
+        return Array(projectCount).fill(false);
+      }
+      return prev;
+    });
+
+    // Reset interval refs array if length changed
+    if (intervalRefs.current.length !== projectCount) {
+      // Clear existing intervals
+      intervalRefs.current.forEach((intervalId) => {
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      });
+      intervalRefs.current = Array(projectCount).fill(null);
+    }
+  }, [projects.length]);
 
   // Start auto-play for all projects on component mount
   useEffect(() => {
@@ -946,7 +1037,7 @@ const Projects = React.forwardRef((props, ref) => {
 
       <div className="projects-container">
         {filteredProjects.map((project, index) => {
-          const projectIndex = projectIndexMap.get(project.name);
+          const projectIndex = projectIndexMap.get(project.id);
           return (
             <div key={project.name} className="project-card">
               <div className="project-card-inner">
@@ -1081,18 +1172,34 @@ const Projects = React.forwardRef((props, ref) => {
 
       {/* Lightbox/Modal */}
       {lightboxOpen && lightboxProject && (
-        <div className="lightbox-overlay" onClick={closeLightbox}>
+        <div
+          className="lightbox-overlay"
+          onClick={(e) => {
+            // Only close if clicking directly on overlay, not on modal content
+            if (e.target === e.currentTarget) {
+              closeLightbox();
+            }
+          }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="lightbox-title"
+          aria-describedby="lightbox-instructions"
+        >
           <div
+            ref={lightboxContainerRef}
             className="lightbox-container"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="lightbox-header">
-              <h3 className="lightbox-title">{lightboxProject.name}</h3>
+              <h3 id="lightbox-title" className="lightbox-title">
+                {lightboxProject.name}
+              </h3>
               <div className="lightbox-controls">
                 <button
                   className="lightbox-control-btn"
                   onClick={toggleLightboxZoom}
                   title={lightboxZoomed ? "Zoom out" : "Zoom in"}
+                  aria-label={lightboxZoomed ? "Zoom out" : "Zoom in"}
                 >
                   {lightboxZoomed ? <FiMaximize2 /> : <FiZoomIn />}
                 </button>
@@ -1100,6 +1207,9 @@ const Projects = React.forwardRef((props, ref) => {
                   className="lightbox-control-btn"
                   onClick={toggleFullScreen}
                   title={isFullScreen ? "Exit fullscreen" : "Enter fullscreen"}
+                  aria-label={
+                    isFullScreen ? "Exit fullscreen" : "Enter fullscreen"
+                  }
                 >
                   {isFullScreen ? <FiMinimize2 /> : <FiMaximize2 />}
                 </button>
@@ -1107,6 +1217,7 @@ const Projects = React.forwardRef((props, ref) => {
                   className="lightbox-control-btn"
                   onClick={closeLightbox}
                   title="Close"
+                  aria-label="Close lightbox"
                 >
                   <FiX />
                 </button>
@@ -1120,6 +1231,7 @@ const Projects = React.forwardRef((props, ref) => {
                     className="lightbox-nav-btn lightbox-nav-prev"
                     onClick={prevLightboxImage}
                     title="Previous image"
+                    aria-label="Previous image"
                   >
                     <FiChevronLeft />
                   </button>
@@ -1138,6 +1250,7 @@ const Projects = React.forwardRef((props, ref) => {
                     className="lightbox-nav-btn lightbox-nav-next"
                     onClick={nextLightboxImage}
                     title="Next image"
+                    aria-label="Next image"
                   >
                     <FiChevronRight />
                   </button>
@@ -1148,7 +1261,10 @@ const Projects = React.forwardRef((props, ref) => {
                 <div className="lightbox-image-counter">
                   {lightboxImageIndex + 1} / {lightboxProject.media.length}
                 </div>
-                <div className="lightbox-instructions">
+                <div
+                  id="lightbox-instructions"
+                  className="lightbox-instructions"
+                >
                   Use arrow keys to navigate • Press ESC to close • Press Z to
                   zoom • Press F for fullscreen
                 </div>
