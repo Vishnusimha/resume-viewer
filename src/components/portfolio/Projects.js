@@ -399,66 +399,6 @@ const Projects = React.forwardRef((props, ref) => {
       ],
     },
     {
-      name: "Notes - Android App",
-      description:
-        "Developed a note-taking application for Android using Kotlin and Jetpack Compose. Implemented features like user authentication, note creation, editing, and deletion. Utilized Room Database for local data storage and ensured a smooth user experience with a responsive UI.",
-      technologies: ["Kotlin", "Android", "Jetpack Compose", "Room Database"],
-      media: [
-        AndroidPlaceholder,
-        NotesApp1,
-        NotesApp2,
-        NotesApp3,
-        NotesApp4,
-        NotesApp5,
-        NotesApp6,
-      ],
-      category: "Mobile Development",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/Notes",
-        },
-      ],
-    },
-    {
-      name: "Personal Portfolio Website",
-      description:
-        "A modern, responsive portfolio website built with React showcasing professional experience, projects, and technical skills. Features interactive project galleries, markdown-based blog system with syntax highlighting, downloadable resume, contact form integration, and dark/light theme toggle. Implements XSS protection with DOMPurify for secure content rendering.",
-      technologies: [
-        "React",
-        "React Router",
-        "React Icons",
-        "React Typed",
-        "Framer Motion",
-        "Lottie React",
-        "Marked",
-        "Highlight.js",
-        "DOMPurify",
-        "EmailJS",
-        "Formspree",
-        "Tailwind CSS",
-        "PostCSS",
-        "GitHub Pages",
-        "Vercel",
-      ],
-      media: [ReactJavaScriptPlaceholder],
-      category: "Full-Stack Development",
-      links: [
-        {
-          type: "github",
-          url: "https://github.com/Vishnusimha/vishnuportfolio",
-        },
-        {
-          type: "demo",
-          url: "https://vishnusimha.github.io/vishnuportfolio",
-        },
-        {
-          type: "demo",
-          url: "https://vishnusimha.github.io/vishnuportfolio/home",
-        },
-      ],
-    },
-    {
       id: "notes-android-app",
       name: "Notes - Android App",
       description:
